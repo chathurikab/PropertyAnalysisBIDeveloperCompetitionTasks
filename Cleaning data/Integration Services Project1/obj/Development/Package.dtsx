@@ -1,0 +1,1471 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/14/2020 10:58:54 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CHATHU-LAPTOP"
+  DTS:CreatorName="CHATHU-LAPTOP\Chanuth"
+  DTS:DTSID="{166CC805-483F-4A98-A70C-F48CC6AACACE}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="5129"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{5B6BF127-71B6-4748-BC98-6D10EB6EC4EF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager_AUS_property_median]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{D0E9835B-9854-4BA7-992A-BCC7827E767A}"
+      DTS:ObjectName="Excel Connection Manager_AUS_property_median">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Copy of Copy of NSW_PropertyMedainValue.csv.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager_AUS_suburbs]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{60EE5075-26F8-4B17-A12B-1D65BCDD31E4}"
+      DTS:ObjectName="Excel Connection Manager_AUS_suburbs">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\AUS_SubCityDistrictState_Data.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Australia Property Median"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{E288C8FC-56E2-4305-985D-48695E7F42A2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Australia Property Median">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Australia Property Median\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{DF08275B-BB34-408D-8626-B39F4E65C29C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Australia Property Median\Data Flow Task\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="State"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[State]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Australia Property Median\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[StateCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[StateCode]"
+                          name="StateCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[RIGHT](#{Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[State]},3)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">RIGHT(State,3)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Australia Property Median\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Data Flow Task\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">NSW_PropertyMedainValue#csv$</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager_AUS_property_median]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager_AUS_property_median]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[State]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[State]"
+                          name="State"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Suburb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Suburb]"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Suburb]"
+                          name="Suburb"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Postcode]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Postcode]"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Postcode]"
+                          name="Postcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[District]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[District]"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[District]"
+                          name="District"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Location]"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Location]"
+                          name="Location"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Property_Median_Value]"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]"
+                          name="Property_Median_Value"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Year]"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]"
+                          name="Updated_Year"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Month]"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]"
+                          name="Updated_Month"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[City]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[City]"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[City]"
+                          name="City"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="255"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Suburb]"
+                          dataType="wstr"
+                          length="255"
+                          name="Suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Postcode]"
+                          dataType="r8"
+                          name="Postcode" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[District]"
+                          dataType="wstr"
+                          length="255"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="255"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Property_Median_Value]"
+                          dataType="cy"
+                          name="Property_Median_Value" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Year]"
+                          dataType="r8"
+                          name="Updated_Year" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Month]"
+                          dataType="r8"
+                          name="Updated_Month" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="255"
+                          name="City" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
+                          name="State" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[City]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[City]"
+                          name="City" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Suburb]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Suburb]"
+                          name="Suburb" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Postcode]"
+                          dataType="r8"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Postcode]"
+                          name="Postcode" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[District]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[District]"
+                          name="District" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Location]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Location]"
+                          name="Location" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Property_Median_Value]"
+                          dataType="cy"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Property_Median_Value]"
+                          name="Property_Median_Value" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Year]"
+                          dataType="r8"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Year]"
+                          name="Updated_Year" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Month]"
+                          dataType="r8"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Month]"
+                          name="Updated_Month" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Data Flow Task\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Data Flow Task\Multicast.Outputs[Multicast Output 1]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Australia Property Median\Data Flow Task\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Australia Property Median\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\Australia Property Median\Data Flow Task\Multicast.Inputs[Multicast Input 1]"
+                  name="Derived Column Output"
+                  startId="Package\Australia Property Median\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Australia Property Median\Data Flow Task.Paths[Excel Source Output]"
+                  endId="Package\Australia Property Median\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Excel Source Output"
+                  startId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Australia Property Median\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3A7759C0-CD2B-4924-B1FD-0035D3B672ED}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}"
+              SQLTask:SqlStatementSource="delete AUS_PropertyMedian" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Australia Property Median.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{6CC91453-102C-430F-8513-A00B35F372DF}"
+          DTS:From="Package\Australia Property Median\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Australia Property Median\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Australia Suburbs"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:Disabled="True"
+      DTS:DTSID="{E1DF8B4B-99D7-4B4E-93D8-B1D85D6FA98F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Australia Suburbs">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Australia Suburbs\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{8C666DD5-FB98-4003-83E7-0A5C8BECB812}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Australia Suburbs\Data Flow Task\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="suburb"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[suburb]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[city]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="city"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[city]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Distric]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Distric"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Distric]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[state]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="state"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[state]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of suburb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of suburb]"
+                          name="Copy of suburb"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[suburb]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]"
+                          name="Copy of city"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[city]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Distric]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Distric]"
+                          name="Copy of Distric"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Distric]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state]"
+                          name="Copy of state"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[state]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Suburbs\Data Flow Task\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">'AUS_Post_suburb v2$'</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager_AUS_suburbs]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager_AUS_suburbs]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[postcode]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[postcode]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[postcode]"
+                          name="postcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[suburb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[suburb]"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[suburb]"
+                          name="suburb"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[city]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[city]"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[city]"
+                          name="city"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[state]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[state]"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[state]"
+                          name="state"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[state_code]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[state_code]"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[state_code]"
+                          name="state_code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[lat]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[lat]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[lat]"
+                          name="lat"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[lon]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[lon]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[lon]"
+                          name="lon"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Distric]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distric]"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Distric]"
+                          name="Distric"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[postcode]"
+                          dataType="r8"
+                          name="postcode" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[suburb]"
+                          dataType="wstr"
+                          length="255"
+                          name="suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[city]"
+                          dataType="wstr"
+                          length="255"
+                          name="city" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[state]"
+                          dataType="wstr"
+                          length="255"
+                          name="state" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[state_code]"
+                          dataType="wstr"
+                          length="255"
+                          name="state_code" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[lat]"
+                          dataType="r8"
+                          name="lat" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[lon]"
+                          dataType="r8"
+                          name="lon" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Distric]"
+                          dataType="wstr"
+                          length="255"
+                          name="Distric" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[postcode]"
+                          dataType="r8"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[postcode]"
+                          name="postcode" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[suburb]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[suburb]"
+                          name="suburb" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[city]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[city]"
+                          name="city" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[state]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[state]"
+                          name="state" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[state_code]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[state_code]"
+                          name="state_code" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[lat]"
+                          dataType="r8"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[lat]"
+                          name="lat" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[lon]"
+                          dataType="r8"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[lon]"
+                          name="lon" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Distric]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Distric]"
+                          name="Distric" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AUS_GeographicalArea]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[postcode]"
+                          cachedDataType="r8"
+                          cachedName="postcode"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[postcode]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[state_code]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="state_code"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[state_code]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lat]"
+                          cachedDataType="r8"
+                          cachedName="lat"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuburbLatitude]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[lat]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lon]"
+                          cachedDataType="r8"
+                          cachedName="lon"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuburbLongitude]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[lon]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of suburb"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of suburb]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of city]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of city"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Distric]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of Distric"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Distric]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of state]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Copy of state"
+                          externalMetadataColumnId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="StateCode" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="100"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          dataType="wstr"
+                          length="100"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="100"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          name="Suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="PostCode" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuburbLatitude]"
+                          dataType="numeric"
+                          name="SuburbLatitude"
+                          precision="8"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuburbLongitude]"
+                          dataType="numeric"
+                          name="SuburbLongitude"
+                          precision="9"
+                          scale="6" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Australia Suburbs\Data Flow Task.Paths[Data Conversion Output]"
+                  endId="Package\Australia Suburbs\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Australia Suburbs\Data Flow Task.Paths[Excel Source Output]"
+                  endId="Package\Australia Suburbs\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Excel Source Output"
+                  startId="Package\Australia Suburbs\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Australia Suburbs\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9D251A80-430E-441D-BA3B-685CA0930B30}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}"
+              SQLTask:SqlStatementSource="delete&#xA;from [Task1].[dbo].[AUS_GeographicalArea]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Australia Suburbs.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F11C37C0-2826-4C04-8671-CE8BEB86BA1C}"
+          DTS:From="Package\Australia Suburbs\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Australia Suburbs\Data Flow Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Australia Suburbs\Data Flow Task"
+          TopLeft="154.5,134" />
+        <EdgeLayout
+          Id="Package\Australia Suburbs.PrecedenceConstraints[Constraint]"
+          TopLeft="87,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143,37"
+              Start="0,0"
+              End="143,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="139,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="139,18.5"
+                    Point2="143,18.5"
+                    Point3="143,22.5" />
+                  <mssgle:LineSegment
+                    End="143,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,52"
+          Id="Package\Australia Suburbs\Execute SQL Task"
+          TopLeft="5.5,45" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="311,225"
+          Size="311,268"
+          Id="Package\Australia Suburbs"
+          TopLeft="33,25" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Australia Property Median\Execute SQL Task"
+          TopLeft="81,50" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Australia Property Median\Data Flow Task"
+          TopLeft="105,122" />
+        <EdgeLayout
+          Id="Package\Australia Property Median.PrecedenceConstraints[Constraint]"
+          TopLeft="162.5,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18,30"
+              Start="0,0"
+              End="18,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="4,15" />
+                  <mssgle:LineSegment
+                    End="14,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14,15"
+                    Point2="18,15"
+                    Point3="18,19" />
+                  <mssgle:LineSegment
+                    End="18,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="322,303"
+          Size="322,346"
+          Id="Package\Australia Property Median"
+          TopLeft="373,31" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Australia Suburbs\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Australia Suburbs\Data Flow Task\Excel Source"
+          TopLeft="251,98" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Australia Suburbs\Data Flow Task\OLE DB Destination"
+          TopLeft="343,314" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Australia Suburbs\Data Flow Task\Data Conversion"
+          TopLeft="282,218" />
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="320.5,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.5,78"
+              Start="0,0"
+              End="39.5,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="4,39" />
+                  <mssgle:LineSegment
+                    End="35.5,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.5,39"
+                    Point2="39.5,39"
+                    Point3="39.5,43" />
+                  <mssgle:LineSegment
+                    End="39.5,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Data Flow Task.Paths[Data Conversion Output]"
+          TopLeft="360,260">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="68.5,54"
+              Start="0,0"
+              End="68.5,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
+                  <mssgle:LineSegment
+                    End="64.5,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.5,27"
+                    Point2="68.5,27"
+                    Point3="68.5,31" />
+                  <mssgle:LineSegment
+                    End="68.5,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Suburbs\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Suburbs\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Australia Property Median\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Australia Property Median\Data Flow Task\Excel Source"
+          TopLeft="60,60" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Australia Property Median\Data Flow Task\Derived Column"
+          TopLeft="452,146" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Data Flow Task.Paths[Excel Source Output]"
+          TopLeft="129.5,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="399.5,44"
+              Start="0,0"
+              End="399.5,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
+                  <mssgle:LineSegment
+                    End="395.5,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="395.5,22"
+                    Point2="399.5,22"
+                    Point3="399.5,26" />
+                  <mssgle:LineSegment
+                    End="399.5,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Australia Property Median\Data Flow Task\Multicast"
+          TopLeft="456,274" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="529,188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13,86"
+              Start="0,0"
+              End="-13,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39"
+                    Point2="0,43"
+                    Point3="-4,43" />
+                  <mssgle:LineSegment
+                    End="-9,43" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9,43"
+                    Point2="-13,43"
+                    Point3="-13,47" />
+                  <mssgle:LineSegment
+                    End="-13,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-14.5,48,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Property Median\Data Flow Task\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

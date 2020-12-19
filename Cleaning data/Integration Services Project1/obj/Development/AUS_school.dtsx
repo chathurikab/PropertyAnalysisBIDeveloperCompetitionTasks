@@ -1,0 +1,2137 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/15/2020 10:31:38 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="CHATHU-LAPTOP"
+  DTS:CreatorName="CHATHU-LAPTOP\Chanuth"
+  DTS:DTSID="{E254D403-1598-498C-8E35-0DF452780702}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.93"
+  DTS:LocaleID="5129"
+  DTS:ObjectName="AUS_school"
+  DTS:PackageType="5"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{62FBEE59-FB00-40B3-9449-2EB531594950}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{DB610E8D-A9FD-4C5B-92D5-BA4E7F5BC88D}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Formatted\NSW-Public-Schools-Master-Dataset-07032017.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A84356B6-1323-4380-8626-99F0D56F5BEA}"
+      DTS:ObjectName="LocalHost 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Task1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{15BBCF04-1D8A-4479-9F0B-62C5B59C3637}"
+      DTS:ObjectName="LocalHost.Task1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Task1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3F39AD20-D686-49B7-BC4A-1B4BD97E1867}"
+      DTS:ObjectName="LocalHost.Task1_Warehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Task1_Warehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F1CBB4FA-03E1-4BFE-9D68-E313098ED07B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5C25F47A-2B5D-4E12-91B9-891943E25F9D}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}"
+              SQLTask:SqlStatementSource="delete from AUS_Schools" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\get to database"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{9C70B460-764A-4E19-B5AC-A96F1CC84FBD}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="get to database"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\get to database\Excel Source"
+                  componentClassID="Microsoft.ExcelSource"
+                  contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Excel Source"
+                  name="Excel Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">'NSW-Public-Schools-Master-Datas$'</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mapping from parameters in the SQL command to variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\get to database\Excel Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                      connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output]"
+                      name="Excel Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_code]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_code]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_code]"
+                          name="school_code"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[AgeID]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[AgeID]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[AgeID]"
+                          name="AgeID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_name]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_name]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_name]"
+                          name="school_name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[street]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[street]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[street]"
+                          name="street"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[town_suburb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[town_suburb]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[town_suburb]"
+                          name="town_suburb"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[postcode]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[postcode]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[postcode]"
+                          name="postcode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[student_number]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[student_number]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[student_number]"
+                          name="student_number"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[indigenous_pct]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[indigenous_pct]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[indigenous_pct]"
+                          name="indigenous_pct"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[lbote_pct]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[lbote_pct]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[lbote_pct]"
+                          name="lbote_pct"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[ICSEA_Value]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[ICSEA_Value]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[ICSEA_Value]"
+                          name="ICSEA_Value"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[level_of_schooling]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[level_of_schooling]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[level_of_schooling]"
+                          name="level_of_schooling"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[selective_school]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[selective_school]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[selective_school]"
+                          name="selective_school"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[opportunity_class]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[opportunity_class]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[opportunity_class]"
+                          name="opportunity_class"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_specialty_type]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_specialty_type]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_specialty_type]"
+                          name="school_specialty_type"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_subtype]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_subtype]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_subtype]"
+                          name="school_subtype"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[support_classes]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[support_classes]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[support_classes]"
+                          name="support_classes"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[preschool_ind]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[preschool_ind]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[preschool_ind]"
+                          name="preschool_ind"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[distance_education]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[distance_education]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[distance_education]"
+                          name="distance_education"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[intensive_english_centre]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[intensive_english_centre]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[intensive_english_centre]"
+                          name="intensive_english_centre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_gender]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_gender]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_gender]"
+                          name="school_gender"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[phone]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[phone]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[phone]"
+                          name="phone"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_email]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_email]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_email]"
+                          name="school_email"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[fax]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[fax]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[fax]"
+                          name="fax"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[late_opening_school]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[late_opening_school]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[late_opening_school]"
+                          name="late_opening_school"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[date_1st_teacher]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[date_1st_teacher]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[date_1st_teacher]"
+                          name="date_1st_teacher"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[lga]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[lga]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[lga]"
+                          name="lga"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[electorate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[electorate]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[electorate]"
+                          name="electorate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[fed_electorate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[fed_electorate]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[fed_electorate]"
+                          name="fed_electorate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[operational_directorate]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[operational_directorate]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[operational_directorate]"
+                          name="operational_directorate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[principal_network]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[principal_network]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[principal_network]"
+                          name="principal_network"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[facs_district]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[facs_district]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[facs_district]"
+                          name="facs_district"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[local_health_district]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[local_health_district]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[local_health_district]"
+                          name="local_health_district"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[aecg_region]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[aecg_region]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[aecg_region]"
+                          name="aecg_region"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[ASGS_remoteness]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[ASGS_remoteness]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[ASGS_remoteness]"
+                          name="ASGS_remoteness"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[latitude]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[latitude]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[latitude]"
+                          name="latitude"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[longitude]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[longitude]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[longitude]"
+                          name="longitude"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[date_extracted]"
+                          dataType="date"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[date_extracted]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[date_extracted]"
+                          name="date_extracted"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[StateCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[StateCode]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[StateCode]"
+                          name="StateCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[Address]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Address]"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[Address]"
+                          name="Address"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_code]"
+                          dataType="r8"
+                          name="school_code" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[AgeID]"
+                          dataType="r8"
+                          name="AgeID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_name]"
+                          dataType="wstr"
+                          length="255"
+                          name="school_name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[street]"
+                          dataType="wstr"
+                          length="255"
+                          name="street" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[town_suburb]"
+                          dataType="wstr"
+                          length="255"
+                          name="town_suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[postcode]"
+                          dataType="r8"
+                          name="postcode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[student_number]"
+                          dataType="r8"
+                          name="student_number" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[indigenous_pct]"
+                          dataType="r8"
+                          name="indigenous_pct" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[lbote_pct]"
+                          dataType="r8"
+                          name="lbote_pct" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[ICSEA_Value]"
+                          dataType="r8"
+                          name="ICSEA_Value" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[level_of_schooling]"
+                          dataType="wstr"
+                          length="255"
+                          name="level_of_schooling" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[selective_school]"
+                          dataType="wstr"
+                          length="255"
+                          name="selective_school" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[opportunity_class]"
+                          dataType="wstr"
+                          length="255"
+                          name="opportunity_class" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_specialty_type]"
+                          dataType="wstr"
+                          length="255"
+                          name="school_specialty_type" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_subtype]"
+                          dataType="wstr"
+                          length="255"
+                          name="school_subtype" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[support_classes]"
+                          dataType="wstr"
+                          length="255"
+                          name="support_classes" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[preschool_ind]"
+                          dataType="wstr"
+                          length="255"
+                          name="preschool_ind" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[distance_education]"
+                          dataType="wstr"
+                          length="255"
+                          name="distance_education" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[intensive_english_centre]"
+                          dataType="wstr"
+                          length="255"
+                          name="intensive_english_centre" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_gender]"
+                          dataType="wstr"
+                          length="255"
+                          name="school_gender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[phone]"
+                          dataType="wstr"
+                          length="255"
+                          name="phone" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[school_email]"
+                          dataType="wstr"
+                          length="255"
+                          name="school_email" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[fax]"
+                          dataType="wstr"
+                          length="255"
+                          name="fax" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[late_opening_school]"
+                          dataType="wstr"
+                          length="255"
+                          name="late_opening_school" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[date_1st_teacher]"
+                          dataType="wstr"
+                          length="255"
+                          name="date_1st_teacher" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[lga]"
+                          dataType="wstr"
+                          length="255"
+                          name="lga" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[electorate]"
+                          dataType="wstr"
+                          length="255"
+                          name="electorate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[fed_electorate]"
+                          dataType="wstr"
+                          length="255"
+                          name="fed_electorate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[operational_directorate]"
+                          dataType="wstr"
+                          length="255"
+                          name="operational_directorate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[principal_network]"
+                          dataType="wstr"
+                          length="255"
+                          name="principal_network" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[facs_district]"
+                          dataType="wstr"
+                          length="255"
+                          name="facs_district" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[local_health_district]"
+                          dataType="wstr"
+                          length="255"
+                          name="local_health_district" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[aecg_region]"
+                          dataType="wstr"
+                          length="255"
+                          name="aecg_region" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[ASGS_remoteness]"
+                          dataType="wstr"
+                          length="255"
+                          name="ASGS_remoteness" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[latitude]"
+                          dataType="r8"
+                          name="latitude" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[longitude]"
+                          dataType="r8"
+                          name="longitude" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[date_extracted]"
+                          dataType="date"
+                          name="date_extracted" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[StateCode]"
+                          dataType="wstr"
+                          length="255"
+                          name="StateCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="255"
+                          name="Address" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output]"
+                      isErrorOut="true"
+                      name="Excel Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[StateCode]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[StateCode]"
+                          name="StateCode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_code]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_code]"
+                          name="school_code" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[AgeID]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[AgeID]"
+                          name="AgeID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_name]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_name]"
+                          name="school_name" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[street]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[street]"
+                          name="street" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[town_suburb]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[town_suburb]"
+                          name="town_suburb" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[Address]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[Address]"
+                          name="Address" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[postcode]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[postcode]"
+                          name="postcode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[student_number]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[student_number]"
+                          name="student_number" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[indigenous_pct]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[indigenous_pct]"
+                          name="indigenous_pct" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[lbote_pct]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[lbote_pct]"
+                          name="lbote_pct" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[ICSEA_Value]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[ICSEA_Value]"
+                          name="ICSEA_Value" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[level_of_schooling]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[level_of_schooling]"
+                          name="level_of_schooling" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[selective_school]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[selective_school]"
+                          name="selective_school" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[opportunity_class]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[opportunity_class]"
+                          name="opportunity_class" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_specialty_type]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_specialty_type]"
+                          name="school_specialty_type" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_subtype]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_subtype]"
+                          name="school_subtype" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[support_classes]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[support_classes]"
+                          name="support_classes" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[preschool_ind]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[preschool_ind]"
+                          name="preschool_ind" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[distance_education]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[distance_education]"
+                          name="distance_education" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[intensive_english_centre]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[intensive_english_centre]"
+                          name="intensive_english_centre" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_gender]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_gender]"
+                          name="school_gender" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[phone]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[phone]"
+                          name="phone" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_email]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[school_email]"
+                          name="school_email" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[fax]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[fax]"
+                          name="fax" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[late_opening_school]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[late_opening_school]"
+                          name="late_opening_school" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[date_1st_teacher]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[date_1st_teacher]"
+                          name="date_1st_teacher" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[lga]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[lga]"
+                          name="lga" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[electorate]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[electorate]"
+                          name="electorate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[fed_electorate]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[fed_electorate]"
+                          name="fed_electorate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[operational_directorate]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[operational_directorate]"
+                          name="operational_directorate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[principal_network]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[principal_network]"
+                          name="principal_network" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[facs_district]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[facs_district]"
+                          name="facs_district" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[local_health_district]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[local_health_district]"
+                          name="local_health_district" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[aecg_region]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[aecg_region]"
+                          name="aecg_region" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[ASGS_remoteness]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[ASGS_remoteness]"
+                          name="ASGS_remoteness" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[latitude]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[latitude]"
+                          name="latitude" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[longitude]"
+                          dataType="r8"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[longitude]"
+                          name="longitude" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[date_extracted]"
+                          dataType="date"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[date_extracted]"
+                          name="date_extracted" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\get to database\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AUS_Schools]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\get to database\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[street]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="street"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[street]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[postcode]"
+                          cachedDataType="r8"
+                          cachedName="postcode"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[postcode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_name]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="school_name"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolName]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_name]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[town_suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="town_suburb"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[town_suburb]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[longitude]"
+                          cachedDataType="r8"
+                          cachedName="longitude"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationLongitude]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[longitude]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[latitude]"
+                          cachedDataType="r8"
+                          cachedName="latitude"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationLatitude]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[latitude]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[facs_district]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="facs_district"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[facs_district]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_code]"
+                          cachedDataType="r8"
+                          cachedName="school_code"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolID]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_code]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[level_of_schooling]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="level_of_schooling"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LevelOfSchooling]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[level_of_schooling]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_subtype]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="school_subtype"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSubType]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_subtype]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_gender]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="school_gender"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolGender]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_gender]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Address"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[Address]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_specialty_type]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="school_specialty_type"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialityType]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_specialty_type]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolName]"
+                          dataType="wstr"
+                          length="100"
+                          name="SchoolName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street]"
+                          dataType="wstr"
+                          length="100"
+                          name="Street" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          name="Suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          dataType="wstr"
+                          length="100"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="PostCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LevelOfSchooling]"
+                          dataType="wstr"
+                          length="100"
+                          name="LevelOfSchooling" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSubType]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolSubType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationLatitude]"
+                          dataType="numeric"
+                          name="LocationLatitude"
+                          precision="8"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationLongitude]"
+                          dataType="numeric"
+                          name="LocationLongitude"
+                          precision="9"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolGender]"
+                          dataType="wstr"
+                          length="10"
+                          name="SchoolGender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolID]"
+                          dataType="wstr"
+                          length="10"
+                          name="SchoolID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          name="Address" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialityType]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolSpecialityType" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\get to database\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\get to database\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\get to database\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\get to database.Paths[Excel Source Output]"
+                  endId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Excel Source Output"
+                  startId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\load data to DW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{F66FD26B-9ABA-49F0-A83A-C3C4C4FC123B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="load data to DW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\load data to DW\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimSchool]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\load data to DW\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="SchoolName"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolName]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[District]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="District"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LevelOfSchooling]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="LevelOfSchooling"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LevelOfSchooling]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LevelOfSchooling]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolSubType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SchoolSubType"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSubType]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSubType]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolGender]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SchoolGender"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolGender]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolGender]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolID]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SchoolID"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchooID]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LocationLongitude]"
+                          cachedDataType="numeric"
+                          cachedName="LocationLongitude"
+                          cachedPrecision="9"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolLog]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLongitude]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LocationLatitude]"
+                          cachedDataType="numeric"
+                          cachedName="LocationLatitude"
+                          cachedPrecision="8"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolLat]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLatitude]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolSpecialityType]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="SchoolSpecialityType"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialtyType]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSpecialityType]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Address]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Address"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolAddress]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolCode]"
+                          dataType="i4"
+                          name="SchoolCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchooID]"
+                          dataType="wstr"
+                          length="10"
+                          name="SchooID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolName]"
+                          dataType="wstr"
+                          length="100"
+                          name="SchoolName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolAddress]"
+                          dataType="wstr"
+                          length="100"
+                          name="SchoolAddress" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LevelOfSchooling]"
+                          dataType="wstr"
+                          length="100"
+                          name="LevelOfSchooling" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          dataType="wstr"
+                          length="100"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolLog]"
+                          dataType="numeric"
+                          name="SchoolLog"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolLat]"
+                          dataType="numeric"
+                          name="SchoolLat"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialtyType]"
+                          dataType="wstr"
+                          length="100"
+                          name="SchoolSpecialtyType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSubType]"
+                          dataType="wstr"
+                          length="100"
+                          name="SchoolSubType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolGender]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolGender" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\load data to DW\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AUS_Schools]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\load data to DW\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolID]"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolID]"
+                          name="SchoolID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolName]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolName]"
+                          name="SchoolName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Street]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Street]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Street]"
+                          name="Street"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          name="Suburb"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[District]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]"
+                          name="District"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          name="PostCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LevelOfSchooling]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LevelOfSchooling]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LevelOfSchooling]"
+                          name="LevelOfSchooling"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSubType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolSubType]"
+                          length="50"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSubType]"
+                          name="SchoolSubType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLatitude]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocationLatitude]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLatitude]"
+                          name="LocationLatitude"
+                          precision="8"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLongitude]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocationLongitude]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLongitude]"
+                          name="LocationLongitude"
+                          precision="9"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolGender]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolGender]"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolGender]"
+                          name="SchoolGender"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Address]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]"
+                          name="Address"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSpecialityType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolSpecialityType]"
+                          length="50"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSpecialityType]"
+                          name="SchoolSpecialityType"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolID]"
+                          dataType="wstr"
+                          length="10"
+                          name="SchoolID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolName]"
+                          dataType="wstr"
+                          length="100"
+                          name="SchoolName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Street]"
+                          dataType="wstr"
+                          length="100"
+                          name="Street" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          name="Suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[District]"
+                          dataType="wstr"
+                          length="100"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="PostCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LevelOfSchooling]"
+                          dataType="wstr"
+                          length="100"
+                          name="LevelOfSchooling" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolSubType]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolSubType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocationLatitude]"
+                          dataType="numeric"
+                          name="LocationLatitude"
+                          precision="8"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LocationLongitude]"
+                          dataType="numeric"
+                          name="LocationLongitude"
+                          precision="9"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolGender]"
+                          dataType="wstr"
+                          length="10"
+                          name="SchoolGender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          name="Address" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolSpecialityType]"
+                          dataType="wstr"
+                          length="50"
+                          name="SchoolSpecialityType" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolID]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolID]"
+                          name="SchoolID" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolName]"
+                          name="SchoolName" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Street]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Street]"
+                          name="Street" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          name="Suburb" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[District]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[District]"
+                          name="District" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          name="PostCode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LevelOfSchooling]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LevelOfSchooling]"
+                          name="LevelOfSchooling" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolSubType]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolSubType]"
+                          name="SchoolSubType" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocationLatitude]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocationLatitude]"
+                          name="LocationLatitude"
+                          precision="8"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocationLongitude]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LocationLongitude]"
+                          name="LocationLongitude"
+                          precision="9"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolGender]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolGender]"
+                          name="SchoolGender" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Address]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Address]"
+                          name="Address" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolSpecialityType]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolSpecialityType]"
+                          name="SchoolSpecialityType" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\load data to DW.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{D972826E-A29B-4E87-AB88-58AEF0101709}"
+          DTS:From="Package\Sequence Container\Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\get to database" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{C84AE080-5063-4BBE-9361-90D55AFB3E2F}"
+          DTS:From="Package\Sequence Container\get to database"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\load data to DW" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Sequence Container\get to database"
+          TopLeft="155,132" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="130.5,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="101,54"
+              Start="0,0"
+              End="101,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
+                  <mssgle:LineSegment
+                    End="97,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="97,27"
+                    Point2="101,27"
+                    Point3="101,31" />
+                  <mssgle:LineSegment
+                    End="101,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence Container\Execute SQL Task"
+          TopLeft="49,36" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence Container\load data to DW"
+          TopLeft="203,203" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="231.5,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.5,29"
+              Start="0,0"
+              End="49.5,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
+                  <mssgle:LineSegment
+                    End="45.5,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,14.5"
+                    Point2="49.5,14.5"
+                    Point3="49.5,18.5" />
+                  <mssgle:LineSegment
+                    End="49.5,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="368,300"
+          Size="368,343"
+          Id="Package\Sequence Container"
+          TopLeft="77,47" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\get to database">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence Container\get to database\OLE DB Destination"
+          TopLeft="529,311" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container\get to database\Excel Source"
+          TopLeft="421,109" />
+        <EdgeLayout
+          Id="Package\Sequence Container\get to database.Paths[Excel Source Output]"
+          TopLeft="490.5,151">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124,160"
+              Start="0,0"
+              End="124,152.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,76"
+                    Point2="0,80"
+                    Point3="4,80" />
+                  <mssgle:LineSegment
+                    End="120,80" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120,80"
+                    Point2="124,80"
+                    Point3="124,84" />
+                  <mssgle:LineSegment
+                    End="124,152.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\get to database\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\get to database\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Sequence Container\load data to DW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence Container\load data to DW\OLE DB Source"
+          TopLeft="204,99" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence Container\load data to DW\OLE DB Destination"
+          TopLeft="369,290" />
+        <EdgeLayout
+          Id="Package\Sequence Container\load data to DW.Paths[OLE DB Source Output]"
+          TopLeft="279,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.5,149"
+              Start="0,0"
+              End="175.5,141.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,70.5"
+                    Point2="0,74.5"
+                    Point3="4,74.5" />
+                  <mssgle:LineSegment
+                    End="171.5,74.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.5,74.5"
+                    Point2="175.5,74.5"
+                    Point3="175.5,78.5" />
+                  <mssgle:LineSegment
+                    End="175.5,141.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\load data to DW\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\load data to DW\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

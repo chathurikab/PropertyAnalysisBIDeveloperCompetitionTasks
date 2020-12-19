@@ -1,0 +1,6 @@
+[1209/234703.102:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1209/234703.104:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1209/234703.105:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1209/234703.105:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1210/110123.770:ERROR:registration_protocol_win.cc(56)] CreateFile: The system cannot find the file specified. (0x2)
+[1210/110124.327:ERROR:registration_protocol_win.cc(56)] CreateFile: The system cannot find the file specified. (0x2)

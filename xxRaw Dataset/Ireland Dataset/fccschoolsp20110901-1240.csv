@@ -1,0 +1,122 @@
+ID,School_Roll_No,Name,Address1,Address2,Address3,Phone,School_Level,Mixed_Status,Fee_paying,Completion_Prog,Lat,Long
+1,20176C,Rush Lusk Educate Together Ns,Rathmore Rd,Lusk,,(01) 8430525,Primary,Mixed,No,,53.5289465480972,-6.15690613123526
+2,20137P,Mary Mother Of Hope Senior Ns,"Littlepace, Castaheaney",Dublin 15, ,(01) 8128693,Primary,Mixed,No,,53.4044437677559,-6.42466733348594
+3,60852R,Mater Christi Secondary School,Cappagh,Dublin 11, ,(01) 8343165,Secondary,Girls,No,,53.3921439465229,-6.32306232071899
+4,19601H,Saint Philip The Apostle  Jns,Mountview Road,Dublin 15, ,(01) 8212992,Primary,Mixed,No,School Completion Programme,53.3902759865971,-6.407382917605
+5,19470S,Saint Francis Xavier Sns,Roselawn Road,Castleknock,Dublin 15,(01) 8211121,Primary,Mixed,No,,53.3827223864593,-6.38334297475873
+6,19393D,Bayside Jns (Muire Agus Iosef),Verbena Avenue,Sutton,Dublin 13,(01) 8326524,Primary,Mixed,No,,53.3893444134756,-6.14725231097875
+7,16970A,Saint Mologas Ns,Bremore,Balbriggan,Dublin,(01) 8413133,Primary,Mixed,No,,53.6158565903141,-6.19034968085074
+8,20202A,Balbriggan Educate Together,Hamlet Lane,Moylaragh,Balbriggan,(01) 6904635,Primary,Mixed,No,School Completion Programme,53.6125330756283,-6.20650185613338
+9,20130B,Saint Patricks National School,Diswellstown,Dubiln 15, ,(01) 8249930,Primary,Mixed,No,,53.3692097523722,-6.38814974279032
+10,19769W,Scoil Thomais,Laurel Lodge,Castleknock,Dublin 15,(01) 8201022,Primary,Mixed,No,,53.3781604561254,-6.37781693388738
+11,19545A,St Patricks Jns/Corduff Ns,Blackcourt Road,Corduff,Dublin 15,(01) 8211546,Primary,Mixed,No,School Completion Programme,53.3988995049934,-6.37569150077036
+12,19850F,Ladyswell National School,Ladyswell,Mulhuddart,Dublin 15,(01) 8204255,Primary,Mixed,No,School Completion Programme,53.4059732702325,-6.3919037401449
+13,16675V,Mulhuddart National School,Mulhuddart Village,Dublin 15, ,(01) 8210623,Primary,Mixed,No,,53.4146752800165,-6.39227934103521
+14,20201V,Tyrellstown Educate Together,Powerstown Road,Tyrellstown,Dublin 15,(01) 8273140,Primary,Mixed,No,,53.4146479295021,-6.39024989908105
+15,60383I,Colaiste Choilm,Dublin Road,Swords,Co. Dublin,(01) 8401420,Secondary,Boys,No,,53.4525052650678,-6.2255181795291
+16,76062B,Castleknock Community College,Carpenterstown Road,Dublin 15, ,(01) 8221626,Secondary,Mixed,No,,53.3719942627298,-6.39106269312186
+17,18976W,Saint Colmcilles Boy'S National School,Chapel Lane,Swords,Co. Dublin,(01) 8405132,Primary,Boys,No,School Completion Programme,53.4584828670109,-6.2147721001359
+18,76078Q,Skerries Community College,Balbriggan Street,Skerries,Balbriggan,(01) 8490011,Secondary,Mixed,No,,53.5791861567889,-6.11589336340986
+19,19625V,Scoil Realt Na Mara,Balbriggan Road,Skerries,Balbriggan,(01) 8490049,Primary,Mixed,No,,53.580314399909,-6.1206978131954
+20,17961E,Lusk National School (Sn Lusca),Chapel Road,Lusk,Co. Dublin,(01) 8437738,Primary,Mixed,No,,53.5291863342288,-6.16791665699562
+21,16844S,Loughshinney National School (Saint Brendans/ Scoil N Breandan),Ballykea,Skerries,Balbriggan,(01) 8490394,Primary,Mixed,No,,53.5464103754593,-6.09018257953956
+22,19624T,Scoil Nais Caitriona- Saint Catherines National School,Saint Catherine'S Avenue,Rush,Co. Dublin,(01) 8438266,Primary,Mixed,No,,53.5350226302885,-6.0992697020554
+23,17472M,Hedgestown Ns (Scoil Baile Falbhach),Jordanstown,Lusk,Co. Dublin,(01) 8438372,Primary,Mixed,No,,53.5507115722196,-6.20756620503561
+24,17263D,Oldtown National School (S N Muire An Sean Baile),Oldtown,Co. Dublin, ,(01) 8433420,Primary,Mixed,No,,53.5244717037047,-6.31850695020617
+25,19693P,Mary Queen Of Ireland National School,Toberburr,Saint Margaret's,Swords,(01) 8404629,Primary,Mixed,No,School Completion Programme,53.4525756509884,-6.2925495316841
+26,19505L,Gaelscoil Oilibheir,Snugborough Road,Dublin 15, ,(01) 8215277,Primary,Mixed,No,,53.3873745195204,-6.39780159301137
+27,91315O,Coolmine Community School- Scoil Phobail Chuil Mhin,Blanchardstown Road South,Dublin 15, ,(01) 8214141,Secondary,Mixed,No,,53.3887384917891,-6.39571734814438
+28,19762I,Saint Helens Senior School,Limetree Avenue,Portmarnock,Dublin 13,(01) 8461808,Primary,Mixed,No,,53.4389986271051,-6.13580350925631
+29,19578P,Saint Helens Junior School,Limetree Avenue,Portmarnock,Dublin 13,(01) 8461763,Primary,Mixed,No,,53.4399030334322,-6.1360722630568
+30,12358M,Swords Borough N S ,Church Road,Swords,Co. Dublin,(01) 8407036,Primary,Mixed,No,,53.4574521100282,-6.22313009039377
+31,91325R,Malahide Community School,Broomfield,Malahide,Co. Dublin,(01) 8463244,Secondary,Mixed,No,,53.4382530582525,-6.15248338966244
+32,15569R,Milverton National School (Scoil Mobhi),Milverton,Skerries,Balbriggan,(01) 8492467,Primary,Mixed,No,,53.5646445212491,-6.14753412080114
+33,09492W,Balscadden National School,Balscadden,Balbriggan,Co. Dublin,(01) 8412579,Primary,Mixed,No,,53.6152784596126,-6.23217712174507
+34,20098I,Castleknock Educate Together National School,Beechpark Avenue,Dublin 15, ,(01) 8219331,Primary,Mixed,No,,53.3800111040008,-6.36279657705396
+35,70081V,Riversdale Community College,Blanchardstown Road North,Dublin 15, ,(01) 8201488,Secondary,Mixed,No,School Completion Programme,53.4019244964689,-6.37934606077867
+36,19755L,Sacred Heart National School,Huntstown Way,Huntstown,Dublin 15,(01) 8216400,Primary,Mixed,No,,53.4025589560919,-6.41005253389049
+37,19643A,Saint Philips Sns,Mountview Road,Clonsilla,Dublin 15,(01) 8216101,Primary,Mixed,No,School Completion Programme,53.3896278385681,-6.40741120060094
+38,91316Q,Blakestown Community School,Sheepmoor Avenue,Blakestown,Dublin 15,(01) 8215522,Secondary,Mixed,No,School Completion Programme,53.3960412535743,-6.40342122792023
+39,19636D,Saint Patricks Sns,Blackcourt Road,Corduff,Dublin 15,(01) 8216563,Primary,Mixed,No,School Completion Programme,53.3987915983412,-6.3774388843997
+40,18778S,Saint Mochtas National School,Porterstown Road,Clonsilla,Dublin 15,(01) 8210499,Primary,Mixed,No,,53.3820015349048,-6.40516624801997
+41,19435Q,Saint Francis Xaviers Jns,Roselawn Road,Castleknock,Dublin 15,(01) 8210892,Primary,Mixed,No,,53.3834856250928,-6.38317877928549
+42,18046A,Scoil Bride (Saint Brigids) Boys School,Castleknock Road,Dublin 15, ,(01) 8201299,Primary,Boys,No,,53.3843298514973,-6.37279344284397
+43,18047C,Scoil Bride (Saint Brigids) Girls School,Castleknock Road,Dublin 15, ,(01) 8201717,Primary,Girls,No,,53.3845543199929,-6.3740337897356
+44,19988L,Saint Mary'S School,Grange Road,Baldoyle,Dublin 13,(01) 8326782,Primary,Girls,No,,53.397950298878,-6.13779093684913
+45,19533Q,Bayside Sns (Muire Agus Iosef),Verbena Avenue,Sutton,Dublin 13,(01) 8393682,Primary,Mixed,No,,53.3897493623251,-6.14687817487823
+46,16333Q,Saint Patricks Jnr Mixed,Beau-Piers Lane,Skerries,Balbriggan,(01) 8490836,Primary,Mixed,No,,53.57804880607,-6.10940713836094
+47,16332O,Saint Patricks Snr Mixed,Beau-Piers Lane,Skerries,Balbriggan,(01) 8490945,Primary,Mixed,No,,53.5779987496743,-6.1101673570477
+48,14180H,Holmpatrick National School,Convent Lane,Skerries,Balbriggan,(01) 8491409,Primary,Mixed,No,,53.5796715096608,-6.10752250290817
+49,60021U,Saint Marys Secondary School,Dublin Street,Baldoyle,Dublin 13,(01) 8325591,Secondary,Girls,No,,53.3969122749918,-6.12765352044671
+50,17284L,Baldoyle National School (Saints Peter & Paul),Brookstone Road,Baldoyle,Dublin 13,(01) 8322938,Primary,Boys,No,,53.3964267730838,-6.13288327307307
+51,70120F,Saint Finians Community College,Jugback Lane,Swords,Co. Dublin,(01) 8402623,Secondary,Mixed,No,School Completion Programme,53.4652333373987,-6.22460049737486
+52,09642P,Burrow National School,Howth Road,Sutton,Dublin 13,(01) 8325784,Primary,Mixed,No,,53.3912904823223,-6.10028481232697
+53,20161M,Donabate Portrane Educate Together,Ballisk Common,Portrane Road,Donabate,(01) 8434573,Primary,Mixed,No,,53.4895633430219,-6.14663645057326
+54,20145O,Swords Educate Together,Applewood,Off Rathbeale Road,Swords,(01) 8903899,Primary,Mixed,No,,53.4726618061018,-6.25039428646153
+55,60370W,Saint Fintans High School,Dublin Road,Sutton,Dublin 13,(01) 8324632,Secondary,Boys,No,,53.3891853759158,-6.11794562331764
+56,60380C,Santa Sabina Convent School (Saint Dominics),Greenfield Road,Sutton,Dublin 13,(01) 8322200,Secondary,Girls,No,,53.3871306994664,-6.10055876820687
+57,19549I,Saint Fintans National School,Carrickbrack Road,Sutton,Dublin 13,(01) 8391067,Primary,Mixed,No,,53.3803756223716,-6.09515494735983
+58,18080A,Scoil Mhuire,Tuckett'S Lane,Howth,Dublin 13,(01) 8323572,Primary,Mixed,No,,53.3843945186902,-6.06892800689785
+59,60381E,Sutton Park School,Sutton Park Schools,Saint Fintan'S Road,Sutton,(01) 8322940,Secondary,Mixed,Yes,,53.3771210905958,-6.09389711658856
+60,00697S,Saint Bridgids National School,Beechpark Lawn,Castleknock,Dublin 15,(01) 8214040,Primary,Mixed,No,,53.3751386169793,-6.36220804059328
+61,19456B,Brackenstown Jnr/ Saint Cronans Jns,Brackenstown Road,Swords,Co. Dublin,(01) 8402194,Primary,Mixed,No,School Completion Programme,53.459094075905,-6.23644942163998
+62,19535U,St. Cronans Sns/ Brackenstown Snr N S,Brackenstown Road,Swords,Co. Dublin,(01) 8403488,Primary,Mixed,No,School Completion Programme,53.4589142755789,-6.23546126539716
+63,18977B,Saint Colmcilles Girl'S National School,Chapel Lane,Swords,Co. Dublin,(01) 8404168,Primary,Girls,No,School Completion Programme,53.4576702245861,-6.21437203536868
+64,19898K,Gaelscoil An Duinninigh,Aspen Road,Kinsaley,Swords,(01) 8409640,Primary,Mixed,No,,53.4468238071301,-6.19983115725011
+65,60100Q,Castleknock College,College Road,Castleknock,Dublin 15,(01) 8213051,Secondary,Boys,Yes,,53.3684106990672,-6.36860964371238
+66,60120W,Mount Sackville Secondary School,Mount Sackville Convent,College Road,Dublin 20,(01) 8214061,Secondary,Girls,Yes,,53.3593624974873,-6.35632168145822
+67,16972E,Scoil N Paedar Agus Pol -Saint Peter & Pauls Junior School,Chapel Street,Balbriggan,Co. Dublin,(01) 8412670,Primary,Mixed,No,,53.6099536642268,-6.18849000681767
+68,70010V,Balbriggan Community College,42_56 Drogheda Street,Balbriggan,Co. Dublin,(01) 8412388,Secondary,Mixed,No,School Completion Programme,53.6112543680337,-6.18823265591237
+69,60010P,Loreto Sec School,Brick Lane,Balbriggan,Co. Dublin,(01) 8411594,Secondary,Girls,No,,53.6122587883104,-6.18511353890968
+70,19515O,Sn Naomh Treasa- Saint Theresas National School,Pinewood Green Hill,Balbriggan,Co. Dublin,(01) 8416270,Primary,Mixed,No,School Completion Programme,53.6035536349061,-6.17401611328114
+71,19627C,Pope John Paul Ii School,Inbhir Ide Drive,Malahide,Co. Dublin,(01) 8450736,Primary,Mixed,No,,53.4540490160206,-6.16918649807329
+72,11583O,Saint Andrews National School,Church Road,Malahide,Co. Dublin,(01) 8450185,Primary,Mixed,No,,53.4489088532301,-6.15296363177237
+73,10296G,Scoil Noamh Mearnog- Saint Marnocks National School,Strand Road,Portmarnock,Dublin 13,(01) 8462060,Primary,Mixed,No,,53.4222165232002,-6.13499450579206
+74,91324P,Portmarnock Community School,Carrickhill Road Upper,Portmarnock,Dublin 13,(01) 8038056,Secondary,Mixed,No,,53.43164254759,-6.13777961138717
+75,60343T,Saint Josephs Secondary School,Convent Lane,Rush,Co. Dublin,(01) 8437534,Secondary,Mixed,No,School Completion Programme,53.5199122909665,-6.09087779439766
+76,19660A,Rush National School,Channel Road,Rush,Co. Dublin,(01) 8437095,Primary,Mixed,No,,53.5206655148285,-6.1043338775029
+77,91339F,Hartstown Community School,Hartstown Road,Dublin 15, ,(01) 8207863,Secondary,Mixed,No,,53.3961272415178,-6.41611660283864
+78,70121H,Fingal Community College,Seatown Road,Swords,Co. Dublin,(01) 8405829,Secondary,Mixed,No,School Completion Programme,53.460697236919,-6.21677806710571
+79,17914S,Saint Oliver Plunkett'S School,Grove Road,Malahide,Co. Dublin,(01) 8452052,Primary,Mixed,No,,53.4464181483832,-6.15075543990591
+80,17559B,Garristown National School (Scoil Mhuire),The Green,Garristown,Co. Dublin,(01) 8354505,Primary,Mixed,No,,53.562778489998,-6.38506478033781
+81,18038B,Saint Margaret'S National School,Sandyhill,Saint Margaret's,Swords,(01) 8361669,Primary,Mixed,No,,53.4301874849074,-6.30050477615684
+82,01170G,S N Na H-Aille - Naul National School,Naul Hill,Naul,Balbriggan,(01) 8413821,Primary,Mixed,No,,53.5788742855182,-6.28563599883117
+83,60810B,Loreto College,36 River Valley,Swords,Co. Dublin,(01) 8407025,Secondary,Girls,No,,53.454322300372,-6.24560800804706
+84,19001G,Ballyboghil National School,Naul Road,Ballyboghil,Ballyboughal,(01) 8433469,Primary,Mixed,No,,53.5211050837104,-6.26641646266821
+85,17785K,San Nioclas Myre- St Nicholas Of The Myre,Kinsaley,Dublin 17,Co. Dublin,(01) 8464033,Primary,Mixed,No,,53.420823298965,-6.1760376513586
+86,18412W,S N C  Naomh Padraig- Saint Patricks Girls National School,Portrane Road,Donabate,Malahide,(01) 8436201,Primary,Girls,No,,53.4927714035727,-6.13540955185898
+87,16267G,Saint Patricks Boys National School,Portrane Road,Donabate,Malahide,(01) 8436168,Primary,Boys,No,,53.4937215141296,-6.13539930171506
+88,17569E,Balrothery National School (Blessed Oliver),Coach Road,Balrothery,Balbriggan,(01) 8411494,Primary,Mixed,No,,53.5896257436739,-6.18586035239134
+89,17820J,Rowlestown National School (Saint Brigids- Brigdhe Naofa),Kilsallaghan,Swords,Co. Dublin,(01) 8404130,Primary,Mixed,No,,53.4917143363902,-6.30034396107163
+90,17595F,Kilcoskan School- Cill Coscain,Coolquay Common,The Ward,Dublin 11,(01) 8351508,Primary,Mixed,No,,53.4636663985147,-6.3447156619936
+91,15650A,Corduff National School,Corduff,Lusk,Co. Dublin,(01) 8438274,Primary,Mixed,No,,53.5167350149126,-6.1906869844147
+92,20095C,Gaelscoil Bhrian Boroimhe,Applewood,Off Rathbeale Road,Swords,(01) 8902799,Primary,Mixed,No,,53.4734636640135,-6.24992449454856
+93,19877C,Holy Family Sns,Forrest Fields,River Valley,Swords,(01) 8406334,Primary,Mixed,No,School Completion Programme,53.4523934878807,-6.24190313435401
+94,19721R,Holy Family Jns,Forrest Fields,River Valley,Swords,(01) 8404394,Primary,Mixed,No,,53.4518318780658,-6.24183618341275
+95,17928G,Saint Sylvesters- Sn N Sailbheastar ,Yellow Walls Road,Malahide,Co Dublin,(01) 8450061,Primary,Mixed,No,,53.4495753244413,-6.16381207028053
+96,91342R,Pobail Scoil Neasain,Moyclare Road,Baldoyle,Dublin 13,(01) 8063092,Secondary,Mixed,No,,53.3920578874359,-6.13124382992056
+97,19644C,Saint Ciarans,Hartstown,Dublin 15, ,(01) 8212233,Primary,Mixed,No,,53.3938263485663,-6.42054179098043
+98,19694R,Scoil Mhuire Sns,Blakestown Road,Mulhuddart,Dublin 15,(01) 8212288,Primary,Mixed,No,School Completion Programme,53.3978627498276,-6.40003155220583
+99,19605P,Scoil Mhuire Jns- Scoil Nais Mhuire Sois,Blakestown Road,Blakestown,Dublin 15,(01) 8216916,Primary,Mixed,No,School Completion Programme,53.3976219424703,-6.4010389300682
+100,18623M,Scoil Naisunta Chnuacha - Castleknock Ns,Main Street,Castleknock,Dublin 15,(01) 8202611,Primary,Mixed,No,,53.3742033496102,-6.36227154706234
+101,20231H,St Benedicts Ns,Ongar,,,(01) 8026579,Primary,Mixed,,,53.393370914516,-6.4404517365496
+102,20241K,Scoil Choilm Community Ns,Porterstown Rd,Porterstown,Dublin 15,(01) 8213352,Primary,Mixed,,School Completion Programme,53.3760508366983,-6.40883974318196
+103,20247W,Scoil Ghrainne Community Ns,Phibblestown,,Dublin 15,(01) 6402418,Primary,Mixed,,,53.3981119442269,-6.43557775697545
+104,20252P,Gaelscoil Bhaile Brigin,Castlelands,Balbriggan,,(01) 8416036,Primary,Mixed,,,53.6006365154263,-6.17916461489784
+105,20282B,Bracken Educate Together,Castlelands,Balbriggan,,(01) 6911476,Primary,Mixed,,School Completion Programme,53.6006238708783,-6.1783342678751
+106,20334R,Gealscoil Ros Eo,Rush Demesne,Rush,,(01) 8949767,Primary,Mixed,,,53.5322118452601,-6.10613362811996
+107,20302E,Thornleigh Avenue Et Ns,Thornleigh Green,Applewood Village,,(01) 8074969,Primary,Mixed,,,53.4722713429671,-6.23373022565862
+108,20309S,Mary Mother Of Hope Jun Ns,Littlepace,Castaheny,,(01) 6405655,Primary,Mixed,,,53.4049825463883,-6.4237106088145
+109,20307O,Skerries Etns,Barnageeragh Cove,Kellys Bay,,(01) 8494050,Primary,Mixed,,,53.5833092773916,-6.13450216291879
+110,20186F,Castaheaney Educate Together ,Ongar Village,Clonsilla,Dublin 15,(01) 6467484,Primary,Mixed,No,School Completion Programme,53.3933929670964,-6.44268782533509
+111,15315J,St Georges National School,Clonard Road,Balbriggan,,(01) 8410107,Primary,Mixed,No,,53.607114028759,-6.20379978152459
+112,76129H,Ardgillan Community College,Ardgillan,Balbriggan,,(01) 9680734,Secondary,Mixed,,,53.60065178047,-6.18075960766523
+113,76098W,Colaiste Pobail Setanta,Phibblestown,Dublin 15,,(01) 6402403,Secondary,Mixed,,,53.3975773941679,-6.43496294872191
+114,76104O,Donabate Community College,Portrane Rd,Donabate,,(01) 8436726,Secondary,Mixed,,,53.48991218389,-6.14321050326772
+115,Blanchardstown Institute of Technology,Blanchardstown Institute Of Technology,"Block A, College Business & Technology Park",Blanchardstown Road North,Blanchardstown,(01) 8851000,Third Level,N/A,N/A,N/A,53.4063914970854,-6.37653026187407
+121,76130P,Luttrellstown Community College,Mill Road,Blanchardstown,Dublin 15,(01) 8235262,Secondary,Mixed,No,,53.389555824159,-6.37279514731567
+122,Blanchardstown Youthreach,Blanchardstown Youthreach,The Brace Centre,Main StreetMain StreetMain StreetMain Street,Blanchardstown,(01) 8217007,Youthreach,Mixed,No,,53.3874624894966,-6.37903666361972
+123,Swords Youthreach,Swords Youthreach,North Street,Swords,,(01) 8408253,Youthreach,Mixed,No,,53.4610877781228,-6.21721855761167
+124,Rush Youthreach,Rush Youthreach,Convent Lane,Rush,,(01) 8439161,Youthreach,Mixed,No,,53.5214197203729,-6.09037872184725
+125,Balbriggan Youthreach,Balbriggan Youthreach,"1st Floor, Sarsfield House",Mill Street,Balbriggan,(01) 9680600,Youthreach,Mixed,No,,53.6108788935618,-6.18197565537802
+126,20348F,Holywell Educate Together National School,Holywell Road,Swords,,(01) 4444386,Primary,Mixed,No,,53.4448497151892,-6.20929970846087

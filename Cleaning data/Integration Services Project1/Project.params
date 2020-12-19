@@ -1,0 +1,25 @@
+﻿<?xml version="1.0"?>
+<SSIS:Parameters xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+  <SSIS:Parameter
+    SSIS:Name="GoogleMapApiKey">
+    <SSIS:Properties>
+      <SSIS:Property
+        SSIS:Name="ID">{a95735a7-4473-4da1-8dfd-f3447c9032de}</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="CreationName"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Description"></SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Required">0</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Sensitive">1</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="Value"
+        SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdm44N+T6WkqNq0GvCVSTeAAAAAACAAAAAAAQZgAAAAEAACAAAADNisAtIUsDqHnDMU6VO3SPU9w9vRv0ZKn95uoyQr3ZSAAAAAAOgAAAAAIAACAAAABMGt0MhGmFFN5cAATc9mYUFXqlTLcS2aIUIdiyQknEJKAAAACMQyn6GGcQHGOzXdjE5TSZCR/jswyyU/vUwsmN0TGzES2dWIeMdq58J94hvrQ4tnNMTwPmyqUcTt8jOgJTctNdR9Dg1AghrilCXHefQ0CUKdJIttYlz98oh1eK1TPh2EGoaQCsVOFyyLuQ3l4GqtTIeHS+0icdQoJLkvwjk5HooVoz+bQV/bqrbVYPWP0ODlX1xjP7wYkNPfdlsLDpwWfWQAAAAPt8KjOcoEx3HkCL0pL2CDvRtcRmfOJumdoIfntNHSz0FChkb/5joTzL8WzPfRNvqeDxXfetb7Lq43UjLrYhqwQ=</SSIS:Property>
+      <SSIS:Property
+        SSIS:Name="DataType">18</SSIS:Property>
+    </SSIS:Properties>
+  </SSIS:Parameter>
+</SSIS:Parameters>
