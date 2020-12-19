@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="2_AUS_Transport"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{AF31D6D8-CA0D-429A-833A-A63FCD37C4A1}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{A346BB3E-B393-4847-9494-89C33B466EBD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -885,10 +885,11 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Exit_Number]"
+                          length="255"
                           lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]"
                           name="Exit_Number"
                           truncationRowDisposition="FailComponent" />
@@ -944,7 +945,8 @@
                           name="LONG" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Exit_Number]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="255"
                           name="Exit_Number" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[StateCode]"
@@ -1009,7 +1011,8 @@
                           name="LONG" />
                         <outputColumn
                           refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Exit_Number]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Exit_Number]"
                           name="Exit_Number" />
                         <outputColumn
@@ -1174,7 +1177,8 @@
                           lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
                         <inputColumn
                           refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Exit_Number]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Exit_Number"
                           externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
                           lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]" />
@@ -2477,7 +2481,8 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
                         <inputColumn
                           refId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0].Columns[Exit_Number]"
-                          cachedDataType="r8"
+                          cachedDataType="wstr"
+                          cachedLength="255"
                           cachedName="Exit_Number"
                           lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]" />
                         <inputColumn
@@ -2678,15 +2683,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     design-time-name="Package\Sequence Container\Load to DW">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence Container\Load to DW\OLE DB Source"
-          TopLeft="278,135" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\Load to DW\OLE DB Destination"
           TopLeft="272,360" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence Container\Load to DW\OLE DB Source"
+          TopLeft="278,135" />
         <EdgeLayout
           Id="Package\Sequence Container\Load to DW.Paths[OLE DB Source Output]"
           TopLeft="355.25,177">
@@ -2706,12 +2711,27 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Load to DW\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Load to DW\OLE DB Source">
     <Properties>
@@ -2735,6 +2755,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Sequence Container\To get data to database\Script Component"
           TopLeft="296,314" />
         <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence Container\To get data to database\OLE DB Destination"
+          TopLeft="285,425" />
+        <NodeLayout
           Size="139,42"
           Id="Package\Sequence Container\To get data to database\Excel Source"
           TopLeft="274,124" />
@@ -2742,6 +2766,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Size="156,42"
           Id="Package\Sequence Container\To get data to database\Data Conversion"
           TopLeft="305,221" />
+        <EdgeLayout
+          Id="Package\Sequence Container\To get data to database.Paths[Output 0]"
+          TopLeft="374,356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,69"
+              Start="0,0"
+              End="0,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\To get data to database.Paths[Excel Source Output]"
           TopLeft="343.5,166">
@@ -2800,63 +2846,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence Container\To get data to database\OLE DB Destination"
-          TopLeft="285,425" />
-        <EdgeLayout
-          Id="Package\Sequence Container\To get data to database.Paths[Output 0]"
-          TopLeft="374,356">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,69"
-              Start="0,0"
-              End="0,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\To get data to database\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Load to DW\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\To get data to database\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\To get data to database\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
