@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="CHATHU-LAPTOP"
   DTS:CreatorName="CHATHU-LAPTOP\Chanuth"
-  DTS:DTSID="{E3995B5B-E833-44BD-B5AA-A190D33CDC30}"
+  DTS:DTSID="{CCC7851C-BFF4-4640-9138-794D4F85B9D1}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.93"
   DTS:LocaleID="5129"
-  DTS:ObjectName="3_AUS_school"
+  DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{C221275E-F6D2-459F-A816-A80F67D86A56}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{D0F5819E-CA3F-4DA5-8EBA-D4C423B2B68C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

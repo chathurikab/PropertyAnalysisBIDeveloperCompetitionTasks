@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="1_AUS_GeographicalArea"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{B923FA37-0140-499D-BE69-8F9BEB5B5E7E}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{5C50014A-9F02-4759-9C40-F5A02619C5CA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2023,6 +2023,494 @@
               version="1">
               <components>
                 <component
+                  refId="Package\Australia Suburbs\Load data to DW\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Australia Suburbs\Load data to DW\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Australia Suburbs\Load data to DW\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="3"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryCode]"
+                          name="CountryCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"AUD"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"AUD"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="9"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryName]"
+                          name="CountryName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"Australia"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"Australia"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Australia Suburbs\Load data to DW\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Insert Only Australia"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[StateCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="StateCode"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[State]"
+                          cachedComparisonFlags="5"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="State"
+                          cachedSortKeyPosition="3"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[District]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="District"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[City]"
+                          cachedComparisonFlags="5"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="City"
+                          cachedSortKeyPosition="1"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[Suburb]"
+                          cachedComparisonFlags="5"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Suburb"
+                          cachedSortKeyPosition="2"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[PostCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="PostCode"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[SuburbLatitude]"
+                          cachedDataType="numeric"
+                          cachedName="SuburbLatitude"
+                          cachedPrecision="8"
+                          cachedScale="6"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[SuburbLongitude]"
+                          cachedDataType="numeric"
+                          cachedName="SuburbLongitude"
+                          cachedPrecision="9"
+                          cachedScale="6"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[CityCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="CityCode"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[CountryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="CountryCode"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input].Columns[CountryName]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="CountryName"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryName]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">2</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[StateCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[StateCode]"
+                          name="StateCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[State]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[State]"
+                          name="State">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[District]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[District]"
+                          name="District">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[City]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[City]"
+                          name="City">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[Suburb]"
+                          name="Suburb">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[PostCode]"
+                          name="PostCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[SuburbLatitude]"
+                          dataType="numeric"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[SuburbLatitude]"
+                          name="SuburbLatitude"
+                          precision="8"
+                          scale="6">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[SuburbLongitude]"
+                          dataType="numeric"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[SuburbLongitude]"
+                          name="SuburbLongitude"
+                          precision="9"
+                          scale="6">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[CityCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[CityCode]"
+                          name="CityCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[CountryCode]"
+                          dataType="wstr"
+                          length="3"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[CountryCode]"
+                          name="CountryCode"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[CountryName]"
+                          dataType="wstr"
+                          length="9"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[CountryName]"
+                          name="CountryName"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryName]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Australia Suburbs\Load data to DW\Insert only unique city"
                   componentClassID="Microsoft.Sort"
                   contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -3168,6 +3656,165 @@ where [refTable].[City] = ?</property>
                   </outputs>
                 </component>
                 <component
+                  refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup for new Country"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCountry]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCountry]) [refTable]
+where [refTable].[CountryCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CountryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryCode]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Inputs[Lookup Input].Columns[CountryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="CountryCode"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output].Columns[CountryCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CountryCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup Match Output].Columns[CountryName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="100"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup Match Output].Columns[CountryName]"
+                          name="CountryName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CountryName</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
                   refId="Package\Australia Suburbs\Load data to DW\Lookup for new State"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -3521,6 +4168,13 @@ where [refTable].[Suburb] = ?</property>
                       refId="Package\Australia Suburbs\Load data to DW\Multicast.Outputs[Multicast Output 4]"
                       deleteOutputOnPathDetached="true"
                       name="Multicast Output 4"
+                      synchronousInputId="Package\Australia Suburbs\Load data to DW\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Suburbs\Load data to DW\Multicast.Outputs[Multicast Output 5]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 5"
                       synchronousInputId="Package\Australia Suburbs\Load data to DW\Multicast.Inputs[Multicast Input 1]">
                       <externalMetadataColumns />
                     </output>
@@ -4248,18 +4902,6 @@ where [refTable].[Suburb] = ?</property>
                           dataType="wstr"
                           length="10"
                           name="CityCode" />
-                        <externalMetadataColumn
-                          refId="Package\Australia Suburbs\Load data to DW\To DimCity.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
-                          dataType="numeric"
-                          name="Latitude"
-                          precision="8"
-                          scale="6" />
-                        <externalMetadataColumn
-                          refId="Package\Australia Suburbs\Load data to DW\To DimCity.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
-                          dataType="numeric"
-                          name="Longitude"
-                          precision="9"
-                          scale="6" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4281,6 +4923,139 @@ where [refTable].[Suburb] = ?</property>
                           refId="Package\Australia Suburbs\Load data to DW\To DimCity.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Australia Suburbs\Load data to DW\To DimCity.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Suburbs\Load data to DW\To DimCountry"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="To DimCountry"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimCountry]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input].Columns[CountryCode]"
+                          cachedDataType="wstr"
+                          cachedLength="3"
+                          cachedName="CountryCode"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[CountryCode]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input].Columns[CountryName]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="CountryName"
+                          cachedSortKeyPosition="2"
+                          externalMetadataColumnId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output].Columns[CountryName]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
+                          dataType="i4"
+                          name="CountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="CountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          dataType="wstr"
+                          length="100"
+                          name="CountryName" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Load data to DW\To DimCountry.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimCountry.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Suburbs\Load data to DW\To DimCountry.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -4583,6 +5358,11 @@ where [refTable].[Suburb] = ?</property>
               </components>
               <paths>
                 <path
+                  refId="Package\Australia Suburbs\Load data to DW.Paths[Derived Column Output]"
+                  endId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Australia Suburbs\Load data to DW\Derived Column.Outputs[Derived Column Output]" />
+                <path
                   refId="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output]"
                   endId="Package\Australia Suburbs\Load data to DW\Insert only unique city.Inputs[Sort Input]"
                   name="Lookup No Match Output"
@@ -4598,6 +5378,11 @@ where [refTable].[Suburb] = ?</property>
                   name="Lookup No Match Output"
                   startId="Package\Australia Suburbs\Load data to DW\Lookup for new State.Outputs[Lookup No Match Output]" />
                 <path
+                  refId="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output3]"
+                  endId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Inputs[Sort Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Australia Suburbs\Load data to DW\Lookup for new Country.Outputs[Lookup No Match Output]" />
+                <path
                   refId="Package\Australia Suburbs\Load data to DW.Paths[Multicast Output 1]"
                   endId="Package\Australia Suburbs\Load data to DW\Lookup for new City.Inputs[Lookup Input]"
                   name="Multicast Output 1"
@@ -4612,6 +5397,11 @@ where [refTable].[Suburb] = ?</property>
                   endId="Package\Australia Suburbs\Load data to DW\Lookup for new State.Inputs[Lookup Input]"
                   name="Multicast Output 4"
                   startId="Package\Australia Suburbs\Load data to DW\Multicast.Outputs[Multicast Output 4]" />
+                <path
+                  refId="Package\Australia Suburbs\Load data to DW.Paths[Multicast Output 5]"
+                  endId="Package\Australia Suburbs\Load data to DW\Derived Column.Inputs[Derived Column Input]"
+                  name="Multicast Output 5"
+                  startId="Package\Australia Suburbs\Load data to DW\Multicast.Outputs[Multicast Output 5]" />
                 <path
                   refId="Package\Australia Suburbs\Load data to DW.Paths[OLE DB Source Output]"
                   endId="Package\Australia Suburbs\Load data to DW\Sort and remove duplications.Inputs[Sort Input]"
@@ -4637,6 +5427,11 @@ where [refTable].[Suburb] = ?</property>
                   endId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input]"
                   name="Sort Output"
                   startId="Package\Australia Suburbs\Load data to DW\Insert only unique State.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Australia Suburbs\Load data to DW.Paths[Sort Output4]"
+                  endId="Package\Australia Suburbs\Load data to DW\To DimCountry.Inputs[OLE DB Destination Input]"
+                  name="Sort Output"
+                  startId="Package\Australia Suburbs\Load data to DW\Insert Only Australia.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -4898,7 +5693,7 @@ where [refTable].[Suburb] = ?</property>
         <NodeLayout
           Size="137,42"
           Id="Package\Australia Suburbs\Load data to DW\To DimState"
-          TopLeft="868,599" />
+          TopLeft="709,618" />
         <NodeLayout
           Size="194,42"
           Id="Package\Australia Suburbs\Load data to DW\Lookup for new Suburbs"
@@ -4910,11 +5705,11 @@ where [refTable].[Suburb] = ?</property>
         <NodeLayout
           Size="192,42"
           Id="Package\Australia Suburbs\Load data to DW\Insert only unique State"
-          TopLeft="868,508" />
+          TopLeft="709,527" />
         <NodeLayout
           Size="180,42"
           Id="Package\Australia Suburbs\Load data to DW\Lookup for new State"
-          TopLeft="800,390" />
+          TopLeft="641,409" />
         <NodeLayout
           Size="150,42"
           Id="Package\Australia Suburbs\Load data to DW\OLE DB Source"
@@ -4937,7 +5732,7 @@ where [refTable].[Suburb] = ?</property>
           TopLeft="188,616" />
         <EdgeLayout
           Id="Package\Australia Suburbs\Load data to DW.Paths[Sort Output3]"
-          TopLeft="964,550">
+          TopLeft="805,569">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5063,26 +5858,26 @@ where [refTable].[Suburb] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="504,44"
+              EndConnector="345,63"
               Start="0,0"
-              End="504,36.5">
+              End="345,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.304347826087" />
+                    End="0,17.9130434782609" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.304347826087"
-                    Point2="0,15.304347826087"
-                    Point3="4,15.304347826087" />
+                    Point1="0,17.9130434782609"
+                    Point2="0,21.9130434782609"
+                    Point3="4,21.9130434782609" />
                   <mssgle:LineSegment
-                    End="500,15.304347826087" />
+                    End="341,21.9130434782609" />
                   <mssgle:CubicBezierSegment
-                    Point1="500,15.304347826087"
-                    Point2="504,15.304347826087"
-                    Point3="504,19.304347826087" />
+                    Point1="341,21.9130434782609"
+                    Point2="345,21.9130434782609"
+                    Point3="345,25.9130434782609" />
                   <mssgle:LineSegment
-                    End="504,36.5" />
+                    End="345,55.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5161,7 +5956,7 @@ where [refTable].[Suburb] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output2]"
-          TopLeft="890,432">
+          TopLeft="731,451">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5253,6 +6048,160 @@ where [refTable].[Suburb] = ?</property>
             <mssgm:EdgeLabel
               BoundingBox="-49.05638671875,40,111.6127734375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Australia Suburbs\Load data to DW\Lookup for new Country"
+          TopLeft="888,408" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Australia Suburbs\Load data to DW\Derived Column"
+          TopLeft="897,327" />
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Derived Column Output]"
+          TopLeft="974,369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,39"
+              Start="0,0"
+              End="10,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="6,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,19.5"
+                    Point2="10,19.5"
+                    Point3="10,23.5" />
+                  <mssgle:LineSegment
+                    End="10,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Australia Suburbs\Load data to DW\To DimCountry"
+          TopLeft="902,619" />
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Multicast Output 5]"
+          TopLeft="418,325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="479,10"
+              Start="0,0"
+              End="471.5,10">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="235.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="235.5,0"
+                    Point2="239.5,0"
+                    Point3="239.5,4" />
+                  <mssgle:LineSegment
+                    End="239.5,6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="239.5,6"
+                    Point2="239.5,10"
+                    Point3="243.5,10" />
+                  <mssgle:LineSegment
+                    End="471.5,10" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Australia Suburbs\Load data to DW\Insert Only Australia"
+          TopLeft="937,518" />
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output3]"
+          TopLeft="984,450">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.5,68"
+              Start="0,0"
+              End="40.5,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="36.5,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.5,34"
+                    Point2="40.5,34"
+                    Point3="40.5,38" />
+                  <mssgle:LineSegment
+                    End="40.5,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.55638671875,39,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Sort Output4]"
+          TopLeft="1024.5,560">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47.5,59"
+              Start="0,0"
+              End="-47.5,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="-4,29.5" />
+                  <mssgle:LineSegment
+                    End="-43.5,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43.5,29.5"
+                    Point2="-47.5,29.5"
+                    Point3="-47.5,33.5" />
+                  <mssgle:LineSegment
+                    End="-47.5,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5368,6 +6317,42 @@ where [refTable].[Suburb] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Australia Suburbs\Load data to DW\To DimCity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new Country">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCountry]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Suburbs\Load data to DW\To DimCountry">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
