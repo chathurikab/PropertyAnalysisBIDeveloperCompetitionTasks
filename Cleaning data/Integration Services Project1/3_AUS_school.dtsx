@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="CHATHU-LAPTOP"
   DTS:CreatorName="CHATHU-LAPTOP\Chanuth"
-  DTS:DTSID="{E254D403-1598-498C-8E35-0DF452780702}"
+  DTS:DTSID="{E3995B5B-E833-44BD-B5AA-A190D33CDC30}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.93"
   DTS:LocaleID="5129"
-  DTS:ObjectName="AUS_school"
+  DTS:ObjectName="3_AUS_school"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{62FBEE59-FB00-40B3-9449-2EB531594950}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{B77FE5C1-B32F-482B-A4FC-74DD28C0A778}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -100,6 +100,110 @@
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\Sequence Container\get to database\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\get to database\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\Data Conversion.Inputs[Data Conversion Input].Columns[longitude]"
+                          cachedDataType="r8"
+                          cachedName="longitude"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[longitude]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\Data Conversion.Inputs[Data Conversion Input].Columns[latitude]"
+                          cachedDataType="r8"
+                          cachedName="latitude"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[latitude]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\get to database\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Output].Columns[LongitudeStr]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Output].Columns[LongitudeStr]"
+                          name="LongitudeStr"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[longitude]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Output].Columns[LatitudeStr]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Output].Columns[LatitudeStr]"
+                          name="LatitudeStr"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[latitude]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\get to database\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\Sequence Container\get to database\Excel Source"
                   componentClassID="Microsoft.ExcelSource"
@@ -221,10 +325,11 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[indigenous_pct]"
-                          dataType="r8"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[indigenous_pct]"
+                          length="255"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[indigenous_pct]"
                           name="indigenous_pct"
                           truncationRowDisposition="FailComponent" />
@@ -388,11 +493,10 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[date_1st_teacher]"
-                          dataType="wstr"
+                          dataType="date"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[date_1st_teacher]"
-                          length="255"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[date_1st_teacher]"
                           name="date_1st_teacher"
                           truncationRowDisposition="FailComponent" />
@@ -569,7 +673,8 @@
                           name="student_number" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[indigenous_pct]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="255"
                           name="indigenous_pct" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[lbote_pct]"
@@ -651,8 +756,7 @@
                           name="late_opening_school" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[date_1st_teacher]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="date"
                           name="date_1st_teacher" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[lga]"
@@ -780,7 +884,8 @@
                           name="student_number" />
                         <outputColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[indigenous_pct]"
-                          dataType="r8"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[indigenous_pct]"
                           name="indigenous_pct" />
                         <outputColumn
@@ -879,8 +984,7 @@
                           name="late_opening_school" />
                         <outputColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[date_1st_teacher]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="date"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[date_1st_teacher]"
                           name="date_1st_teacher" />
                         <outputColumn
@@ -1042,32 +1146,12 @@
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[street]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="street"
-                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street]"
-                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[street]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[postcode]"
-                          cachedDataType="r8"
-                          cachedName="postcode"
-                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
-                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[postcode]" />
-                        <inputColumn
                           refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_name]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="school_name"
                           externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolName]"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_name]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[town_suburb]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="town_suburb"
-                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
-                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[town_suburb]" />
                         <inputColumn
                           refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[longitude]"
                           cachedDataType="r8"
@@ -1080,13 +1164,6 @@
                           cachedName="latitude"
                           externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationLatitude]"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[latitude]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[facs_district]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="facs_district"
-                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
-                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[facs_district]" />
                         <inputColumn
                           refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_code]"
                           cachedDataType="r8"
@@ -1115,19 +1192,61 @@
                           externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolGender]"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_gender]" />
                         <inputColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Address]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Address"
-                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
-                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[Address]" />
-                        <inputColumn
                           refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_specialty_type]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="school_specialty_type"
                           externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialityType]"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_specialty_type]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutSuburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="OutSuburb"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutSuburb]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutDistrict]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="OutDistrict"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutDistrict]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutPostCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="OutPostCode"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutPostCode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutStateName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="OutStateName"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStateName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutStreetNo]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="OutStreetNo"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStreetNo]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutStreetName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="OutStreetName"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStreetName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OutCountryName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="OutCountryName"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutCountryName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1136,11 +1255,6 @@
                           dataType="wstr"
                           length="100"
                           name="SchoolName" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street]"
-                          dataType="wstr"
-                          length="100"
-                          name="Street" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
                           dataType="wstr"
@@ -1189,15 +1303,30 @@
                           length="10"
                           name="SchoolID" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Address]"
-                          dataType="wstr"
-                          length="100"
-                          name="Address" />
-                        <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialityType]"
                           dataType="wstr"
                           length="50"
                           name="SchoolSpecialityType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StateName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
+                          dataType="wstr"
+                          length="10"
+                          name="StreetNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StreetName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          dataType="wstr"
+                          length="100"
+                          name="CountryName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1226,13 +1355,1351 @@
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\Sequence Container\get to database\Script Component"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;12"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="Script Component"
+                  version="12">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="33">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_f8ddcd1617a142d29d4a53431e5d6aba.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{62385EE2-B8AA-4B3B-B65F-39A96E231DA0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SC_f8ddcd1617a142d29d4a53431e5d6aba</RootNamespace>
+    <AssemblyName>SC_f8ddcd1617a142d29d4a53431e5d6aba</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Rootobject.cs" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\References\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.TxScript, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Compile Include="main.cs" />
+    <Compile Include="BufferWrapper.cs" />
+    <Compile Include="ComponentWrapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptComponent" IconIndex="0" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_SC150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[#region Help:  Introduction to the Script Component
+/* The Script Component allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services data flow.
+ *
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script component. */
+#endregion
+
+#region Namespaces
+using System;
+using System.Data;
+using System.Linq;
+using System.Net.Http;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+using Newtonsoft.Json;
+using static SC_f8ddcd1617a142d29d4a53431e5d6aba.GoogleGeoCode;
+#endregion
+
+/// <summary>
+/// This is the class to which to add your code.  Do not change the name, attributes, or parent
+/// of this class.
+/// </summary>
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+    #region Help:  Using Integration Services variables and parameters
+    /* To use a variable in this script, first ensure that the variable has been added to
+     * either the list contained in the ReadOnlyVariables property or the list contained in
+     * the ReadWriteVariables property of this script component, according to whether or not your
+     * code needs to write into the variable.  To do so, save this script, close this instance of
+     * Visual Studio, and update the ReadOnlyVariables and ReadWriteVariables properties in the
+     * Script Transformation Editor window.
+     * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+     *
+     * Example of reading from a variable or parameter:
+     *  DateTime startTime = Variables.MyStartTime;
+     *
+     * Example of writing to a variable:
+     *  Variables.myStringVariable = "new value";
+     */
+    #endregion
+
+    #region Help:  Using Integration Services Connnection Managers
+    /* Some types of connection managers can be used in this script component.  See the help topic
+     * "Working with Connection Managers Programatically" for details.
+     *
+     * To use a connection manager in this script, first ensure that the connection manager has
+     * been added to either the list of connection managers on the Connection Managers page of the
+     * script component editor.  To add the connection manager, save this script, close this instance of
+     * Visual Studio, and add the Connection Manager to the list.
+     *
+     * If the component needs to hold a connection open while processing rows, override the
+     * AcquireConnections and ReleaseConnections methods.
+     * 
+     * Example of using an ADO.Net connection manager to acquire a SqlConnection:
+     *  object rawConnection = Connections.SalesDB.AcquireConnection(transaction);
+     *  SqlConnection salesDBConn = (SqlConnection)rawConnection;
+     *
+     * Example of using a File connection manager to acquire a file path:
+     *  object rawConnection = Connections.Prices_zip.AcquireConnection(transaction);
+     *  string filePath = (string)rawConnection;
+     *
+     * Example of releasing a connection manager:
+     *  Connections.SalesDB.ReleaseConnection(rawConnection);
+     */
+    #endregion
+
+    #region Help:  Firing Integration Services Events
+    /* This script component can fire events.
+     *
+     * Example of firing an error event:
+     *  ComponentMetaData.FireError(10, "Process Values", "Bad value", "", 0, out cancel);
+     *
+     * Example of firing an information event:
+     *  ComponentMetaData.FireInformation(10, "Process Values", "Processing has started", "", 0, fireAgain);
+     *
+     * Example of firing a warning event:
+     *  ComponentMetaData.FireWarning(10, "Process Values", "No rows were received", "", 0);
+     */
+    #endregion
+
+    private HttpClient client = new HttpClient();
+
+    /// <summary>
+    /// This method is called once, before rows begin to be processed in the data flow.
+    ///
+    /// You can remove this method if you don't need to do anything here.
+    /// </summary>
+    public override void PreExecute()
+    {
+        base.PreExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called after all the rows have passed through this component.
+    ///
+    /// You can delete this method if you don't need to do anything here.
+    /// </summary>
+    public override void PostExecute()
+    {
+        base.PostExecute();
+        /*
+         * Add your code here
+         */
+    }
+
+    /// <summary>
+    /// This method is called once for every row that passes through the component from Input0.
+    ///
+    /// Example of reading a value from a column in the the row:
+    ///  string zipCode = Row.ZipCode
+    ///
+    /// Example of writing a value to a column in the row:
+    ///  Row.ZipCode = zipCode
+    /// </summary>
+    /// <param name="Row">The row that is currently passing through the component</param>
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        try
+        {
+
+            HttpResponseMessage response = client.GetAsync($"https://maps.googleapis.com/maps/api/geocode/json?latlng={Row.LatitudeStr.Trim()},{Row.LongitudeStr.Trim()}&key=AIzaSyB_4lIINmxszcv9iuWIMV094iBV87CU9kw").Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+
+                var jsonString = response.Content.ReadAsStringAsync().Result;
+                Rootobject rootObject = JsonConvert.DeserializeObject<Rootobject>(jsonString);
+                var result = rootObject.results[1];
+
+                if (result != null)
+                {
+                    Row.OutStreetNo = result.address_components.Where(c => c.types.Contains("street_number")).FirstOrDefault()?.short_name; 
+                    Row.OutStreetName = result.address_components.Where(c => c.types.Contains("route")).FirstOrDefault()?.long_name; 
+                    Row.OutSuburb = result.address_components.Where(c => c.types.Contains("locality")).FirstOrDefault()?.long_name;
+                    Row.OutPostCode = result.address_components.Where(c => c.types.Contains("postal_code")).FirstOrDefault()?.long_name;
+                    Row.OutStateName = result.address_components.Where(c => c.types.Contains("administrative_area_level_1")).FirstOrDefault()?.long_name;
+                    Row.OutCountryName = result.address_components.Where(c => c.types.Contains("country")).FirstOrDefault()?.long_name;
+                }
+
+            }
+
+        }
+
+        catch (Exception ex)
+        { 
+        
+        }
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String street
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+    }
+    public bool street_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String townsuburb
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+    }
+    public bool townsuburb_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public Double postcode
+    {
+        get
+        {
+            return Buffer.GetDouble(BufferColumnIndexes[2]);
+        }
+    }
+    public bool postcode_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    public String LongitudeStr
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[3]);
+        }
+    }
+    public bool LongitudeStr_IsNull
+    {
+        get
+        {
+            return IsNull(3);
+        }
+    }
+
+    public String LatitudeStr
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[4]);
+        }
+    }
+    public bool LatitudeStr_IsNull
+    {
+        get
+        {
+            return IsNull(4);
+        }
+    }
+
+    public String OutCountryName
+    {
+        set
+        {
+            this[5] = value;
+        }
+    }
+    public bool OutCountryName_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(5);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String OutPostCode
+    {
+        set
+        {
+            this[6] = value;
+        }
+    }
+    public bool OutPostCode_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(6);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String OutSuburb
+    {
+        set
+        {
+            this[7] = value;
+        }
+    }
+    public bool OutSuburb_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(7);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String OutStreetName
+    {
+        set
+        {
+            this[8] = value;
+        }
+    }
+    public bool OutStreetName_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(8);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String OutStateName
+    {
+        set
+        {
+            this[9] = value;
+        }
+    }
+    public bool OutStateName_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(9);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String OutDistrict
+    {
+        set
+        {
+            this[10] = value;
+        }
+    }
+    public bool OutDistrict_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(10);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    public String OutStreetNo
+    {
+        set
+        {
+            this[11] = value;
+        }
+    }
+    public bool OutStreetNo_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(11);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_f8ddcd1617a142d29d4a53431e5d6aba.Properties.Settings.get_Default():SC_f8ddcd1617a142d29d4a53431e5d6aba.Properties.Sett" +
+    "ings")]
+
+namespace SC_f8ddcd1617a142d29d4a53431e5d6aba.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Rootobject.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SC_f8ddcd1617a142d29d4a53431e5d6aba
+{
+    public class GoogleGeoCode
+    {
+        public class Rootobject
+        {
+            public Result[] results { get; set; }
+        }
+
+        public class Plus_Code
+        {
+            public string compound_code { get; set; }
+            public string global_code { get; set; }
+        }
+
+        public class Result
+        {
+            public Address_Components[] address_components { get; set; }
+            public string formatted_address { get; set; }
+            public string[] postcode_localities { get; set; }
+        }
+        public class Address_Components
+        {
+            public string long_name { get; set; }
+            public string short_name { get; set; }
+            public string[] types { get; set; }
+        }
+
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>SC_f8ddcd1617a142d29d4a53431e5d6aba</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>SC_f8ddcd1617a142d29d4a53431e5d6aba</msb:DisplayName>
+    <msb:ProjectId>{A1162103-45B2-4477-ACEB-088ACA7AB898}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="SC_f8ddcd1617a142d29d4a53431e5d6aba.csproj" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="main.cs" />
+    <msb:File Include="BufferWrapper.cs" />
+    <msb:File Include="Rootobject.cs" />
+    <msb:File Include="ComponentWrapper.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_f8ddcd1617a142d29d4a53431e5d6aba")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_f8ddcd1617a142d29d4a53431e5d6aba")]
+[assembly: AssemblyCopyright("Copyright @  2020")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_f8ddcd1617a142d29d4a53431e5d6aba.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_f8ddcd1617a142d29d4a53431e5d6aba.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_f8ddcd1617a142d29d4a53431e5d6aba.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_f8ddcd1617a142d29d4a53431e5d6aba.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_f8ddcd1617a142d29d4a53431e5d6aba.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_f8ddcd1617a142d29d4a53431e5d6aba.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAG+Y3l8AAAAAAAAAAOAAIiALATAAACgAAAAIAAAAAAAAVkYA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAARGAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAXCYAAAAgAAAAKAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAEgEAAAAYAAAAAYAAAAqAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAMAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAA4
+RgAAAAAAAEgAAAACAAUALCYAACAfAAABAAAAAAAAAExFAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBAAAAoqHgIoEQAACiobMAUACgIAAAEAABECewEAAAQb
+jR4AAAElFnIBAABwoiUXA28OAAAGbxIAAAqiJRhydQAAcKIlGQNvDAAABm8SAAAKoiUacnkAAHCi
+KBMAAApvFAAACm8VAAAKCgZvFgAACjmpAQAABm8XAAAKbxgAAApvGQAACigBAAArbzYAAAYXmgsH
+OYYBAAADB28+AAAGfgoAAAQlLRcmfgkAAAT+BjAAAAZzGwAACiWACgAABCgCAAArKAMAACslLQQm
+FCsFKEcAAAZvHAAABgMHbz4AAAZ+CwAABCUtFyZ+CQAABP4GMQAABnMbAAAKJYALAAAEKAIAACso
+AwAAKyUtBCYUKwUoRQAABm8WAAAGAwdvPgAABn4MAAAEJS0XJn4JAAAE/gYyAAAGcxsAAAolgAwA
+AAQoAgAAKygDAAArJS0EJhQrBShFAAAGbxQAAAYDB28+AAAGfg0AAAQlLRcmfgkAAAT+BjMAAAZz
+GwAACiWADQAABCgCAAArKAMAACslLQQmFCsFKEUAAAZvEgAABgMHbz4AAAZ+DgAABCUtFyZ+CQAA
+BP4GNAAABnMbAAAKJYAOAAAEKAIAACsoAwAAKyUtBCYUKwUoRQAABm8YAAAGAwdvPgAABn4PAAAE
+JS0XJn4JAAAE/gY1AAAGcxsAAAolgA8AAAQoAgAAKygDAAArJS0EJhQrBShFAAAGbxAAAAbeAybe
+ACoAAEEcAAAAAAAAAAAAAAYCAAAGAgAAAwAAABAAAAFKAnMeAAAKfQEAAAQCKCAAAAYqKgIDBAUo
+HwAACipSAnsgAAAKAnshAAAKFpRvIgAACioiAhYoIwAACipSAnsgAAAKAnshAAAKF5RvIgAACioi
+AhcoIwAACipSAnsgAAAKAnshAAAKGJRvJAAACioiAhgoIwAACipSAnsgAAAKAnshAAAKGZRvIgAA
+CioiAhkoIwAACipSAnsgAAAKAnshAAAKGpRvIgAACioiAhooIwAACiomAhsDKCUAAAoqWgMsCAIb
+KCYAAAoqctMAAHBzJwAACnomAhwDKCUAAAoqWgMsCAIcKCYAAAoqctMAAHBzJwAACnomAh0DKCUA
+AAoqWgMsCAIdKCYAAAoqctMAAHBzJwAACnomAh4DKCUAAAoqWgMsCAIeKCYAAAoqctMAAHBzJwAA
+CnoqAh8JAyglAAAKKl4DLAkCHwkoJgAACipy0wAAcHMnAAAKeioCHwoDKCUAAAoqXgMsCQIfCigm
+AAAKKnLTAABwcycAAAp6KgIfCwMoJQAACipeAywJAh8LKCYAAAoqctMAAHBzJwAACnoeAigoAAAK
+Kh4CKCkAAAoqfgIoKgAACgICcyQAAAZ9AgAABAICcyUAAAZ9AwAABCqSBHJwAQBwGm8rAAAKLBUC
+BQIDKCwAAAoOBHMFAAAGbyIAAAYqSisHAgNvIwAABgNvHgAABi3xKgYqOgIoLQAACgIDfQQAAAQq
+OgIoLQAACgIDfQUAAAQqHgIoLQAACiqufgYAAAQtHnKAAQBw0AgAAAIoLgAACm8vAAAKczAAAAqA
+BgAABH4GAAAEKhp+BwAABCoeAoAHAAAEKhp+CAAABCoeAigxAAAKKi5zLAAABoAIAAAEKi5zLwAA
+BoAJAAAEKkYDb0kAAAZy8gEAcCgEAAArKkYDb0kAAAZyDgIAcCgEAAArKkYDb0kAAAZyGgIAcCgE
+AAArKkYDb0kAAAZyLAIAcCgEAAArKkYDb0kAAAZyRAIAcCgEAAArKkYDb0kAAAZyfAIAcCgEAAAr
+Kh4CexAAAAQqIgIDfRAAAAQqHgJ7EQAABCoiAgN9EQAABCoeAnsSAAAEKiICA30SAAAEKh4CexMA
+AAQqIgIDfRMAAAQqHgJ7FAAABCoiAgN9FAAABCoeAnsVAAAEKiICA30VAAAEKh4CexYAAAQqIgID
+fRYAAAQqHgJ7FwAABCoiAgN9FwAABCoeAnsYAAAEKiICA30YAAAEKkJTSkIBAAEAAAAAAAwAAAB2
+NC4wLjMwMzE5AAAAAAUAbAAAANwMAAAjfgAASA0AAIwMAAAjU3RyaW5ncwAAAADUGQAAjAIAACNV
+UwBgHAAAEAAAACNHVUlEAAAAcBwAALACAAAjQmxvYgAAAAAAAAACAAABVxWiCQkLAAAA+gEzABYA
+AAEAAAAoAAAADgAAABgAAABLAAAAKgAAADIAAAAsAAAAAQAAAAcAAAAkAAAALgAAAAMAAAABAAAA
+BwAAAAEAAAAFAAAABAAAAAAAnwYBAAAAAAAGAJYFUAkGACoGUAkGAOIEPQkPAMQJAAAGAA8FNQgG
+AHkFNQgGAFoFNQgGABEGNQgGALYFNQgGAM8FNQgGACYFNQgGAEEFZQYKAOoFHQQOAKcLtggOAFYD
+tggGAFcI6AcGAKoEUAkGAEgL6AcGAI4A6AcKAO4IHQQSAN8IHQQKAJ4IHQQKANcLHQQGAMUEPQkG
+AP8IcAkGAJIIIAgWAJUEiQYWAPYEiQYWAH0ECwgGAIIG6AcGAF8AfgoOAPMLtggaABwMYQgeAGoD
+xggGAFEAcAEGAEcI6AcGAHEI6AcGAD4E6AcGAH8D6AcGAIAMNQgAAAAAEQEAAAAAAQABAAEAEAAA
+CAAAEAABAAEAAQAQANIIAABRAAIABQABABAAuQsAAF0AAgAgAAEAEAClCgAASQAEACQAAQAQADIK
+AABJAAUAJQABABAAzwIiAUkABgAmAAAAEAB3CQMKSQAGACcAAAEQAHUKAwp1AAgAKwADIRAAbAEA
+AEkACQAuAAIAEABPCwAASQAQADYAAgAQAMUCAABJABEAOQACABAAoAsAAEkAEwA+AAIAEAD1CgAA
+SQAWAEUAAQCyCyEBBgClCiUBBgAyCikBAQDHCy0BAQDHCy0BEQD0BzEBEQBtBDUBEQC1AjkBNgAN
+AT0BFgABAEEBFgApAEEBFgBmAEEBFgCVAEEBFgC9AEEBFgDlAEEBAQB4AkoBAQCmAU8BAQDFAU8B
+AQCRAlIBAQBVAk8BAQAZAlcBAQDiAU8BAQD9AU8BAQA+AlcBUCAAAAAAxgBIBgYAAQBYIAAAAADG
+AFMGBgABAGAgAAAAAMYAXQxbAQEAlCIAAAAAhhgPCQYAAgCnIgAAAACGGA8JnwACALIiAAAAAIYI
+agsiAAUAxyIAAAAAhgjFB0IABQDQIgAAAACGCF0BIgAFAOUiAAAAAIYI3AZCAAUA7iIAAAAAhghJ
+A2EBBQADIwAAAACGCAkHQgAFAAwjAAAAAIYIHAkiAAUAISMAAAAAhgh/B0IABQAqIwAAAACGCC0J
+IgAFAD8jAAAAAIYIlwdCAAUASCMAAAAAhgjQAxAABQBSIwAAAACGCE4HZQEGAGkjAAAAAIYI9QIQ
+AAcAcyMAAAAAhgjyBmUBCACKIwAAAACGCE8BEAAJAJQjAAAAAIYIxwZlAQoAqyMAAAAAhgi0AxAA
+CwC1IwAAAACGCDUHZQEMAMwjAAAAAIYIowMQAA0A1yMAAAAAhggdB2UBDgDvIwAAAACGCFoLEAAP
+APojAAAAAIYIrgdlARAAEiQAAAAAhgiCCBAAEQAdJAAAAACGCGgHZQESADUkAAAAAIYAdAxCABMA
+PSQAAAAAhgB1C0IAEwBFJAAAAACGGA8JBgATAGUkAAAAAMYAUAxqARMAiiQAAAAAxgFJDFsBFwCd
+JAAAAADGAV0MWwEYAJ8kAAAAAIYYDwl0ARkAriQAAAAAhhgPCXQBGgC9JAAAAACGGA8JBgAbAL0k
+AAAAAIMYDwkGABsAxSQAAAAAkwj7CHoBGwDxJAAAAACTCFUEfwEbAPgkAAAAAJMIYQSEARsAACUA
+AAAAlgiBC4oBHAAHJQAAAACGGA8JBgAcAA8lAAAAAJEYFQmPARwAGyUAAAAAkRgVCY8BHAC9JAAA
+AACGGA8JBgAcACclAAAAAIMACgCTARwAOSUAAAAAgwAyAJMBHQBLJQAAAACDAG8AkwEeAF0lAAAA
+AIMAngCTAR8AbyUAAAAAgwDGAJMBIACBJQAAAACDAO4AkwEhAJMlAAAAAIYI3QqZASIAmyUAAAAA
+hgjpCp8BIgC9JAAAAACGGA8JBgAjAKQlAAAAAIYIBQMiACMArCUAAAAAhggXAxAAIwC1JQAAAACG
+CCkDIgAkAL0lAAAAAIYIOQMQACQAvSQAAAAAhhgPCQYAJQDGJQAAAACGCAgLpgElAM4lAAAAAIYI
+HwusASUA1yUAAAAAhgixCiIAJgDfJQAAAACGCMcKEAAmAOglAAAAAIYI0wmzAScA8CUAAAAAhgjr
+CbgBJwC9JAAAAACGGA8JBgAoAPklAAAAAIYI4wMiACgAASYAAAAAhgjxAxAAKAAKJgAAAACGCP8D
+IgApABImAAAAAIYIDgQQACkAGyYAAAAAhgg8CrMBKgAjJgAAAACGCEYKuAEqAL0kAAAAAIYYDwkG
+ACsAAAABAHgMAAABAPQIAAACAFAKAAADAKwIAAABAF8GAAABAF8GAAABAF8GAAABAF8GAAABAF8G
+AAABAF8GAAABAF8GAAABAF8GAAABAF8GAAABAF8GAAABAF8GAAABAF8GAAABAF8GAAABAF8GAAAB
+ABoBAAACAMYDAAADAPQIAAAEAKwIAAABAPQIAAABAHgMAAABAN0LAAABAN0LAAABAF8GAAABAKQB
+AAABAKQBAAABAKQBAAABAKQBAAABAKQBAAABAKQBAAABAF8GAAABAF8GAAABAF8GAAABAF8GAAAB
+AF8GAAABAF8GAAABAF8GAAABAF8GAAABAF8GCQAPCQEAEQAPCQYAGQAPCQoAKQAPCRAAMQAPCRAA
+OQAPCRAAQQAPCRAASQAPCRAAUQAPCRAAWQAPCRAAYQAPCRAAaQAPCQYAiQAPCQYAwQAPCQYA4QAP
+CRUAuQBIBgYAuQBTBgYA8QDvByIA8QA2CyYAcQCdASwADACcCz0AeQDdAkIAeQDnC0YAAQGLAUwA
+FACcCz0ACQE9C1oAHAAPCW4AEQFDBHQAEQGNC5IAcQAPCQYAoQAPCZ8AoQD0CKkAoQBQCq0AqQB/
+BrEAoQDQB7YAqQB1A7sAoQDfB8AAoQDXBwEAIQEPCRAAoQB0DEIAoQB1C0IAuQAPCQYA8QCVCsYA
+uQBkCs4AkQAPCQYAMQGRA9QAMQF8DN0AyQAPCeMA6QAPCQYAEQGcCusALgALAOoBLgATAPMBLgAb
+ABICLgAjABsCLgArAEQCLgAzAEQCLgA7AEQCLgBDABsCLgBLAEoCLgBTAEQCLgBbAGECQwBjAKsC
+AQFrAKsCAwFzAKsCQwFrAKsCAQJrAKsCIQJrAKsCQQJrAKsCYQJrAKsCgQJrAKsCoQJrAKsCwQJr
+AKsC4QJrAKsCAQNrAKsCKQN7ABICSQN7ABICwAZrAKsC4AZrAKsCIAdrAKsCQAdrAKsCYAdrAKsC
+gAdrAKsCwAdrAKsC4AdrAKsCAAhrAKsCIAhrAKsCQAhrAKsCYAhrAKsCoAhrAKsCwAhrAKsC4Ahr
+AKsCAAlrAKsCIAlrAKsCQAlrAKsCGwADAAEACAAZAAkAGwALABwADAAdAA0AHwAOACIAAABuC74B
+AADJB8IBAABhAb4BAADgBsIBAABNA8YBAAANB8IBAAAgCb4BAACDB8IBAAAxCb4BAACbB8IBAADU
+A74BAABSB8IBAAD5Ar4BAAD2BsIBAABTAb4BAADLBsIBAAC4A74BAAA5B8IBAACnA74BAAAhB8IB
+AABeC74BAACyB8IBAACGCL4BAABsB8IBAAD/CMoBAAB1BM8BAACUC9QBAADtCtkBAAAbA74BAAA9
+A74BAAAjC98BAADLCr4BAADvCeUBAAD1A74BAAASBL4BAABKCuUBAgAGAAMAAgAHAAUAAgAIAAcA
+AgAJAAkAAgAKAAsAAgALAA0AAgAMAA8AAgANABEAAgAOABMAAgAPABUAAQAQABcAAQARABkAAQAS
+ABsAAQATAB0AAQAUAB8AAQAVACEAAQAWACMAAQAXACUAAQAYACcAAQAZACkAAQAaACsAAQAbAC0A
+AQAcAC8AAQAdADEAAgAoADMAAgApADUAAQAqADUAAgArADcAAgA2ADkAAQA3ADkAAgA5ADsAAQA6
+ADsAAgA7AD0AAQA8AD0AAgA+AD8AAQA/AD8AAgBAAEEAAQBBAEEAAgBCAEMAAQBDAEMAAgBFAEUA
+AQBGAEUAAgBHAEcAAQBIAEcAAgBJAEkAAQBKAEkANgBUAGYABIAAAAEAAAAAAAAAAAAAAAAAIgEA
+AAQAAAAAAAAAAAAAAP0ARgEAAAAADwAAAAAAAAAAAAAABgH/CwAAAAAEAAAAAAAAAAAAAAAPAbYI
+AAAAAA8AAAAAAAAAAAAAAAYBKAwAAAAABAAAAAAAAAAAAAAA/QDoBwAAAAAMAAAAAAAAAAAAAAAY
+AWEIAAAAAAQAAAAAAAAAAAAAAP0ASQQAAAAAAAAAAAEAAACBCQAACgACAAsABwAMAAcADQAHAA4A
+BwA1AGEAOQCNADsAjQBlAPkAAAAAPD45X18zXzAAPElucHV0MF9Qcm9jZXNzSW5wdXRSb3c+Yl9f
+M18wADw+OV9fM18xADxJbnB1dDBfUHJvY2Vzc0lucHV0Um93PmJfXzNfMQBJRW51bWVyYWJsZWAx
+AFRhc2tgMQA8PjlfXzNfMgA8SW5wdXQwX1Byb2Nlc3NJbnB1dFJvdz5iX18zXzIARnVuY2AyADw+
+OV9fM18zADxJbnB1dDBfUHJvY2Vzc0lucHV0Um93PmJfXzNfMwA8PjlfXzNfNAA8SW5wdXQwX1By
+b2Nlc3NJbnB1dFJvdz5iX18zXzQAPD45X18zXzUAPElucHV0MF9Qcm9jZXNzSW5wdXRSb3c+Yl9f
+M181ADw+OQA8TW9kdWxlPgBJbnB1dElEAFNDX2Y4ZGRjZDE2MTdhMTQyZDI5ZDRhNTM0MzFlNWQ2
+YWJhAG1zY29ybGliAHNldF9PdXRTdWJ1cmIAZ2V0X3Rvd25zdWJ1cmIAPD5jAFN5c3RlbS5Db2xs
+ZWN0aW9ucy5HZW5lcmljAFJlYWRBc1N0cmluZ0FzeW5jAEdldEFzeW5jADxjb21wb3VuZF9jb2Rl
+PmtfX0JhY2tpbmdGaWVsZAA8Z2xvYmFsX2NvZGU+a19fQmFja2luZ0ZpZWxkADxsb25nX25hbWU+
+a19fQmFja2luZ0ZpZWxkADxzaG9ydF9uYW1lPmtfX0JhY2tpbmdGaWVsZAA8cG9zdGNvZGVfbG9j
+YWxpdGllcz5rX19CYWNraW5nRmllbGQAPHR5cGVzPmtfX0JhY2tpbmdGaWVsZAA8Zm9ybWF0dGVk
+X2FkZHJlc3M+a19fQmFja2luZ0ZpZWxkADxyZXN1bHRzPmtfX0JhY2tpbmdGaWVsZAA8YWRkcmVz
+c19jb21wb25lbnRzPmtfX0JhY2tpbmdGaWVsZABkZWZhdWx0SW5zdGFuY2UAUGx1c19Db2RlAEdv
+b2dsZUdlb0NvZGUAZ2V0X0lzU3VjY2Vzc1N0YXR1c0NvZGUAc2V0X091dFBvc3RDb2RlAGdldF9j
+b21wb3VuZF9jb2RlAHNldF9jb21wb3VuZF9jb2RlAGdldF9nbG9iYWxfY29kZQBzZXRfZ2xvYmFs
+X2NvZGUAZ2V0X3Bvc3Rjb2RlAEh0dHBSZXNwb25zZU1lc3NhZ2UARW51bWVyYWJsZQBHZXREb3Vi
+bGUAUnVudGltZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAc2V0X091dFN0YXRlTmFtZQBz
+ZXRfT3V0U3RyZWV0TmFtZQBJbnB1dE5hbWUAc2V0X091dENvdW50cnlOYW1lAGdldF9sb25nX25h
+bWUAc2V0X2xvbmdfbmFtZQBnZXRfc2hvcnRfbmFtZQBzZXRfc2hvcnRfbmFtZQBNaWNyb3NvZnQu
+U3FsU2VydmVyLkR0cy5QaXBlbGluZQBUeXBlAFdoZXJlAFN5c3RlbS5Db3JlAGdldF9DdWx0dXJl
+AHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBFZGl0
+b3JCcm93c2FibGVTdGF0ZQBDb21waWxlckdlbmVyYXRlZEF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVz
+ZXJDb2RlQXR0cmlidXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmli
+dXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFy
+Z2V0RnJhbWV3b3JrQXR0cmlidXRlAEFzc2VtYmx5Q29uZmlndXJhdGlvbkF0dHJpYnV0ZQBBc3Nl
+bWJseURlc2NyaXB0aW9uQXR0cmlidXRlAENvbXBpbGF0aW9uUmVsYXhhdGlvbnNBdHRyaWJ1dGUA
+QXNzZW1ibHlQcm9kdWN0QXR0cmlidXRlAEFzc2VtYmx5Q29weXJpZ2h0QXR0cmlidXRlAFNTSVNT
+Y3JpcHRDb21wb25lbnRFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFueUF0dHJpYnV0
+ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBQcmVFeGVjdXRlAFBvc3RFeGVjdXRlAHZh
+bHVlAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAR2V0U3RyaW5nAFN5c3RlbS5Db21wb25lbnRN
+b2RlbABTQ19mOGRkY2QxNjE3YTE0MmQyOWQ0YTUzNDMxZTVkNmFiYS5kbGwAc2V0X091dFN1YnVy
+Yl9Jc051bGwAZ2V0X3Rvd25zdWJ1cmJfSXNOdWxsAHNldF9PdXRQb3N0Q29kZV9Jc051bGwAZ2V0
+X3Bvc3Rjb2RlX0lzTnVsbABzZXRfT3V0U3RhdGVOYW1lX0lzTnVsbABzZXRfT3V0U3RyZWV0TmFt
+ZV9Jc051bGwAc2V0X091dENvdW50cnlOYW1lX0lzTnVsbABzZXRfT3V0U3RyZWV0Tm9fSXNOdWxs
+AGdldF9Mb25naXR1ZGVTdHJfSXNOdWxsAGdldF9MYXRpdHVkZVN0cl9Jc051bGwAc2V0X091dERp
+c3RyaWN0X0lzTnVsbABnZXRfc3RyZWV0X0lzTnVsbABTZXROdWxsAHNldF9JdGVtAFN5c3RlbQBU
+cmltAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkds
+b2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBO
+ZXd0b25zb2Z0Lkpzb24AU3RyaW5nQ29tcGFyaXNvbgBzZXRfT3V0U3RyZWV0Tm8AQ3VsdHVyZUlu
+Zm8AT3V0cHV0TmFtZU1hcABPdXRwdXRNYXAAU3lzdGVtLk5ldC5IdHRwAFN5c3RlbS5MaW5xAElu
+cHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRCdWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdl
+cgAuY3RvcgAuY2N0b3IAZ2V0X0xvbmdpdHVkZVN0cgBnZXRfTGF0aXR1ZGVTdHIAU3lzdGVtLkRp
+YWdub3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNl
+cwBTQ19mOGRkY2QxNjE3YTE0MmQyOWQ0YTUzNDMxZTVkNmFiYS5Qcm9wZXJ0aWVzLlJlc291cmNl
+cy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAZ2V0X3Bvc3Rjb2RlX2xvY2FsaXRpZXMAc2V0X3Bv
+c3Rjb2RlX2xvY2FsaXRpZXMAU0NfZjhkZGNkMTYxN2ExNDJkMjlkNGE1MzQzMWU1ZDZhYmEuUHJv
+cGVydGllcwBWYXJpYWJsZXMAZ2V0X3R5cGVzAHNldF90eXBlcwBCdWZmZXJDb2x1bW5JbmRleGVz
+AEdldENvbHVtbkluZGV4ZXMAU2V0dGluZ3MAU3lzdGVtLlRocmVhZGluZy5UYXNrcwBFcXVhbHMA
+Q29udGFpbnMAQ29ubmVjdGlvbnMAZ2V0X2Zvcm1hdHRlZF9hZGRyZXNzAHNldF9mb3JtYXR0ZWRf
+YWRkcmVzcwBnZXRfcmVzdWx0cwBzZXRfcmVzdWx0cwBBZGRyZXNzX0NvbXBvbmVudHMAZ2V0X2Fk
+ZHJlc3NfY29tcG9uZW50cwBzZXRfYWRkcmVzc19jb21wb25lbnRzAENvbmNhdABEZXNlcmlhbGl6
+ZU9iamVjdABSb290b2JqZWN0AHNldF9PdXREaXN0cmljdABnZXRfc3RyZWV0AEVuZE9mUm93c2V0
+AGdldF9EZWZhdWx0AEZpcnN0T3JEZWZhdWx0AGdldF9SZXN1bHQASHR0cENsaWVudABjbGllbnQA
+VXNlckNvbXBvbmVudABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9uZW50AGdldF9Db250ZW50
+AEh0dHBDb250ZW50AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuVHhTY3JpcHQASnNvbkNvbnZlcnQATWlj
+cm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQwX1Byb2Nlc3NJbnB1dABJbnB1dDBf
+UHJvY2Vzc0lucHV0Um93AE5leHRSb3cAZ2V0X0Fzc2VtYmx5AAAAAABzaAB0AHQAcABzADoALwAv
+AG0AYQBwAHMALgBnAG8AbwBnAGwAZQBhAHAAaQBzAC4AYwBvAG0ALwBtAGEAcABzAC8AYQBwAGkA
+LwBnAGUAbwBjAG8AZABlAC8AagBzAG8AbgA/AGwAYQB0AGwAbgBnAD0AAAMsAABZJgBrAGUAeQA9
+AEEASQB6AGEAUwB5AEIAXwA0AGwASQBJAE4AbQB4AHMAegBjAHYAOQBpAHUAVwBJAE0AVgAwADkA
+NABpAEIAVgA4ADcAQwBVADkAawB3AACAm0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAA
+YwBhAG4AbgBvAHQAIABiAGUAIABzAGUAdAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBn
+AG4AIABhACAAdgBhAGwAdQBlACAAdABvACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQA
+ZQBhAGQALgAAD0kAbgBwAHUAdAAgADAAAHFTAEMAXwBmADgAZABkAGMAZAAxADYAMQA3AGEAMQA0
+ADIAZAAyADkAZAA0AGEANQAzADQAMwAxAGUANQBkADYAYQBiAGEALgBQAHIAbwBwAGUAcgB0AGkA
+ZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMAABtzAHQAcgBlAGUAdABfAG4AdQBtAGIAZQByAAALcgBv
+AHUAdABlAAARbABvAGMAYQBsAGkAdAB5AAAXcABvAHMAdABhAGwAXwBjAG8AZABlAAA3YQBkAG0A
+aQBuAGkAcwB0AHIAYQB0AGkAdgBlAF8AYQByAGUAYQBfAGwAZQB2AGUAbABfADEAAA9jAG8AdQBu
+AHQAcgB5AACXjXKzQVtNR6L2ekKnKpPfAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFtBgcCEj0S
+NAMgAA4FAAEOHQ4JIAEVEn0BEj0OBhUSfQESPQQgABMAAyAAAgUgABKAgQcgABUSfQEOBRUSfQEO
+BhABAR4ADgQKARIsBxUSTQISOAIFIAIBHBgYEAECFRKAjQEeABUSgI0BHgAVEk0CHgACBAoBEjgM
+EAEBHgAVEoCNAR4ACSADARJVHQgSWQMGElUDBh0IBCABDggEIAECCAQgAQ0IBSACAQgcByACAg4R
+gJUFIAEdCAgIAAESgJkRgJ0FIAASgKEHIAIBDhKAoQ0QAQICFRKAjQEeAB4AAwoBDgi3elxWGTTg
+iQiJhF3NgIDMkQiwP19/EdUKOggwrU/msqau7QMGEjkDBhIUAwYSGAMGEl0DBhJlAwYSaQMGEiQD
+BhIoCAYVEk0CEjgCBAYdEjQCBg4EBh0SOAMGHQ4FIAEBEgwDIAANBCABAQIJIAQBCA4SVRJZBSAB
+ARJdBAAAEmUEAAASaQUAAQESaQQAABIkAwAAAQUgAQISOAUgAB0SNAYgAQEdEjQFIAAdEjgGIAEB
+HRI4BCAAHQ4FIAEBHQ4DKAAOAygAAgMoAA0ECAASZQQIABJpBAgAEiQFKAAdEjQFKAAdEjgEKAAd
+DggBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0Nf
+ZjhkZGNkMTYxN2ExNDJkMjlkNGE1MzQzMWU1ZDZhYmEAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAg
+MjAyMAAASQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5
+TmFtZRIuTkVUIEZyYW1ld29yayA0LjcEAQAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291
+cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
+ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMu
+UnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAAAsRgAAAAAAAAAAAABGRgAA
+ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOEYAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVl
+LmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAY
+AACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAAAOwD
+AAAAAAAAAAAAAOwDNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+AAAB
+AAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBhAHIA
+RgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAAsARM
+AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAAoAwAAAQAwADAAMAAwADAANABiADAA
+AAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEAbQBl
+AAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAQwBfAGYA
+OABkAGQAYwBkADEANgAxADcAYQAxADQAMgBkADIAOQBkADQAYQA1ADMANAAzADEAZQA1AGQANgBh
+AGIAYQAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAwAC4AMAAAAHAA
+KAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBDAF8AZgA4AGQAZABjAGQAMQA2ADEANwBh
+ADEANAAyAGQAMgA5AGQANABhADUAMwA0ADMAMQBlADUAZAA2AGEAYgBhAC4AZABsAGwAAABIABIA
+AQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAg
+ADIAMAAyADAAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEAZABlAG0AYQByAGsAcwAAAAAAAAAAAHgA
+KAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAEMAXwBmADgAZABkAGMAZAAx
+ADYAMQA3AGEAMQA0ADIAZAAyADkAZAA0AGEANQAzADQAMwAxAGUANQBkADYAYQBiAGEALgBkAGwA
+bAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBDAF8AZgA4AGQAZABjAGQAMQA2
+ADEANwBhADEANAAyAGQAMgA5AGQANABhADUAMwA0ADMAMQBlADUAZAA2AGEAYgBhAAAANAAIAAEA
+UAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAADgACAABAEEAcwBz
+AGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAABYNgAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_f8ddcd1617a142d29d4a53431e5d6aba</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum140"
+                      typeConverter="NOTBROWSABLE">D1</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\get to database\Script Component.Inputs[Input 0]"
+                      hasSideEffects="true"
+                      name="Input 0">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Inputs[Input 0].Columns[street]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="street"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[street]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Inputs[Input 0].Columns[town_suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="town_suburb"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[town_suburb]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Inputs[Input 0].Columns[postcode]"
+                          cachedDataType="r8"
+                          cachedName="postcode"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[postcode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Inputs[Input 0].Columns[LongitudeStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="LongitudeStr"
+                          lineageId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Output].Columns[LongitudeStr]"
+                          name="LongitudeStr" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Inputs[Input 0].Columns[LatitudeStr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="LatitudeStr"
+                          lineageId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Output].Columns[LatitudeStr]"
+                          name="LatitudeStr" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\Sequence Container\get to database\Script Component.Inputs[Input 0]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutCountryName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutCountryName]"
+                          name="OutCountryName" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutPostCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutPostCode]"
+                          name="OutPostCode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutSuburb]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutSuburb]"
+                          name="OutSuburb" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStreetName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStreetName]"
+                          name="OutStreetName" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStateName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStateName]"
+                          name="OutStateName" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutDistrict]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutDistrict]"
+                          name="OutDistrict" />
+                        <outputColumn
+                          refId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStreetNo]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutStreetNo]"
+                          name="OutStreetNo" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
+                  refId="Package\Sequence Container\get to database.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\get to database\Script Component.Inputs[Input 0]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\get to database\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
                   refId="Package\Sequence Container\get to database.Paths[Excel Source Output]"
-                  endId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\Sequence Container\get to database\Data Conversion.Inputs[Data Conversion Input]"
                   name="Excel Source Output"
                   startId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output]" />
+                <path
+                  refId="Package\Sequence Container\get to database.Paths[Output 0]"
+                  endId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Output 0"
+                  startId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -1388,13 +2855,6 @@
                           cachedName="SchoolSpecialityType"
                           externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialtyType]"
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSpecialityType]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Address]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Address"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolAddress]"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1412,11 +2872,6 @@
                           dataType="wstr"
                           length="100"
                           name="SchoolName" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolAddress]"
-                          dataType="wstr"
-                          length="100"
-                          name="SchoolAddress" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LevelOfSchooling]"
                           dataType="wstr"
@@ -1452,6 +2907,36 @@
                           dataType="wstr"
                           length="50"
                           name="SchoolGender" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          dataType="wstr"
+                          length="100"
+                          name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StateName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
+                          dataType="wstr"
+                          length="10"
+                          name="StreetNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StreetName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          name="Suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="PostCode" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1562,16 +3047,6 @@
                           name="SchoolName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Street]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Street]"
-                          length="100"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Street]"
-                          name="Street"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -1654,16 +3129,6 @@
                           name="SchoolGender"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Address]"
-                          length="100"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address]"
-                          name="Address"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSpecialityType]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
@@ -1672,6 +3137,46 @@
                           length="50"
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSpecialityType]"
                           name="SchoolSpecialityType"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]"
+                          name="StreetNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]"
+                          name="StreetName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StateName]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateName]"
+                          name="StateName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryName]"
+                          name="CountryName"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -1686,11 +3191,6 @@
                           dataType="wstr"
                           length="100"
                           name="SchoolName" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Street]"
-                          dataType="wstr"
-                          length="100"
-                          name="Street" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
                           dataType="wstr"
@@ -1734,15 +3234,30 @@
                           length="10"
                           name="SchoolGender" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Address]"
-                          dataType="wstr"
-                          length="100"
-                          name="Address" />
-                        <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolSpecialityType]"
                           dataType="wstr"
                           length="50"
                           name="SchoolSpecialityType" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
+                          dataType="wstr"
+                          length="10"
+                          name="StreetNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StreetName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StateName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StateName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
+                          dataType="wstr"
+                          length="100"
+                          name="CountryName" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1763,11 +3278,17 @@
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolName]"
                           name="SchoolName" />
                         <outputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Street]"
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
+                          name="StreetNumber" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetName]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Street]"
-                          name="Street" />
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetName]"
+                          name="StreetName" />
                         <outputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
                           dataType="wstr"
@@ -1781,11 +3302,23 @@
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[District]"
                           name="District" />
                         <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StateName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StateName]"
+                          name="StateName" />
+                        <outputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
                           dataType="wstr"
                           length="10"
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
                           name="PostCode" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CountryName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CountryName]"
+                          name="CountryName" />
                         <outputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LevelOfSchooling]"
                           dataType="wstr"
@@ -1818,12 +3351,6 @@
                           length="10"
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolGender]"
                           name="SchoolGender" />
-                        <outputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Address]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Address]"
-                          name="Address" />
                         <outputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolSpecialityType]"
                           dataType="wstr"
@@ -1892,9 +3419,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence Container\Execute SQL Task"
+          TopLeft="49,36" />
+        <NodeLayout
           Size="153,42"
           Id="Package\Sequence Container\get to database"
           TopLeft="155,132" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence Container\load data to DW"
+          TopLeft="203,203" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
           TopLeft="130.5,78">
@@ -1929,14 +3464,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence Container\Execute SQL Task"
-          TopLeft="49,36" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Sequence Container\load data to DW"
-          TopLeft="203,203" />
         <EdgeLayout
           Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
           TopLeft="231.5,174">
@@ -1985,41 +3512,107 @@
     design-time-name="Package\Sequence Container\get to database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\get to database\OLE DB Destination"
-          TopLeft="529,311" />
+          TopLeft="405,442" />
         <NodeLayout
           Size="139,42"
           Id="Package\Sequence Container\get to database\Excel Source"
           TopLeft="421,109" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence Container\get to database\Script Component"
+          TopLeft="423,278" />
+        <EdgeLayout
+          Id="Package\Sequence Container\get to database.Paths[Output 0]"
+          TopLeft="504.5,320">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14,122"
+              Start="0,0"
+              End="-14,114.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57"
+                    Point2="0,61"
+                    Point3="-4,61" />
+                  <mssgle:LineSegment
+                    End="-10,61" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10,61"
+                    Point2="-14,61"
+                    Point3="-14,65" />
+                  <mssgle:LineSegment
+                    End="-14,114.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15,66,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Sequence Container\get to database\Data Conversion"
+          TopLeft="425,192" />
         <EdgeLayout
           Id="Package\Sequence Container\get to database.Paths[Excel Source Output]"
           TopLeft="490.5,151">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="124,160"
+              EndConnector="12.5,41"
               Start="0,0"
-              End="124,152.5">
+              End="12.5,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76" />
+                    End="0,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,76"
-                    Point2="0,80"
-                    Point3="4,80" />
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="4,20.5" />
                   <mssgle:LineSegment
-                    End="120,80" />
+                    End="8.5,20.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="120,80"
-                    Point2="124,80"
-                    Point3="124,84" />
+                    Point1="8.5,20.5"
+                    Point2="12.5,20.5"
+                    Point3="12.5,24.5" />
                   <mssgle:LineSegment
-                    End="124,152.5" />
+                    End="12.5,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\get to database.Paths[Data Conversion Output]"
+          TopLeft="503.75,234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2108,7 +3701,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\load data to DW\OLE DB Source">
+    design-time-name="Package\Sequence Container\load data to DW\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2121,7 +3714,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\load data to DW\OLE DB Destination">
+    design-time-name="Package\Sequence Container\load data to DW\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

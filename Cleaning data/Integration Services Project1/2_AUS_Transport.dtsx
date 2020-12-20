@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="2_AUS_Transport"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{A346BB3E-B393-4847-9494-89C33B466EBD}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{764FC5F9-A0E9-46DD-9B72-58F63D6A9800}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2021,7 +2021,7 @@ namespace SC_bb104a6ce7754e2aab597d67f8bdd55a.Properties {
     <msb:CodeName>SC_bb104a6ce7754e2aab597d67f8bdd55a</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_bb104a6ce7754e2aab597d67f8bdd55a</msb:DisplayName>
-    <msb:ProjectId>{F91E83C2-DB58-4C89-A20A-C39F33C0E7CD}</msb:ProjectId>
+    <msb:ProjectId>{0F2542BB-989E-4849-9407-91D3F71BD741}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_bb104a6ce7754e2aab597d67f8bdd55a.csproj" />
@@ -2211,7 +2211,7 @@ namespace SC_bb104a6ce7754e2aab597d67f8bdd55a
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAFff3V8AAAAAAAAAAOAAIiALATAAACIAAAAIAAAAAAAATkAA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAJh83l8AAAAAAAAAAOAAIiALATAAACIAAAAIAAAAAAAATkAA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAPw/AABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2347,7 +2347,7 @@ AGUAcgB0AHkAIABjAGEAbgBuAG8AdAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4A
 IABBAHMAcwBpAGcAbgAgAGEAIAB2AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBu
 ACAAaQBuAHMAdABlAGEAZAAuAAAPSQBuAHAAdQB0ACAAMAAAcVMAQwBfAGIAYgAxADAANABhADYA
 YwBlADcANwA1ADQAZQAyAGEAYQBiADUAOQA3AGQANgA3AGYAOABiAGQAZAA1ADUAYQAuAFAAcgBv
-AHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAAC6WwKFy5rDTJD6M7i6gFRIAAQg
+AHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAABBn0+4A2ZsRp30690InxKYAAQg
 AQEIAyAAAQUgAQEREQQgAQEOBSABARFpBgcCEj0SMAUAAQ4dDgkgARUSeQESPQ4GFRJ5ARI9BCAA
 EwADIAACBCAAEn0HIAAVEnkBDgUVEnkBDgYQAQEeAA4ECgESKAkgAwESSR0IEk0DBhJJAwYdCAQg
 AQ4IBCABAggEIAENCAUgAgEIHAcgAgIOEYCJBSABHQgICAABEoCNEYCRBSAAEoCVByACAQ4SgJUI
@@ -2683,7 +2683,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     design-time-name="Package\Sequence Container\Load to DW">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\Load to DW\OLE DB Destination"
@@ -2711,9 +2711,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
