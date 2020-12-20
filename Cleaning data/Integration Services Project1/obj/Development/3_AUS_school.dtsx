@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_school"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{B77FE5C1-B32F-482B-A4FC-74DD28C0A778}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{C221275E-F6D2-459F-A816-A80F67D86A56}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1165,12 +1165,6 @@
                           externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LocationLatitude]"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[latitude]" />
                         <inputColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_code]"
-                          cachedDataType="r8"
-                          cachedName="school_code"
-                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolID]"
-                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_code]" />
-                        <inputColumn
                           refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[level_of_schooling]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -1298,11 +1292,6 @@
                           length="10"
                           name="SchoolGender" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolID]"
-                          dataType="wstr"
-                          length="10"
-                          name="SchoolID" />
-                        <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialityType]"
                           dataType="wstr"
                           length="50"
@@ -1327,6 +1316,11 @@
                           dataType="wstr"
                           length="100"
                           name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="SchoolCode" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2826,47 +2820,85 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolGender]"
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolGender]" />
                         <inputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolID]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="SchoolID"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchooID]"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolID]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LocationLongitude]"
-                          cachedDataType="numeric"
-                          cachedName="LocationLongitude"
-                          cachedPrecision="9"
-                          cachedScale="6"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolLog]"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLongitude]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LocationLatitude]"
-                          cachedDataType="numeric"
-                          cachedName="LocationLatitude"
-                          cachedPrecision="8"
-                          cachedScale="6"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolLat]"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLatitude]" />
-                        <inputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolSpecialityType]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="SchoolSpecialityType"
                           externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialtyType]"
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolSpecialityType]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="CountryName"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StateName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="StateName"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetNumber]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="StreetNumber"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="StreetName"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Suburb"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="PostCode"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LocationLatitude]"
+                          cachedDataType="numeric"
+                          cachedName="LocationLatitude"
+                          cachedPrecision="8"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLatitude]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LocationLongitude]"
+                          cachedDataType="numeric"
+                          cachedName="LocationLongitude"
+                          cachedPrecision="9"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[LocationLongitude]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SchoolCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="SchoolCode"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolCode]"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolCode]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolCode]"
-                          dataType="i4"
-                          name="SchoolCode" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchooID]"
                           dataType="wstr"
                           length="10"
-                          name="SchooID" />
+                          name="SchoolCode" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolName]"
                           dataType="wstr"
@@ -2882,16 +2914,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           dataType="wstr"
                           length="100"
                           name="District" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolLog]"
-                          dataType="numeric"
-                          name="SchoolLog"
-                          precision="18" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolLat]"
-                          dataType="numeric"
-                          name="SchoolLat"
-                          precision="18" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialtyType]"
                           dataType="wstr"
@@ -2937,6 +2959,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           dataType="wstr"
                           length="10"
                           name="PostCode" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchooIId]"
+                          dataType="i4"
+                          name="SchooIId" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          dataType="numeric"
+                          name="Latitude"
+                          precision="8"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          dataType="numeric"
+                          name="Longitude"
+                          precision="9"
+                          scale="6" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3026,16 +3064,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
-                        <outputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolID]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolID]"
-                          length="10"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolID]"
-                          name="SchoolID"
-                          truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolName]"
                           dataType="wstr"
@@ -3178,14 +3206,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryName]"
                           name="CountryName"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolCode]"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolCode]"
+                          name="SchoolCode"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolID]"
-                          dataType="wstr"
-                          length="10"
-                          name="SchoolID" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolName]"
                           dataType="wstr"
@@ -3258,6 +3291,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           dataType="wstr"
                           length="100"
                           name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SchoolCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="SchoolCode" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3266,11 +3304,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolID]"
+                          refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolCode]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolID]"
-                          name="SchoolID" />
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolCode]"
+                          name="SchoolCode" />
                         <outputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolName]"
                           dataType="wstr"
@@ -3518,13 +3556,17 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Sequence Container\get to database\OLE DB Destination"
           TopLeft="405,442" />
         <NodeLayout
+          Size="163,42"
+          Id="Package\Sequence Container\get to database\Script Component"
+          TopLeft="423,278" />
+        <NodeLayout
           Size="139,42"
           Id="Package\Sequence Container\get to database\Excel Source"
           TopLeft="421,109" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Sequence Container\get to database\Script Component"
-          TopLeft="423,278" />
+          Size="156,42"
+          Id="Package\Sequence Container\get to database\Data Conversion"
+          TopLeft="425,192" />
         <EdgeLayout
           Id="Package\Sequence Container\get to database.Paths[Output 0]"
           TopLeft="504.5,320">
@@ -3561,10 +3603,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Sequence Container\get to database\Data Conversion"
-          TopLeft="425,192" />
         <EdgeLayout
           Id="Package\Sequence Container\get to database.Paths[Excel Source Output]"
           TopLeft="490.5,151">
@@ -3596,7 +3634,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3618,14 +3658,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\get to database\Excel Source">
+    design-time-name="Package\Sequence Container\get to database\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3638,7 +3680,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\get to database\OLE DB Destination">
+    design-time-name="Package\Sequence Container\get to database\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
