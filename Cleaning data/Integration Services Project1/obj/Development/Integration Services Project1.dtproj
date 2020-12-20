@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">CHATHU-LAPTOP</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdm44N+T6WkqNq0GvCVSTeAAAAAACAAAAAAAQZgAAAAEAACAAAAA2tbJnuHv7LAMGkVoMTi6/vj64bbnYRDqdASjkOaWYyAAAAAAOgAAAAAIAACAAAADLwoOMcHavO95rHApTStYdOlO/DdpwKvEHL6/VsTk7lJAAAAB5fcLZvaxS572OAhLcZ7OLv7PSZkiPkUAa00izMpSNaw6HyY0bWyfzT8VO+uUiSyA7oW0Pktbzbgu3u24BK+DcQF2kQXbRbQkac6Vz/2hiztLv56E5rleS4Pb5Jj9ltdsxodpbNTVNcm6VzmveQy/vN9O2AZ8LdORs/n0mkHWeezyE2C/LdXy9M4/GZBi2tiJAAAAA8XC1oVwAuLJLH7K2zREx05GkO4dtnl3fCis8u4UEpVaIR/WoQ8fnPd6hBxuC0bo1/xE3xzEoQozF0saLThQ8uA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdm44N+T6WkqNq0GvCVSTeAAAAAACAAAAAAAQZgAAAAEAACAAAACrQN3mVr3KUrwK+Rm9seRFv1zShah1ZSlXCtGmmYKFLQAAAAAOgAAAAAIAACAAAACb2EHHlgJ6E9XOkD4KDNgB/1KWTj3kzb0ToelOH2z/oZAAAACDkSj3tMVx5TKpsgS9IuIyuGjFfHiwHK7EIxlx3zACmDbGmA5fSJedhJ71l4jiD2UB5eLB6SghWF5qK2M7bagPfDc04PsDMQVR/vSaBrkaMMUk9w+L2nMaz9ldNnUaFfaFxOUMqMsKiac1C16HI9P6L9Co8kUGOtNDoIxMtdmK7EBmaFjLXY//yqXzH7v0dhNAAAAAwIFJx7pWxvYuxy1NQszGG2D6H4u4iFD0w+9e+zg1fXctlMaeMQqcMjmy86oiDlJXSR3TD6zHPffTPFyQ402Uog==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -34,6 +34,7 @@
           <SSIS:Package SSIS:Name="2_AUS_Transport.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="3_AUS_School.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="4_AUS_Property_median.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="5_UK.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="Staging Db.conmgr" />
@@ -1288,6 +1289,23 @@
                   </SSIS:Properties>
                 </SSIS:Parameter>
               </SSIS:Parameters>
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="5_UK.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{482DDBF5-994C-4D45-9668-E2144DA1B7BE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7B062633-54D4-4B4A-B3BD-CA7DF841F584}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
             </SSIS:PackageMetaData>
           </SSIS:PackageInfo>
         </SSIS:DeploymentInfo>

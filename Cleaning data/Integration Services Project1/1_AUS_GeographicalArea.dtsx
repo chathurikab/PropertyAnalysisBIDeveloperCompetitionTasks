@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="1_AUS_GeographicalArea"
   DTS:PackageType="5"
-  DTS:VersionBuild="52"
-  DTS:VersionGUID="{5C50014A-9F02-4759-9C40-F5A02619C5CA}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{9124EAAC-DE5E-4C2A-8D47-95E839C457D0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3866,7 +3866,7 @@ where [refTable].[StateName] = ?</property>
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateAltKey" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -5136,13 +5136,6 @@ where [refTable].[Suburb] = ?</property>
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].Columns[StateCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="StateCode"
-                          externalMetadataColumnId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].ExternalColumns[StateAltKey]"
-                          lineageId="Package\Australia Suburbs\Load data to DW\Insert only unique State.Outputs[Sort Output].Columns[StateCode]" />
-                        <inputColumn
                           refId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].Columns[State]"
                           cachedDataType="wstr"
                           cachedLength="100"
@@ -5150,6 +5143,13 @@ where [refTable].[Suburb] = ?</property>
                           cachedSortKeyPosition="1"
                           externalMetadataColumnId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
                           lineageId="Package\Australia Suburbs\Load data to DW\Insert only unique State.Outputs[Sort Output].Columns[State]" />
+                        <inputColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].Columns[StateCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="StateCode"
+                          externalMetadataColumnId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
+                          lineageId="Package\Australia Suburbs\Load data to DW\Insert only unique State.Outputs[Sort Output].Columns[StateCode]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -5158,15 +5158,15 @@ where [refTable].[Suburb] = ?</property>
                           dataType="i4"
                           name="StateId" />
                         <externalMetadataColumn
-                          refId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].ExternalColumns[StateAltKey]"
-                          dataType="wstr"
-                          length="10"
-                          name="StateAltKey" />
-                        <externalMetadataColumn
                           refId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
                           dataType="wstr"
                           length="100"
                           name="StateName" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimState.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="StateCode" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -5563,7 +5563,7 @@ where [refTable].[Suburb] = ?</property>
     design-time-name="Package\Australia Suburbs\Get data to load database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="291,42"
           Id="Package\Australia Suburbs\Get data to load database\Excel Source"
@@ -5607,9 +5607,7 @@ where [refTable].[Suburb] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5643,9 +5641,7 @@ where [refTable].[Suburb] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5683,9 +5679,17 @@ where [refTable].[Suburb] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="131,42"
-          Id="Package\Australia Suburbs\Load data to DW\To DimCity"
-          TopLeft="473,607" />
+          Size="150,42"
+          Id="Package\Australia Suburbs\Load data to DW\OLE DB Source"
+          TopLeft="277,98" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Australia Suburbs\Load data to DW\Multicast"
+          TopLeft="298,304" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Australia Suburbs\Load data to DW\Lookup for new Country"
+          TopLeft="888,408" />
         <NodeLayout
           Size="205,42"
           Id="Package\Australia Suburbs\Load data to DW\Insert only unique suburbs"
@@ -5695,41 +5699,177 @@ where [refTable].[Suburb] = ?</property>
           Id="Package\Australia Suburbs\Load data to DW\To DimState"
           TopLeft="709,618" />
         <NodeLayout
-          Size="194,42"
-          Id="Package\Australia Suburbs\Load data to DW\Lookup for new Suburbs"
-          TopLeft="174,410" />
-        <NodeLayout
           Size="265,42"
           Id="Package\Australia Suburbs\Load data to DW\Sort and remove duplications"
           TopLeft="224,211" />
-        <NodeLayout
-          Size="192,42"
-          Id="Package\Australia Suburbs\Load data to DW\Insert only unique State"
-          TopLeft="709,527" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Australia Suburbs\Load data to DW\Lookup for new State"
-          TopLeft="641,409" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Australia Suburbs\Load data to DW\OLE DB Source"
-          TopLeft="277,98" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Australia Suburbs\Load data to DW\Multicast"
-          TopLeft="298,304" />
         <NodeLayout
           Size="173,42"
           Id="Package\Australia Suburbs\Load data to DW\Lookup for new City"
           TopLeft="439,408" />
         <NodeLayout
-          Size="184,42"
-          Id="Package\Australia Suburbs\Load data to DW\Insert only unique city"
-          TopLeft="447,520" />
+          Size="131,42"
+          Id="Package\Australia Suburbs\Load data to DW\To DimCity"
+          TopLeft="473,607" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Australia Suburbs\Load data to DW\Lookup for new State"
+          TopLeft="641,409" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Australia Suburbs\Load data to DW\Insert Only Australia"
+          TopLeft="937,518" />
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Australia Suburbs\Load data to DW\Insert only unique State"
+          TopLeft="709,527" />
         <NodeLayout
           Size="171,42"
           Id="Package\Australia Suburbs\Load data to DW\To DimSuburb"
           TopLeft="188,616" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Australia Suburbs\Load data to DW\Lookup for new Suburbs"
+          TopLeft="174,410" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Australia Suburbs\Load data to DW\Derived Column"
+          TopLeft="897,327" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Australia Suburbs\Load data to DW\To DimCountry"
+          TopLeft="902,619" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Australia Suburbs\Load data to DW\Insert only unique city"
+          TopLeft="447,520" />
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output1]"
+          TopLeft="273.25,452">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64"
+              Start="0,0"
+              End="0,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,22.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output]"
+          TopLeft="525.5,450">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.5,70"
+              Start="0,0"
+              End="13.5,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31"
+                    Point2="0,35"
+                    Point3="4,35" />
+                  <mssgle:LineSegment
+                    End="9.5,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.5,35"
+                    Point2="13.5,35"
+                    Point3="13.5,39" />
+                  <mssgle:LineSegment
+                    End="13.5,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-49.05638671875,40,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Derived Column Output]"
+          TopLeft="974,369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,39"
+              Start="0,0"
+              End="10,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="4,19.5" />
+                  <mssgle:LineSegment
+                    End="6,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,19.5"
+                    Point2="10,19.5"
+                    Point3="10,23.5" />
+                  <mssgle:LineSegment
+                    End="10,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Sort Output4]"
+          TopLeft="1024.5,560">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-47.5,59"
+              Start="0,0"
+              End="-47.5,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="-4,29.5" />
+                  <mssgle:LineSegment
+                    End="-43.5,29.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-43.5,29.5"
+                    Point2="-47.5,29.5"
+                    Point3="-47.5,33.5" />
+                  <mssgle:LineSegment
+                    End="-47.5,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Suburbs\Load data to DW.Paths[Sort Output3]"
           TopLeft="805,569">
@@ -5853,6 +5993,40 @@ where [refTable].[Suburb] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Multicast Output 5]"
+          TopLeft="418,325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="479,10"
+              Start="0,0"
+              End="471.5,10">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="235.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="235.5,0"
+                    Point2="239.5,0"
+                    Point3="239.5,4" />
+                  <mssgle:LineSegment
+                    End="239.5,6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="239.5,6"
+                    Point2="239.5,10"
+                    Point3="243.5,10" />
+                  <mssgle:LineSegment
+                    End="471.5,10" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Australia Suburbs\Load data to DW.Paths[Multicast Output 4]"
           TopLeft="386,346">
           <EdgeLayout.Curve>
@@ -5955,186 +6129,6 @@ where [refTable].[Suburb] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output2]"
-          TopLeft="731,451">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="74,76"
-              Start="0,0"
-              End="74,68.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
-                  <mssgle:LineSegment
-                    End="70,38" />
-                  <mssgle:CubicBezierSegment
-                    Point1="70,38"
-                    Point2="74,38"
-                    Point3="74,42" />
-                  <mssgle:LineSegment
-                    End="74,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-18.80638671875,43,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output1]"
-          TopLeft="273.25,452">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,64"
-              Start="0,0"
-              End="0,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,22.4453125,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output]"
-          TopLeft="525.5,450">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="13.5,70"
-              Start="0,0"
-              End="13.5,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31"
-                    Point2="0,35"
-                    Point3="4,35" />
-                  <mssgle:LineSegment
-                    End="9.5,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.5,35"
-                    Point2="13.5,35"
-                    Point3="13.5,39" />
-                  <mssgle:LineSegment
-                    End="13.5,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-49.05638671875,40,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="192,42"
-          Id="Package\Australia Suburbs\Load data to DW\Lookup for new Country"
-          TopLeft="888,408" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Australia Suburbs\Load data to DW\Derived Column"
-          TopLeft="897,327" />
-        <EdgeLayout
-          Id="Package\Australia Suburbs\Load data to DW.Paths[Derived Column Output]"
-          TopLeft="974,369">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10,39"
-              Start="0,0"
-              End="10,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="4,19.5" />
-                  <mssgle:LineSegment
-                    End="6,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6,19.5"
-                    Point2="10,19.5"
-                    Point3="10,23.5" />
-                  <mssgle:LineSegment
-                    End="10,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Australia Suburbs\Load data to DW\To DimCountry"
-          TopLeft="902,619" />
-        <EdgeLayout
-          Id="Package\Australia Suburbs\Load data to DW.Paths[Multicast Output 5]"
-          TopLeft="418,325">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="479,10"
-              Start="0,0"
-              End="471.5,10">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="235.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="235.5,0"
-                    Point2="239.5,0"
-                    Point3="239.5,4" />
-                  <mssgle:LineSegment
-                    End="239.5,6" />
-                  <mssgle:CubicBezierSegment
-                    Point1="239.5,6"
-                    Point2="239.5,10"
-                    Point3="243.5,10" />
-                  <mssgle:LineSegment
-                    End="471.5,10" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Australia Suburbs\Load data to DW\Insert Only Australia"
-          TopLeft="937,518" />
-        <EdgeLayout
           Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output3]"
           TopLeft="984,450">
           <EdgeLayout.Curve>
@@ -6171,101 +6165,44 @@ where [refTable].[Suburb] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Suburbs\Load data to DW.Paths[Sort Output4]"
-          TopLeft="1024.5,560">
+          Id="Package\Australia Suburbs\Load data to DW.Paths[Lookup No Match Output2]"
+          TopLeft="731,451">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-47.5,59"
+              EndConnector="74,76"
               Start="0,0"
-              End="-47.5,51.5">
+              End="74,68.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.5" />
+                    End="0,34" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.5"
-                    Point2="0,29.5"
-                    Point3="-4,29.5" />
+                    Point1="0,34"
+                    Point2="0,38"
+                    Point3="4,38" />
                   <mssgle:LineSegment
-                    End="-43.5,29.5" />
+                    End="70,38" />
                   <mssgle:CubicBezierSegment
-                    Point1="-43.5,29.5"
-                    Point2="-47.5,29.5"
-                    Point3="-47.5,33.5" />
+                    Point1="70,38"
+                    Point2="74,38"
+                    Point3="74,42" />
                   <mssgle:LineSegment
-                    End="-47.5,51.5" />
+                    End="74,68.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-18.80638671875,43,111.6127734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new City">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCity]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new Suburbs">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimSuburb]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Australia Suburbs\Load data to DW\To DimSuburb">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Australia Suburbs\Load data to DW\OLE DB Source">
     <Properties>
@@ -6276,6 +6213,29 @@ where [refTable].[Suburb] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new Country">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCountry]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -6293,7 +6253,7 @@ where [refTable].[Suburb] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new State">
+    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new City">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -6303,7 +6263,7 @@ where [refTable].[Suburb] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimState]</Value>
+          type="q3:string">[dbo].[DimCity]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -6329,7 +6289,7 @@ where [refTable].[Suburb] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new Country">
+    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new State">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -6339,12 +6299,48 @@ where [refTable].[Suburb] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[DimCountry]</Value>
+          type="q3:string">[dbo].[DimState]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Suburbs\Load data to DW\To DimSuburb">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Suburbs\Load data to DW\Lookup for new Suburbs">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimSuburb]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
