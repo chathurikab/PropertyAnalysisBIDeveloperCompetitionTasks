@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="AUS_Property_median"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{DAC329B9-0558-439C-9144-33A7746CC281}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{D04E8AE0-FB4F-4268-94D6-42F1AA2E3CE1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,7 @@
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Formatted\NSW_PropertyMedainValue.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Formatted\NSW_PropertyMedainValue.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -675,39 +675,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Australia Property Median\Data Flow Task\Excel Source"
-          TopLeft="343,175" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Australia Property Median\Data Flow Task\OLE DB Destination"
           TopLeft="474,352" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Australia Property Median\Data Flow Task\Excel Source"
+          TopLeft="324,87" />
         <EdgeLayout
           Id="Package\Australia Property Median\Data Flow Task.Paths[Excel Source Output]"
-          TopLeft="412.5,217">
+          TopLeft="393.5,129">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="147,135"
+              EndConnector="166,223"
               Start="0,0"
-              End="147,127.5">
+              End="166,215.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,107.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,63.5"
-                    Point2="0,67.5"
-                    Point3="4,67.5" />
+                    Point1="0,107.5"
+                    Point2="0,111.5"
+                    Point3="4,111.5" />
                   <mssgle:LineSegment
-                    End="143,67.5" />
+                    End="162,111.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="143,67.5"
-                    Point2="147,67.5"
-                    Point3="147,71.5" />
+                    Point1="162,111.5"
+                    Point2="166,111.5"
+                    Point3="166,115.5" />
                   <mssgle:LineSegment
-                    End="147,127.5" />
+                    End="166,215.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
