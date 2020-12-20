@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="37"
-  DTS:VersionGUID="{D0F5819E-CA3F-4DA5-8EBA-D4C423B2B68C}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{BFAF8B2A-86DB-4C00-AFA3-3BFF8BCBDC41}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -325,11 +325,10 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[indigenous_pct]"
-                          dataType="wstr"
+                          dataType="r8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[indigenous_pct]"
-                          length="255"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[indigenous_pct]"
                           name="indigenous_pct"
                           truncationRowDisposition="FailComponent" />
@@ -493,10 +492,11 @@
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[date_1st_teacher]"
-                          dataType="date"
+                          dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[date_1st_teacher]"
+                          length="255"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[date_1st_teacher]"
                           name="date_1st_teacher"
                           truncationRowDisposition="FailComponent" />
@@ -673,8 +673,7 @@
                           name="student_number" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[indigenous_pct]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="r8"
                           name="indigenous_pct" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[lbote_pct]"
@@ -756,7 +755,8 @@
                           name="late_opening_school" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[date_1st_teacher]"
-                          dataType="date"
+                          dataType="wstr"
+                          length="255"
                           name="date_1st_teacher" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[lga]"
@@ -884,8 +884,7 @@
                           name="student_number" />
                         <outputColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[indigenous_pct]"
-                          dataType="wstr"
-                          length="255"
+                          dataType="r8"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[indigenous_pct]"
                           name="indigenous_pct" />
                         <outputColumn
@@ -984,7 +983,8 @@
                           name="late_opening_school" />
                         <outputColumn
                           refId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[date_1st_teacher]"
-                          dataType="date"
+                          dataType="wstr"
+                          length="255"
                           lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Error Output].Columns[date_1st_teacher]"
                           name="date_1st_teacher" />
                         <outputColumn
@@ -1241,6 +1241,12 @@
                           cachedName="OutCountryName"
                           externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
                           lineageId="Package\Sequence Container\get to database\Script Component.Outputs[Output 0].Columns[OutCountryName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[school_code]"
+                          cachedDataType="r8"
+                          cachedName="school_code"
+                          externalMetadataColumnId="Package\Sequence Container\get to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolCode]"
+                          lineageId="Package\Sequence Container\get to database\Excel Source.Outputs[Excel Source Output].Columns[school_code]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3550,7 +3556,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     design-time-name="Package\Sequence Container\get to database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\get to database\OLE DB Destination"
@@ -3567,6 +3573,28 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Size="156,42"
           Id="Package\Sequence Container\get to database\Data Conversion"
           TopLeft="425,192" />
+        <EdgeLayout
+          Id="Package\Sequence Container\get to database.Paths[Data Conversion Output]"
+          TopLeft="503.75,234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\get to database.Paths[Output 0]"
           TopLeft="504.5,320">
@@ -3598,9 +3626,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-15,66,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3634,33 +3660,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\get to database.Paths[Data Conversion Output]"
-          TopLeft="503.75,234">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3698,13 +3698,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence Container\load data to DW\OLE DB Source"
-          TopLeft="204,99" />
-        <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\load data to DW\OLE DB Destination"
           TopLeft="369,290" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence Container\load data to DW\OLE DB Source"
+          TopLeft="204,99" />
         <EdgeLayout
           Id="Package\Sequence Container\load data to DW.Paths[OLE DB Source Output]"
           TopLeft="279,141">
