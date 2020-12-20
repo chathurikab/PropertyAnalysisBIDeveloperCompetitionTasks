@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="AUS_Property_median"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{D04E8AE0-FB4F-4268-94D6-42F1AA2E3CE1}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{6AEBDE00-555D-4E1D-A58B-41F21A18FA96}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,17 @@
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Formatted\NSW_PropertyMedainValue.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Formatted\NSW_PropertyMedainValue.xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{116FC0E3-58E1-44BC-8B3C-84FC71E88709}"
+      DTS:ObjectName="LocalHost.Task1_Warehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Task1_Warehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -40,13 +50,30 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Australia Property Median\Data Flow Task"
+          DTS:refId="Package\Australia Property Median\Execute SQL Task"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{841f9c11-545f-498a-ace5-0b42357bf45f}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}"
+              SQLTask:SqlStatementSource="delete AUS_PropertyMedian" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Australia Property Median\Get data to Staging DB"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{8211d699-b3cb-45bc-afb9-65800950bf34}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Data Flow Task"
+          DTS:ObjectName="Get data to Staging DB"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -54,7 +81,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Australia Property Median\Data Flow Task\Excel Source"
+                  refId="Package\Australia Property Median\Get data to Staging DB\Excel Source"
                   componentClassID="Microsoft.ExcelSource"
                   contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Excel Source"
@@ -95,7 +122,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Australia Property Median\Data Flow Task\Excel Source.Connections[OleDbConnection]"
+                      refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
                       connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                       description="The OLE DB runtime connection used to access the database."
@@ -103,242 +130,242 @@
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output]"
+                      refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output]"
                       name="Excel Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[StatecODE]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[StatecODE]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[StatecODE]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[StatecODE]"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[StatecODE]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[StatecODE]"
                           name="StatecODE"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[State]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[State]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[State]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[State]"
                           name="State"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[City/Town]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[City/Town]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[City/Town]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[City/Town]"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[City/Town]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[City/Town]"
                           name="City/Town"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Suburb]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Suburb]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Suburb]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Suburb]"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Suburb]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Suburb]"
                           name="Suburb"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Postcode]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Postcode]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Postcode]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Postcode]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Postcode]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Postcode]"
                           name="Postcode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[District]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[District]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[District]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[District]"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[District]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[District]"
                           name="District"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Location]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Location]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Location]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Location]"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Location]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Location]"
                           name="Location"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]"
                           dataType="cy"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Property_Median_Value]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Property_Median_Value]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]"
                           name="Property_Median_Value"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Year]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Year]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]"
                           name="Updated_Year"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Month]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Month]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]"
                           name="Updated_Month"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[StatecODE]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[StatecODE]"
                           dataType="wstr"
                           length="255"
                           name="StatecODE" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[State]"
                           dataType="wstr"
                           length="255"
                           name="State" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[City/Town]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[City/Town]"
                           dataType="wstr"
                           length="255"
                           name="City/Town" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Suburb]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Suburb]"
                           dataType="wstr"
                           length="255"
                           name="Suburb" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Postcode]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Postcode]"
                           dataType="r8"
                           name="Postcode" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[District]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[District]"
                           dataType="wstr"
                           length="255"
                           name="District" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Location]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Location]"
                           dataType="wstr"
                           length="255"
                           name="Location" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Property_Median_Value]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Property_Median_Value]"
                           dataType="cy"
                           name="Property_Median_Value" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Year]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Year]"
                           dataType="r8"
                           name="Updated_Year" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Month]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[Updated_Month]"
                           dataType="r8"
                           name="Updated_Month" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
                           dataType="wstr"
                           length="255"
                           name="F11" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[F12]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[F12]"
                           dataType="wstr"
                           length="255"
                           name="F12" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].ExternalColumns[F13]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].ExternalColumns[F13]"
                           dataType="wstr"
                           length="255"
                           name="F13" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output]"
+                      refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output]"
                       isErrorOut="true"
                       name="Excel Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[StatecODE]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[StatecODE]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[StatecODE]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[StatecODE]"
                           name="StatecODE" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[State]"
                           name="State" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[City/Town]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[City/Town]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[City/Town]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[City/Town]"
                           name="City/Town" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Suburb]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Suburb]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Suburb]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Suburb]"
                           name="Suburb" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Postcode]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Postcode]"
                           dataType="r8"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Postcode]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Postcode]"
                           name="Postcode" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[District]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[District]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[District]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[District]"
                           name="District" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Location]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Location]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Location]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Location]"
                           name="Location" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Property_Median_Value]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Property_Median_Value]"
                           dataType="cy"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Property_Median_Value]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Property_Median_Value]"
                           name="Property_Median_Value" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Year]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Year]"
                           dataType="r8"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Year]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Year]"
                           name="Updated_Year" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Month]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Month]"
                           dataType="r8"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Month]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[Updated_Month]"
                           name="Updated_Month" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -347,7 +374,45 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination"
+                  refId="Package\Australia Property Median\Get data to Staging DB\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Get data to Staging DB\Multicast.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Get data to Staging DB\Multicast.Outputs[Multicast Output 2]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Get data to Staging DB\Multicast.Outputs[Multicast Output 3]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -404,7 +469,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}:external"
                       connectionManagerRefId="Project.ConnectionManagers[LocalHost]"
                       description="The OLE DB runtime connection used to access the database."
@@ -412,128 +477,128 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StatecODE]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StatecODE]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="StatecODE"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[StatecODE]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[StatecODE]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="State"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[State]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[State]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Suburb]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Suburb]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Suburb"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Suburb]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Suburb]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Postcode]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Postcode]"
                           cachedDataType="r8"
                           cachedName="Postcode"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Postcode]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Postcode]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[District]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[District]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="District"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[District]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[District]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Location]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Location]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Location"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Location]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Location]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[City/Town]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[City/Town]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="City/Town"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[City/Town]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[City/Town]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Property_Median_Value]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Property_Median_Value]"
                           cachedDataType="cy"
                           cachedName="Property_Median_Value"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyMedianValue]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyMedianValue]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Property_Median_Value]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Updated_Year]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Updated_Year]"
                           cachedDataType="r8"
                           cachedName="Updated_Year"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedYear]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedYear]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]" />
                         <inputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Updated_Month]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Updated_Month]"
                           cachedDataType="r8"
                           cachedName="Updated_Month"
-                          externalMetadataColumnId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedMonth]"
-                          lineageId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]" />
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedMonth]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
                           dataType="wstr"
                           length="10"
                           name="StateCode" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                           dataType="wstr"
                           length="100"
                           name="State" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
                           dataType="wstr"
                           length="100"
                           name="District" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
                           dataType="wstr"
                           length="100"
                           name="City" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
                           dataType="wstr"
                           length="100"
                           name="Suburb" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
                           dataType="wstr"
                           length="10"
                           name="PostCode" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Location]"
                           dataType="wstr"
                           length="100"
                           name="Location" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyMedianValue]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyMedianValue]"
                           dataType="numeric"
                           name="PropertyMedianValue"
                           precision="15"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedYear]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedYear]"
                           dataType="i4"
                           name="UpdatedYear" />
                         <externalMetadataColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedMonth]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedMonth]"
                           dataType="i4"
                           name="UpdatedMonth" />
                       </externalMetadataColumns>
@@ -541,22 +606,149 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimPeriod]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Updated_Year]"
+                          cachedDataType="r8"
+                          cachedName="Updated_Year"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Updated_Year]" />
+                        <inputColumn
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Updated_Month]"
+                          cachedDataType="r8"
+                          cachedName="Updated_Month"
+                          externalMetadataColumnId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output].Columns[Updated_Month]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[PeriodKey]"
+                          dataType="i4"
+                          name="PeriodKey" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
+                          dataType="i4"
+                          name="Year" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Month]"
+                          dataType="i4"
+                          name="Month" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -567,29 +759,1387 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Australia Property Median\Data Flow Task.Paths[Excel Source Output]"
-                  endId="Package\Australia Property Median\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Australia Property Median\Get data to Staging DB.Paths[Excel Source Output]"
+                  endId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]"
                   name="Excel Source Output"
-                  startId="Package\Australia Property Median\Data Flow Task\Excel Source.Outputs[Excel Source Output]" />
+                  startId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output]" />
+                <path
+                  refId="Package\Australia Property Median\Get data to Staging DB.Paths[Multicast Output 1]"
+                  endId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Multicast Output 1"
+                  startId="Package\Australia Property Median\Get data to Staging DB\Multicast.Outputs[Multicast Output 1]" />
+                <path
+                  refId="Package\Australia Property Median\Get data to Staging DB.Paths[Multicast Output 2]"
+                  endId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+                  name="Multicast Output 2"
+                  startId="Package\Australia Property Median\Get data to Staging DB\Multicast.Outputs[Multicast Output 2]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Australia Property Median\Execute SQL Task"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{841f9c11-545f-498a-ace5-0b42357bf45f}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:refId="Package\Australia Property Median\Load data to DW"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{6CAF378D-9FA7-46BF-8700-F21E7FC25380}"
+          DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Execute SQL Task"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ObjectName="Load data to DW"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}"
-              SQLTask:SqlStatementSource="delete AUS_PropertyMedian" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\Lookup City"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup City"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCity]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCity]) [refTable]
+where [refTable].[City] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CityId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CityCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="City" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Load data to DW\Lookup City.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Load data to DW\Lookup City.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup City.Inputs[Lookup Input].Columns[City]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="City"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">City</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup City.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Match Output].Columns[CityCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="10"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Match Output].Columns[CityCode]"
+                          name="CityCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CityCode</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup City.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup City.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\Lookup School"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup School"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimSchool]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimSchool]) [refTable]
+where [refTable].[StateName] = ? and [refTable].[Suburb] = ? and [refTable].[PostCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SchooIId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="District" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LevelOfSchooling" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="SchoolSpecialtyType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolSubType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolGender" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]};#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]};#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Load data to DW\Lookup School.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Load data to DW\Lookup School.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup School.Inputs[Lookup Input].Columns[Suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Suburb"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Suburb</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup School.Inputs[Lookup Input].Columns[PostCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="PostCode"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PostCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup School.Inputs[Lookup Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="State"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">StateName</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup School.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup School.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup School.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup School.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup School.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup School.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup School.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup School.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup School.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup School.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\Lookup State"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup State"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimState]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimState]) [refTable]
+where [refTable].[StateCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Load data to DW\Lookup State.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Load data to DW\Lookup State.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup State.Inputs[Lookup Input].Columns[StateCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="StateCode"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">StateCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup State.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Match Output].Columns[StateId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Match Output].Columns[StateId]"
+                          name="StateId"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">StateId</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup State.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup State.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\Lookup Suburb"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Suburb"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimSuburb]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimSuburb]) [refTable]
+where [refTable].[Suburb] = ? and [refTable].[PostalCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SuburbKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostalCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]};#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Inputs[Lookup Input].Columns[Suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Suburb"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Suburb</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Inputs[Lookup Input].Columns[PostCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="PostCode"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PostalCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Match Output].Columns[SuburbKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Match Output].Columns[SuburbKey]"
+                          name="SuburbKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">SuburbKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\Lookup Transport"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Transport"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimTransport]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimTransport]) [refTable]
+where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StationName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StopId" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EntranceType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="ExitNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]};#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]};#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="State"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">State</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input].Columns[Suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Suburb"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Suburb</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input].Columns[PostCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="PostCode"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PostCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output].Columns[Id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output].Columns[Id]"
+                          name="Id"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">Id</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 2]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 3]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 4]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 4"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 5]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 5"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 6]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 6"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Connections[OleDbConnection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <externalMetadataColumns
+                        isUsed="True" />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[AUS_PropertyMedian]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[LocalHost]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StateCode]"
+                          length="10"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]"
+                          name="StateCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                          name="State"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[District]"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]"
+                          name="District"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                          name="City"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          name="Suburb"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          length="10"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          name="PostCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Location]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Location]"
+                          name="Location"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyMedianValue]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PropertyMedianValue]"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyMedianValue]"
+                          name="PropertyMedianValue"
+                          precision="15"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedYear]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedYear]"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedYear]"
+                          name="UpdatedYear"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedMonth]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedMonth]"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedMonth]"
+                          name="UpdatedMonth"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StateCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="StateCode" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="100"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[District]"
+                          dataType="wstr"
+                          length="100"
+                          name="District" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          dataType="wstr"
+                          length="100"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          name="Suburb" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="PostCode" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Location]"
+                          dataType="wstr"
+                          length="100"
+                          name="Location" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PropertyMedianValue]"
+                          dataType="numeric"
+                          name="PropertyMedianValue"
+                          precision="15"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedYear]"
+                          dataType="i4"
+                          name="UpdatedYear" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedMonth]"
+                          dataType="i4"
+                          name="UpdatedMonth" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StateCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StateCode]"
+                          name="StateCode" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                          name="State" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[District]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[District]"
+                          name="District" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                          name="City" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          name="Suburb" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          name="PostCode" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Location]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Location]"
+                          name="Location" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PropertyMedianValue]"
+                          dataType="numeric"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PropertyMedianValue]"
+                          name="PropertyMedianValue"
+                          precision="15"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedYear]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedYear]"
+                          name="UpdatedYear" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedMonth]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UpdatedMonth]"
+                          name="UpdatedMonth" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 1]"
+                  endId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Inputs[Lookup Input]"
+                  name="Multicast Output 1"
+                  startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 1]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 2]"
+                  endId="Package\Australia Property Median\Load data to DW\Lookup State.Inputs[Lookup Input]"
+                  name="Multicast Output 2"
+                  startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 2]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 3]"
+                  endId="Package\Australia Property Median\Load data to DW\Lookup School.Inputs[Lookup Input]"
+                  name="Multicast Output 3"
+                  startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 3]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 4]"
+                  endId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]"
+                  name="Multicast Output 4"
+                  startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 4]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 5]"
+                  endId="Package\Australia Property Median\Load data to DW\Lookup City.Inputs[Lookup Input]"
+                  name="Multicast Output 5"
+                  startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 5]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[OLE DB Source Output]"
+                  endId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -601,7 +2151,15 @@
           DTS:From="Package\Australia Property Median\Execute SQL Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Australia Property Median\Data Flow Task" />
+          DTS:To="Package\Australia Property Median\Get data to Staging DB" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Australia Property Median.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{7F54BFA8-CC18-40F5-8536-3448E947F345}"
+          DTS:From="Package\Australia Property Median\Get data to Staging DB"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Australia Property Median\Load data to DW" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -616,10 +2174,10 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="151,42"
-          Id="Package\Australia Property Median\Data Flow Task"
+          Size="187,42"
+          Id="Package\Australia Property Median\Get data to Staging DB"
           TopLeft="105,122" />
         <NodeLayout
           Size="163,42"
@@ -631,9 +2189,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18,30"
+              EndConnector="36,30"
               Start="0,0"
-              End="18,22.5">
+              End="36,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -644,13 +2202,51 @@
                     Point2="0,15"
                     Point3="4,15" />
                   <mssgle:LineSegment
-                    End="14,15" />
+                    End="32,15" />
                   <mssgle:CubicBezierSegment
-                    Point1="14,15"
-                    Point2="18,15"
-                    Point3="18,19" />
+                    Point1="32,15"
+                    Point2="36,15"
+                    Point3="36,19" />
                   <mssgle:LineSegment
-                    End="18,22.5" />
+                    End="36,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Australia Property Median\Load data to DW"
+          TopLeft="169,202" />
+        <EdgeLayout
+          Id="Package\Australia Property Median.PrecedenceConstraints[Constraint 1]"
+          TopLeft="198.5,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49.5,38"
+              Start="0,0"
+              End="49.5,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15"
+                    Point2="0,19"
+                    Point3="4,19" />
+                  <mssgle:LineSegment
+                    End="45.5,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45.5,19"
+                    Point2="49.5,19"
+                    Point3="49.5,23" />
+                  <mssgle:LineSegment
+                    End="49.5,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -662,52 +2258,128 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="322,303"
-          Size="322,346"
+          PanelSize="334,303"
+          Size="334,346"
           Id="Package\Australia Property Median"
           TopLeft="60,60" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Australia Property Median\Data Flow Task">
+    design-time-name="Package\Australia Property Median\Get data to Staging DB">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171,42"
-          Id="Package\Australia Property Median\Data Flow Task\OLE DB Destination"
+          Id="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination"
           TopLeft="474,352" />
         <NodeLayout
           Size="139,42"
-          Id="Package\Australia Property Median\Data Flow Task\Excel Source"
+          Id="Package\Australia Property Median\Get data to Staging DB\Excel Source"
           TopLeft="324,87" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Australia Property Median\Get data to Staging DB\Multicast"
+          TopLeft="372,196" />
         <EdgeLayout
-          Id="Package\Australia Property Median\Data Flow Task.Paths[Excel Source Output]"
+          Id="Package\Australia Property Median\Get data to Staging DB.Paths[Excel Source Output]"
           TopLeft="393.5,129">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="166,223"
+              EndConnector="38.5,67"
               Start="0,0"
-              End="166,215.5">
+              End="38.5,59.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,107.5" />
+                    End="0,29.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,107.5"
-                    Point2="0,111.5"
-                    Point3="4,111.5" />
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
                   <mssgle:LineSegment
-                    End="162,111.5" />
+                    End="34.5,33.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="162,111.5"
-                    Point2="166,111.5"
-                    Point3="166,115.5" />
+                    Point1="34.5,33.5"
+                    Point2="38.5,33.5"
+                    Point3="38.5,37.5" />
                   <mssgle:LineSegment
-                    End="166,215.5" />
+                    End="38.5,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Property Median\Get data to Staging DB.Paths[Multicast Output 1]"
+          TopLeft="432,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.5,114"
+              Start="0,0"
+              End="127.5,106.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53"
+                    Point2="0,57"
+                    Point3="4,57" />
+                  <mssgle:LineSegment
+                    End="123.5,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.5,57"
+                    Point2="127.5,57"
+                    Point3="127.5,61" />
+                  <mssgle:LineSegment
+                    End="127.5,106.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1"
+          TopLeft="217,352" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Get data to Staging DB.Paths[Multicast Output 2]"
+          TopLeft="413.333333333333,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-106.333333333333,114"
+              Start="0,0"
+              End="-106.333333333333,106.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5"
+                    Point2="0,46.5"
+                    Point3="-4,46.5" />
+                  <mssgle:LineSegment
+                    End="-102.333333333333,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-102.333333333333,46.5"
+                    Point2="-106.333333333333,46.5"
+                    Point3="-106.333333333333,50.5" />
+                  <mssgle:LineSegment
+                    End="-106.333333333333,106.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -720,7 +2392,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Australia Property Median\Data Flow Task\Excel Source">
+    design-time-name="Package\Australia Property Median\Get data to Staging DB\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -733,7 +2405,392 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Australia Property Median\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Australia Property Median\Load data to DW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Australia Property Median\Load data to DW\OLE DB Source"
+          TopLeft="252,81" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Australia Property Median\Load data to DW\OLE DB Destination"
+          TopLeft="397,583" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Australia Property Median\Load data to DW\Multicast"
+          TopLeft="363,176" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[OLE DB Source Output]"
+          TopLeft="327,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96,53"
+              Start="0,0"
+              End="96,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="92,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92,26.5"
+                    Point2="96,26.5"
+                    Point3="96,30.5" />
+                  <mssgle:LineSegment
+                    End="96,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Australia Property Median\Load data to DW\Lookup State"
+          TopLeft="544,288" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 2]"
+          TopLeft="441.666666666667,218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="172.833333333333,70"
+              Start="0,0"
+              End="172.833333333333,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5526315789474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5526315789474"
+                    Point2="0,28.5526315789474"
+                    Point3="4,28.5526315789474" />
+                  <mssgle:LineSegment
+                    End="168.833333333333,28.5526315789474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="168.833333333333,28.5526315789474"
+                    Point2="172.833333333333,28.5526315789474"
+                    Point3="172.833333333333,32.5526315789474" />
+                  <mssgle:LineSegment
+                    End="172.833333333333,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Australia Property Median\Load data to DW\Lookup Suburb"
+          TopLeft="320,288" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 1]"
+          TopLeft="404.333333333333,218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.33333333333331,70"
+              Start="0,0"
+              End="-9.33333333333331,62.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5526315789474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.5526315789474"
+                    Point2="0,28.5526315789474"
+                    Point3="-4,28.5526315789474" />
+                  <mssgle:LineSegment
+                    End="-5.33333333333331,28.5526315789474" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.33333333333331,28.5526315789474"
+                    Point2="-9.33333333333331,28.5526315789474"
+                    Point3="-9.33333333333331,32.5526315789474" />
+                  <mssgle:LineSegment
+                    End="-9.33333333333331,62.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Australia Property Median\Load data to DW\Lookup School"
+          TopLeft="770,285" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 3]"
+          TopLeft="451,218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="392.5,67"
+              Start="0,0"
+              End="392.5,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.304347826087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.304347826087"
+                    Point2="0,23.304347826087"
+                    Point3="4,23.304347826087" />
+                  <mssgle:LineSegment
+                    End="388.5,23.304347826087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="388.5,23.304347826087"
+                    Point2="392.5,23.304347826087"
+                    Point3="392.5,27.304347826087" />
+                  <mssgle:LineSegment
+                    End="392.5,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Australia Property Median\Load data to DW\Lookup Transport"
+          TopLeft="114,290" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 4]"
+          TopLeft="389.4,218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.4,72"
+              Start="0,0"
+              End="-194.4,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="-4,22" />
+                  <mssgle:LineSegment
+                    End="-190.4,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-190.4,22"
+                    Point2="-194.4,22"
+                    Point3="-194.4,26" />
+                  <mssgle:LineSegment
+                    End="-194.4,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Australia Property Median\Load data to DW\Lookup City"
+          TopLeft="999,278" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 5]"
+          TopLeft="460.333333333333,218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="605.666666666667,60"
+              Start="0,0"
+              End="605.666666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4516129032258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4516129032258"
+                    Point2="0,16.4516129032258"
+                    Point3="4,16.4516129032258" />
+                  <mssgle:LineSegment
+                    End="601.666666666667,16.4516129032258" />
+                  <mssgle:CubicBezierSegment
+                    Point1="601.666666666667,16.4516129032258"
+                    Point2="605.666666666667,16.4516129032258"
+                    Point3="605.666666666667,20.4516129032258" />
+                  <mssgle:LineSegment
+                    End="605.666666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Property Median\Load data to DW\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Property Median\Load data to DW\Lookup State">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimState]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Property Median\Load data to DW\Lookup Suburb">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimSuburb]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Property Median\Load data to DW\Lookup School">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimSchool]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Property Median\Load data to DW\Lookup Transport">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTransport]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Property Median\Load data to DW\Lookup City">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCity]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination 1">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

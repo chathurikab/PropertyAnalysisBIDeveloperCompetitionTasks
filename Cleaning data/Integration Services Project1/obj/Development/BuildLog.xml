@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Integration Services Project1</Name>
-    <LastWriteTime>2020-12-20T04:08:11.7668434Z</LastWriteTime>
+    <LastWriteTime>2020-12-20T20:01:09.4047501Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,17 +13,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>2_AUS_Transport.dtsx</Name>
-      <LastWriteTime>2020-12-20T02:59:26.9088323Z</LastWriteTime>
+      <LastWriteTime>2020-12-20T20:43:40.6311478Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>3_AUS_School.dtsx</Name>
-      <LastWriteTime>2020-12-20T11:36:45.7543721Z</LastWriteTime>
+      <LastWriteTime>2020-12-20T19:24:14.9877009Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>4_AUS_Property_median.dtsx</Name>
-      <LastWriteTime>2020-12-20T11:36:45.768906Z</LastWriteTime>
+      <LastWriteTime>2020-12-20T21:02:21.0765582Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>

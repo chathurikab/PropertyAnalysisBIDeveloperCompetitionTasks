@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="2_AUS_Transport"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{1AC0179E-1D7A-4261-9F0B-9DB20BDFDB6F}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{E7C72279-B7FB-4B23-A534-D422AA1A1715}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -509,13 +509,6 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                           lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StationName]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="StationName"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]" />
-                        <inputColumn
                           refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceLatitude]"
                           cachedDataType="numeric"
                           cachedName="EntranceLatitude"
@@ -531,6 +524,20 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedScale="6"
                           externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
                           lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLongitude]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StationName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="StationName"
+                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                          cachedDataType="wstr"
+                          cachedLength="9"
+                          cachedName="Country"
+                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\Sequence Container\Load to DW\Derived Column.Outputs[Derived Column Output].Columns[Country]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -552,11 +559,6 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                           dataType="i4"
                           name="Id" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                          dataType="wstr"
-                          length="100"
-                          name="Name" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
                           dataType="wstr"
@@ -599,6 +601,11 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           dataType="wstr"
                           length="100"
                           name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StationName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -1478,13 +1485,6 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                           lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[State]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Train_Station]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Train_Station"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Train_Station]" />
-                        <inputColumn
                           refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Entrance_Type]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -1512,11 +1512,6 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                           dataType="i4"
                           name="Id" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                          dataType="wstr"
-                          length="100"
-                          name="Name" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
                           dataType="wstr"
@@ -1573,6 +1568,11 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           dataType="wstr"
                           length="100"
                           name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StationName" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>

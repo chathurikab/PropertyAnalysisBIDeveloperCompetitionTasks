@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{35EF3CED-EEC1-443B-90A6-B8AEFDDC4472}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{A7F61218-18BD-4A4E-A841-84E82ED04A98}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2877,6 +2877,38 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                       exclusionGroup="1"
                       name="Lookup Match Output"
                       synchronousInputId="Package\Sequence Container\load data to DW\Identify new school records.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\Identify new school records.Outputs[Lookup Match Output].Columns[SchoolName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="100"
+                          lineageId="Package\Sequence Container\load data to DW\Identify new school records.Outputs[Lookup Match Output].Columns[SchoolName]"
+                          name="SchoolName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">SchoolName</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\load data to DW\Identify new school records.Outputs[Lookup Match Output].Columns[SchoolCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="10"
+                          lineageId="Package\Sequence Container\load data to DW\Identify new school records.Outputs[Lookup Match Output].Columns[SchoolCode]"
+                          name="SchoolCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">SchoolCode</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
