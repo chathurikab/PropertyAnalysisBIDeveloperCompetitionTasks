@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="2_AUS_Transport"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{E7C72279-B7FB-4B23-A534-D422AA1A1715}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{DC2107D1-20E3-4103-BB94-E11F7012E3A2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -525,19 +525,19 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
                           lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLongitude]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StationName]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="StationName"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]" />
-                        <inputColumn
                           refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
                           cachedDataType="wstr"
                           cachedLength="9"
                           cachedName="Country"
                           externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                           lineageId="Package\Sequence Container\Load to DW\Derived Column.Outputs[Derived Column Output].Columns[Country]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StationName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="StationName"
+                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -555,10 +555,6 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
                           dataType="i4"
                           name="ExitNumber" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                          dataType="i4"
-                          name="Id" />
                         <externalMetadataColumn
                           refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
                           dataType="wstr"
@@ -602,10 +598,14 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           length="100"
                           name="Country" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
                           dataType="wstr"
                           length="100"
-                          name="StationName" />
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransportId]"
+                          dataType="i4"
+                          name="TransportId" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3072,10 +3072,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Id="Package\Sequence Container\Load to DW\OLE DB Destination"
           TopLeft="272,360" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence Container\Load to DW\OLE DB Source"
-          TopLeft="523,78" />
-        <NodeLayout
           Size="236,42"
           Id="Package\Sequence Container\Load to DW\Lookup for new Transport entries"
           TopLeft="240,257" />
@@ -3083,28 +3079,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           Size="154,42"
           Id="Package\Sequence Container\Load to DW\Derived Column"
           TopLeft="522,171" />
-        <EdgeLayout
-          Id="Package\Sequence Container\Load to DW.Paths[OLE DB Source Output]"
-          TopLeft="598.5,120">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51"
-              Start="0,0"
-              End="0,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence Container\Load to DW\OLE DB Source"
+          TopLeft="523,78" />
         <EdgeLayout
           Id="Package\Sequence Container\Load to DW.Paths[Lookup No Match Output]"
           TopLeft="357.75,299">
@@ -3163,24 +3141,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Load to DW.Paths[OLE DB Source Output]"
+          TopLeft="598.5,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\Load to DW\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Load to DW\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3212,6 +3199,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Load to DW\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

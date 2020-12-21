@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="1_AUS_GeographicalArea"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{9124EAAC-DE5E-4C2A-8D47-95E839C457D0}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{133D9C43-EBEB-426A-B806-C400B9BA99E2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2059,13 +2059,13 @@
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Expression"
-                              name="Expression">"AUD"</property>
+                              name="Expression">"AUS"</property>
                             <property
                               containsID="true"
                               dataType="System.String"
                               description="Derived Column Friendly Expression"
                               expressionType="Notify"
-                              name="FriendlyExpression">"AUD"</property>
+                              name="FriendlyExpression">"AUS"</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -5302,10 +5302,6 @@ where [refTable].[Suburb] = ?</property>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Australia Suburbs\Load data to DW\To DimSuburb.Inputs[OLE DB Destination Input].ExternalColumns[SuburbKey]"
-                          dataType="i4"
-                          name="SuburbKey" />
-                        <externalMetadataColumn
                           refId="Package\Australia Suburbs\Load data to DW\To DimSuburb.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
                           dataType="wstr"
                           length="100"
@@ -5327,6 +5323,10 @@ where [refTable].[Suburb] = ?</property>
                           name="Longitude"
                           precision="9"
                           scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Australia Suburbs\Load data to DW\To DimSuburb.Inputs[OLE DB Destination Input].ExternalColumns[SuburbId]"
+                          dataType="i4"
+                          name="SuburbId" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6294,7 +6294,7 @@ where [refTable].[Suburb] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6304,7 +6304,7 @@ where [refTable].[Suburb] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{A7F61218-18BD-4A4E-A841-84E82ED04A98}">
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{FF8256DF-1D35-435F-98B8-4302EC17DFF2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3195,10 +3195,6 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           length="10"
                           name="PostCode" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchooIId]"
-                          dataType="i4"
-                          name="SchooIId" />
-                        <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
                           dataType="numeric"
                           name="Latitude"
@@ -3210,6 +3206,10 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           name="Longitude"
                           precision="9"
                           scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolId]"
+                          dataType="i4"
+                          name="SchoolId" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4448,17 +4448,55 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence Container\load data to DW\Sort"
+          TopLeft="328,272" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\load data to DW\OLE DB Destination"
           TopLeft="386,442" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence Container\load data to DW\OLE DB Source"
-          TopLeft="204,99" />
-        <NodeLayout
           Size="209,42"
           Id="Package\Sequence Container\load data to DW\Identify new school records"
           TopLeft="287,186" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence Container\load data to DW\OLE DB Source"
+          TopLeft="204,99" />
+        <EdgeLayout
+          Id="Package\Sequence Container\load data to DW.Paths[Sort Output]"
+          TopLeft="377,314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.5,128"
+              Start="0,0"
+              End="94.5,120.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,60"
+                    Point2="0,64"
+                    Point3="4,64" />
+                  <mssgle:LineSegment
+                    End="90.5,64" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.5,64"
+                    Point2="94.5,64"
+                    Point3="94.5,68" />
+                  <mssgle:LineSegment
+                    End="94.5,120.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\load data to DW.Paths[OLE DB Source Output]"
           TopLeft="279,141">
@@ -4493,10 +4531,6 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Sequence Container\load data to DW\Sort"
-          TopLeft="328,272" />
         <EdgeLayout
           Id="Package\Sequence Container\load data to DW.Paths[Lookup No Match Output]"
           TopLeft="391.5,228">
@@ -4533,40 +4567,6 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Sequence Container\load data to DW.Paths[Sort Output]"
-          TopLeft="377,314">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94.5,128"
-              Start="0,0"
-              End="94.5,120.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60"
-                    Point2="0,64"
-                    Point3="4,64" />
-                  <mssgle:LineSegment
-                    End="90.5,64" />
-                  <mssgle:CubicBezierSegment
-                    Point1="90.5,64"
-                    Point2="94.5,64"
-                    Point3="94.5,68" />
-                  <mssgle:LineSegment
-                    End="94.5,120.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4584,25 +4584,12 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\load data to DW\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Sequence Container\load data to DW\Identify new school records">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4612,10 +4599,23 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\load data to DW\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
