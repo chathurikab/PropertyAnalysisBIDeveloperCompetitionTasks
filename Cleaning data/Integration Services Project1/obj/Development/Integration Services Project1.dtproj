@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">CHATHU-LAPTOP</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdm44N+T6WkqNq0GvCVSTeAAAAAACAAAAAAAQZgAAAAEAACAAAAD/4dxBmfbL+ts0ZdX+hcKR1m+e58VrCzHazwXB5MSyJAAAAAAOgAAAAAIAACAAAADjCWaeEYfudACFA83SIx71NmKVJoEhZzYVjWm4tpG5HZAAAAATgzZ8COPewUlPGx/zpPBYM0WYaxnb1AZ84FQcJnEJT3xX7Bi8D6ibuDBVQFgY2ggu9/toXhn2haV49PUAAgkcLSga5Eh5JkihwdCxT13hcobD91OfZfQGk/OjurYCgmHXK8uEyrU/FX3yzudon7UaqWjknLVGJ100cPE+Roikjaf+syZ5VJrOgaJ4/gT5zClAAAAAE0tgk1k/GzK7l4/Ys3X3TBrkJhuB3L/xBef402tFL2XvlenKpbGDH50zwj/geAVZu5oBpXtjIbMOarjGyNyrnw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAdm44N+T6WkqNq0GvCVSTeAAAAAACAAAAAAAQZgAAAAEAACAAAADj0rw+XyO5MQJXPSwjIy3UugDC3Ge819hxc2iV2GhYSAAAAAAOgAAAAAIAACAAAACVpjM2FmcjTK6eVi/cDSwQIT+jg0SttNCL9DqKTg20m5AAAADKaOZ4T5i9Xd3IwiqOlbQJhnRAC9lcLqMlVteC7vGi8y0JY4ABc66GkA+OfI8GUi/sHByZHBUYUL2QETyJnJjBW6pok/7PMImM8jghINrz7EOh7ZliHMQD9mloMmS+0oTgMkq+/qR9ZAzq6LroZ+1KNTgkN6245+fbV7uMIVkqngEqtrYvH/YK2D+uQSewNMxAAAAAskNt69DaABmWyLDwki/ppAyfYhNmPZtev3ua5JSF16jAjNh2KA3rpnCcSG8e78Fh2XXGNM3ADE0t4NyiOrLNIA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -420,10 +420,10 @@
                 <SSIS:Property SSIS:Name="Name">2_AUS_Transport</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">53</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">54</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{DC2107D1-20E3-4103-BB94-E11F7012E3A2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F57E2007-224A-43CE-BD15-0E8DE2A87D67}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1161,10 +1161,10 @@
                 <SSIS:Property SSIS:Name="Name">AUS_Property_median</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">65</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">71</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{1822734E-A828-47FD-BB17-3FC2766D7EFC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{271F8351-F689-4DA4-A0D5-B880025A5C13}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1182,7 +1182,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Formatted\NSW_PropertyMedainValue.xls;Extended Properties="EXCEL 8.0;HDR=YES";</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Formatted\NSW_PropertyMedainValue.xls;Extended Properties="Excel 8.0;HDR=YES";</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
