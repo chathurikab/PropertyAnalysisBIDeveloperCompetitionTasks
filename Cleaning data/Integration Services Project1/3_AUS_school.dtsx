@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="44"
-  DTS:VersionGUID="{FF8256DF-1D35-435F-98B8-4302EC17DFF2}">
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{42540DB0-D6F5-4396-9C94-3224EB87A730}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -51,6 +51,16 @@
       DTS:CreationName="OLEDB"
       DTS:DTSID="{3F39AD20-D686-49B7-BC4A-1B4BD97E1867}"
       DTS:ObjectName="LocalHost.Task1_Warehouse">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Task1_Warehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Task1_Warehouse 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{116FC0E3-58E1-44BC-8B3C-84FC71E88709}"
+      DTS:ObjectName="LocalHost.Task1_Warehouse 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=.;Initial Catalog=Task1_Warehouse;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
@@ -2739,7 +2749,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       expressionType="Notify"
                       name="SqlCommandParam"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimSchool]) [refTable]
-where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[CountryName] = ? and [refTable].[SchoolCode] = ?</property>
+where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[SchoolCode] = ?</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the type of connection used to access the reference dataset."
@@ -2770,12 +2780,12 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SchooIId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="District" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LevelOfSchooling" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="SchoolSpecialtyType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolSubType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolGender" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SchoolId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="District" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LevelOfSchooling" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="SchoolSpecialtyType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolSubType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolGender" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolName]};#{Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]};#{Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryName]};#{Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolCode]};</property>
+                      name="ParameterMap">#{Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolName]};#{Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]};#{Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolCode]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -2816,40 +2826,6 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence Container\load data to DW\Identify new school records.Inputs[Lookup Input].Columns[PostCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="PostCode"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">PostCode</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Sequence Container\load data to DW\Identify new school records.Inputs[Lookup Input].Columns[CountryName]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="CountryName"
-                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CountryName]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">CountryName</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
                           refId="Package\Sequence Container\load data to DW\Identify new school records.Inputs[Lookup Input].Columns[SchoolName]"
                           cachedDataType="wstr"
                           cachedLength="100"
@@ -2860,6 +2836,23 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                               dataType="System.String"
                               description="Specifies the column in the reference table that a column joins."
                               name="JoinToReferenceColumn">SchoolName</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\Identify new school records.Inputs[Lookup Input].Columns[PostCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="PostCode"
+                          lineageId="Package\Sequence Container\load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PostCode</property>
                             <property
                               dataType="System.Null"
                               description="Specifies the column in the reference table from which a column is copied."
@@ -3059,20 +3052,6 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolSpecialtyType]"
                           lineageId="Package\Sequence Container\load data to DW\Sort.Outputs[Sort Output].Columns[SchoolSpecialityType]" />
                         <inputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryName]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="CountryName"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
-                          lineageId="Package\Sequence Container\load data to DW\Sort.Outputs[Sort Output].Columns[CountryName]" />
-                        <inputColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StateName]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="StateName"
-                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
-                          lineageId="Package\Sequence Container\load data to DW\Sort.Outputs[Sort Output].Columns[StateName]" />
-                        <inputColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetNumber]"
                           cachedDataType="wstr"
                           cachedLength="10"
@@ -3126,6 +3105,20 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           cachedSortKeyPosition="3"
                           externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolCode]"
                           lineageId="Package\Sequence Container\load data to DW\Sort.Outputs[Sort Output].Columns[SchoolCode]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StateName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="StateName"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          lineageId="Package\Sequence Container\load data to DW\Sort.Outputs[Sort Output].Columns[StateName]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="CountryName"
+                          externalMetadataColumnId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\Sequence Container\load data to DW\Sort.Outputs[Sort Output].Columns[CountryName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3165,16 +3158,6 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           length="50"
                           name="SchoolGender" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
-                          dataType="wstr"
-                          length="100"
-                          name="CountryName" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateName]"
-                          dataType="wstr"
-                          length="100"
-                          name="StateName" />
-                        <externalMetadataColumn
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
                           dataType="wstr"
                           length="10"
@@ -3210,6 +3193,16 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolId]"
                           dataType="i4"
                           name="SchoolId" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="100"
+                          name="State" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          dataType="wstr"
+                          length="100"
+                          name="Country" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4306,7 +4299,7 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
     design-time-name="Package\Sequence Container\get to database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
           Id="Package\Sequence Container\get to database\OLE DB Destination"
@@ -4354,7 +4347,9 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4388,7 +4383,9 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4410,7 +4407,9 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4448,81 +4447,35 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="98,42"
-          Id="Package\Sequence Container\load data to DW\Sort"
-          TopLeft="328,272" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence Container\load data to DW\OLE DB Destination"
-          TopLeft="386,442" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Sequence Container\load data to DW\Identify new school records"
-          TopLeft="287,186" />
-        <NodeLayout
           Size="150,42"
           Id="Package\Sequence Container\load data to DW\OLE DB Source"
           TopLeft="204,99" />
-        <EdgeLayout
-          Id="Package\Sequence Container\load data to DW.Paths[Sort Output]"
-          TopLeft="377,314">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94.5,128"
-              Start="0,0"
-              End="94.5,120.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,60" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,60"
-                    Point2="0,64"
-                    Point3="4,64" />
-                  <mssgle:LineSegment
-                    End="90.5,64" />
-                  <mssgle:CubicBezierSegment
-                    Point1="90.5,64"
-                    Point2="94.5,64"
-                    Point3="94.5,68" />
-                  <mssgle:LineSegment
-                    End="94.5,120.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Sequence Container\load data to DW\Identify new school records"
+          TopLeft="168,199" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Sequence Container\load data to DW\Sort"
+          TopLeft="222,282" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Sequence Container\load data to DW\OLE DB Destination"
+          TopLeft="186,487" />
         <EdgeLayout
           Id="Package\Sequence Container\load data to DW.Paths[OLE DB Source Output]"
-          TopLeft="279,141">
+          TopLeft="275.75,141">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="112.5,45"
+              EndConnector="0,58"
               Start="0,0"
-              End="112.5,37.5">
+              End="0,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="108.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="108.5,22.5"
-                    Point2="112.5,22.5"
-                    Point3="112.5,26.5" />
-                  <mssgle:LineSegment
-                    End="112.5,37.5" />
+                    End="0,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4533,37 +4486,49 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Sequence Container\load data to DW.Paths[Lookup No Match Output]"
-          TopLeft="391.5,228">
+          TopLeft="271.75,241">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-14.5,44"
+              EndConnector="0,41"
               Start="0,0"
-              End="-14.5,36.5">
+              End="0,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="-4,22" />
-                  <mssgle:LineSegment
-                    End="-10.5,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-10.5,22"
-                    Point2="-14.5,22"
-                    Point3="-14.5,26" />
-                  <mssgle:LineSegment
-                    End="-14.5,36.5" />
+                    End="0,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-63.05638671875,27,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,10.9453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\load data to DW.Paths[Sort Output]"
+          TopLeft="271.25,324">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,163"
+              Start="0,0"
+              End="0,155.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,155.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,69.75,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4571,7 +4536,7 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\load data to DW\OLE DB Destination">
+    design-time-name="Package\Sequence Container\load data to DW\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4589,7 +4554,7 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -4599,7 +4564,7 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4607,7 +4572,7 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\load data to DW\OLE DB Source">
+    design-time-name="Package\Sequence Container\load data to DW\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
