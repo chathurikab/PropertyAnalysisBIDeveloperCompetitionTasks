@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="2_AUS_Transport"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{BFEB23E1-EE16-4EEC-8B0B-CDCEDF2D2B62}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{164AA6B4-9152-4FB8-8B1E-5A512DDA345A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -211,7 +211,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]};#{Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]};#{Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]};#{Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]};#{Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]};</property>
+                      name="ParameterMap">#{Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]};#{Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]};#{Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]};#{Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]};#{Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -239,7 +239,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="Suburb"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -256,7 +256,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="EntranceType"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -273,7 +273,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StopID"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -290,7 +290,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -459,55 +459,55 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedLength="100"
                           cachedName="Suburb"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetName]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="StreetName"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetName]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceType]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="EntranceType"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ExitNumber]"
                           cachedDataType="i4"
                           cachedName="ExitNumber"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExitNumber]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[ExitNumber]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StopID]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StopID"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetNumber]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StreetNumber"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetNumber]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostCode]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="State"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[State]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceLatitude]"
                           cachedDataType="numeric"
@@ -515,7 +515,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedPrecision="8"
                           cachedScale="6"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLatitude]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLatitude]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceLongitude]"
                           cachedDataType="numeric"
@@ -523,7 +523,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedPrecision="9"
                           cachedScale="6"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLongitude]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLongitude]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
                           cachedDataType="wstr"
@@ -537,7 +537,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedLength="100"
                           cachedName="StationName"
                           externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]" />
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StationName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -635,11 +635,11 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </outputs>
                 </component>
                 <component
-                  refId="Package\2_AUS_Transport\Load to DW\OLE DB Source"
+                  refId="Package\2_AUS_Transport\Load to DW\Staging DB"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="OLE DB Source"
+                  name="Staging DB"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -684,7 +684,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Connections[OleDbConnection]"
+                      refId="Package\2_AUS_Transport\Load to DW\Staging DB.Connections[OleDbConnection]"
                       connectionManagerID="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}:external"
                       connectionManagerRefId="Project.ConnectionManagers[LocalHost]"
                       description="The OLE DB runtime connection used to access the database."
@@ -692,263 +692,263 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]"
                           name="Suburb"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetName]"
                           name="StreetName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceType]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceType]"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]"
                           name="EntranceType"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLatitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLatitude]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceLatitude]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLatitude]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceLatitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLatitude]"
                           name="EntranceLatitude"
                           precision="8"
                           scale="6"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLongitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLongitude]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceLongitude]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLongitude]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceLongitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLongitude]"
                           name="EntranceLongitude"
                           precision="9"
                           scale="6"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[ExitNumber]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ExitNumber]"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExitNumber]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[ExitNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[ExitNumber]"
                           name="ExitNumber"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StopID]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StopID]"
                           length="10"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]"
                           name="StopID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StationName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StationName]"
                           name="StationName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetNumber]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
                           length="10"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetNumber]"
                           name="StreetNumber"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
                           length="10"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]"
                           name="PostCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[State]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[State]"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[State]"
                           name="State"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
                           dataType="wstr"
                           length="100"
                           name="Suburb" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
                           dataType="wstr"
                           length="100"
                           name="StreetName" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceType]"
                           dataType="wstr"
                           length="100"
                           name="EntranceType" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceLatitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceLatitude]"
                           dataType="numeric"
                           name="EntranceLatitude"
                           precision="8"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceLongitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceLongitude]"
                           dataType="numeric"
                           name="EntranceLongitude"
                           precision="9"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[ExitNumber]"
                           dataType="i4"
                           name="ExitNumber" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StopID]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StopID]"
                           dataType="wstr"
                           length="10"
                           name="StopID" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
                           dataType="wstr"
                           length="100"
                           name="StationName" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
                           dataType="wstr"
                           length="10"
                           name="StreetNumber" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
                           dataType="wstr"
                           length="10"
                           name="PostCode" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[State]"
                           dataType="wstr"
                           length="100"
                           name="State" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StationName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StationName]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StationName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StationName]"
                           name="StationName" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
                           name="StreetNumber" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[Suburb]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[Suburb]"
                           name="Suburb" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StreetName]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StreetName]"
                           name="StreetName" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[PostCode]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[PostCode]"
                           name="PostCode" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[State]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[State]"
                           name="State" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceType]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceType]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceType]"
                           name="EntranceType" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceLatitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceLatitude]"
                           dataType="numeric"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceLatitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceLatitude]"
                           name="EntranceLatitude"
                           precision="8"
                           scale="6" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceLongitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceLongitude]"
                           dataType="numeric"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceLongitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceLongitude]"
                           name="EntranceLongitude"
                           precision="9"
                           scale="6" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ExitNumber]"
                           dataType="i4"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ExitNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ExitNumber]"
                           name="ExitNumber" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StopID]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StopID]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StopID]"
                           name="StopID" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -972,7 +972,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   refId="Package\2_AUS_Transport\Load to DW.Paths[OLE DB Source Output]"
                   endId="Package\2_AUS_Transport\Load to DW\Define Country.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
-                  startId="Package\2_AUS_Transport\Load to DW\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -3046,101 +3046,97 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <NodeLayout
           Size="171,42"
           Id="Package\2_AUS_Transport\Load to DW\OLE DB Destination"
-          TopLeft="272,360" />
+          TopLeft="505,323" />
         <NodeLayout
           Size="236,42"
           Id="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries"
-          TopLeft="240,257" />
+          TopLeft="475,228" />
         <NodeLayout
           Size="149,42"
           Id="Package\2_AUS_Transport\Load to DW\Define Country"
-          TopLeft="522,171" />
+          TopLeft="522,157" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\2_AUS_Transport\Load to DW\OLE DB Source"
+          Size="131,42"
+          Id="Package\2_AUS_Transport\Load to DW\Staging DB"
           TopLeft="523,78" />
         <EdgeLayout
           Id="Package\2_AUS_Transport\Load to DW.Paths[Lookup No Match Output]"
-          TopLeft="357.75,299">
+          TopLeft="591.75,270">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,53.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,20.9453125,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,16.9453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\2_AUS_Transport\Load to DW.Paths[Derived Column Output]"
-          TopLeft="596.5,213">
+          TopLeft="594.75,199">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-238.5,44"
+              EndConnector="0,29"
               Start="0,0"
-              End="-238.5,36.5">
+              End="0,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="-4,22" />
-                  <mssgle:LineSegment
-                    End="-234.5,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-234.5,22"
-                    Point2="-238.5,22"
-                    Point3="-238.5,26" />
-                  <mssgle:LineSegment
-                    End="-238.5,36.5" />
+                    End="0,21.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\2_AUS_Transport\Load to DW.Paths[OLE DB Source Output]"
-          TopLeft="597.25,120">
+          TopLeft="588.5,120">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="8,37"
               Start="0,0"
-              End="0,43.5">
+              End="8,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="4,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,18.5"
+                    Point2="8,18.5"
+                    Point3="8,22.5" />
+                  <mssgle:LineSegment
+                    End="8,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3183,7 +3179,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\2_AUS_Transport\Load to DW\OLE DB Source">
+    design-time-name="Package\2_AUS_Transport\Load to DW\Staging DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3203,11 +3199,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <NodeLayout
           Size="163,42"
           Id="Package\2_AUS_Transport\To get data to staging db\Script Component"
-          TopLeft="296,314" />
+          TopLeft="300,285" />
         <NodeLayout
           Size="171,42"
           Id="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination"
-          TopLeft="285,425" />
+          TopLeft="291,363" />
         <NodeLayout
           Size="139,42"
           Id="Package\2_AUS_Transport\To get data to staging db\Excel Source"
@@ -3215,21 +3211,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <NodeLayout
           Size="156,42"
           Id="Package\2_AUS_Transport\To get data to staging db\Data Conversion"
-          TopLeft="305,221" />
+          TopLeft="305,208" />
         <EdgeLayout
           Id="Package\2_AUS_Transport\To get data to staging db.Paths[Output 0]"
-          TopLeft="374,356">
+          TopLeft="379,327">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69"
+              EndConnector="0,36"
               Start="0,0"
-              End="0,61.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3244,14 +3240,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="0,37"
               Start="0,0"
-              End="0,42.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3262,18 +3258,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\2_AUS_Transport\To get data to staging db.Paths[Data Conversion Output]"
-          TopLeft="380.25,263">
+          TopLeft="382.25,250">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,43.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

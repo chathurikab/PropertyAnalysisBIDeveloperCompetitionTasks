@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="2_AUS_Transport"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{F57E2007-224A-43CE-BD15-0E8DE2A87D67}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{164AA6B4-9152-4FB8-8B1E-5A512DDA345A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -40,17 +40,17 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Sequence Container"
+      DTS:refId="Package\2_AUS_Transport"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{C942EFE8-ACD3-4962-BCC8-B4D3D1C5A486}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Sequence Container">
+      DTS:ObjectName="2_AUS_Transport">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Execute SQL Task"
+          DTS:refId="Package\2_AUS_Transport\Execute SQL Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{49FA38BB-882E-4D0B-B639-4F33FDDFDBAB}"
@@ -67,7 +67,7 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\Load to DW"
+          DTS:refId="Package\2_AUS_Transport\Load to DW"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{6C4B6687-BD87-4DBB-B887-4C7FEF839C9F}"
@@ -81,7 +81,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Sequence Container\Load to DW\Define Country"
+                  refId="Package\2_AUS_Transport\Load to DW\Define Country"
                   componentClassID="Microsoft.DerivedColumn"
                   contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -89,7 +89,7 @@
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Sequence Container\Load to DW\Define Country.Inputs[Derived Column Input]"
+                      refId="Package\2_AUS_Transport\Load to DW\Define Country.Inputs[Derived Column Input]"
                       description="Input to the Derived Column Transformation"
                       name="Derived Column Input">
                       <externalMetadataColumns />
@@ -97,19 +97,19 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output]"
                       description="Default Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       name="Derived Column Output"
-                      synchronousInputId="Package\Sequence Container\Load to DW\Define Country.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\2_AUS_Transport\Load to DW\Define Country.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]"
+                          refId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]"
                           dataType="wstr"
                           errorOrTruncationOperation="Computation"
                           errorRowDisposition="FailComponent"
                           length="9"
-                          lineageId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]"
                           name="Country"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -130,23 +130,23 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Error Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Error Output]"
                       description="Error Output of the Derived Column Transformation"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Derived Column Error Output"
-                      synchronousInputId="Package\Sequence Container\Load to DW\Define Country.Inputs[Derived Column Input]">
+                      synchronousInputId="Package\2_AUS_Transport\Load to DW\Define Country.Inputs[Derived Column Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          refId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -155,7 +155,7 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries"
+                  refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
                   description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -211,7 +211,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]};#{Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]};#{Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]};#{Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]};#{Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]};</property>
+                      name="ParameterMap">#{Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]};#{Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]};#{Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]};#{Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]};#{Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -223,7 +223,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Connections[OleDbConnection]"
+                      refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
                       connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
                       description="Connection manager used to access lookup data."
@@ -231,15 +231,15 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]"
+                      refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]"
                       name="Lookup Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[Suburb]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="Suburb"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -252,11 +252,11 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[EntranceType]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="EntranceType"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -269,11 +269,11 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[StopID]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StopID"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -286,11 +286,11 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[PostCode]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -303,11 +303,11 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           </properties>
                         </inputColumn>
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[Country]"
+                          refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input].Columns[Country]"
                           cachedDataType="wstr"
                           cachedLength="9"
                           cachedName="Country"
-                          lineageId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]">
+                          lineageId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -325,18 +325,18 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup Match Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup Match Output]"
                       errorOrTruncationOperation="Lookup"
                       exclusionGroup="1"
                       name="Lookup Match Output"
-                      synchronousInputId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]">
+                      synchronousInputId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup Match Output].Columns[StopId]"
+                          refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup Match Output].Columns[StopId]"
                           dataType="wstr"
                           errorOrTruncationOperation="Copy Column"
                           length="10"
-                          lineageId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup Match Output].Columns[StopId]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup Match Output].Columns[StopId]"
                           name="StopId"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -350,30 +350,30 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup No Match Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup No Match Output]"
                       description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                       exclusionGroup="1"
                       name="Lookup No Match Output"
-                      synchronousInputId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]">
+                      synchronousInputId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]">
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Lookup Error Output"
-                      synchronousInputId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]">
+                      synchronousInputId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          refId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -382,7 +382,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence Container\Load to DW\OLE DB Destination"
+                  refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -439,7 +439,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence Container\Load to DW\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
                       connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -447,163 +447,163 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Suburb]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="Suburb"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetName]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetName]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="StreetName"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetName]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceType]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="EntranceType"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ExitNumber]"
                           cachedDataType="i4"
                           cachedName="ExitNumber"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExitNumber]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[ExitNumber]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StopID]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StopID"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetNumber]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StreetNumber"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetNumber]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostCode]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="State"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[State]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceLatitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceLatitude]"
                           cachedDataType="numeric"
                           cachedName="EntranceLatitude"
                           cachedPrecision="8"
                           cachedScale="6"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLatitude]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLatitude]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceLongitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceLongitude]"
                           cachedDataType="numeric"
                           cachedName="EntranceLongitude"
                           cachedPrecision="9"
                           cachedScale="6"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLongitude]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLongitude]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
                           cachedDataType="wstr"
                           cachedLength="9"
                           cachedName="Country"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                          lineageId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output].Columns[Country]" />
                         <inputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StationName]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StationName]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="StationName"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StationName]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
                           dataType="wstr"
                           length="100"
                           name="StreetName" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
                           dataType="wstr"
                           length="100"
                           name="EntranceType" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
                           dataType="i4"
                           name="ExitNumber" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
                           dataType="wstr"
                           length="10"
                           name="StopId" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
                           dataType="wstr"
                           length="10"
                           name="StreetNumber" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
                           dataType="wstr"
                           length="100"
                           name="Suburb" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
                           dataType="wstr"
                           length="10"
                           name="PostCode" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                           dataType="wstr"
                           length="100"
                           name="State" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
                           dataType="numeric"
                           name="Latitude"
                           precision="8"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
                           dataType="numeric"
                           name="Longitude"
                           precision="9"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                           dataType="wstr"
                           length="100"
                           name="Country" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
                           dataType="wstr"
                           length="100"
                           name="Name" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransportId]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransportId]"
                           dataType="i4"
                           name="TransportId" />
                       </externalMetadataColumns>
@@ -611,22 +611,22 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -635,11 +635,11 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence Container\Load to DW\OLE DB Source"
+                  refId="Package\2_AUS_Transport\Load to DW\Staging DB"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="OLE DB Source"
+                  name="Staging DB"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -684,7 +684,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence Container\Load to DW\OLE DB Source.Connections[OleDbConnection]"
+                      refId="Package\2_AUS_Transport\Load to DW\Staging DB.Connections[OleDbConnection]"
                       connectionManagerID="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}:external"
                       connectionManagerRefId="Project.ConnectionManagers[LocalHost]"
                       description="The OLE DB runtime connection used to access the database."
@@ -692,263 +692,263 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[Suburb]"
                           name="Suburb"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetName]"
                           name="StreetName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceType]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceType]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceType]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceType]"
                           name="EntranceType"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLatitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLatitude]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceLatitude]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLatitude]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceLatitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLatitude]"
                           name="EntranceLatitude"
                           precision="8"
                           scale="6"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLongitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLongitude]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceLongitude]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[EntranceLongitude]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceLongitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[EntranceLongitude]"
                           name="EntranceLongitude"
                           precision="9"
                           scale="6"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[ExitNumber]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ExitNumber]"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[ExitNumber]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[ExitNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[ExitNumber]"
                           name="ExitNumber"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StopID]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StopID]"
                           length="10"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StopID]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StopID]"
                           name="StopID"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StationName]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StationName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StationName]"
                           name="StationName"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetNumber]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
                           length="10"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StreetNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[StreetNumber]"
                           name="StreetNumber"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
                           length="10"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[PostCode]"
                           name="PostCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[State]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[State]"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].Columns[State]"
                           name="State"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
                           dataType="wstr"
                           length="100"
                           name="Suburb" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StreetName]"
                           dataType="wstr"
                           length="100"
                           name="StreetName" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceType]"
                           dataType="wstr"
                           length="100"
                           name="EntranceType" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceLatitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceLatitude]"
                           dataType="numeric"
                           name="EntranceLatitude"
                           precision="8"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EntranceLongitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[EntranceLongitude]"
                           dataType="numeric"
                           name="EntranceLongitude"
                           precision="9"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[ExitNumber]"
                           dataType="i4"
                           name="ExitNumber" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StopID]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StopID]"
                           dataType="wstr"
                           length="10"
                           name="StopID" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StationName]"
                           dataType="wstr"
                           length="100"
                           name="StationName" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[StreetNumber]"
                           dataType="wstr"
                           length="10"
                           name="StreetNumber" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
                           dataType="wstr"
                           length="10"
                           name="PostCode" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output].ExternalColumns[State]"
                           dataType="wstr"
                           length="100"
                           name="State" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StationName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StationName]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StationName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StationName]"
                           name="StationName" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StreetNumber]"
                           name="StreetNumber" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[Suburb]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[Suburb]"
                           name="Suburb" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetName]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StreetName]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StreetName]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StreetName]"
                           name="StreetName" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[PostCode]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[PostCode]"
                           name="PostCode" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[State]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[State]"
                           name="State" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceType]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceType]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceType]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceType]"
                           name="EntranceType" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceLatitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceLatitude]"
                           dataType="numeric"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceLatitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceLatitude]"
                           name="EntranceLatitude"
                           precision="8"
                           scale="6" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceLongitude]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceLongitude]"
                           dataType="numeric"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EntranceLongitude]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[EntranceLongitude]"
                           name="EntranceLongitude"
                           precision="9"
                           scale="6" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ExitNumber]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ExitNumber]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ExitNumber]"
                           name="ExitNumber" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StopID]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StopID]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[StopID]"
                           name="StopID" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -959,32 +959,32 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
               </components>
               <paths>
                 <path
-                  refId="Package\Sequence Container\Load to DW.Paths[Derived Column Output]"
-                  endId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]"
+                  refId="Package\2_AUS_Transport\Load to DW.Paths[Derived Column Output]"
+                  endId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Inputs[Lookup Input]"
                   name="Derived Column Output"
-                  startId="Package\Sequence Container\Load to DW\Define Country.Outputs[Derived Column Output]" />
+                  startId="Package\2_AUS_Transport\Load to DW\Define Country.Outputs[Derived Column Output]" />
                 <path
-                  refId="Package\Sequence Container\Load to DW.Paths[Lookup No Match Output]"
-                  endId="Package\Sequence Container\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\2_AUS_Transport\Load to DW.Paths[Lookup No Match Output]"
+                  endId="Package\2_AUS_Transport\Load to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Lookup No Match Output"
-                  startId="Package\Sequence Container\Load to DW\Lookup for new Transport entries.Outputs[Lookup No Match Output]" />
+                  startId="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries.Outputs[Lookup No Match Output]" />
                 <path
-                  refId="Package\Sequence Container\Load to DW.Paths[OLE DB Source Output]"
-                  endId="Package\Sequence Container\Load to DW\Define Country.Inputs[Derived Column Input]"
+                  refId="Package\2_AUS_Transport\Load to DW.Paths[OLE DB Source Output]"
+                  endId="Package\2_AUS_Transport\Load to DW\Define Country.Inputs[Derived Column Input]"
                   name="OLE DB Source Output"
-                  startId="Package\Sequence Container\Load to DW\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\2_AUS_Transport\Load to DW\Staging DB.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Sequence Container\To get data to database"
+          DTS:refId="Package\2_AUS_Transport\To get data to staging db"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{83EC8660-46F0-4160-824C-B164A1DA9B52}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="To get data to database"
+          DTS:ObjectName="To get data to staging db"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -992,7 +992,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
               version="1">
               <components>
                 <component
-                  refId="Package\Sequence Container\To get data to database\Data Conversion"
+                  refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion"
                   componentClassID="Microsoft.DataConvert"
                   contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
                   description="Data Conversion"
@@ -1000,38 +1000,38 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   usesDispositions="true">
                   <inputs>
                     <input
-                      refId="Package\Sequence Container\To get data to database\Data Conversion.Inputs[Data Conversion Input]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Inputs[Data Conversion Input]"
                       name="Data Conversion Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\Data Conversion.Inputs[Data Conversion Input].Columns[LAT]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Inputs[Data Conversion Input].Columns[LAT]"
                           cachedDataType="r8"
                           cachedName="LAT"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[LAT]" />
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LAT]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\Data Conversion.Inputs[Data Conversion Input].Columns[LONG]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Inputs[Data Conversion Input].Columns[LONG]"
                           cachedDataType="r8"
                           cachedName="LONG"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[LONG]" />
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LONG]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output]"
                       exclusionGroup="1"
                       name="Data Conversion Output"
-                      synchronousInputId="Package\Sequence Container\To get data to database\Data Conversion.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]"
                           name="Latitude"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1039,7 +1039,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[LAT]}</property>
+                              name="SourceInputColumnLineageID">#{Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LAT]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1047,13 +1047,13 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="50"
-                          lineageId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]"
                           name="Longitude"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -1061,7 +1061,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
-                              name="SourceInputColumnLineageID">#{Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[LONG]}</property>
+                              name="SourceInputColumnLineageID">#{Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LONG]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1072,22 +1072,22 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Error Output]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Data Conversion Error Output"
-                      synchronousInputId="Package\Sequence Container\To get data to database\Data Conversion.Inputs[Data Conversion Input]">
+                      synchronousInputId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1096,7 +1096,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence Container\To get data to database\Excel Source"
+                  refId="Package\2_AUS_Transport\To get data to staging db\Excel Source"
                   componentClassID="Microsoft.ExcelSource"
                   contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Excel Source"
@@ -1137,7 +1137,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence Container\To get data to database\Excel Source.Connections[OleDbConnection]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
                       connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                       description="The OLE DB runtime connection used to access the database."
@@ -1145,209 +1145,209 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output]"
                       name="Excel Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Train_Station]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Train_Station]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Train_Station]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Train_Station]"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Train_Station]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Train_Station]"
                           name="Train_Station"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Street_Name]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Street_Name]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Street_Name]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Street_Name]"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Street_Name]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Street_Name]"
                           name="Street_Name"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Street_Type]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Street_Type]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Street_Type]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Street_Type]"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Street_Type]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Street_Type]"
                           name="Street_Type"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Entrance_Type]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Entrance_Type]"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]"
                           name="Entrance_Type"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[LAT]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LAT]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[LAT]"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[LAT]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[LAT]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LAT]"
                           name="LAT"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[LONG]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LONG]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[LONG]"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[LONG]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[LONG]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LONG]"
                           name="LONG"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Exit_Number]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Exit_Number]"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]"
                           name="Exit_Number"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[StateCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StateCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[StateCode]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[StateCode]"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[StateCode]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StateCode]"
                           name="StateCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StopID]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[StopID]"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[StopID]"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[StopID]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StopID]"
                           name="StopID"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Train_Station]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Train_Station]"
                           dataType="wstr"
                           length="255"
                           name="Train_Station" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Street_Name]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Street_Name]"
                           dataType="wstr"
                           length="255"
                           name="Street_Name" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Street_Type]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Street_Type]"
                           dataType="wstr"
                           length="255"
                           name="Street_Type" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Entrance_Type]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Entrance_Type]"
                           dataType="wstr"
                           length="255"
                           name="Entrance_Type" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[LAT]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[LAT]"
                           dataType="r8"
                           name="LAT" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[LONG]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[LONG]"
                           dataType="r8"
                           name="LONG" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[Exit_Number]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[Exit_Number]"
                           dataType="wstr"
                           length="255"
                           name="Exit_Number" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[StateCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[StateCode]"
                           dataType="wstr"
                           length="255"
                           name="StateCode" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].ExternalColumns[StopID]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].ExternalColumns[StopID]"
                           dataType="r8"
                           name="StopID" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output]"
                       isErrorOut="true"
                       name="Excel Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[StateCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[StateCode]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[StateCode]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[StateCode]"
                           name="StateCode" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[StopID]"
                           dataType="r8"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[StopID]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[StopID]"
                           name="StopID" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Train_Station]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Train_Station]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Train_Station]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Train_Station]"
                           name="Train_Station" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Street_Name]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Street_Name]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Street_Name]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Street_Name]"
                           name="Street_Name" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Street_Type]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Street_Type]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Street_Type]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Street_Type]"
                           name="Street_Type" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Entrance_Type]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Entrance_Type]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Entrance_Type]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Entrance_Type]"
                           name="Entrance_Type" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[LAT]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[LAT]"
                           dataType="r8"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[LAT]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[LAT]"
                           name="LAT" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[LONG]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[LONG]"
                           dataType="r8"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[LONG]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[LONG]"
                           name="LONG" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Exit_Number]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Exit_Number]"
                           dataType="wstr"
                           length="255"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[Exit_Number]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[Exit_Number]"
                           name="Exit_Number" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1356,7 +1356,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence Container\To get data to database\OLE DB Destination"
+                  refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -1413,7 +1413,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Sequence Container\To get data to database\OLE DB Destination.Connections[OleDbConnection]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
                       connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
                       description="The OLE DB runtime connection used to access the database."
@@ -1421,179 +1421,179 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StopID]"
                           cachedDataType="r8"
                           cachedName="StopID"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[StopID]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StopID]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Latitude]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Latitude]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Latitude"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
-                          lineageId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Longitude]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Longitude]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Longitude"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
-                          lineageId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetNumber]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StreetNumber"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[StreetNumber]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[StreetNumber]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetName]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetName]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="StreetName"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[StreetName]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[StreetName]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Suburb]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Suburb]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="Suburb"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[Suburb]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[Suburb]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostCode]"
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[PostCode]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[PostCode]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[State]"
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="State"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[State]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[State]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Entrance_Type]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Entrance_Type]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Entrance_Type"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Exit_Number]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Exit_Number]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Exit_Number"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Country"
-                          externalMetadataColumnId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[Country]" />
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[Country]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
-                          dataType="i4"
-                          name="Id" />
-                        <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
                           dataType="wstr"
                           length="10"
                           name="StopId" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
                           dataType="wstr"
                           length="10"
                           name="StreetNumber" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetName]"
                           dataType="wstr"
                           length="100"
                           name="StreetName" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
                           dataType="wstr"
                           length="100"
                           name="Suburb" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
                           dataType="wstr"
                           length="10"
                           name="PostCode" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                           dataType="wstr"
                           length="100"
                           name="State" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
                           dataType="wstr"
                           length="100"
                           name="EntranceType" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
                           dataType="numeric"
                           name="Latitude"
                           precision="8"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
                           dataType="numeric"
                           name="Longitude"
                           precision="9"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
                           dataType="i4"
                           name="ExitNumber" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                           dataType="wstr"
                           length="100"
                           name="Country" />
                         <externalMetadataColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransportId]"
+                          dataType="i4"
+                          name="TransportId" />
+                        <externalMetadataColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
                           dataType="wstr"
                           length="100"
-                          name="StationName" />
+                          name="Name" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\To get data to database\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\To get data to database\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Sequence Container\To get data to database\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -1602,7 +1602,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Sequence Container\To get data to database\Script Component"
+                  refId="Package\2_AUS_Transport\To get data to staging db\Script Component"
                   componentClassID="Microsoft.ManagedComponentHost"
                   contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;12"
                   description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
@@ -2826,92 +2826,92 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                   </properties>
                   <inputs>
                     <input
-                      refId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0]"
                       hasSideEffects="true"
                       name="Input 0">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0].Columns[Latitude]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[Latitude]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Latitude"
-                          lineageId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]" />
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0].Columns[Longitude]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[Longitude]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="Longitude"
-                          lineageId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]" />
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0].Columns[Train_Station]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[Train_Station]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Train_Station"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Train_Station]" />
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Train_Station]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0].Columns[Entrance_Type]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[Entrance_Type]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Entrance_Type"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0].Columns[Exit_Number]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[Exit_Number]"
                           cachedDataType="wstr"
                           cachedLength="255"
                           cachedName="Exit_Number"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]" />
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]" />
                         <inputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0].Columns[StopID]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[StopID]"
                           cachedDataType="r8"
                           cachedName="StopID"
-                          lineageId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output].Columns[StopID]" />
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StopID]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0]"
+                      refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0]"
                       name="Output 0"
-                      synchronousInputId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0]">
+                      synchronousInputId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[StreetNumber]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[StreetNumber]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[StreetNumber]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[StreetNumber]"
                           name="StreetNumber" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[StreetName]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[StreetName]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[StreetName]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[StreetName]"
                           name="StreetName" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[Suburb]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[Suburb]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[Suburb]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[Suburb]"
                           name="Suburb" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[PostCode]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[PostCode]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[PostCode]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[PostCode]"
                           name="PostCode" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[State]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[State]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[State]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[State]"
                           name="State" />
                         <outputColumn
-                          refId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[Country]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[Country]"
                           dataType="wstr"
                           length="50"
-                          lineageId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0].Columns[Country]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[Country]"
                           name="Country" />
                       </outputColumns>
                       <externalMetadataColumns />
@@ -2921,20 +2921,20 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
               </components>
               <paths>
                 <path
-                  refId="Package\Sequence Container\To get data to database.Paths[Data Conversion Output]"
-                  endId="Package\Sequence Container\To get data to database\Script Component.Inputs[Input 0]"
+                  refId="Package\2_AUS_Transport\To get data to staging db.Paths[Data Conversion Output]"
+                  endId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0]"
                   name="Data Conversion Output"
-                  startId="Package\Sequence Container\To get data to database\Data Conversion.Outputs[Data Conversion Output]" />
+                  startId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
-                  refId="Package\Sequence Container\To get data to database.Paths[Excel Source Output]"
-                  endId="Package\Sequence Container\To get data to database\Data Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\2_AUS_Transport\To get data to staging db.Paths[Excel Source Output]"
+                  endId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Inputs[Data Conversion Input]"
                   name="Excel Source Output"
-                  startId="Package\Sequence Container\To get data to database\Excel Source.Outputs[Excel Source Output]" />
+                  startId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output]" />
                 <path
-                  refId="Package\Sequence Container\To get data to database.Paths[Output 0]"
-                  endId="Package\Sequence Container\To get data to database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\2_AUS_Transport\To get data to staging db.Paths[Output 0]"
+                  endId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Output 0"
-                  startId="Package\Sequence Container\To get data to database\Script Component.Outputs[Output 0]" />
+                  startId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2942,21 +2942,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\2_AUS_Transport.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{209CC8DF-8225-4B0F-B20D-BC0F75826C1B}"
-          DTS:From="Package\Sequence Container\Execute SQL Task"
+          DTS:From="Package\2_AUS_Transport\Execute SQL Task"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\Sequence Container\To get data to database" />
+          DTS:To="Package\2_AUS_Transport\To get data to staging db" />
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:refId="Package\2_AUS_Transport.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
           DTS:DTSID="{B10B7281-BA5C-4E68-A0FD-B291CE1CA707}"
-          DTS:From="Package\Sequence Container\To get data to database"
+          DTS:From="Package\2_AUS_Transport\To get data to staging db"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
-          DTS:To="Package\Sequence Container\Load to DW" />
+          DTS:To="Package\2_AUS_Transport\Load to DW" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -2974,42 +2974,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="163,42"
-          Id="Package\Sequence Container\Execute SQL Task"
+          Id="Package\2_AUS_Transport\Execute SQL Task"
           TopLeft="85.5,32" />
         <NodeLayout
           Size="134,42"
-          Id="Package\Sequence Container\Load to DW"
-          TopLeft="254,266" />
+          Id="Package\2_AUS_Transport\Load to DW"
+          TopLeft="100,218" />
         <NodeLayout
-          Size="192,42"
-          Id="Package\Sequence Container\To get data to database"
-          TopLeft="180.5,187" />
+          Size="199,42"
+          Id="Package\2_AUS_Transport\To get data to staging db"
+          TopLeft="73.5,120" />
         <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
-          TopLeft="167,74">
+          Id="Package\2_AUS_Transport.PrecedenceConstraints[Constraint]"
+          TopLeft="170,74">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.5,113"
+              EndConnector="0,46"
               Start="0,0"
-              End="109.5,105.5">
+              End="0,38.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,52.5"
-                    Point2="0,56.5"
-                    Point3="4,56.5" />
-                  <mssgle:LineSegment
-                    End="105.5,56.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="105.5,56.5"
-                    Point2="109.5,56.5"
-                    Point3="109.5,60.5" />
-                  <mssgle:LineSegment
-                    End="109.5,105.5" />
+                    End="0,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3019,31 +3007,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="276.5,229">
+          Id="Package\2_AUS_Transport.PrecedenceConstraints[Constraint 1]"
+          TopLeft="170,162">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="44.5,37"
+              EndConnector="0,56"
               Start="0,0"
-              End="44.5,29.5">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
-                  <mssgle:LineSegment
-                    End="40.5,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="40.5,18.5"
-                    Point2="44.5,18.5"
-                    Point3="44.5,22.5" />
-                  <mssgle:LineSegment
-                    End="44.5,29.5" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3055,84 +3031,72 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="419,363"
-          Size="419,406"
-          Id="Package\Sequence Container"
+          PanelSize="317,305"
+          Size="317,348"
+          Id="Package\2_AUS_Transport"
           TopLeft="166,58" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Sequence Container\Load to DW">
+    design-time-name="Package\2_AUS_Transport\Load to DW">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171,42"
-          Id="Package\Sequence Container\Load to DW\OLE DB Destination"
-          TopLeft="272,360" />
+          Id="Package\2_AUS_Transport\Load to DW\OLE DB Destination"
+          TopLeft="505,323" />
         <NodeLayout
           Size="236,42"
-          Id="Package\Sequence Container\Load to DW\Lookup for new Transport entries"
-          TopLeft="240,257" />
+          Id="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries"
+          TopLeft="475,228" />
         <NodeLayout
           Size="149,42"
-          Id="Package\Sequence Container\Load to DW\Define Country"
-          TopLeft="522,171" />
+          Id="Package\2_AUS_Transport\Load to DW\Define Country"
+          TopLeft="522,157" />
         <NodeLayout
-          Size="150,42"
-          Id="Package\Sequence Container\Load to DW\OLE DB Source"
+          Size="131,42"
+          Id="Package\2_AUS_Transport\Load to DW\Staging DB"
           TopLeft="523,78" />
         <EdgeLayout
-          Id="Package\Sequence Container\Load to DW.Paths[Lookup No Match Output]"
-          TopLeft="357.75,299">
+          Id="Package\2_AUS_Transport\Load to DW.Paths[Lookup No Match Output]"
+          TopLeft="591.75,270">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,61"
+              EndConnector="0,53"
               Start="0,0"
-              End="0,53.5">
+              End="0,45.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.5" />
+                    End="0,45.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,20.9453125,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,16.9453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\Load to DW.Paths[Derived Column Output]"
-          TopLeft="596.5,213">
+          Id="Package\2_AUS_Transport\Load to DW.Paths[Derived Column Output]"
+          TopLeft="594.75,199">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-238.5,44"
+              EndConnector="0,29"
               Start="0,0"
-              End="-238.5,36.5">
+              End="0,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="-4,22" />
-                  <mssgle:LineSegment
-                    End="-234.5,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-234.5,22"
-                    Point2="-238.5,22"
-                    Point3="-238.5,26" />
-                  <mssgle:LineSegment
-                    End="-238.5,36.5" />
+                    End="0,21.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3142,19 +3106,31 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\Load to DW.Paths[OLE DB Source Output]"
-          TopLeft="597.25,120">
+          Id="Package\2_AUS_Transport\Load to DW.Paths[OLE DB Source Output]"
+          TopLeft="588.5,120">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="8,37"
               Start="0,0"
-              End="0,43.5">
+              End="8,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="4,18.5" />
+                  <mssgle:LineSegment
+                    End="4,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,18.5"
+                    Point2="8,18.5"
+                    Point3="8,22.5" />
+                  <mssgle:LineSegment
+                    End="8,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3167,7 +3143,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Load to DW\OLE DB Destination">
+    design-time-name="Package\2_AUS_Transport\Load to DW\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3180,7 +3156,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Load to DW\Lookup for new Transport entries">
+    design-time-name="Package\2_AUS_Transport\Load to DW\Lookup for new Transport entries">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -3203,7 +3179,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\Load to DW\OLE DB Source">
+    design-time-name="Package\2_AUS_Transport\Load to DW\Staging DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3216,40 +3192,40 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Sequence Container\To get data to database">
+    design-time-name="Package\2_AUS_Transport\To get data to staging db">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Sequence Container\To get data to database\OLE DB Destination"
-          TopLeft="285,425" />
-        <NodeLayout
           Size="163,42"
-          Id="Package\Sequence Container\To get data to database\Script Component"
-          TopLeft="296,314" />
+          Id="Package\2_AUS_Transport\To get data to staging db\Script Component"
+          TopLeft="300,285" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination"
+          TopLeft="291,363" />
         <NodeLayout
           Size="139,42"
-          Id="Package\Sequence Container\To get data to database\Excel Source"
-          TopLeft="274,124" />
+          Id="Package\2_AUS_Transport\To get data to staging db\Excel Source"
+          TopLeft="309,129" />
         <NodeLayout
           Size="156,42"
-          Id="Package\Sequence Container\To get data to database\Data Conversion"
-          TopLeft="305,221" />
+          Id="Package\2_AUS_Transport\To get data to staging db\Data Conversion"
+          TopLeft="305,208" />
         <EdgeLayout
-          Id="Package\Sequence Container\To get data to database.Paths[Output 0]"
-          TopLeft="374,356">
+          Id="Package\2_AUS_Transport\To get data to staging db.Paths[Output 0]"
+          TopLeft="379,327">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69"
+              EndConnector="0,36"
               Start="0,0"
-              End="0,61.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3259,31 +3235,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\To get data to database.Paths[Excel Source Output]"
-          TopLeft="343.5,166">
+          Id="Package\2_AUS_Transport\To get data to staging db.Paths[Excel Source Output]"
+          TopLeft="380.75,171">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="39.5,55"
+              EndConnector="0,37"
               Start="0,0"
-              End="39.5,47.5">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.5"
-                    Point2="0,27.5"
-                    Point3="4,27.5" />
-                  <mssgle:LineSegment
-                    End="35.5,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.5,27.5"
-                    Point2="39.5,27.5"
-                    Point3="39.5,31.5" />
-                  <mssgle:LineSegment
-                    End="39.5,47.5" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3293,19 +3257,19 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Sequence Container\To get data to database.Paths[Data Conversion Output]"
-          TopLeft="380.25,263">
+          Id="Package\2_AUS_Transport\To get data to staging db.Paths[Data Conversion Output]"
+          TopLeft="382.25,250">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,43.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3318,7 +3282,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\To get data to database\OLE DB Destination">
+    design-time-name="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3331,7 +3295,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Sequence Container\To get data to database\Excel Source">
+    design-time-name="Package\2_AUS_Transport\To get data to staging db\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

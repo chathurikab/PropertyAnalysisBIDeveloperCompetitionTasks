@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="AUS_Property_median"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{B875E3A2-20F7-4A32-9475-65A597439481}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{AC9D0726-28D4-4E78-A34D-B00F45B40E15}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -586,37 +586,6 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Australia Property Median\Get data to Staging DB\Multicast"
-                  componentClassID="Microsoft.Multicast"
-                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
-                  name="Multicast">
-                  <inputs>
-                    <input
-                      refId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]"
-                      name="Multicast Input 1">
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Australia Property Median\Get data to Staging DB\Multicast.Outputs[Multicast Output 2]"
-                      deleteOutputOnPathDetached="true"
-                      name="Multicast Output 2"
-                      synchronousInputId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Australia Property Median\Get data to Staging DB\Multicast.Outputs[Multicast Output 1]"
-                      dangling="true"
-                      deleteOutputOnPathDetached="true"
-                      name="Multicast Output 1"
-                      synchronousInputId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -843,14 +812,9 @@
                   startId="Package\Australia Property Median\Get data to Staging DB\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
                   refId="Package\Australia Property Median\Get data to Staging DB.Paths[Excel Source Output]"
-                  endId="Package\Australia Property Median\Get data to Staging DB\Multicast.Inputs[Multicast Input 1]"
+                  endId="Package\Australia Property Median\Get data to Staging DB\Data Conversion.Inputs[Data Conversion Input]"
                   name="Excel Source Output"
                   startId="Package\Australia Property Median\Get data to Staging DB\Excel Source.Outputs[Excel Source Output]" />
-                <path
-                  refId="Package\Australia Property Median\Get data to Staging DB.Paths[Multicast Output 2]"
-                  endId="Package\Australia Property Median\Get data to Staging DB\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Multicast Output 2"
-                  startId="Package\Australia Property Median\Get data to Staging DB\Multicast.Outputs[Multicast Output 2]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -5303,18 +5267,49 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
                       <externalMetadataColumns />
                     </output>
                     <output
-                      refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 3]"
-                      deleteOutputOnPathDetached="true"
-                      name="Multicast Output 3"
-                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
                       refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 9]"
                       dangling="true"
                       deleteOutputOnPathDetached="true"
                       name="Multicast Output 9"
                       synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Australia Property Median\Load data to DW\Multicast 1"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast 1">
+                  <inputs>
+                    <input
+                      refId="Package\Australia Property Median\Load data to DW\Multicast 1.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast 1.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast 1.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast 1.Outputs[Multicast Output 2]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast 1.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Australia Property Median\Load data to DW\Multicast 1.Outputs[Multicast Output 3]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast 1.Inputs[Multicast Input 1]">
                       <externalMetadataColumns />
                     </output>
                   </outputs>
@@ -8942,15 +8937,20 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
                   name="Multicast Output 1"
                   startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 1]" />
                 <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 11]"
+                  endId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]"
+                  name="Multicast Output 1"
+                  startId="Package\Australia Property Median\Load data to DW\Multicast 1.Outputs[Multicast Output 1]" />
+                <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 2]"
                   endId="Package\Australia Property Median\Load data to DW\Lookup State.Inputs[Lookup Input]"
                   name="Multicast Output 2"
                   startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 2]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 3]"
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 21]"
                   endId="Package\Australia Property Median\Load data to DW\Lookup year and month.Inputs[Lookup Input]"
-                  name="Multicast Output 3"
-                  startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 3]" />
+                  name="Multicast Output 2"
+                  startId="Package\Australia Property Median\Load data to DW\Multicast 1.Outputs[Multicast Output 2]" />
                 <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 4]"
                   endId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]"
@@ -8978,7 +8978,7 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
                   startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 8]" />
                 <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[OLE DB Source Output]"
-                  endId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]"
+                  endId="Package\Australia Property Median\Load data to DW\Multicast 1.Inputs[Multicast Input 1]"
                   name="OLE DB Source Output"
                   startId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
@@ -8991,11 +8991,6 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
                   endId="Package\Australia Property Median\Load data to DW\Merge Join 2.Inputs[Merge Join Right Input]"
                   name="Sort Output"
                   startId="Package\Australia Property Median\Load data to DW\Sort 3.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output2]"
-                  endId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output]" />
                 <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output3]"
                   endId="Package\Australia Property Median\Load data to DW\Merge Join 3.Inputs[Merge Join Right Input]"
@@ -9021,6 +9016,11 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
                   endId="Package\Australia Property Median\Load data to DW\DimPeriod.Inputs[OLE DB Destination Input]"
                   name="Sort Output"
                   startId="Package\Australia Property Median\Load data to DW\Sort 7.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output2]"
+                  endId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -9061,18 +9061,18 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         <NodeLayout
           Size="163,42"
           Id="Package\Australia Property Median\Execute SQL Task"
-          TopLeft="81,50" />
+          TopLeft="25,18" />
         <NodeLayout
           Size="187,42"
           Id="Package\Australia Property Median\Get data to Staging DB"
-          TopLeft="105,122" />
+          TopLeft="49,90" />
         <NodeLayout
           Size="158,42"
           Id="Package\Australia Property Median\Load data to DW"
-          TopLeft="169,202" />
+          TopLeft="113,170" />
         <EdgeLayout
           Id="Package\Australia Property Median.PrecedenceConstraints[Constraint]"
-          TopLeft="162.5,92">
+          TopLeft="106.5,60">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9106,7 +9106,7 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median.PrecedenceConstraints[Constraint 1]"
-          TopLeft="198.5,164">
+          TopLeft="142.5,132">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9141,8 +9141,8 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="334,303"
-          Size="334,346"
+          PanelSize="290,251"
+          Size="290,294"
           Id="Package\Australia Property Median"
           TopLeft="60,60" />
       </GraphLayout>
@@ -9152,129 +9152,61 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
     design-time-name="Package\Australia Property Median\Get data to Staging DB">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="167,42"
           Id="Package\Australia Property Median\Get data to Staging DB\OLE DB Destination"
-          TopLeft="582,407" />
+          TopLeft="439,286" />
         <NodeLayout
           Size="139,42"
           Id="Package\Australia Property Median\Get data to Staging DB\Excel Source"
-          TopLeft="453,87" />
+          TopLeft="448,117" />
         <NodeLayout
           Size="156,42"
           Id="Package\Australia Property Median\Get data to Staging DB\Data Conversion"
-          TopLeft="788,301" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Australia Property Median\Get data to Staging DB\Multicast"
-          TopLeft="501,196" />
+          TopLeft="442,192" />
         <EdgeLayout
-          Id="Package\Australia Property Median\Get data to Staging DB.Paths[Multicast Output 2]"
-          TopLeft="561,238">
+          Id="Package\Australia Property Median\Get data to Staging DB.Paths[Data Conversion Output]"
+          TopLeft="521.25,234">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="305,63"
+              EndConnector="0,52"
               Start="0,0"
-              End="305,55.5">
+              End="0,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.5"
-                    Point2="0,31.5"
-                    Point3="4,31.5" />
-                  <mssgle:LineSegment
-                    End="301,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="301,31.5"
-                    Point2="305,31.5"
-                    Point3="305,35.5" />
-                  <mssgle:LineSegment
-                    End="305,55.5" />
+                    End="0,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Get data to Staging DB.Paths[Excel Source Output]"
-          TopLeft="522.5,129">
+          TopLeft="518.75,159">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38.5,67"
+              EndConnector="0,33"
               Start="0,0"
-              End="38.5,59.5">
+              End="0,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.5"
-                    Point2="0,33.5"
-                    Point3="4,33.5" />
-                  <mssgle:LineSegment
-                    End="34.5,33.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.5,33.5"
-                    Point2="38.5,33.5"
-                    Point3="38.5,37.5" />
-                  <mssgle:LineSegment
-                    End="38.5,59.5" />
+                    End="0,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Australia Property Median\Get data to Staging DB.Paths[Data Conversion Output]"
-          TopLeft="866,343">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-200.5,64"
-              Start="0,0"
-              End="-200.5,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28"
-                    Point2="0,32"
-                    Point3="-4,32" />
-                  <mssgle:LineSegment
-                    End="-196.5,32" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-196.5,32"
-                    Point2="-200.5,32"
-                    Point3="-200.5,36" />
-                  <mssgle:LineSegment
-                    End="-200.5,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9314,11 +9246,11 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         <NodeLayout
           Size="191,42"
           Id="Package\Australia Property Median\Load data to DW\Lookup year and month"
-          TopLeft="89,230" />
+          TopLeft="112,144" />
         <NodeLayout
           Size="150,42"
           Id="Package\Australia Property Median\Load data to DW\OLE DB Source"
-          TopLeft="846,72" />
+          TopLeft="847,47" />
         <NodeLayout
           Size="139,42"
           Id="Package\Australia Property Median\Load data to DW\Merge Join 4"
@@ -9342,7 +9274,7 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         <NodeLayout
           Size="122,42"
           Id="Package\Australia Property Median\Load data to DW\Lookup 1"
-          TopLeft="975,568" />
+          TopLeft="1282,462" />
         <NodeLayout
           Size="152,42"
           Id="Package\Australia Property Median\Load data to DW\Lookup Schools"
@@ -9358,11 +9290,11 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         <NodeLayout
           Size="171,42"
           Id="Package\Australia Property Median\Load data to DW\OLE DB Destination"
-          TopLeft="939,649" />
+          TopLeft="860,471" />
         <NodeLayout
           Size="120,42"
           Id="Package\Australia Property Median\Load data to DW\Multicast"
-          TopLeft="856,142" />
+          TopLeft="876,141" />
         <NodeLayout
           Size="139,42"
           Id="Package\Australia Property Median\Load data to DW\Merge Join 2"
@@ -9402,7 +9334,7 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         <NodeLayout
           Size="107,42"
           Id="Package\Australia Property Median\Load data to DW\Sort 7"
-          TopLeft="132,320" />
+          TopLeft="155,234" />
         <NodeLayout
           Size="107,42"
           Id="Package\Australia Property Median\Load data to DW\Sort 4"
@@ -9418,37 +9350,37 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         <NodeLayout
           Size="127,42"
           Id="Package\Australia Property Median\Load data to DW\DimPeriod"
-          TopLeft="120,415" />
+          TopLeft="140,304" />
         <NodeLayout
           Size="152,42"
           Id="Package\Australia Property Median\Load data to DW\AUS as Country"
           TopLeft="310,216" />
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 2]"
-          TopLeft="888,184">
+          TopLeft="908,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-310.5,32"
+              EndConnector="-330.5,33"
               Start="0,0"
-              End="-310.5,24.5">
+              End="-330.5,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.1304347826087" />
+                    End="0,7.47826086956522" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,7.1304347826087"
-                    Point2="0,11.1304347826087"
-                    Point3="-4,11.1304347826087" />
+                    Point1="0,7.47826086956522"
+                    Point2="0,11.4782608695652"
+                    Point3="-4,11.4782608695652" />
                   <mssgle:LineSegment
-                    End="-306.5,11.1304347826087" />
+                    End="-326.5,11.4782608695652" />
                   <mssgle:CubicBezierSegment
-                    Point1="-306.5,11.1304347826087"
-                    Point2="-310.5,11.1304347826087"
-                    Point3="-310.5,15.1304347826087" />
+                    Point1="-326.5,11.4782608695652"
+                    Point2="-330.5,11.4782608695652"
+                    Point3="-330.5,15.4782608695652" />
                   <mssgle:LineSegment
-                    End="-310.5,24.5" />
+                    End="-330.5,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9459,30 +9391,18 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 1]"
-          TopLeft="916,184">
+          TopLeft="935,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18,30"
+              EndConnector="0,31"
               Start="0,0"
-              End="18,22.5">
+              End="0,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11"
-                    Point2="0,15"
-                    Point3="4,15" />
-                  <mssgle:LineSegment
-                    End="14,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14,15"
-                    Point2="18,15"
-                    Point3="18,19" />
-                  <mssgle:LineSegment
-                    End="18,22.5" />
+                    End="0,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9519,26 +9439,26 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-463.5,136"
+              EndConnector="-156.5,30"
               Start="0,0"
-              End="-463.5,128.5">
+              End="-156.5,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,64" />
+                    End="0,11" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,64"
-                    Point2="0,68"
-                    Point3="-4,68" />
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="-4,15" />
                   <mssgle:LineSegment
-                    End="-459.5,68" />
+                    End="-152.5,15" />
                   <mssgle:CubicBezierSegment
-                    Point1="-459.5,68"
-                    Point2="-463.5,68"
-                    Point3="-463.5,72" />
+                    Point1="-152.5,15"
+                    Point2="-156.5,15"
+                    Point3="-156.5,19" />
                   <mssgle:LineSegment
-                    End="-463.5,128.5" />
+                    End="-156.5,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9637,43 +9557,43 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Lookup No Match Output1]"
-          TopLeft="1036,610">
+          TopLeft="1282,483">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-11.5,39"
+              EndConnector="-251,9"
               Start="0,0"
-              End="-11.5,31.5">
+              End="-243.5,9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
+                    End="-121.5,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="-4,19.5" />
+                    Point1="-121.5,0"
+                    Point2="-125.5,0"
+                    Point3="-125.5,4" />
                   <mssgle:LineSegment
-                    End="-7.5,19.5" />
+                    End="-125.5,5" />
                   <mssgle:CubicBezierSegment
-                    Point1="-7.5,19.5"
-                    Point2="-11.5,19.5"
-                    Point3="-11.5,23.5" />
+                    Point1="-125.5,5"
+                    Point2="-125.5,9"
+                    Point3="-129.5,9" />
                   <mssgle:LineSegment
-                    End="-11.5,31.5" />
+                    End="-243.5,9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-61.55638671875,24.5,111.6127734375,11.609375"
+              BoundingBox="-181.30638671875,-17.609375,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Lookup No Match Output]"
-          TopLeft="185,272">
+          TopLeft="208,186">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9911,18 +9831,18 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output7]"
-          TopLeft="184.5,362">
+          TopLeft="206,276">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53"
+              EndConnector="0,28"
               Start="0,0"
-              End="0,45.5">
+              End="0,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,45.5" />
+                    End="0,20.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10098,53 +10018,31 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[OLE DB Source Output]"
-          TopLeft="918.5,114">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 8]"
-          TopLeft="958,184">
+          TopLeft="978,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="535,26"
+              EndConnector="515,27"
               Start="0,0"
-              End="535,18.5">
+              End="515,19.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,2" />
+                    End="0,2.23076923076923" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,2"
-                    Point2="0,6"
-                    Point3="4,6" />
+                    Point1="0,2.23076923076923"
+                    Point2="0,6.23076923076923"
+                    Point3="4,6.23076923076923" />
                   <mssgle:LineSegment
-                    End="531,6" />
+                    End="511,6.23076923076923" />
                   <mssgle:CubicBezierSegment
-                    Point1="531,6"
-                    Point2="535,6"
-                    Point3="535,10" />
+                    Point1="511,6.23076923076923"
+                    Point2="515,6.23076923076923"
+                    Point3="515,10.2307692307692" />
                   <mssgle:LineSegment
-                    End="535,18.5" />
+                    End="515,19.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10155,30 +10053,30 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 7]"
-          TopLeft="930,184">
+          TopLeft="950,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="181.5,29"
+              EndConnector="161.5,30"
               Start="0,0"
-              End="181.5,21.5">
+              End="161.5,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.58490566037736" />
+                    End="0,9.0188679245283" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.58490566037736"
-                    Point2="0,12.5849056603774"
-                    Point3="4,12.5849056603774" />
+                    Point1="0,9.0188679245283"
+                    Point2="0,13.0188679245283"
+                    Point3="4,13.0188679245283" />
                   <mssgle:LineSegment
-                    End="177.5,12.5849056603774" />
+                    End="157.5,13.0188679245283" />
                   <mssgle:CubicBezierSegment
-                    Point1="177.5,12.5849056603774"
-                    Point2="181.5,12.5849056603774"
-                    Point3="181.5,16.5849056603774" />
+                    Point1="157.5,13.0188679245283"
+                    Point2="161.5,13.0188679245283"
+                    Point3="161.5,17.0188679245283" />
                   <mssgle:LineSegment
-                    End="181.5,21.5" />
+                    End="161.5,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10189,30 +10087,30 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 6]"
-          TopLeft="874,184">
+          TopLeft="894,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-488,32"
+              EndConnector="-508,33"
               Start="0,0"
-              End="-488,24.5">
+              End="-508,25.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,3.38461538461539" />
+                    End="0,3.61538461538462" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,3.38461538461539"
-                    Point2="0,7.38461538461539"
-                    Point3="-4,7.38461538461539" />
+                    Point1="0,3.61538461538462"
+                    Point2="0,7.61538461538462"
+                    Point3="-4,7.61538461538462" />
                   <mssgle:LineSegment
-                    End="-484,7.38461538461539" />
+                    End="-504,7.61538461538462" />
                   <mssgle:CubicBezierSegment
-                    Point1="-484,7.38461538461539"
-                    Point2="-488,7.38461538461539"
-                    Point3="-488,11.3846153846154" />
+                    Point1="-504,7.61538461538462"
+                    Point2="-508,7.61538461538462"
+                    Point3="-508,11.6153846153846" />
                   <mssgle:LineSegment
-                    End="-488,24.5" />
+                    End="-508,25.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10223,30 +10121,30 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 5]"
-          TopLeft="902,184">
+          TopLeft="922,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-162,30"
+              EndConnector="-182,31"
               Start="0,0"
-              End="-162,22.5">
+              End="-182,23.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.0188679245283" />
+                    End="0,9.45283018867925" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,9.0188679245283"
-                    Point2="0,13.0188679245283"
-                    Point3="-4,13.0188679245283" />
+                    Point1="0,9.45283018867925"
+                    Point2="0,13.4528301886792"
+                    Point3="-4,13.4528301886792" />
                   <mssgle:LineSegment
-                    End="-158,13.0188679245283" />
+                    End="-178,13.4528301886792" />
                   <mssgle:CubicBezierSegment
-                    Point1="-158,13.0188679245283"
-                    Point2="-162,13.0188679245283"
-                    Point3="-162,17.0188679245283" />
+                    Point1="-178,13.4528301886792"
+                    Point2="-182,13.4528301886792"
+                    Point3="-182,17.4528301886792" />
                   <mssgle:LineSegment
-                    End="-162,22.5" />
+                    End="-182,23.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10257,30 +10155,68 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 4]"
-          TopLeft="944,184">
+          TopLeft="964,183">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="362,27"
+              EndConnector="342,28"
               Start="0,0"
-              End="362,19.5">
+              End="342,20.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,5.39130434782609" />
+                    End="0,5.73913043478261" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,5.39130434782609"
-                    Point2="0,9.39130434782609"
-                    Point3="4,9.39130434782609" />
+                    Point1="0,5.73913043478261"
+                    Point2="0,9.73913043478261"
+                    Point3="4,9.73913043478261" />
                   <mssgle:LineSegment
-                    End="358,9.39130434782609" />
+                    End="338,9.73913043478261" />
                   <mssgle:CubicBezierSegment
-                    Point1="358,9.39130434782609"
-                    Point2="362,9.39130434782609"
-                    Point3="362,13.3913043478261" />
+                    Point1="338,9.73913043478261"
+                    Point2="342,9.73913043478261"
+                    Point3="342,13.7391304347826" />
                   <mssgle:LineSegment
-                    End="362,19.5" />
+                    End="342,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Australia Property Median\Load data to DW\Multicast 1"
+          TopLeft="702,113" />
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[OLE DB Source Output]"
+          TopLeft="922,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-155,24"
+              Start="0,0"
+              End="-155,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8"
+                    Point2="0,12"
+                    Point3="-4,12" />
+                  <mssgle:LineSegment
+                    End="-151,12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-151,12"
+                    Point2="-155,12"
+                    Point3="-155,16" />
+                  <mssgle:LineSegment
+                    End="-155,16.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10290,31 +10226,65 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 3]"
-          TopLeft="872.444444444444,184">
+          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 11]"
+          TopLeft="832,134">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-687.944444444444,46"
+              EndConnector="44,28"
               Start="0,0"
-              End="-687.944444444444,38.5">
+              End="36.5,28">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,5.89534883720931" />
+                    End="18,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,5.89534883720931"
-                    Point2="0,9.89534883720931"
-                    Point3="-4,9.89534883720931" />
+                    Point1="18,0"
+                    Point2="22,0"
+                    Point3="22,4" />
                   <mssgle:LineSegment
-                    End="-683.944444444444,9.89534883720931" />
+                    End="22,24" />
                   <mssgle:CubicBezierSegment
-                    Point1="-683.944444444444,9.89534883720931"
-                    Point2="-687.944444444444,9.89534883720931"
-                    Point3="-687.944444444444,13.8953488372093" />
+                    Point1="22,24"
+                    Point2="22,28"
+                    Point3="26,28" />
                   <mssgle:LineSegment
-                    End="-687.944444444444,38.5" />
+                    End="36.5,28" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 21]"
+          TopLeft="702,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-399,31"
+              Start="0,0"
+              End="-391.5,31">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-195.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-195.5,0"
+                    Point2="-199.5,0"
+                    Point3="-199.5,4" />
+                  <mssgle:LineSegment
+                    End="-199.5,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-199.5,27"
+                    Point2="-199.5,31"
+                    Point3="-203.5,31" />
+                  <mssgle:LineSegment
+                    End="-391.5,31" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{7577A609-6490-4708-BCED-9EB52FCB13C6}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{73B7A175-E4A4-420A-8FD1-B4FB413E6F33}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1468,7 +1468,7 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
         <NodeLayout
           Size="159,42"
           Id="Package\Data Flow Task\OLE DB Source 6"
-          TopLeft="244,433" />
+          TopLeft="615,341" />
         <NodeLayout
           Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
@@ -1480,19 +1480,19 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
         <NodeLayout
           Size="159,42"
           Id="Package\Data Flow Task\OLE DB Source 4"
-          TopLeft="788,179" />
+          TopLeft="419,343" />
         <NodeLayout
           Size="128,42"
           Id="Package\Data Flow Task\DimSchool"
-          TopLeft="317,555" />
+          TopLeft="629,413" />
         <NodeLayout
           Size="143,42"
           Id="Package\Data Flow Task\DimTransport"
-          TopLeft="1274,305" />
+          TopLeft="226,404" />
         <NodeLayout
           Size="127,42"
           Id="Package\Data Flow Task\DimPeriod"
-          TopLeft="430,300" />
+          TopLeft="431,267" />
         <NodeLayout
           Size="159,42"
           Id="Package\Data Flow Task\OLE DB Source 1"
@@ -1504,49 +1504,37 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
         <NodeLayout
           Size="131,42"
           Id="Package\Data Flow Task\DimSuburb"
-          TopLeft="806,296" />
+          TopLeft="430,417" />
         <NodeLayout
           Size="159,42"
           Id="Package\Data Flow Task\OLE DB Source 5"
-          TopLeft="1282,186" />
+          TopLeft="219,332" />
         <NodeLayout
           Size="134,42"
           Id="Package\Data Flow Task\DimCountry"
-          TopLeft="234,302" />
+          TopLeft="234,269" />
         <NodeLayout
           Size="122,42"
           Id="Package\Data Flow Task\DimState"
-          TopLeft="620,298" />
+          TopLeft="626,263" />
         <NodeLayout
           Size="115,42"
           Id="Package\Data Flow Task\DimCity"
-          TopLeft="58,302" />
+          TopLeft="63,270" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output5]"
-          TopLeft="1361.5,228">
+          TopLeft="298,374">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-16,77"
+              EndConnector="0,30"
               Start="0,0"
-              End="-16,69.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.5"
-                    Point2="0,38.5"
-                    Point3="-4,38.5" />
-                  <mssgle:LineSegment
-                    End="-12,38.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12,38.5"
-                    Point2="-16,38.5"
-                    Point3="-16,42.5" />
-                  <mssgle:LineSegment
-                    End="-16,69.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1557,18 +1545,18 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output4]"
-          TopLeft="869.5,221">
+          TopLeft="497,385">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,75"
+              EndConnector="0,32"
               Start="0,0"
-              End="0,67.5">
+              End="0,24.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,67.5" />
+                    End="0,24.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1579,18 +1567,18 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output3]"
-          TopLeft="683.75,224">
+          TopLeft="686.75,224">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,74"
+              EndConnector="0,39"
               Start="0,0"
-              End="0,66.5">
+              End="0,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.5" />
+                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1601,18 +1589,18 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output2]"
-          TopLeft="494,229">
+          TopLeft="494.5,229">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,63.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1627,14 +1615,14 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73"
+              EndConnector="0,40"
               Start="0,0"
-              End="0,65.5">
+              End="0,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.5" />
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1645,18 +1633,18 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="116.25,231">
+          TopLeft="118.75,231">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="0,39"
               Start="0,0"
-              End="0,63.5">
+              End="0,31.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1667,30 +1655,18 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output6]"
-          TopLeft="323.5,475">
+          TopLeft="693.75,383">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="57.5,80"
+              EndConnector="0,30"
               Start="0,0"
-              End="57.5,72.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36"
-                    Point2="0,40"
-                    Point3="4,40" />
-                  <mssgle:LineSegment
-                    End="53.5,40" />
-                  <mssgle:CubicBezierSegment
-                    Point1="53.5,40"
-                    Point2="57.5,40"
-                    Point3="57.5,44" />
-                  <mssgle:LineSegment
-                    End="57.5,72.5" />
+                    End="0,22.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

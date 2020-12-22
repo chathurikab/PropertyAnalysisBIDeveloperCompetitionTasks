@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="1_AUS_GeographicalArea"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{4E67C9EC-CBE7-4B37-859C-EC0A683F7910}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{63AC5EF5-6659-42BD-924A-CAF0036B4328}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2147,7 +2147,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StateCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2166,7 +2166,7 @@
                           cachedLength="100"
                           cachedName="State"
                           cachedSortKeyPosition="3"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2183,7 +2183,7 @@
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="District"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2202,7 +2202,7 @@
                           cachedLength="100"
                           cachedName="City"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2221,7 +2221,7 @@
                           cachedLength="100"
                           cachedName="Suburb"
                           cachedSortKeyPosition="2"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2238,7 +2238,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2256,7 +2256,7 @@
                           cachedName="SuburbLatitude"
                           cachedPrecision="8"
                           cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2274,7 +2274,7 @@
                           cachedName="SuburbLongitude"
                           cachedPrecision="9"
                           cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2291,7 +2291,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CityCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2358,7 +2358,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2372,7 +2372,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2386,7 +2386,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2400,7 +2400,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2414,7 +2414,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2428,7 +2428,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2443,7 +2443,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2458,7 +2458,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2472,7 +2472,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2538,7 +2538,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StateCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2557,7 +2557,7 @@
                           cachedLength="100"
                           cachedName="State"
                           cachedSortKeyPosition="3"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2574,7 +2574,7 @@
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="District"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2593,7 +2593,7 @@
                           cachedLength="100"
                           cachedName="City"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2612,7 +2612,7 @@
                           cachedLength="100"
                           cachedName="Suburb"
                           cachedSortKeyPosition="2"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2629,7 +2629,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2647,7 +2647,7 @@
                           cachedName="SuburbLatitude"
                           cachedPrecision="8"
                           cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2665,7 +2665,7 @@
                           cachedName="SuburbLongitude"
                           cachedPrecision="9"
                           cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2682,7 +2682,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CityCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2715,7 +2715,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2729,7 +2729,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2743,7 +2743,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2758,7 +2758,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2772,7 +2772,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2786,7 +2786,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2801,7 +2801,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2816,7 +2816,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -2830,7 +2830,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -2866,7 +2866,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StateCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2885,7 +2885,7 @@
                           cachedLength="100"
                           cachedName="State"
                           cachedSortKeyPosition="3"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2902,7 +2902,7 @@
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="District"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2921,7 +2921,7 @@
                           cachedLength="100"
                           cachedName="City"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2940,7 +2940,7 @@
                           cachedLength="100"
                           cachedName="Suburb"
                           cachedSortKeyPosition="2"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2957,7 +2957,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2975,7 +2975,7 @@
                           cachedName="SuburbLatitude"
                           cachedPrecision="8"
                           cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -2993,7 +2993,7 @@
                           cachedName="SuburbLongitude"
                           cachedPrecision="9"
                           cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3010,7 +3010,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CityCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3043,7 +3043,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3058,7 +3058,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3072,7 +3072,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3086,7 +3086,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3100,7 +3100,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3114,7 +3114,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3129,7 +3129,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3144,7 +3144,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3158,7 +3158,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3194,7 +3194,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="StateCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3213,7 +3213,7 @@
                           cachedLength="100"
                           cachedName="State"
                           cachedSortKeyPosition="3"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3230,7 +3230,7 @@
                           cachedDataType="wstr"
                           cachedLength="100"
                           cachedName="District"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3249,7 +3249,7 @@
                           cachedLength="100"
                           cachedName="City"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3268,7 +3268,7 @@
                           cachedLength="100"
                           cachedName="Suburb"
                           cachedSortKeyPosition="2"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3285,7 +3285,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="PostCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3303,7 +3303,7 @@
                           cachedName="SuburbLatitude"
                           cachedPrecision="8"
                           cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3321,7 +3321,7 @@
                           cachedName="SuburbLongitude"
                           cachedPrecision="9"
                           cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3338,7 +3338,7 @@
                           cachedDataType="wstr"
                           cachedLength="10"
                           cachedName="CityCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]">
                           <properties>
                             <property
                               dataType="System.Int32"
@@ -3371,7 +3371,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3385,7 +3385,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3399,7 +3399,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3413,7 +3413,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3428,7 +3428,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3442,7 +3442,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3457,7 +3457,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3472,7 +3472,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]}</property>
                           </properties>
                         </outputColumn>
                         <outputColumn
@@ -3486,7 +3486,7 @@
                               containsID="true"
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]}</property>
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -3551,7 +3551,7 @@ where [refTable].[City] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]};</property>
+                      name="ParameterMap">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3581,7 +3581,7 @@ where [refTable].[City] = ?</property>
                           cachedLength="100"
                           cachedName="City"
                           cachedSortKeyPosition="1"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -3871,7 +3871,7 @@ where [refTable].[StateName] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]};</property>
+                      name="ParameterMap">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -3901,7 +3901,7 @@ where [refTable].[StateName] = ?</property>
                           cachedLength="100"
                           cachedName="Suburb"
                           cachedSortKeyPosition="2"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -4032,7 +4032,7 @@ where [refTable].[Suburb] = ?</property>
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]};</property>
+                      name="ParameterMap">#{Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]};</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4062,7 +4062,7 @@ where [refTable].[Suburb] = ?</property>
                           cachedLength="100"
                           cachedName="Suburb"
                           cachedSortKeyPosition="2"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]">
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]">
                           <properties>
                             <property
                               dataType="System.String"
@@ -4189,11 +4189,338 @@ where [refTable].[Suburb] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source"
+                  refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort and remove duplicates"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[StateCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="StateCode"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[StateCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[State]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="State"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[State]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">5</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[District]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="District"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[District]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[City]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="City"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[City]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">5</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[Suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="Suburb"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[Suburb]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">5</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[PostCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="PostCode"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[PostCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[SuburbLatitude]"
+                          cachedDataType="numeric"
+                          cachedName="SuburbLatitude"
+                          cachedPrecision="8"
+                          cachedScale="6"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[SuburbLatitude]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[SuburbLongitude]"
+                          cachedDataType="numeric"
+                          cachedName="SuburbLongitude"
+                          cachedPrecision="9"
+                          cachedScale="6"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[SuburbLongitude]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input].Columns[CityCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="CityCode"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[CityCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[StateCode]"
+                          name="StateCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[StateCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]"
+                          comparisonFlags="5"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[State]"
+                          name="State"
+                          sortKeyPosition="3">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[State]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[District]"
+                          name="District">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[District]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]"
+                          comparisonFlags="5"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[City]"
+                          name="City"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[City]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]"
+                          comparisonFlags="5"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[Suburb]"
+                          name="Suburb"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[Suburb]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[PostCode]"
+                          name="PostCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[PostCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]"
+                          dataType="numeric"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLatitude]"
+                          name="SuburbLatitude"
+                          precision="8"
+                          scale="6">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[SuburbLatitude]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]"
+                          dataType="numeric"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[SuburbLongitude]"
+                          name="SuburbLongitude"
+                          precision="9"
+                          scale="6">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[SuburbLongitude]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output].Columns[CityCode]"
+                          name="CityCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[CityCode]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
-                  name="OLE DB Source"
+                  name="Staging Db"
                   usesDispositions="true"
                   version="7">
                   <properties>
@@ -4238,7 +4565,7 @@ where [refTable].[Suburb] = ?</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Connections[OleDbConnection]"
+                      refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Connections[OleDbConnection]"
                       connectionManagerID="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}:external"
                       connectionManagerRefId="Project.ConnectionManagers[LocalHost]"
                       description="The OLE DB runtime connection used to access the database."
@@ -4246,553 +4573,226 @@ where [refTable].[Suburb] = ?</property>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output]"
+                      refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[StateCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StateCode]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[StateCode]"
                           length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[StateCode]"
                           name="StateCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[State]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[State]"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[State]"
                           name="State"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[District]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[District]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[District]"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[District]"
                           name="District"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[City]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[City]"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[City]"
                           name="City"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[Suburb]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[Suburb]"
                           name="Suburb"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[PostCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
                           length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[PostCode]"
                           name="PostCode"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SuburbLatitude]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[SuburbLatitude]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SuburbLatitude]"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SuburbLatitude]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[SuburbLatitude]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[SuburbLatitude]"
                           name="SuburbLatitude"
                           precision="8"
                           scale="6"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SuburbLongitude]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[SuburbLongitude]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SuburbLongitude]"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SuburbLongitude]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[SuburbLongitude]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[SuburbLongitude]"
                           name="SuburbLongitude"
                           precision="9"
                           scale="6"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[CityCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CityCode]"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[CityCode]"
                           length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityCode]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].Columns[CityCode]"
                           name="CityCode"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StateCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[StateCode]"
                           dataType="wstr"
                           length="10"
                           name="StateCode" />
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[State]"
                           dataType="wstr"
                           length="100"
                           name="State" />
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[District]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[District]"
                           dataType="wstr"
                           length="100"
                           name="District" />
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[City]"
                           dataType="wstr"
                           length="100"
                           name="City" />
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[Suburb]"
                           dataType="wstr"
                           length="100"
                           name="Suburb" />
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[PostCode]"
                           dataType="wstr"
                           length="10"
                           name="PostCode" />
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SuburbLatitude]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[SuburbLatitude]"
                           dataType="numeric"
                           name="SuburbLatitude"
                           precision="8"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SuburbLongitude]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[SuburbLongitude]"
                           dataType="numeric"
                           name="SuburbLongitude"
                           precision="9"
                           scale="6" />
                         <externalMetadataColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CityCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output].ExternalColumns[CityCode]"
                           dataType="wstr"
                           length="10"
                           name="CityCode" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StateCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[StateCode]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StateCode]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[StateCode]"
                           name="StateCode" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[State]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[State]"
                           name="State" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[District]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[District]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[District]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[District]"
                           name="District" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[City]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[City]"
                           name="City" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[Suburb]"
                           dataType="wstr"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Suburb]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[Suburb]"
                           name="Suburb" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[PostCode]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostCode]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[PostCode]"
                           name="PostCode" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SuburbLatitude]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[SuburbLatitude]"
                           dataType="numeric"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SuburbLatitude]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[SuburbLatitude]"
                           name="SuburbLatitude"
                           precision="8"
                           scale="6" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SuburbLongitude]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[SuburbLongitude]"
                           dataType="numeric"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SuburbLongitude]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[SuburbLongitude]"
                           name="SuburbLongitude"
                           precision="9"
                           scale="6" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CityCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[CityCode]"
                           dataType="wstr"
                           length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CityCode]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[CityCode]"
                           name="CityCode" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications"
-                  componentClassID="Microsoft.Sort"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  name="Sort and remove duplications"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                      name="EliminateDuplicates">true</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify"
-                      name="MaximumThreads">-1</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input]"
-                      name="Sort Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[StateCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="StateCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[State]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="State"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">5</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">3</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[District]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="District"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[City]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="City"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">5</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[Suburb]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Suburb"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">5</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[PostCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="PostCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[SuburbLatitude]"
-                          cachedDataType="numeric"
-                          cachedName="SuburbLatitude"
-                          cachedPrecision="8"
-                          cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SuburbLatitude]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[SuburbLongitude]"
-                          cachedDataType="numeric"
-                          cachedName="SuburbLongitude"
-                          cachedPrecision="9"
-                          cachedScale="6"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SuburbLongitude]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input].Columns[CityCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="CityCode"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityCode]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">0</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output]"
-                      isSorted="true"
-                      name="Sort Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[StateCode]"
-                          name="StateCode">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]"
-                          comparisonFlags="5"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[State]"
-                          name="State"
-                          sortKeyPosition="3">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[District]"
-                          name="District">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]"
-                          comparisonFlags="5"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[City]"
-                          name="City"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]"
-                          comparisonFlags="5"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[Suburb]"
-                          name="Suburb"
-                          sortKeyPosition="2">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[PostCode]"
-                          name="PostCode">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]"
-                          dataType="numeric"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLatitude]"
-                          name="SuburbLatitude"
-                          precision="8"
-                          scale="6">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SuburbLatitude]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]"
-                          dataType="numeric"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[SuburbLongitude]"
-                          name="SuburbLongitude"
-                          precision="9"
-                          scale="6">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[SuburbLongitude]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output].Columns[CityCode]"
-                          name="CityCode">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[CityCode]}</property>
-                          </properties>
-                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -5404,14 +5404,14 @@ where [refTable].[Suburb] = ?</property>
                   startId="Package\1_AUS_GeographicalArea\Load data to DW\Multicast.Outputs[Multicast Output 5]" />
                 <path
                   refId="Package\1_AUS_GeographicalArea\Load data to DW.Paths[OLE DB Source Output]"
-                  endId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Inputs[Sort Input]"
+                  endId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Inputs[Sort Input]"
                   name="OLE DB Source Output"
-                  startId="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output]" />
+                  startId="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output]"
                   endId="Package\1_AUS_GeographicalArea\Load data to DW\Multicast.Inputs[Multicast Input 1]"
                   name="Sort Output"
-                  startId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications.Outputs[Sort Output]" />
+                  startId="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates.Outputs[Sort Output]" />
                 <path
                   refId="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output1]"
                   endId="Package\1_AUS_GeographicalArea\Load data to DW\To DimSuburb.Inputs[OLE DB Destination Input]"
@@ -5655,256 +5655,96 @@ where [refTable].[Suburb] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source"
-          TopLeft="277,98" />
+          Size="131,42"
+          Id="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db"
+          TopLeft="503,98" />
         <NodeLayout
           Size="120,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Multicast"
-          TopLeft="298,304" />
+          TopLeft="507,228" />
         <NodeLayout
           Size="192,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Lookup for new Country"
-          TopLeft="888,408" />
+          TopLeft="854,434" />
         <NodeLayout
           Size="205,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Insert only unique suburbs"
-          TopLeft="173,516" />
+          TopLeft="192,431" />
         <NodeLayout
           Size="137,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\To DimState"
-          TopLeft="709,618" />
+          TopLeft="669,555" />
         <NodeLayout
-          Size="265,42"
-          Id="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplications"
-          TopLeft="224,211" />
+          Size="208,42"
+          Id="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates"
+          TopLeft="459,163" />
         <NodeLayout
           Size="173,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Lookup for new City"
-          TopLeft="439,408" />
+          TopLeft="420,334" />
         <NodeLayout
           Size="131,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\To DimCity"
-          TopLeft="473,607" />
+          TopLeft="446,549" />
         <NodeLayout
           Size="180,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Lookup for new State"
-          TopLeft="641,409" />
+          TopLeft="634,334" />
         <NodeLayout
           Size="175,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Insert Only Australia"
-          TopLeft="937,518" />
+          TopLeft="863,523" />
         <NodeLayout
           Size="192,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Insert only unique State"
-          TopLeft="709,527" />
+          TopLeft="643,435" />
         <NodeLayout
           Size="171,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\To DimSuburb"
-          TopLeft="188,616" />
+          TopLeft="210,541" />
         <NodeLayout
           Size="194,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Lookup for new Suburbs"
-          TopLeft="174,410" />
+          TopLeft="198,333" />
         <NodeLayout
           Size="154,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Derived Column"
-          TopLeft="897,327" />
+          TopLeft="848,338" />
         <NodeLayout
           Size="150,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\To DimCountry"
-          TopLeft="902,619" />
+          TopLeft="870,619" />
         <NodeLayout
           Size="184,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Insert only unique city"
-          TopLeft="447,520" />
+          TopLeft="420,434" />
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Lookup No Match Output1]"
-          TopLeft="273.25,452">
+          TopLeft="294.75,375">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64"
+              EndConnector="0,56"
               Start="0,0"
-              End="0,56.5">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.5" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-55.80638671875,22.4453125,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,18.4453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Lookup No Match Output]"
-          TopLeft="525.5,450">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="13.5,70"
-              Start="0,0"
-              End="13.5,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31"
-                    Point2="0,35"
-                    Point3="4,35" />
-                  <mssgle:LineSegment
-                    End="9.5,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.5,35"
-                    Point2="13.5,35"
-                    Point3="13.5,39" />
-                  <mssgle:LineSegment
-                    End="13.5,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-49.05638671875,40,111.6127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Derived Column Output]"
-          TopLeft="974,369">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10,39"
-              Start="0,0"
-              End="10,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="4,19.5" />
-                  <mssgle:LineSegment
-                    End="6,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6,19.5"
-                    Point2="10,19.5"
-                    Point3="10,23.5" />
-                  <mssgle:LineSegment
-                    End="10,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output4]"
-          TopLeft="1024.5,560">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-47.5,59"
-              Start="0,0"
-              End="-47.5,51.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.5"
-                    Point2="0,29.5"
-                    Point3="-4,29.5" />
-                  <mssgle:LineSegment
-                    End="-43.5,29.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-43.5,29.5"
-                    Point2="-47.5,29.5"
-                    Point3="-47.5,33.5" />
-                  <mssgle:LineSegment
-                    End="-47.5,51.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output3]"
-          TopLeft="805,569">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-27.5,49"
-              Start="0,0"
-              End="-27.5,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="-4,24.5" />
-                  <mssgle:LineSegment
-                    End="-23.5,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-23.5,24.5"
-                    Point2="-27.5,24.5"
-                    Point3="-27.5,28.5" />
-                  <mssgle:LineSegment
-                    End="-27.5,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output2]"
-          TopLeft="538.75,562">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output1]"
-          TopLeft="274.5,558">
+          TopLeft="509.25,376">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5921,23 +5761,147 @@ where [refTable].[Suburb] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-55.80638671875,19.4453125,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Derived Column Output]"
+          TopLeft="925,380">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="25,54"
+              Start="0,0"
+              End="25,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
+                  <mssgle:LineSegment
+                    End="21,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21,27"
+                    Point2="25,27"
+                    Point3="25,31" />
+                  <mssgle:LineSegment
+                    End="25,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output4]"
+          TopLeft="947.75,565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output3]"
+          TopLeft="738.25,477">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output2]"
+          TopLeft="511.75,476">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,73"
+              Start="0,0"
+              End="0,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output1]"
+          TopLeft="295,473">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68"
+              Start="0,0"
+              End="0,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Sort Output]"
-          TopLeft="357.25,253">
+          TopLeft="565,205">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51"
+              EndConnector="0,23"
               Start="0,0"
-              End="0,43.5">
+              End="0,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5948,18 +5912,18 @@ where [refTable].[Suburb] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[OLE DB Source Output]"
-          TopLeft="354.25,140">
+          TopLeft="565.75,140">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,71"
+              EndConnector="0,23"
               Start="0,0"
-              End="0,63.5">
+              End="0,15.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,15.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5970,30 +5934,30 @@ where [refTable].[Suburb] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Multicast Output 5]"
-          TopLeft="418,325">
+          TopLeft="600.6,270">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="479,10"
+              EndConnector="324.4,68"
               Start="0,0"
-              End="471.5,10">
+              End="324.4,60.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="235.5,0" />
+                    End="0,16.7777777777778" />
                   <mssgle:CubicBezierSegment
-                    Point1="235.5,0"
-                    Point2="239.5,0"
-                    Point3="239.5,4" />
+                    Point1="0,16.7777777777778"
+                    Point2="0,20.7777777777778"
+                    Point3="4,20.7777777777778" />
                   <mssgle:LineSegment
-                    End="239.5,6" />
+                    End="320.4,20.7777777777778" />
                   <mssgle:CubicBezierSegment
-                    Point1="239.5,6"
-                    Point2="239.5,10"
-                    Point3="243.5,10" />
+                    Point1="320.4,20.7777777777778"
+                    Point2="324.4,20.7777777777778"
+                    Point3="324.4,24.7777777777778" />
                   <mssgle:LineSegment
-                    End="471.5,10" />
+                    End="324.4,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6004,30 +5968,30 @@ where [refTable].[Suburb] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Multicast Output 4]"
-          TopLeft="386,346">
+          TopLeft="578.2,270">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="345,63"
+              EndConnector="145.8,64"
               Start="0,0"
-              End="345,55.5">
+              End="145.8,56.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.9130434782609" />
+                    End="0,24.7058823529412" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.9130434782609"
-                    Point2="0,21.9130434782609"
-                    Point3="4,21.9130434782609" />
+                    Point1="0,24.7058823529412"
+                    Point2="0,28.7058823529412"
+                    Point3="4,28.7058823529412" />
                   <mssgle:LineSegment
-                    End="341,21.9130434782609" />
+                    End="141.8,28.7058823529412" />
                   <mssgle:CubicBezierSegment
-                    Point1="341,21.9130434782609"
-                    Point2="345,21.9130434782609"
-                    Point3="345,25.9130434782609" />
+                    Point1="141.8,28.7058823529412"
+                    Point2="145.8,28.7058823529412"
+                    Point3="145.8,32.7058823529412" />
                   <mssgle:LineSegment
-                    End="345,55.5" />
+                    End="145.8,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6038,30 +6002,30 @@ where [refTable].[Suburb] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Multicast Output 2]"
-          TopLeft="330,346">
+          TopLeft="533.4,270">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-59,64"
+              EndConnector="-238.4,63"
               Start="0,0"
-              End="-59,56.5">
+              End="-238.4,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.2608695652174" />
+                    End="0,15.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.2608695652174"
-                    Point2="0,22.2608695652174"
-                    Point3="-4,22.2608695652174" />
+                    Point1="0,15.25"
+                    Point2="0,19.25"
+                    Point3="-4,19.25" />
                   <mssgle:LineSegment
-                    End="-55,22.2608695652174" />
+                    End="-234.4,19.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="-55,22.2608695652174"
-                    Point2="-59,22.2608695652174"
-                    Point3="-59,26.2608695652174" />
+                    Point1="-234.4,19.25"
+                    Point2="-238.4,19.25"
+                    Point3="-238.4,23.25" />
                   <mssgle:LineSegment
-                    End="-59,56.5" />
+                    End="-238.4,55.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6072,30 +6036,30 @@ where [refTable].[Suburb] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Multicast Output 1]"
-          TopLeft="358,346">
+          TopLeft="555.8,270">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="167.5,62"
+              EndConnector="-49.3,64"
               Start="0,0"
-              End="167.5,54.5">
+              End="-49.3,56.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27" />
+                    End="0,24.7058823529412" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,27"
-                    Point2="0,31"
-                    Point3="4,31" />
+                    Point1="0,24.7058823529412"
+                    Point2="0,28.7058823529412"
+                    Point3="-4,28.7058823529412" />
                   <mssgle:LineSegment
-                    End="163.5,31" />
+                    End="-45.3,28.7058823529412" />
                   <mssgle:CubicBezierSegment
-                    Point1="163.5,31"
-                    Point2="167.5,31"
-                    Point3="167.5,35" />
+                    Point1="-45.3,28.7058823529412"
+                    Point2="-49.3,28.7058823529412"
+                    Point3="-49.3,32.7058823529412" />
                   <mssgle:LineSegment
-                    End="167.5,54.5" />
+                    End="-49.3,56.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6106,73 +6070,61 @@ where [refTable].[Suburb] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Lookup No Match Output3]"
-          TopLeft="984,450">
+          TopLeft="950.25,476">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="40.5,68"
+              EndConnector="0,47"
               Start="0,0"
-              End="40.5,60.5">
+              End="0,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
-                  <mssgle:LineSegment
-                    End="36.5,34" />
-                  <mssgle:CubicBezierSegment
-                    Point1="36.5,34"
-                    Point2="40.5,34"
-                    Point3="40.5,38" />
-                  <mssgle:LineSegment
-                    End="40.5,60.5" />
+                    End="0,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-35.55638671875,39,111.6127734375,11.609375"
+              BoundingBox="-55.80638671875,13.9453125,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Load data to DW.Paths[Lookup No Match Output2]"
-          TopLeft="731,451">
+          TopLeft="724,376">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="74,76"
+              EndConnector="15,59"
               Start="0,0"
-              End="74,68.5">
+              End="15,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34" />
+                    End="0,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,34"
-                    Point2="0,38"
-                    Point3="4,38" />
+                    Point1="0,25.5"
+                    Point2="0,29.5"
+                    Point3="4,29.5" />
                   <mssgle:LineSegment
-                    End="70,38" />
+                    End="11,29.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="70,38"
-                    Point2="74,38"
-                    Point3="74,42" />
+                    Point1="11,29.5"
+                    Point2="15,29.5"
+                    Point3="15,33.5" />
                   <mssgle:LineSegment
-                    End="74,68.5" />
+                    End="15,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-18.80638671875,43,111.6127734375,11.609375"
+              BoundingBox="-48.30638671875,34.5,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6180,7 +6132,7 @@ where [refTable].[Suburb] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\1_AUS_GeographicalArea\Load data to DW\OLE DB Source">
+    design-time-name="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
