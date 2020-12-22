@@ -6,7 +6,7 @@
       <Options>
         <ServerName />
         <PathOnServer />
-        <StartObjectID>2_AUS_Transport.dtsx</StartObjectID>
+        <StartObjectID>0_Populate_Defaults.dtsx</StartObjectID>
         <UserIDs />
         <UserPasswords />
         <OfflineMode>false</OfflineMode>
