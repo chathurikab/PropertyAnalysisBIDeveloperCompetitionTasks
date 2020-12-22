@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="2_AUS_Transport"
   DTS:PackageType="5"
-  DTS:VersionBuild="56"
-  DTS:VersionGUID="{164AA6B4-9152-4FB8-8B1E-5A512DDA345A}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{AD430445-B647-4952-9820-13B0ED2401B2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -24,6 +24,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Source\Property Analysis BI Developer Competition Tasks\Raw Dataset\Australia Dataset\Formatted\NSW_StationEntrances_Sydney 2018.csv.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Task1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EBD2223A-608E-4FF7-BE95-6EDD7FBEB089}"
+      DTS:ObjectName="LocalHost.Task1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Task1;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -206,7 +216,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StopId" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EntranceType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="ExitNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TransportId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StopId" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EntranceType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="ExitNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -685,8 +695,8 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   <connections>
                     <connection
                       refId="Package\2_AUS_Transport\Load to DW\Staging DB.Connections[OleDbConnection]"
-                      connectionManagerID="{F93B2DB2-7039-4FFF-9CCB-AFF9C2E22834}:external"
-                      connectionManagerRefId="Project.ConnectionManagers[LocalHost]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1371,7 +1381,7 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                     <property
                       dataType="System.String"
                       description="Specifies the name of the database object used to open a rowset."
-                      name="OpenRowset">[dbo].[DimTransport]</property>
+                      name="OpenRowset">[dbo].[AUS_Stations]</property>
                     <property
                       dataType="System.String"
                       description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1414,8 +1424,8 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                   <connections>
                     <connection
                       refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1427,28 +1437,6 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
-                        <inputColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StopID]"
-                          cachedDataType="r8"
-                          cachedName="StopID"
-                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
-                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StopID]" />
-                        <inputColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Latitude]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Latitude"
-                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
-                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Latitude]" />
-                        <inputColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Longitude]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="Longitude"
-                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
-                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[Longitude]" />
                         <inputColumn
                           refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StreetNumber]"
                           cachedDataType="wstr"
@@ -1499,20 +1487,33 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
                           lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Exit_Number]" />
                         <inputColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Street_Name]"
                           cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="Country"
-                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                          lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[Country]" />
+                          cachedLength="255"
+                          cachedName="Street_Name"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Street_Name]" />
+                        <inputColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LAT]"
+                          cachedDataType="r8"
+                          cachedName="LAT"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceLatitude]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LAT]" />
+                        <inputColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LONG]"
+                          cachedDataType="r8"
+                          cachedName="LONG"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceLongitude]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LONG]" />
+                        <inputColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StopID]"
+                          cachedDataType="r8"
+                          cachedName="StopID"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopID]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StopID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
-                        <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopId]"
-                          dataType="wstr"
-                          length="10"
-                          name="StopId" />
                         <externalMetadataColumn
                           refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StreetNumber]"
                           dataType="wstr"
@@ -1544,35 +1545,31 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           length="100"
                           name="EntranceType" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
-                          dataType="numeric"
-                          name="Latitude"
-                          precision="8"
-                          scale="6" />
-                        <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
-                          dataType="numeric"
-                          name="Longitude"
-                          precision="9"
-                          scale="6" />
-                        <externalMetadataColumn
                           refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ExitNumber]"
                           dataType="i4"
                           name="ExitNumber" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StationName]"
                           dataType="wstr"
                           length="100"
-                          name="Country" />
+                          name="StationName" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransportId]"
-                          dataType="i4"
-                          name="TransportId" />
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceLatitude]"
+                          dataType="numeric"
+                          name="EntranceLatitude"
+                          precision="8"
+                          scale="6" />
                         <externalMetadataColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Name]"
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceLongitude]"
+                          dataType="numeric"
+                          name="EntranceLongitude"
+                          precision="9"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopID]"
                           dataType="wstr"
-                          length="100"
-                          name="Name" />
+                          length="10"
+                          name="StopID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3161,7 +3158,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3171,7 +3168,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
