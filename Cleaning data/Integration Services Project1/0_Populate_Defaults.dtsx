@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="20"
-  DTS:VersionGUID="{7577A609-6490-4708-BCED-9EB52FCB13C6}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{504B5711-495A-4A41-A287-29D1E291BD9B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -327,7 +327,7 @@ IF @Count = 0
  BEGIN
 	
 INSERT INTO [dbo].[DimSchool]
-          VALUES(NULL, NULL,NULL,NULL,NULL,NULL, NULL,NULL,NULL,NULL,NULL, NULL,NULL,NULL,NULL)
+          VALUES(NULL, NULL,NULL,NULL,NULL,NULL, NULL,NULL,NULL,NULL,NULL, NULL,NULL,NULL,NULL,NULL)
  END</property>
                 <property
                   dataType="System.Int32"

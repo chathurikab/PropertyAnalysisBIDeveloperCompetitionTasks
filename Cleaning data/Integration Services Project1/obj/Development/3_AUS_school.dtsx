@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{9ACB231C-3A45-4570-B017-2B8C78D9CD07}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{A1049971-2E0A-461E-AD7A-BA19C4F57A81}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1257,6 +1257,12 @@
                           cachedName="school_code"
                           externalMetadataColumnId="Package\3_AUS_School\get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SchoolCode]"
                           lineageId="Package\3_AUS_School\get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[school_code]" />
+                        <inputColumn
+                          refId="Package\3_AUS_School\get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ICSEA_Value]"
+                          cachedDataType="r8"
+                          cachedName="ICSEA_Value"
+                          externalMetadataColumnId="Package\3_AUS_School\get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ICSEAValue]"
+                          lineageId="Package\3_AUS_School\get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[ICSEA_Value]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1337,6 +1343,10 @@
                           dataType="wstr"
                           length="10"
                           name="SchoolCode" />
+                        <externalMetadataColumn
+                          refId="Package\3_AUS_School\get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ICSEAValue]"
+                          dataType="i4"
+                          name="ICSEAValue" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2780,7 +2790,7 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                     <property
                       dataType="System.String"
                       description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SchoolId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="District" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LevelOfSchooling" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="SchoolSpecialtyType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolSubType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolGender" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="SchoolId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="District" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LevelOfSchooling" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="SchoolSpecialtyType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolSubType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SchoolGender" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ICSEAValue" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -3149,6 +3159,15 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           lineageId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolCode]"
                           name="SchoolCode"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICSEAValue]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ICSEAValue]"
+                          lineageId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICSEAValue]"
+                          name="ICSEAValue"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3229,6 +3248,10 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           dataType="wstr"
                           length="10"
                           name="SchoolCode" />
+                        <externalMetadataColumn
+                          refId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ICSEAValue]"
+                          dataType="i4"
+                          name="ICSEAValue" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3328,6 +3351,11 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           length="50"
                           lineageId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SchoolSpecialityType]"
                           name="SchoolSpecialityType" />
+                        <outputColumn
+                          refId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ICSEAValue]"
+                          dataType="i4"
+                          lineageId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ICSEAValue]"
+                          name="ICSEAValue" />
                         <outputColumn
                           refId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
@@ -3625,6 +3653,22 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                               name="NewSortKeyPosition">3</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\3_AUS_School\load data to Warehouse\Sort.Inputs[Sort Input].Columns[ICSEAValue]"
+                          cachedDataType="i4"
+                          cachedName="ICSEAValue"
+                          lineageId="Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICSEAValue]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3851,6 +3895,19 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                               name="SortColumnId">#{Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[SchoolCode]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\3_AUS_School\load data to Warehouse\Sort.Outputs[Sort Output].Columns[ICSEAValue]"
+                          dataType="i4"
+                          lineageId="Package\3_AUS_School\load data to Warehouse\Sort.Outputs[Sort Output].Columns[ICSEAValue]"
+                          name="ICSEAValue">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\3_AUS_School\load data to Warehouse\OLE DB Source.Outputs[OLE DB Source Output].Columns[ICSEAValue]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -3894,7 +3951,7 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                       dataType="System.Int32"
                       description="Specifies the mode used to access the database."
                       name="AccessMode"
-                      typeConverter="AccessMode">3</property>
+                      typeConverter="AccessMode">0</property>
                     <property
                       dataType="System.Boolean"
                       description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
@@ -4039,6 +4096,12 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           cachedName="CountryName"
                           externalMetadataColumnId="Package\3_AUS_School\load data to Warehouse\To Warehouse Db.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                           lineageId="Package\3_AUS_School\load data to Warehouse\Sort.Outputs[Sort Output].Columns[CountryName]" />
+                        <inputColumn
+                          refId="Package\3_AUS_School\load data to Warehouse\To Warehouse Db.Inputs[OLE DB Destination Input].Columns[ICSEAValue]"
+                          cachedDataType="i4"
+                          cachedName="ICSEAValue"
+                          externalMetadataColumnId="Package\3_AUS_School\load data to Warehouse\To Warehouse Db.Inputs[OLE DB Destination Input].ExternalColumns[ICSEAValue]"
+                          lineageId="Package\3_AUS_School\load data to Warehouse\Sort.Outputs[Sort Output].Columns[ICSEAValue]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4123,6 +4186,10 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
                           dataType="wstr"
                           length="100"
                           name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\3_AUS_School\load data to Warehouse\To Warehouse Db.Inputs[OLE DB Destination Input].ExternalColumns[ICSEAValue]"
+                          dataType="i4"
+                          name="ICSEAValue" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -4417,43 +4484,21 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150,42"
-          Id="Package\3_AUS_School\load data to Warehouse\OLE DB Source"
-          TopLeft="200,99" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Identify new school records"
-          TopLeft="166,178" />
+          Size="164,42"
+          Id="Package\3_AUS_School\load data to Warehouse\To Warehouse Db"
+          TopLeft="181,360" />
         <NodeLayout
           Size="98,42"
           Id="Package\3_AUS_School\load data to Warehouse\Sort"
           TopLeft="220,276" />
         <NodeLayout
-          Size="164,42"
-          Id="Package\3_AUS_School\load data to Warehouse\To Warehouse Db"
-          TopLeft="181,360" />
-        <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[OLE DB Source Output]"
-          TopLeft="272.75,141">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37"
-              Start="0,0"
-              End="0,29.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="209,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Identify new school records"
+          TopLeft="166,178" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\3_AUS_School\load data to Warehouse\OLE DB Source"
+          TopLeft="200,99" />
         <EdgeLayout
           Id="Package\3_AUS_School\load data to Warehouse.Paths[Lookup No Match Output]"
           TopLeft="269.75,220">
@@ -4500,11 +4545,33 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[OLE DB Source Output]"
+          TopLeft="272.75,141">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\3_AUS_School\load data to Warehouse\OLE DB Source">
+    design-time-name="Package\3_AUS_School\load data to Warehouse\To Warehouse Db">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -4540,7 +4607,7 @@ where [refTable].[SchoolName] = ? and [refTable].[PostCode] = ? and [refTable].[
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\3_AUS_School\load data to Warehouse\To Warehouse Db">
+    design-time-name="Package\3_AUS_School\load data to Warehouse\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

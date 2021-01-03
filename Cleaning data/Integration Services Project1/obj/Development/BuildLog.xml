@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>Integration Services Project1</Name>
-    <LastWriteTime>2020-12-23T03:57:37.7273528Z</LastWriteTime>
+    <LastWriteTime>2021-01-03T13:23:52.5645065Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -18,7 +18,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>3_AUS_School.dtsx</Name>
-      <LastWriteTime>2020-12-22T12:42:56.9053911Z</LastWriteTime>
+      <LastWriteTime>2021-01-03T13:16:38.5121487Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -28,7 +28,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>0_Populate_Defaults.dtsx</Name>
-      <LastWriteTime>2020-12-23T03:45:06.381081Z</LastWriteTime>
+      <LastWriteTime>2021-01-03T12:47:46.9448619Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
