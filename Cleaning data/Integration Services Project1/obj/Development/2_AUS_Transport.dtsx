@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="2_AUS_Transport"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{AD430445-B647-4952-9820-13B0ED2401B2}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{29BC1916-698C-44E7-AD60-64F6D3DF6330}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1023,6 +1023,12 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedDataType="r8"
                           cachedName="LONG"
                           lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LONG]" />
+                        <inputColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Inputs[Data Conversion Input].Columns[Entrance_Type]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Entrance_Type"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -1072,6 +1078,27 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                               dataType="System.Int32"
                               description="Specifies the input column used as the source of data for the conversion."
                               name="SourceInputColumnLineageID">#{Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[LONG]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[EntranceType]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[EntranceType]"
+                          name="EntranceType"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]}</property>
                             <property
                               dataType="System.Boolean"
                               description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1473,13 +1500,6 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                           lineageId="Package\2_AUS_Transport\To get data to staging db\Script Component.Outputs[Output 0].Columns[State]" />
                         <inputColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Entrance_Type]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Entrance_Type"
-                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
-                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
-                        <inputColumn
                           refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Exit_Number]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -1511,6 +1531,13 @@ where [refTable].[Suburb] = ? and [refTable].[EntranceType] = ? and [refTable].[
                           cachedName="StopID"
                           externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StopID]"
                           lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StopID]" />
+                        <inputColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EntranceType]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="EntranceType"
+                          externalMetadataColumnId="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EntranceType]"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[EntranceType]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1965,14 +1992,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String EntranceType
+    public String ExitNumber
     {
         get
         {
             return Buffer.GetString(BufferColumnIndexes[3]);
         }
     }
-    public bool EntranceType_IsNull
+    public bool ExitNumber_IsNull
     {
         get
         {
@@ -1980,14 +2007,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public String ExitNumber
+    public Double StopID
     {
         get
         {
-            return Buffer.GetString(BufferColumnIndexes[4]);
+            return Buffer.GetDouble(BufferColumnIndexes[4]);
         }
     }
-    public bool ExitNumber_IsNull
+    public bool StopID_IsNull
     {
         get
         {
@@ -1995,14 +2022,14 @@ public class Input0Buffer: ScriptBuffer
         }
     }
 
-    public Double StopID
+    public String EntranceType
     {
         get
         {
-            return Buffer.GetDouble(BufferColumnIndexes[5]);
+            return Buffer.GetString(BufferColumnIndexes[5]);
         }
     }
-    public bool StopID_IsNull
+    public bool EntranceType_IsNull
     {
         get
         {
@@ -2368,7 +2395,7 @@ namespace SC_bb104a6ce7754e2aab597d67f8bdd55a.Properties {
     <msb:CodeName>SC_bb104a6ce7754e2aab597d67f8bdd55a</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>SC_bb104a6ce7754e2aab597d67f8bdd55a</msb:DisplayName>
-    <msb:ProjectId>{52EE4A77-8841-494B-BEE1-6A8B193292A9}</msb:ProjectId>
+    <msb:ProjectId>{272EC762-A4B7-4648-9505-3F3C5C066E28}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="SC_bb104a6ce7754e2aab597d67f8bdd55a.csproj" />
@@ -2558,7 +2585,7 @@ namespace SC_bb104a6ce7754e2aab597d67f8bdd55a
                         <arrayElement
                           dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
-ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHOx3l8AAAAAAAAAAOAAIiALATAAACgAAAAIAAAAAAAAFkYA
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDACMv8l8AAAAAAAAAAOAAIiALATAAACgAAAAIAAAAAAAAFkYA
 AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
 ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMRFAABPAAAAAGAAAEgEAAAAAAAAAAAAAAAAAAAA
 AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -2579,8 +2606,8 @@ JS0XJn4JAAAE/gY1AAAGcxsAAAolgA8AAAQoAgAAKygDAAArJS0EJhQrBShFAAAGbxwAAAbeAybe
 ACoAAEEcAAAAAAAAAAAAAAYCAAAGAgAAAwAAABAAAAFKAnMeAAAKfQEAAAQCKCAAAAYqKgIDBAUo
 HwAACipSAnsgAAAKAnshAAAKFpRvIgAACioiAhYoIwAACipSAnsgAAAKAnshAAAKF5RvIgAACioi
 AhcoIwAACipSAnsgAAAKAnshAAAKGJRvIgAACioiAhgoIwAACipSAnsgAAAKAnshAAAKGZRvIgAA
-CioiAhkoIwAACipSAnsgAAAKAnshAAAKGpRvIgAACioiAhooIwAACipSAnsgAAAKAnshAAAKG5Rv
-JAAACioiAhsoIwAACiomAhwDKCUAAAoqWgMsCAIcKCYAAAoqctMAAHBzJwAACnomAh0DKCUAAAoq
+CioiAhkoIwAACipSAnsgAAAKAnshAAAKGpRvJAAACioiAhooIwAACipSAnsgAAAKAnshAAAKG5Rv
+IgAACioiAhsoIwAACiomAhwDKCUAAAoqWgMsCAIcKCYAAAoqctMAAHBzJwAACnomAh0DKCUAAAoq
 WgMsCAIdKCYAAAoqctMAAHBzJwAACnomAh4DKCUAAAoqWgMsCAIeKCYAAAoqctMAAHBzJwAACnoq
 Ah8JAyglAAAKKl4DLAkCHwkoJgAACipy0wAAcHMnAAAKeioCHwoDKCUAAAoqXgMsCQIfCigmAAAK
 KnLTAABwcycAAAp6KgIfCwMoJQAACipeAywJAh8LKCYAAAoqctMAAHBzJwAACnoeAigoAAAKKh4C
@@ -2609,8 +2636,8 @@ AT0BFgABAEEBFgApAEEBFgBmAEEBFgCVAEEBFgC9AEEBFgDlAEEBAQBxAkoBAQCfAU8BAQC+AU8B
 AQCKAlIBAQBOAk8BAQASAlcBAQDbAU8BAQD2AU8BAQA3AlcBUCAAAAAAxgA7BgYAAQBYIAAAAADG
 AEYGBgABAGAgAAAAAMYAHgxbAQEAlCIAAAAAhhgMCQYAAgCnIgAAAACGGAwJnwACALIiAAAAAIYI
 TQMiAAUAxyIAAAAAhggHB0IABQDQIgAAAACGCD8DIgAFAOUiAAAAAIYI8gZCAAUA7iIAAAAAhgj8
-ByIABQADIwAAAACGCFoHQgAFAAwjAAAAAIYIGwQiAAUAISMAAAAAhggxB0IABQAqIwAAAACGCMAI
-IgAFAD8jAAAAAIYIigdCAAUASCMAAAAAhggaAWEBBQBdIwAAAACGCLoGQgAFAGYjAAAAAIYIrwgQ
+ByIABQADIwAAAACGCFoHQgAFAAwjAAAAAIYIwAgiAAUAISMAAAAAhgiKB0IABQAqIwAAAACGCBoB
+YQEFAD8jAAAAAIYIugZCAAUASCMAAAAAhggbBCIABQBdIwAAAACGCDEHQgAFAGYjAAAAAIYIrwgQ
 AAUAcCMAAAAAhghyB2UBBgCHIwAAAACGCKcDEAAHAJEjAAAAAIYIGwdlAQgAqCMAAAAAhghaARAA
 CQCyIwAAAACGCMwGZQEKAMkjAAAAAIYI7gIQAAsA1CMAAAAAhgjeBmUBDADsIwAAAACGCH4EEAAN
 APcjAAAAAIYISQdlAQ4ADyQAAAAAhghKDBAADwAaJAAAAACGCKAHZQEQADIkAAAAAIYANQxCABEA
@@ -2640,7 +2667,7 @@ QwFrAKsCAQJrAKsCIQJrAKsCQQJrAKsCYQJrAKsCgQJrAKsCoQJrAKsCwQJrAKsC4QJrAKsCAQNr
 AKsCKQN7ABICSQN7ABICwAZrAKsC4AZrAKsCIAdrAKsCQAdrAKsCYAdrAKsCgAdrAKsCwAdrAKsC
 4AdrAKsCAAhrAKsCIAhrAKsCQAhrAKsCYAhrAKsCoAhrAKsCwAhrAKsC4AhrAKsCAAlrAKsCIAlr
 AKsCQAlrAKsCGwADAAEACAAZAAkAGwALABwADAAdAA0AHwAOACIAAABRA74BAAALB8IBAABDA74B
-AAD2BsIBAAAACL4BAABeB8IBAAAfBL4BAAA1B8IBAADECL4BAACOB8IBAAAeAcYBAAC+BsIBAACz
+AAD2BsIBAAAACL4BAABeB8IBAADECL4BAACOB8IBAAAeAcYBAAC+BsIBAAAfBL4BAAA1B8IBAACz
 CL4BAAB2B8IBAACrA74BAAAfB8IBAABeAb4BAADQBsIBAADyAr4BAADiBsIBAACXBL4BAABNB8IB
 AABODL4BAACkB8IBAAD8CMoBAABeBM8BAABVC9QBAADJCtkBAAARA74BAAAzA74BAAD/Ct8BAACn
 Cr4BAADLCeUBAADSA74BAADvA74BAAAmCuUBAgAGAAMAAgAHAAUAAgAIAAcAAgAJAAkAAgAKAAsA
@@ -2719,7 +2746,7 @@ YQBiADUAOQA3AGQANgA3AGYAOABiAGQAZAA1ADUAYQAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBS
 AGUAcwBvAHUAcgBjAGUAcwAAG3MAdAByAGUAZQB0AF8AbgB1AG0AYgBlAHIAAAtyAG8AdQB0AGUA
 ABFsAG8AYwBhAGwAaQB0AHkAABdwAG8AcwB0AGEAbABfAGMAbwBkAGUAADdhAGQAbQBpAG4AaQBz
 AHQAcgBhAHQAaQB2AGUAXwBhAHIAZQBhAF8AbABlAHYAZQBsAF8AMQAAD2MAbwB1AG4AdAByAHkA
-ADTxajMco4NNgoCrp1MrXI0ABCABAQgDIAABBSABARERBCABAQ4FIAEBEW0GBwISPRI0AyAADgUA
+APWCZtkS771DimtbCTnyCKEABCABAQgDIAABBSABARERBCABAQ4FIAEBEW0GBwISPRI0AyAADgUA
 AQ4dDgkgARUSfQESPQ4GFRJ9ARI9BCAAEwADIAACBSAAEoCBByAAFRJ9AQ4FFRJ9AQ4GEAEBHgAO
 BAoBEiwHFRJNAhI4AgUgAgEcGBgQAQIVEoCNAR4AFRKAjQEeABUSTQIeAAIECgESOAwQAQEeABUS
 gI0BHgAJIAMBElUdCBJZAwYSVQMGHQgEIAEOCAQgAQIIBCABDQgFIAIBCBwHIAICDhGAlQUgAR0I
@@ -2816,7 +2843,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                       dataType="System.String"
                       description="Checksum to match component metedata against compiled codes."
                       name="MetadataChecksum140"
-                      typeConverter="NOTBROWSABLE">8E</property>
+                      typeConverter="NOTBROWSABLE">2F</property>
                     <property
                       dataType="System.String"
                       name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
@@ -2848,12 +2875,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           cachedName="Train_Station"
                           lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Train_Station]" />
                         <inputColumn
-                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[Entrance_Type]"
-                          cachedDataType="wstr"
-                          cachedLength="255"
-                          cachedName="Entrance_Type"
-                          lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[Entrance_Type]" />
-                        <inputColumn
                           refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[Exit_Number]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -2864,6 +2885,12 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
                           cachedDataType="r8"
                           cachedName="StopID"
                           lineageId="Package\2_AUS_Transport\To get data to staging db\Excel Source.Outputs[Excel Source Output].Columns[StopID]" />
+                        <inputColumn
+                          refId="Package\2_AUS_Transport\To get data to staging db\Script Component.Inputs[Input 0].Columns[EntranceType]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="EntranceType"
+                          lineageId="Package\2_AUS_Transport\To get data to staging db\Data Conversion.Outputs[Data Conversion Output].Columns[EntranceType]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -3099,7 +3126,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3133,7 +3162,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3158,7 +3189,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3168,7 +3199,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3194,13 +3225,13 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
-          Id="Package\2_AUS_Transport\To get data to staging db\Script Component"
-          TopLeft="300,285" />
-        <NodeLayout
           Size="171,42"
           Id="Package\2_AUS_Transport\To get data to staging db\OLE DB Destination"
           TopLeft="291,363" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\2_AUS_Transport\To get data to staging db\Script Component"
+          TopLeft="300,285" />
         <NodeLayout
           Size="139,42"
           Id="Package\2_AUS_Transport\To get data to staging db\Excel Source"

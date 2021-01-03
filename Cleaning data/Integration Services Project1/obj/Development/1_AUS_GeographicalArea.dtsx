@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="1_AUS_GeographicalArea"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{63AC5EF5-6659-42BD-924A-CAF0036B4328}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{7D6950A8-61EB-4757-A007-F31475E89453}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -140,13 +140,13 @@
                       synchronousInputId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Inputs[Data Conversion Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of suburb]"
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_Suburb]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of suburb]"
-                          name="Copy of suburb"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_Suburb]"
+                          name="_Suburb"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -161,13 +161,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]"
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_City]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]"
-                          name="Copy of city"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_City]"
+                          name="_City"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -182,13 +182,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Distric]"
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_Distric]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Distric]"
-                          name="Copy of Distric"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_Distric]"
+                          name="_Distric"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -203,13 +203,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state]"
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_State]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="100"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state]"
-                          name="Copy of state"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_State]"
+                          name="_State"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -224,13 +224,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CityCode]"
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_CityCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CityCode]"
-                          name="Copy of CityCode"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_CityCode]"
+                          name="_CityCode"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -245,13 +245,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state_code]"
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_StateCode]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           length="10"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state_code]"
-                          name="Copy of state_code"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_StateCode]"
+                          name="_StateCode"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
@@ -1858,62 +1858,65 @@
                           refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[postcode]"
                           cachedDataType="r8"
                           cachedName="postcode"
+                          cachedSortKeyPosition="3"
                           externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostCode]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[postcode]" />
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[postcode]" />
                         <inputColumn
                           refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lat]"
                           cachedDataType="r8"
                           cachedName="lat"
                           externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuburbLatitude]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[lat]" />
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[lat]" />
                         <inputColumn
                           refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[lon]"
                           cachedDataType="r8"
                           cachedName="lon"
                           externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuburbLongitude]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[lon]" />
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[lon]" />
                         <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of suburb]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Copy of suburb"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of suburb]" />
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of city]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Copy of city"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of city]" />
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Distric]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Copy of Distric"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Distric]" />
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of state]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Copy of state"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state]" />
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CityCode]"
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_StateCode]"
                           cachedDataType="wstr"
                           cachedLength="10"
-                          cachedName="Copy of CityCode"
-                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityCode]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CityCode]" />
-                        <inputColumn
-                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of state_code]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="Copy of state_code"
+                          cachedName="_StateCode"
                           externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateCode]"
-                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of state_code]" />
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_StateCode]" />
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_State]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="_State"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_State]" />
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_Distric]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="_Distric"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[District]"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_Distric]" />
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_City]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="_City"
+                          cachedSortKeyPosition="2"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_City]" />
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_Suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="_Suburb"
+                          cachedSortKeyPosition="1"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Suburb]"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_Suburb]" />
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_CityCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="_CityCode"
+                          externalMetadataColumnId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityCode]"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_CityCode]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1992,11 +1995,511 @@
                     </output>
                   </outputs>
                 </component>
+                <component
+                  refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort"
+                  componentClassID="Microsoft.Sort"
+                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+                  name="Sort"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                      name="EliminateDuplicates">true</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the maximum number of threads to use for sorting."
+                      expressionType="Notify"
+                      name="MaximumThreads">-1</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input]"
+                      name="Sort Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[postcode]"
+                          cachedDataType="r8"
+                          cachedName="postcode"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[postcode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="suburb"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[suburb]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[city]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="city"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[city]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[state]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="state"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[state]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[state_code]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="state_code"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[state_code]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[lat]"
+                          cachedDataType="r8"
+                          cachedName="lat"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[lat]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[lon]"
+                          cachedDataType="r8"
+                          cachedName="lon"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[lon]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[Distric]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="Distric"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[Distric]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[CityCode]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CityCode"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[CityCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[_Suburb]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="_Suburb"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_Suburb]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[_City]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="_City"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_City]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">2</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[_Distric]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="_Distric"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_Distric]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[_State]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="_State"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_State]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[_CityCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="_CityCode"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_CityCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input].Columns[_StateCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="_StateCode"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_StateCode]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output]"
+                      isSorted="true"
+                      name="Sort Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[postcode]"
+                          dataType="r8"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[postcode]"
+                          name="postcode"
+                          sortKeyPosition="3">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[postcode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[suburb]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[suburb]"
+                          name="suburb">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[suburb]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[city]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[city]"
+                          name="city">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[city]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[state]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[state]"
+                          name="state">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[state]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[state_code]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[state_code]"
+                          name="state_code">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[state_code]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[lat]"
+                          dataType="r8"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[lat]"
+                          name="lat">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[lat]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[lon]"
+                          dataType="r8"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[lon]"
+                          name="lon">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[lon]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[Distric]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[Distric]"
+                          name="Distric">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[Distric]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[CityCode]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[CityCode]"
+                          name="CityCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output].Columns[CityCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_Suburb]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_Suburb]"
+                          name="_Suburb"
+                          sortKeyPosition="1">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_Suburb]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_City]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_City]"
+                          name="_City"
+                          sortKeyPosition="2">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_City]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_Distric]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_Distric]"
+                          name="_Distric">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_Distric]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_State]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_State]"
+                          name="_State">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_State]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_CityCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_CityCode]"
+                          name="_CityCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_CityCode]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_StateCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output].Columns[_StateCode]"
+                          name="_StateCode">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output].Columns[_StateCode]}</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
               </components>
               <paths>
                 <path
                   refId="Package\1_AUS_GeographicalArea\Get data to Staging Db.Paths[Data Conversion Output]"
-                  endId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  endId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Inputs[Sort Input]"
                   name="Data Conversion Output"
                   startId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Outputs[Data Conversion Output]" />
                 <path
@@ -2004,6 +2507,11 @@
                   endId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion.Inputs[Data Conversion Input]"
                   name="Excel Source Output"
                   startId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source.Outputs[Excel Source Output]" />
+                <path
+                  refId="Package\1_AUS_GeographicalArea\Get data to Staging Db.Paths[Sort Output]"
+                  endId="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Sort Output"
+                  startId="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -5571,7 +6079,7 @@ where [refTable].[Suburb] = ?</property>
         <NodeLayout
           Size="171,42"
           Id="Package\1_AUS_GeographicalArea\Get data to Staging Db\OLE DB Destination"
-          TopLeft="308,307" />
+          TopLeft="305,424" />
         <NodeLayout
           Size="156,42"
           Id="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion"
@@ -5598,9 +6106,13 @@ where [refTable].[Suburb] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort"
+          TopLeft="348,307" />
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Get data to Staging Db.Paths[Data Conversion Output]"
-          TopLeft="394.75,247">
+          TopLeft="396.5,247">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5612,6 +6124,28 @@ where [refTable].[Suburb] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1_AUS_GeographicalArea\Get data to Staging Db.Paths[Sort Output]"
+          TopLeft="393.75,349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75"
+              Start="0,0"
+              End="0,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5655,9 +6189,9 @@ where [refTable].[Suburb] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="131,42"
-          Id="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db"
-          TopLeft="503,98" />
+          Size="208,42"
+          Id="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates"
+          TopLeft="459,163" />
         <NodeLayout
           Size="120,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Multicast"
@@ -5674,10 +6208,6 @@ where [refTable].[Suburb] = ?</property>
           Size="137,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\To DimState"
           TopLeft="669,555" />
-        <NodeLayout
-          Size="208,42"
-          Id="Package\1_AUS_GeographicalArea\Load data to DW\Sort and remove duplicates"
-          TopLeft="459,163" />
         <NodeLayout
           Size="173,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Lookup for new City"
@@ -5698,6 +6228,10 @@ where [refTable].[Suburb] = ?</property>
           Size="192,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\Insert only unique State"
           TopLeft="643,435" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db"
+          TopLeft="503,98" />
         <NodeLayout
           Size="171,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW\To DimSuburb"
@@ -6132,19 +6666,6 @@ where [refTable].[Suburb] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\1_AUS_GeographicalArea\Load data to DW\Lookup for new Country">
     <Properties>
       <Property>
@@ -6236,6 +6757,19 @@ where [refTable].[Suburb] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\1_AUS_GeographicalArea\Load data to DW\Staging Db">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
