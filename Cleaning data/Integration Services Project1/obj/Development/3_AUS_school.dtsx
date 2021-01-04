@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{5FCC0D5C-0440-43BC-B661-A4BFEA192EA2}">
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{D576D54E-5650-4D0A-816F-C62B7E7609ED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -83,7 +83,6 @@
           DTS:refId="Package\3_AUS_School\Execute SQL Task"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:Disabled="True"
           DTS:DTSID="{5C25F47A-2B5D-4E12-91B9-891943E25F9D}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
@@ -101,7 +100,6 @@
           DTS:refId="Package\3_AUS_School\get data to Staging Db"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:Disabled="True"
           DTS:DTSID="{9C70B460-764A-4E19-B5AC-A96F1CC84FBD}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
@@ -7565,10 +7563,6 @@ where [refTable].[Suburb] = ?</property>
                           dataType="i4"
                           name="StateId" />
                         <externalMetadataColumn
-                          refId="Package\3_AUS_School\load data to Warehouse\To Warehouse Db.Inputs[OLE DB Destination Input].ExternalColumns[CityId]"
-                          dataType="i4"
-                          name="CityId" />
-                        <externalMetadataColumn
                           refId="Package\3_AUS_School\load data to Warehouse\To Warehouse Db.Inputs[OLE DB Destination Input].ExternalColumns[CountryId]"
                           dataType="i4"
                           name="CountryId" />
@@ -8337,9 +8331,7 @@ where [refTable].[Suburb] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="17.25,5,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8407,9 +8399,7 @@ where [refTable].[Suburb] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="63.25,18,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

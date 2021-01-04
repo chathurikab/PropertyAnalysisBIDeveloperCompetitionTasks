@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{E79E4BB0-C7C5-4D6C-AD76-AFB9723B0409}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{A0D77828-EE54-48AC-8213-FCFCC7E5EB23}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -608,94 +608,6 @@ INSERT INTO [dbo].[DimSuburb]
                       refId="Package\Data Flow Task\DimSuburb.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Data Flow Task\DimSuburb.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Data Flow Task\DimTransport"
-              componentClassID="Microsoft.OLEDBCommand"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="DimTransport"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @Count as Int;
-
-SELECT  @Count = COUNT(*)
-  FROM [Task1_Warehouse].[dbo].[DimTransport]
-  where StopId IS NULL AND Name IS NULL AND StreetName IS NULL AND EntranceType IS NULL
-
-IF @Count = 0 
- BEGIN
-	
-INSERT INTO [dbo].[DimTransport]
-          
-     VALUES(NULL, NULL,NULL,NULL, NULL,NULL,NULL, NULL,NULL,NULL, NULL,NULL)
-
- END</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\DimTransport.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Data Flow Task\DimTransport.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <externalMetadataColumns
-                    isUsed="True" />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\DimTransport.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Data Flow Task\DimTransport.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Data Flow Task\DimTransport.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Data Flow Task\DimTransport.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\DimTransport.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\DimTransport.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\DimTransport.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\DimTransport.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1370,114 +1282,6 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Data Flow Task\OLE DB Source 5"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source 5"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  COUNT(*) AS Count
-  FROM [Task1_Warehouse].[dbo].[DimTransport]
-  where StopId IS NULL AND Name IS NULL AND StreetName IS NULL AND EntranceType IS NULL</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Data Flow Task\OLE DB Source 5.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Output].Columns[Count]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Output].ExternalColumns[Count]"
-                      lineageId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Output].Columns[Count]"
-                      name="Count"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Output].ExternalColumns[Count]"
-                      dataType="i4"
-                      name="Count" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Error Output].Columns[Count]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Error Output].Columns[Count]"
-                      name="Count" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
@@ -1507,11 +1311,6 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
               startId="Package\Data Flow Task\OLE DB Source 4.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Data Flow Task.Paths[OLE DB Source Output5]"
-              endId="Package\Data Flow Task\DimTransport.Inputs[OLE DB Command Input]"
-              name="OLE DB Source Output"
-              startId="Package\Data Flow Task\OLE DB Source 5.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output6]"
               endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\Define 2017 Periods.Outputs[OLE DB Source Output]" />
@@ -1545,49 +1344,9 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="131,42"
-          Id="Package\Data Flow Task\DimSuburb"
-          TopLeft="806,296" />
-        <NodeLayout
           Size="134,42"
           Id="Package\Data Flow Task\DimCountry"
           TopLeft="234,302" />
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Data Flow Task\DimState"
-          TopLeft="620,298" />
-        <NodeLayout
-          Size="115,42"
-          Id="Package\Data Flow Task\DimCity"
-          TopLeft="58,302" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Data Flow Task\OLE DB Source 1"
-          TopLeft="227,187" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Data Flow Task\OLE DB Source 3"
-          TopLeft="607,182" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Data Flow Task\OLE DB Source 5"
-          TopLeft="977,182" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="605,529" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Data Flow Task\OLE DB Source 4"
-          TopLeft="788,179" />
-        <NodeLayout
-          Size="143,42"
-          Id="Package\Data Flow Task\DimTransport"
-          TopLeft="969,301" />
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Data Flow Task\DimPeriod"
-          TopLeft="430,300" />
         <NodeLayout
           Size="150,42"
           Id="Package\Data Flow Task\OLE DB Source"
@@ -1597,11 +1356,43 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
           Id="Package\Data Flow Task\OLE DB Source 2"
           TopLeft="415,187" />
         <NodeLayout
+          Size="159,42"
+          Id="Package\Data Flow Task\OLE DB Source 4"
+          TopLeft="788,179" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Data Flow Task\DimSuburb"
+          TopLeft="806,296" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Data Flow Task\DimCity"
+          TopLeft="58,302" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Data Flow Task\DimState"
+          TopLeft="620,298" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Data Flow Task\OLE DB Source 1"
+          TopLeft="227,187" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Data Flow Task\OLE DB Source 3"
+          TopLeft="607,182" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="605,529" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Data Flow Task\DimPeriod"
+          TopLeft="430,300" />
+        <NodeLayout
           Size="173,42"
           Id="Package\Data Flow Task\Define 2017 Periods"
           TopLeft="610,412" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output6]"
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output5]"
           TopLeft="693.5,454">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1614,40 +1405,6 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,67.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output5]"
-          TopLeft="1056.5,224">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-16,77"
-              Start="0,0"
-              End="-16,69.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.5"
-                    Point2="0,38.5"
-                    Point3="-4,38.5" />
-                  <mssgle:LineSegment
-                    End="-12,38.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-12,38.5"
-                    Point2="-16,38.5"
-                    Point3="-16,42.5" />
-                  <mssgle:LineSegment
-                    End="-16,69.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1770,51 +1527,6 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source 3">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source 5">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source 4">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
@@ -1832,6 +1544,43 @@ WHERE        (StateId IS NULL) AND (StateCode IS NULL) AND (StateName IS NULL)</
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source 4">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source 3">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

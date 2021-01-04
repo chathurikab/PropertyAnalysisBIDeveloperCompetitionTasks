@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="80"
-  DTS:VersionGUID="{99858E8D-E578-449A-BD69-494102D755DD}">
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{D576D54E-5650-4D0A-816F-C62B7E7609ED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
