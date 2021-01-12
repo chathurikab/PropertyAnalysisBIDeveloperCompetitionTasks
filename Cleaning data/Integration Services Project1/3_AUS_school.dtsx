@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="3_AUS_School"
   DTS:PackageType="5"
-  DTS:VersionBuild="83"
-  DTS:VersionGUID="{D576D54E-5650-4D0A-816F-C62B7E7609ED}">
+  DTS:VersionBuild="84"
+  DTS:VersionGUID="{09C8E494-B023-4BA5-91CE-205910E98DEE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7929,33 +7929,69 @@ where [refTable].[Suburb] = ?</property>
         <NodeLayout
           Size="98,42"
           Id="Package\3_AUS_School\load data to Warehouse\Sort"
-          TopLeft="220,276" />
+          TopLeft="220,240" />
         <NodeLayout
-          Size="209,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Identify new school records"
-          TopLeft="166,178" />
+          Size="130,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Merge Join"
+          TopLeft="140,611" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Lookup Country"
+          TopLeft="108,416" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Sort 2"
+          TopLeft="476,510" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Sort 1"
+          TopLeft="122,505" />
         <NodeLayout
           Size="164,42"
           Id="Package\3_AUS_School\load data to Warehouse\To Warehouse Db"
-          TopLeft="458,722" />
+          TopLeft="458,686" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Sort 3"
+          TopLeft="294,503" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Lookup State"
+          TopLeft="283,416" />
         <NodeLayout
           Size="150,42"
           Id="Package\3_AUS_School\load data to Warehouse\OLE DB Source"
-          TopLeft="200,99" />
+          TopLeft="200,63" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Lookup Suburb"
+          TopLeft="457,413" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Multicast"
+          TopLeft="242,327" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Identify new school records"
+          TopLeft="166,142" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\3_AUS_School\load data to Warehouse\Merge Join 1"
+          TopLeft="328,618" />
         <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[OLE DB Source Output]"
-          TopLeft="272.75,141">
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Merge Join Output]"
+          TopLeft="270,635.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37"
+              EndConnector="58,0"
               Start="0,0"
-              End="0,29.5">
+              End="50.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.5" />
+                    End="50.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7966,7 +8002,7 @@ where [refTable].[Suburb] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\3_AUS_School\load data to Warehouse.Paths[Lookup No Match Output]"
-          TopLeft="269.75,220">
+          TopLeft="269.75,184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7988,93 +8024,57 @@ where [refTable].[Suburb] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Multicast"
-          TopLeft="242,363" />
         <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Sort Output]"
-          TopLeft="269,318">
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Lookup Match Output2]"
+          TopLeft="530.75,455">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="33,45"
+              EndConnector="0,55"
               Start="0,0"
-              End="33,37.5">
+              End="0,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="29,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29,22.5"
-                    Point2="33,22.5"
-                    Point3="33,26.5" />
-                  <mssgle:LineSegment
-                    End="33,37.5" />
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,17.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="107,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Sort 3"
-          TopLeft="294,539" />
-        <NodeLayout
-          Size="153,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Lookup Country"
-          TopLeft="108,452" />
         <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Multicast Output 2]"
-          TopLeft="283.333333333333,405">
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Lookup Match Output1]"
+          TopLeft="350.5,458">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-98.8333333333333,47"
+              EndConnector="0,45"
               Start="0,0"
-              End="-98.8333333333333,39.5">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.1710526315789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.1710526315789"
-                    Point2="0,19.1710526315789"
-                    Point3="-4,19.1710526315789" />
-                  <mssgle:LineSegment
-                    End="-94.8333333333333,19.1710526315789" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-94.8333333333333,19.1710526315789"
-                    Point2="-98.8333333333333,19.1710526315789"
-                    Point3="-98.8333333333333,23.1710526315789" />
-                  <mssgle:LineSegment
-                    End="-98.8333333333333,39.5" />
+                    End="0,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,12.9453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="107,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Sort 1"
-          TopLeft="122,541" />
         <EdgeLayout
           Id="Package\3_AUS_School\load data to Warehouse.Paths[Lookup Match Output]"
-          TopLeft="184.5,494">
+          TopLeft="184.5,458">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8108,235 +8108,9 @@ where [refTable].[Suburb] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Merge Join"
-          TopLeft="140,647" />
-        <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Sort Output1]"
-          TopLeft="175.5,583">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.16666666666666,64"
-              Start="0,0"
-              End="9.16666666666666,56.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.9331306990882" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,33.9331306990882"
-                    Point2="0,37.9331306990882"
-                    Point3="4,37.9331306990882" />
-                  <mssgle:LineSegment
-                    End="5.16666666666666,37.9331306990882" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.16666666666666,37.9331306990882"
-                    Point2="9.16666666666666,37.9331306990882"
-                    Point3="9.16666666666666,41.9331306990882" />
-                  <mssgle:LineSegment
-                    End="9.16666666666666,56.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Sort Output2]"
-          TopLeft="347.5,581">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-122.166666666667,66"
-              Start="0,0"
-              End="-122.166666666667,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.1185410334346" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.1185410334346"
-                    Point2="0,39.1185410334346"
-                    Point3="-4,39.1185410334346" />
-                  <mssgle:LineSegment
-                    End="-118.166666666667,39.1185410334346" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-118.166666666667,39.1185410334346"
-                    Point2="-122.166666666667,39.1185410334346"
-                    Point3="-122.166666666667,43.1185410334346" />
-                  <mssgle:LineSegment
-                    End="-122.166666666667,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="141,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Lookup State"
-          TopLeft="283,452" />
-        <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Multicast Output 4]"
-          TopLeft="302,405">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="51.5,47"
-              Start="0,0"
-              End="51.5,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.5"
-                    Point2="0,23.5"
-                    Point3="4,23.5" />
-                  <mssgle:LineSegment
-                    End="47.5,23.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="47.5,23.5"
-                    Point2="51.5,23.5"
-                    Point3="51.5,27.5" />
-                  <mssgle:LineSegment
-                    End="51.5,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Lookup Match Output1]"
-          TopLeft="350.5,494">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Lookup Suburb"
-          TopLeft="457,449" />
-        <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Multicast Output 3]"
-          TopLeft="330,405">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="202,44"
-              Start="0,0"
-              End="202,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.304347826087" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.304347826087"
-                    Point2="0,15.304347826087"
-                    Point3="4,15.304347826087" />
-                  <mssgle:LineSegment
-                    End="198,15.304347826087" />
-                  <mssgle:CubicBezierSegment
-                    Point1="198,15.304347826087"
-                    Point2="202,15.304347826087"
-                    Point3="202,19.304347826087" />
-                  <mssgle:LineSegment
-                    End="202,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="107,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Sort 2"
-          TopLeft="476,546" />
-        <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Lookup Match Output2]"
-          TopLeft="530.75,491">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,17.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\3_AUS_School\load data to Warehouse\Merge Join 1"
-          TopLeft="328,654" />
-        <EdgeLayout
-          Id="Package\3_AUS_School\load data to Warehouse.Paths[Merge Join Output]"
-          TopLeft="270,671.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="58,0"
-              Start="0,0"
-              End="50.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="50.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\3_AUS_School\load data to Warehouse.Paths[Sort Output3]"
-          TopLeft="529.5,588">
+          TopLeft="529.5,552">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8369,8 +8143,234 @@ where [refTable].[Suburb] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Sort Output2]"
+          TopLeft="347.5,545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-122.166666666667,66"
+              Start="0,0"
+              End="-122.166666666667,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1185410334346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.1185410334346"
+                    Point2="0,39.1185410334346"
+                    Point3="-4,39.1185410334346" />
+                  <mssgle:LineSegment
+                    End="-118.166666666667,39.1185410334346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-118.166666666667,39.1185410334346"
+                    Point2="-122.166666666667,39.1185410334346"
+                    Point3="-122.166666666667,43.1185410334346" />
+                  <mssgle:LineSegment
+                    End="-122.166666666667,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Sort Output1]"
+          TopLeft="175.5,547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.16666666666666,64"
+              Start="0,0"
+              End="9.16666666666666,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.9331306990882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.9331306990882"
+                    Point2="0,37.9331306990882"
+                    Point3="4,37.9331306990882" />
+                  <mssgle:LineSegment
+                    End="5.16666666666666,37.9331306990882" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.16666666666666,37.9331306990882"
+                    Point2="9.16666666666666,37.9331306990882"
+                    Point3="9.16666666666666,41.9331306990882" />
+                  <mssgle:LineSegment
+                    End="9.16666666666666,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Sort Output]"
+          TopLeft="269,282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="33,45"
+              Start="0,0"
+              End="33,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="29,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29,22.5"
+                    Point2="33,22.5"
+                    Point3="33,26.5" />
+                  <mssgle:LineSegment
+                    End="33,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[OLE DB Source Output]"
+          TopLeft="272.75,105">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Multicast Output 4]"
+          TopLeft="302,369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.5,47"
+              Start="0,0"
+              End="51.5,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5"
+                    Point2="0,23.5"
+                    Point3="4,23.5" />
+                  <mssgle:LineSegment
+                    End="47.5,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.5,23.5"
+                    Point2="51.5,23.5"
+                    Point3="51.5,27.5" />
+                  <mssgle:LineSegment
+                    End="51.5,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Multicast Output 3]"
+          TopLeft="330,369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="202,44"
+              Start="0,0"
+              End="202,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.304347826087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.304347826087"
+                    Point2="0,15.304347826087"
+                    Point3="4,15.304347826087" />
+                  <mssgle:LineSegment
+                    End="198,15.304347826087" />
+                  <mssgle:CubicBezierSegment
+                    Point1="198,15.304347826087"
+                    Point2="202,15.304347826087"
+                    Point3="202,19.304347826087" />
+                  <mssgle:LineSegment
+                    End="202,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\3_AUS_School\load data to Warehouse.Paths[Multicast Output 2]"
+          TopLeft="283.333333333333,369">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98.8333333333333,47"
+              Start="0,0"
+              End="-98.8333333333333,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1710526315789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.1710526315789"
+                    Point2="0,19.1710526315789"
+                    Point3="-4,19.1710526315789" />
+                  <mssgle:LineSegment
+                    End="-94.8333333333333,19.1710526315789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94.8333333333333,19.1710526315789"
+                    Point2="-98.8333333333333,19.1710526315789"
+                    Point3="-98.8333333333333,23.1710526315789" />
+                  <mssgle:LineSegment
+                    End="-98.8333333333333,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\3_AUS_School\load data to Warehouse.Paths[Merge Join Output1]"
-          TopLeft="397.5,696">
+          TopLeft="397.5,660">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8406,22 +8406,22 @@ where [refTable].[Suburb] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\3_AUS_School\load data to Warehouse\Identify new school records">
+    design-time-name="Package\3_AUS_School\load data to Warehouse\Lookup Country">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[FactSchool]</Value>
+          type="q3:string">[dbo].[DimCountry]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -8442,6 +8442,29 @@ where [refTable].[Suburb] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\3_AUS_School\load data to Warehouse\Lookup State">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimState]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\3_AUS_School\load data to Warehouse\OLE DB Source">
     <Properties>
       <Property>
@@ -8455,58 +8478,12 @@ where [refTable].[Suburb] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\3_AUS_School\load data to Warehouse\Lookup Country">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimCountry]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\3_AUS_School\load data to Warehouse\Lookup State">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimState]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\3_AUS_School\load data to Warehouse\Lookup Suburb">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -8516,7 +8493,30 @@ where [refTable].[Suburb] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\3_AUS_School\load data to Warehouse\Identify new school records">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[FactSchool]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

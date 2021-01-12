@@ -1,0 +1,95 @@
+﻿CityId,CityCode,City
+1,NULL,NULL
+2,ADE,Adelaide
+3,ADE,"Adelaide "
+4,ADE,Adelaide Hills
+5,ALB,Albany
+6,ALB,Albury
+7,ALI,Alice Springs
+8,ARM,Armadale
+9,ARM,"Armidale "
+10,BAL,Ballarat
+11,BAR,Barossa Valley
+12,BAT,Bathurst
+13,BEN,Bendigo
+14,BLU,Blue Mountains
+15,BRI,Brisbane
+16,BRO,Broken Hill
+17,BRO,"Broken Hill "
+18,BRU,Brunswick
+19,BUN,Bunbury
+20,BUN,Bundaberg
+21,BUR,Burnie
+22,CAI,Cairns
+23,CAN,Canberra
+24,CEN,Central Coast
+25,COF,Coffs Harbour
+26,COL,Collie
+27,DAR,Darwin
+28,DUB,Dubbo
+29,FIN,Finders Island
+30,FLA,Flauricu Peninsula
+31,GEE,Geelong
+32,GER,Geraldton
+33,GLA,Gladstone
+34,GOL,Gold Coast
+35,GOS,Gosford
+36,GOS,"Gosford "
+37,GOU,Goulburn
+38,GRA,Grafton
+39,GRA,"Grafton "
+40,GRI,Griffith
+41,GRO,Grosvenor Place
+42,HAR,Harvey
+43,HER,Hervey Bay
+44,HER,"Hervey Bay "
+45,HOB,Hobart
+46,HUN,Hunter Valley
+47,IPS,Ipswich
+48,KAL,Kalgoorlie-Boulder
+49,KAN,Kangaroo Island
+50,KAR,Karratha
+51,KAT,Katoomba
+52,KIN,King Island
+53,LAU,Launceston
+54,LOW,Lower Eyre Peninsula
+55,MAC,Mackay
+56,MAC,"Mackay "
+57,MAI,Maitland
+58,MAN,Mandurah
+59,MAR,Maryborough
+60,MAR,"Maryborough "
+61,MEL,Melbourne
+62,MIL,Mildura
+63,MOR,Mornington
+64,MOR,Morwell
+65,MOU,Mount Isa
+66,MOU,"Mount Isa "
+67,NEW,Newcastle
+68,NOW,Nowra
+69,ORA,Orange
+70,PER,Perth
+71,PHI,Phillip Island
+72,POR,Port Hedland
+73,POR,Port Macquarie
+74,POR,Port Pirie
+75,RIV,Riverland
+76,ROC,Rockhampton
+77,ROC,"Rockhampton "
+78,SHE,Shepparton
+79,SUN,Sunshine Coast
+80,SYD,Sydney
+81,TAM,Tamworth
+82,TAR,Taree
+83,TOM,Tom Price
+84,TOO,Toowoomba
+85,TOW,Townsville
+86,TWE,Tweed Heads
+87,WAG,Wagga Wagga
+88,WAG,"Wagga Wagga "
+89,WAR,Warwick
+90,WHY,Whyalla
+91,WIC,Wickham
+92,WOL,"Wollongong "
+93,WYN,Wyndham
+94,YOR,York Peninsula

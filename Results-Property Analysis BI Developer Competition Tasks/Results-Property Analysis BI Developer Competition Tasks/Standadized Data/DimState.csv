@@ -1,0 +1,10 @@
+﻿StateId,StateCode,StateName
+1,NULL,NULL
+2,NT," Northern Territory"
+3,WA," Western Australia"
+4,ACT,Australian Capital Territory
+5,NSW,New South Wales
+6,QLD,Queensland
+7,SA,South Australia
+8,TAS,Tasmania
+9,VIC,Victoria

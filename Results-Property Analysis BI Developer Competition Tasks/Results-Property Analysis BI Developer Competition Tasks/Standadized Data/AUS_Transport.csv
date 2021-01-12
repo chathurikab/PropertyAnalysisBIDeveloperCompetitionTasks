@@ -1,0 +1,1011 @@
+﻿StationName,StreetNumber,StreetName,Suburb,PostCode,State,EntranceType,EntranceLatitude,EntranceLongitude,ExitNumber,StopID
+Macqueen,121,MacQueen Street,Aberdeen,2336,New South Wales,Stairs,-32.166899,150.891975,NULL,1
+Macqueen,121,MacQueen Street,Aberdeen,2336,New South Wales,Ramp,-32.166886,150.891957,NULL,2
+Park,7,Park Avenue,Adamstown,2289,New South Wales,Path,-32.933705,151.720451,NULL,3
+St James,2a,Saint James Road,Broadmeadow,2292,New South Wales,Stairs,-32.933413,151.720363,NULL,4
+St James,2a,Saint James Road,Broadmeadow,2292,New South Wales,Ramp,-32.933401,151.720347,NULL,5
+Park,9,Park Avenue,Adamstown,2289,New South Wales,Path,-32.933827,151.720236,NULL,6
+Burroo,207-213,Princes Highway,Albion Park Rail,2527,New South Wales,Ramp,-34.563409,150.799390,NULL,7
+Princes,13,Burroo Street,Albion Park Rail,2527,New South Wales,Ramp,-34.563507,150.799189,NULL,8
+Princes,207,Princes Highway,Albion Park Rail,2527,New South Wales,Stairs,-34.562939,150.798574,NULL,9
+Princes,207,Princes Highway,Albion Park Rail,2527,New South Wales,Ramp,-34.562782,150.798418,NULL,10
+Railway,466,Railway Parade,Allawah,2218,New South Wales,Ramp,-33.969968,151.114944,NULL,11
+Roberts,7,Roberts Lane,Hurstville,2220,New South Wales,Ramp,-33.969537,151.114694,NULL,12
+Roberts,7,Roberts Lane,Hurstville,2220,New South Wales,Stairs,-33.969490,151.114566,NULL,13
+Railway,470,Railway Parade,Allawah,2218,New South Wales,Lift,-33.969877,151.114435,NULL,14
+Railway,472,Railway Parade,Allawah,2218,New South Wales,Ramp,-33.969886,151.114240,NULL,15
+Grove,66,Constitution Road,Dulwich Hill,2203,New South Wales,Path,-33.902045,151.138159,NULL,16
+Constitution,66,Constitution Road,Dulwich Hill,2203,New South Wales,Path,-33.902049,151.138043,NULL,17
+The Arcade,1,The Arcade,Arncliffe,2205,New South Wales,Stairs,-33.936924,151.147427,NULL,18
+The Arcade,1,The Arcade,Arncliffe,2205,New South Wales,Lift,-33.936963,151.147422,NULL,19
+Firth,NULL,NULL,Arncliffe,2205,New South Wales,Lift,-33.936774,151.146860,NULL,20
+Firth,NULL,NULL,Arncliffe,2205,New South Wales,Stairs,-33.936717,151.146850,NULL,21
+Valetta,7,Wilkes Avenue,Artarmon,2064,New South Wales,Ramp,-33.808233,151.184741,NULL,22
+Hampden,88A,Hampden Road,Artarmon,2064,New South Wales,Lift,-33.808759,151.184720,NULL,23
+Hampden,100,Hampden Road,Artarmon,2064,New South Wales,Stairs,-33.808540,151.184428,NULL,24
+Station,7,Station Street,Ashfield,2131,New South Wales,Lift,-33.887442,151.125958,NULL,25
+Station,1A,Charlotte Street,Ashfield,2131,New South Wales,Stairs,-33.887396,151.125802,NULL,26
+Brown,2,Hercules Street,Ashfield,2131,New South Wales,Lift,-33.887891,151.125797,NULL,27
+Brown,NULL,NULL,Ashfield,2131,New South Wales,Stairs,-33.887775,151.125539,NULL,28
+Haldane,13,Haldane Street,Asquith,2077,New South Wales,Path,-33.688691,151.108265,NULL,29
+Pacific,381,B83,Asquith,2077,New South Wales,Ramp,-33.688489,151.107999,NULL,30
+Rawson,NULL,NULL,Auburn,2144,New South Wales,Ramp,-33.849287,151.033291,NULL,31
+South,96-98,South Parade,Auburn,2144,New South Wales,Stairs,-33.849663,151.032919,NULL,32
+South,3,South Parade,Auburn,2144,New South Wales,Ramp,-33.849463,151.032720,NULL,33
+Gilchrist,67,Moore Street,Austinmer,2515,New South Wales,Path,-34.306520,150.929351,NULL,34
+Railway,NULL,NULL,Austinmer,2515,New South Wales,Path,-34.306501,150.928907,NULL,35
+Adelaide,154,Wilton Road,Awaba,2283,New South Wales,Ramp,-33.012916,151.542158,NULL,36
+Adelaide,154,Wilton Road,Awaba,2283,New South Wales,Path,-33.012916,151.542132,NULL,37
+Wilton,154,Wilton Road,Awaba,2283,New South Wales,Ramp,-33.013109,151.542074,NULL,38
+Hattersley,80,Hattersley Street,Banksia,2216,New South Wales,Ramp,-33.944900,151.140849,NULL,39
+Railway,17,Railway Street,Banksia,2216,New South Wales,Ramp,-33.944791,151.140498,NULL,40
+Railway,18,Railway Street,Banksia,2216,New South Wales,Stairs,-33.944883,151.140448,NULL,41
+North,80A,North Terrace,Bankstown,2200,New South Wales,Ramp,-33.917686,151.034269,NULL,42
+Bankstown City,139,Bankstown City Plaza,Bankstown,2200,New South Wales,Path,-33.918052,151.034110,NULL,43
+Bankstown City,NULL,NULL,Bankstown,2200,New South Wales,Path,-33.917788,151.033762,NULL,44
+Hartill Law,16,Hartill-Law Avenue,Bardwell Park,2207,New South Wales,Stairs,-33.931378,151.125379,NULL,45
+Great Southern,227,Great Southern Road,Bargo,2574,New South Wales,Path,-34.290978,150.580175,NULL,46
+Great Southern,227,Great Southern Road,Bargo,2574,New South Wales,Ramp,-34.290984,150.580150,NULL,47
+Railside,96,Old Hume Highway,Bargo,2574,New South Wales,Ramp,-34.291007,150.580020,NULL,48
+Railside,96,Old Hume Highway,Bargo,2574,New South Wales,Path,-34.291044,150.580007,NULL,49
+Sutherland,17,Wongala Crescent,Beecroft,2119,New South Wales,Path,-33.749216,151.066733,NULL,50
+Wongala,17,Wongala Crescent,Beecroft,2119,New South Wales,Path,-33.749044,151.066337,NULL,51
+Wongala,2A,Hannah Street,Beecroft,2119,New South Wales,Path,-33.749233,151.066224,NULL,52
+Sandham,17,Sandham Road,Bell,2786,New South Wales,Ramp,-33.506165,150.279361,NULL,53
+Chiefley,17,Sandham Road,Bell,2786,New South Wales,Stairs,-33.506234,150.279079,NULL,54
+Bellambi,16,Union Street,Bellambi,2518,New South Wales,Ramp,-34.362612,150.910131,NULL,55
+Burwood,NULL,NULL,Belmore,2192,New South Wales,Lift,-33.917248,151.088337,NULL,56
+Burwood,365,Burwood Road,Belmore,2192,New South Wales,Stairs,-33.917227,151.088324,NULL,57
+Campbell,NULL,NULL,Berala,2141,New South Wales,Path,-33.871977,151.032828,NULL,58
+Woodburn,NULL,NULL,Berala,2141,New South Wales,Path,-33.871393,151.032327,NULL,59
+Lawson,NULL,NULL,Beresfield,2322,New South Wales,Stairs,-32.799407,151.658578,NULL,60
+Addison,2,Milton Street,Beresfield,2322,New South Wales,Stairs,-32.799583,151.658334,NULL,61
+Addison,2,Milton Street,Beresfield,2322,New South Wales,Lift,-32.799471,151.658161,NULL,62
+Pacific,NULL,Pacific Highway,Berowra,2081,New South Wales,Ramp,-33.622914,151.153563,NULL,63
+Pacific,1007,Pacific Highway,Cowan,2081,New South Wales,Ramp,-33.623002,151.153142,NULL,64
+Station,5,Station Road,Berry,2535,New South Wales,Path,-34.780273,150.696723,NULL,65
+King Georges,482,A3,Beverly Hills,2209,New South Wales,Stairs,-33.949140,151.080867,NULL,66
+King Georges,480,A3,Beverly Hills,2209,New South Wales,Lift,-33.949130,151.080829,NULL,67
+King Georges,409-413,King Georges Road,Beverly Hills,2209,New South Wales,Stairs,-33.949262,151.080478,NULL,68
+Bexley,2,Shaw Street,Bexley North,2207,New South Wales,Stairs,-33.937481,151.113926,NULL,69
+Avalon,4,Teresa Street,Birrong,2143,New South Wales,Stairs,-33.892536,151.024313,NULL,70
+Great Western,264,A32,Blackheath,2785,New South Wales,Stairs,-33.633972,150.284590,NULL,71
+Station,264,Great Western Highway,Blackheath,2785,New South Wales,Stairs,-33.634005,150.284253,NULL,72
+First,42,First Avenue,Blacktown,2148,New South Wales,Stairs,-33.767777,150.908019,3,73
+First,40,First Avenue,Blacktown,2148,New South Wales,Stairs,-33.767733,150.907968,3,74
+First,40,First Avenue,Blacktown,2148,New South Wales,Lift,-33.767754,150.907961,3,75
+Jim Simpson,14,Main Street,Blacktown,2148,New South Wales,Stairs,-33.768941,150.907305,2,76
+Jim Simpson,14,Main Street,Blacktown,2148,New South Wales,Escalators,-33.768967,150.907296,2,77
+Old Richmond,9b,Main Street,Blacktown,2148,New South Wales,Lift,-33.767829,150.907147,4,78
+Patrick,14,Main Street,Blacktown,2148,New South Wales,Lift,-33.768899,150.907082,1,79
+Patrick,10,Main Street,Blacktown,2148,New South Wales,Stairs,-33.769033,150.906989,1,80
+Old Richmond,9b,Main Street,Blacktown,2148,New South Wales,Stairs,-33.767798,150.906924,4,81
+Wilson,NULL,NULL,Blaxland,2774,New South Wales,Lift,-33.743699,150.609962,NULL,82
+Wilson,NULL,Wilson Way,Blaxland,2774,New South Wales,Stairs,-33.743662,150.609805,NULL,83
+Great Western,140U,Great Western Highway,Blaxland,2774,New South Wales,Stairs,-33.743803,150.609686,NULL,84
+Great Western,144,Great Western Highway,Blaxland,2774,New South Wales,Ramp,-33.744117,150.609388,NULL,85
+Great Western,NULL,NULL,Blaxland,2774,New South Wales,Stairs,-33.744049,150.609328,NULL,86
+Meroo,47,Meroo Street,Bomaderry,2541,New South Wales,Path,-34.853744,150.609770,NULL,87
+Princes,NULL,Princes Highway,Bombo,2533,New South Wales,Stairs,-34.658686,150.853768,NULL,88
+Princes,NULL,Princes Highway,Bombo,2533,New South Wales,Ramp,-34.658855,150.853756,NULL,89
+Grafton,422,Oxford Street,Bondi Junction,2022,New South Wales,Stairs,-33.891030,151.248596,NULL,90
+Rowe,422,Oxford Street,Bondi Junction,2022,New South Wales,Ramp,-33.891869,151.248366,NULL,91
+Grafton,NULL,NULL,Bondi Junction,2022,New South Wales,Stairs,-33.890994,151.248208,NULL,92
+Fourth,105,Toronto Road,Booragul,2284,New South Wales,Ramp,-32.971699,151.605168,NULL,93
+Station,105,Toronto Road,Booragul,2284,New South Wales,Ramp,-32.971900,151.604790,NULL,94
+Station,8,Station Street,Bowral,2576,New South Wales,Path,-34.477924,150.416974,NULL,95
+Kirkham,69,Kirkham Road,Bowral,2576,New South Wales,Path,-34.477637,150.416797,NULL,96
+Wingercarribee,25-29,Station Street,Bowral,2576,New South Wales,Stairs,-34.478416,150.416594,NULL,97
+Wingercarribee,25-29,Station Street,Bowral,2576,New South Wales,Lift,-34.478370,150.416576,NULL,98
+Wingercarribee,25-29,Station Street,Bowral,2576,New South Wales,Lift,-34.478277,150.416394,NULL,99
+Kirkham,25-29,Station Street,Bowral,2576,New South Wales,Stairs,-34.478222,150.416379,NULL,100
+Railway,2,Station Street,Branxton,2335,New South Wales,Ramp,-32.662210,151.345932,NULL,101
+Railway,52,Russell Street,Branxton,2335,New South Wales,Ramp,-32.662092,151.345535,NULL,102
+Graham,33,Graham Road,Broadmeadow,2292,New South Wales,Stairs,-32.922692,151.735412,NULL,103
+Brown,142,Broadmeadow Road,Broadmeadow,2292,New South Wales,Ramp,-32.922164,151.735221,NULL,104
+Graham,NULL,NULL,Broadmeadow,2292,New South Wales,Ramp,-32.922891,151.735065,NULL,105
+Brown,NULL,NULL,Broadmeadow,2292,New South Wales,Stairs,-32.922368,151.734946,NULL,106
+Great Western,352,A32,Bullaburra,2784,New South Wales,Ramp,-33.723519,150.415201,NULL,107
+Railway,NULL,NULL,Bullaburra,2784,New South Wales,Stairs,-33.723167,150.414989,NULL,108
+Park,74A,Park Road,Bulli,2516,New South Wales,Lift,-34.333844,150.915069,NULL,109
+Park,74A,Park Road,Bulli,2516,New South Wales,Lift,-34.333820,150.914931,NULL,110
+Franklin,41,Park Road,Bulli,2516,New South Wales,Path,-34.334286,150.914914,NULL,111
+Railway,41,Park Road,Bulli,2516,New South Wales,Path,-34.334339,150.914688,NULL,112
+Erith,9,Railway Avenue,Bundanoon,2578,New South Wales,Ramp,-34.655752,150.299740,NULL,113
+Church,1,Church Street,Bundanoon,2578,New South Wales,Path,-34.656049,150.299572,NULL,114
+Burradoo,123,Burradoo Road,Burradoo,2576,New South Wales,Path,-34.494186,150.398129,NULL,115
+Burradoo,123,Burradoo Road,Burradoo,2576,New South Wales,Ramp,-34.494185,150.397858,NULL,116
+Burwood,40,Deane Street,Burwood,2134,New South Wales,Stairs,-33.877045,151.103852,NULL,117
+Burwood,212,Burwood Road,Burwood,2134,New South Wales,Path,-33.877188,151.103824,NULL,118
+Broomfield,86,Broomfield Street,Cabramatta,2166,New South Wales,Lift,-33.894642,150.939104,NULL,119
+Broomfield,86A,Broomfield Street,Cabramatta,2166,New South Wales,Stairs,-33.894806,150.939048,NULL,120
+Railway,193,Railway Parade,Cabramatta,2166,New South Wales,Lift,-33.894598,150.938813,NULL,121
+Railway,201,Railway Parade,Cabramatta,2166,New South Wales,Ramp,-33.894942,150.938732,NULL,122
+Railway,NULL,NULL,Cabramatta,2166,New South Wales,Path,-33.895102,150.938659,NULL,123
+Grand,181,James Ruse Drive,Camellia,2142,New South Wales,Ramp,-33.819181,151.024141,NULL,124
+Railway,95,Railway Street,Campbelltown,2560,New South Wales,Ramp,-34.064189,150.814813,NULL,125
+Hurley,NULL,Hurley Street,Campbelltown,2560,New South Wales,Lift,-34.063591,150.814739,NULL,126
+Hurley,NULL,Hurley Street,Campbelltown,2560,New South Wales,Path,-34.063699,150.814622,NULL,127
+Hurley,NULL,Hurley Street,Campbelltown,2560,New South Wales,Stairs,-34.063679,150.814614,NULL,128
+Farrow,2,Farrow Road,Campbelltown,2560,New South Wales,Stairs,-34.063024,150.814409,NULL,129
+Hurley,2,Farrow Road,Campbelltown,2560,New South Wales,Lift,-34.063200,150.814308,NULL,130
+Farrow,NULL,Farrow Road,Campbelltown,2560,New South Wales,Stairs,-34.063323,150.814021,NULL,131
+Beamish,182,Beamish Street,Campsie,2194,New South Wales,Ramp,-33.910495,151.103574,NULL,132
+Beamish,NULL,NULL,Campsie,2194,New South Wales,Ramp,-33.910392,151.103557,NULL,133
+First,12A,First Avenue,Canley Vale,2166,New South Wales,Stairs,-33.887443,150.943689,NULL,134
+First,12,First Avenue,Canley Vale,2166,New South Wales,Ramp,-33.887462,150.943629,NULL,135
+Railway,115,Railway Parade,Canley Vale,2166,New South Wales,Stairs,-33.887234,150.943480,NULL,136
+Railway,115,Railway Parade,Canley Vale,2166,New South Wales,Ramp,-33.887346,150.943419,NULL,137
+Canterbury,1,Broughton Street,Canterbury,2193,New South Wales,Path,-33.912116,151.119013,NULL,138
+Hay,730-742,George Street,Haymarket,2000,New South Wales,Path,-33.879708,151.205558,NULL,139
+Hay,744,George Street,Haymarket,2000,New South Wales,Path,-33.879804,151.205512,NULL,140
+Main,281,Main Road,Cardiff,2285,New South Wales,Path,-32.941279,151.662819,NULL,141
+Mary,NULL,NULL,Cardiff,2285,New South Wales,Stairs,-32.941457,151.662301,NULL,142
+Mary,NULL,NULL,Cardiff,2285,New South Wales,Lift,-32.941409,151.662255,NULL,143
+Kingsway,NULL,NULL,Caringbah,2229,New South Wales,Lift,-34.041625,151.121914,NULL,144
+Kingsway,347,Kingsway,Caringbah,2229,New South Wales,Stairs,-34.041578,151.121856,NULL,145
+Lloyds,1A,Lloyds Avenue,Carlingford,2118,New South Wales,Path,-33.782171,151.047273,NULL,146
+James,1A,Lloyds Avenue,Carlingford,2118,New South Wales,Path,-33.782127,151.046844,NULL,147
+Lloyds,1A,Lloyds Avenue,Carlingford,2118,New South Wales,Ramp,-33.782709,151.046786,NULL,148
+Lloyds,314,Cumberland Highway,Carlingford,2118,New South Wales,Path,-33.782874,151.046657,NULL,149
+Pennant Hills,312B,Pennant Hills Road,Carlingford,2118,New South Wales,Path,-33.783043,151.046351,NULL,150
+Railway,310,Railway Parade,Carlton,2218,New South Wales,Lift,-33.968422,151.124536,NULL,151
+Carlton,37,Carlton Parade,Carlton,2218,New South Wales,Lift,-33.968010,151.124390,NULL,152
+Railway,318,Railway Parade,Carlton,2218,New South Wales,Stairs,-33.968468,151.124344,NULL,153
+Carlton,NULL,NULL,Carlton,2218,New South Wales,Stairs,-33.968092,151.124237,NULL,154
+Carlton,37,Carlton Parade,Carlton,2218,New South Wales,Ramp,-33.967980,151.124179,NULL,155
+Sandal,144C,Wattle Avenue,Carramar,2163,New South Wales,Path,-33.884768,150.960729,NULL,156
+Carramar,33,Carramar Avenue,Carramar,2163,New South Wales,Path,-33.884316,150.960564,NULL,157
+Casula,1,Powerhouse Road,Casula,2170,New South Wales,Stairs,-33.950049,150.912137,NULL,158
+Casula,2,Casula Road,Casula,2170,New South Wales,Lift,-33.950352,150.912079,NULL,159
+Casula,6,Rushton Place,Casula,2170,New South Wales,Lift,-33.950187,150.911728,NULL,160
+Casula,2,Casula Road,Casula,2170,New South Wales,Path,-33.950368,150.911705,NULL,161
+Casula,2,Casula Road,Casula,2170,New South Wales,Stairs,-33.950329,150.911686,NULL,162
+Elizabeth,308,Elizabeth Street,Surry Hills,2010,New South Wales,Ramp,-33.883521,151.207956,4,163
+Elizabeth,2,Chalmers Street,Surry Hills,2010,New South Wales,Lift,-33.883710,151.207899,5,164
+Elizabeth,2,Chalmers Street,Surry Hills,2010,New South Wales,Stairs,-33.883785,151.207862,5,165
+Eddy,NULL,Railway Colonnade Drive,Haymarket,2000,New South Wales,Stairs,-33.883024,151.207076,3,166
+Eddy,1,Eddy Avenue,Haymarket,2000,New South Wales,Escalators,-33.883208,151.207011,3,167
+Eddy,NULL,Eddy Avenue,Haymarket,2000,New South Wales,Lift,-33.883536,151.206971,3,168
+Eddy,1,Eddy Avenue,Haymarket,2000,New South Wales,Path,-33.882539,151.206884,2,169
+Chalmers,17,Randle Street,Surry Hills,2010,New South Wales,Lift,-33.885412,151.206847,6,170
+Chalmers,65,Chalmers Street,Haymarket,2000,New South Wales,Escalators,-33.885444,151.206822,6,171
+Chalmers,67,Chalmers Street,Haymarket,2000,New South Wales,Stairs,-33.885478,151.206790,6,172
+Eddy,1,Eddy Avenue,Haymarket,2000,New South Wales,Path,-33.882330,151.206503,2,173
+Eddy,NULL,Eddy Avenue,Haymarket,2000,New South Wales,Stairs,-33.882102,151.206125,NULL,174
+Eddy,11,Eddy Avenue,Haymarket,2000,New South Wales,Escalators,-33.882137,151.206098,NULL,175
+Pitt,15,Railway Colonnade Drive,Haymarket,2000,New South Wales,Path,-33.882366,151.205813,1,176
+Lee,8A,Lee Street,Haymarket,2000,New South Wales,Path,-33.883985,151.204266,7,177
+Post Office,430,Victoria Avenue,Chatswood,2067,New South Wales,Stairs,-33.797227,151.181442,NULL,178
+Post Office,495,Victoria Avenue,Chatswood,2067,New South Wales,Escalators,-33.797185,151.181428,NULL,179
+Orchard,430,Victoria Avenue,Chatswood,2067,New South Wales,Stairs,-33.796775,151.181380,NULL,180
+Orchard,45,Victoria Avenue,Chatswood,2067,New South Wales,Escalators,-33.796736,151.181364,NULL,181
+Post Office,1,Victoria Avenue,Chatswood,2067,New South Wales,Lift,-33.797176,151.181303,NULL,182
+Thomas,NULL,Unnamed Road,Chatswood,2067,New South Wales,Lift,-33.797651,151.181263,NULL,183
+Thomas,NULL,Unnamed Road,Chatswood,2067,New South Wales,Stairs,-33.797667,151.181181,NULL,184
+Orchard,NULL,NULL,Chatswood,2067,New South Wales,Lift,-33.796735,151.181176,NULL,185
+Railway,NULL,NULL,Chatswood,2067,New South Wales,Lift,-33.796898,151.180712,NULL,186
+Thomas,2-4,Thomas Street,Chatswood,2067,New South Wales,Lift,-33.797930,151.180693,NULL,187
+Railway,438,Victoria Avenue,Chatswood,2067,New South Wales,Stairs,-33.797095,151.180673,NULL,188
+Thomas,2-4,Thomas Street,Chatswood,2067,New South Wales,Stairs,-33.797903,151.180647,NULL,189
+Railway,461,Victoria Avenue,Chatswood,2067,New South Wales,Escalators,-33.797050,151.180536,NULL,190
+Railway,438,Victoria Avenue,Chatswood,2067,New South Wales,Stairs,-33.797015,151.180521,NULL,191
+Cheltenham,22,Cheltenham Road,Cheltenham,2119,New South Wales,Stairs,-33.755397,151.078149,NULL,192
+Cheltenham,22,Cheltenham Road,Cheltenham,2119,New South Wales,Lift,-33.755439,151.078109,NULL,193
+Chester Hill,9,Chester Hill Road,Chester Hill,2162,New South Wales,Path,-33.883688,151.000462,NULL,194
+Alfred,NULL,NULL,Sydney,2000,New South Wales,Stairs,-33.861463,151.210794,NULL,195
+Alfred,30,Alfred Street,Sydney,2000,New South Wales,Escalators,-33.861277,151.210773,NULL,196
+Alfred,1,Alfred Street,Sydney,2000,New South Wales,Escalators,-33.861439,151.210745,NULL,197
+Alfred,30,Alfred Street,Sydney,2000,New South Wales,Lift,-33.861243,151.210734,NULL,198
+Alfred,1,Alfred Street,Sydney,2000,New South Wales,Lift,-33.861466,151.210712,NULL,199
+Alfred,NULL,NULL,Sydney,2000,New South Wales,Stairs,-33.861314,151.210659,NULL,200
+Alfred,5,Alfred Street,Sydney,2000,New South Wales,Stairs,-33.861312,151.210623,NULL,201
+Alfred,1,Alfred Street,Sydney,2000,New South Wales,Stairs,-33.861380,151.210615,NULL,202
+Alfred,30,Alfred Street,Sydney,2000,New South Wales,Escalators,-33.861259,151.210565,NULL,203
+Alfred,2,Alfred Street,Sydney,2000,New South Wales,Escalators,-33.861399,151.210328,NULL,204
+Racecource,40a,Racecourse Road,Clarendon,2756,New South Wales,Ramp,-33.608442,150.787892,NULL,205
+Racecource,40a,Racecourse Road,Clarendon,2756,New South Wales,Path,-33.608488,150.787844,NULL,206
+Racecource,40a,Racecourse Road,Clarendon,2756,New South Wales,Ramp,-33.608594,150.787763,NULL,207
+Berry,3,Sutherland Street,Clyde,2142,New South Wales,Ramp,-33.835546,151.017038,1,208
+Factory,29,William Street,Granville,2142,New South Wales,Ramp,-33.836061,151.016563,2,209
+Lawrence Hargrave,220,Lawrence Hargrave Drive,Coalcliff,2508,New South Wales,Stairs,-34.242535,150.977052,NULL,210
+Lake,460,B53,Argenton,2284,New South Wales,Stairs,-32.942467,151.624430,NULL,211
+Creek Reserve,460,Lake Road,Argenton,2284,New South Wales,Path,-32.942875,151.623812,NULL,212
+Cater,21,Cater Street,Coledale,2515,New South Wales,Stairs,-34.289892,150.943031,NULL,213
+Railway,31,Novara Crescent,Como,2226,New South Wales,Stairs,-34.004540,151.068330,NULL,214
+Railway,27,Novara Crescent,Como,2226,New South Wales,Stairs,-34.004376,151.068248,NULL,215
+Como,111,Como Parade,Como,2226,New South Wales,Ramp,-34.004471,151.067689,NULL,216
+Queen,NULL,NULL,Concord West,2138,New South Wales,Stairs,-33.848092,151.085952,NULL,217
+Queen,NULL,NULL,Concord West,2138,New South Wales,Lift,-33.848031,151.085901,NULL,218
+King,40,Victoria Avenue,Concord West,2138,New South Wales,Stairs,-33.848213,151.085212,NULL,219
+King,NULL,NULL,Concord West,2138,New South Wales,Lift,-33.848089,151.085199,NULL,220
+King,NULL,NULL,Concord West,2138,New South Wales,Stairs,-33.847954,151.085190,NULL,221
+Bridge,25,Bridge Street,Coniston,2500,New South Wales,Stairs,-34.438239,150.885120,NULL,222
+Gladsone,128,Gladstone Avenue,Coniston,2500,New South Wales,Ramp,-34.437965,150.884845,NULL,223
+Darling,100,Murray Street,Pyrmont,2000,New South Wales,Ramp,-33.872864,151.198151,NULL,224
+Duff,NULL,NULL,Corrimal,2518,New South Wales,Path,-34.375494,150.905148,NULL,225
+Railway,8,Duff Parade,East Corrimal,2518,New South Wales,Path,-34.375673,150.904890,NULL,226
+Pacific,1164A,Pacific Highway,Cowan,2081,New South Wales,Ramp,-33.592980,151.171638,NULL,227
+Pacific,1133,Pacific Highway,Cowan,2081,New South Wales,Ramp,-33.593789,151.171565,NULL,228
+Central,NULL,Unnamed Road,Port Kembla,2505,New South Wales,Stairs,-34.467080,150.879958,NULL,229
+Five Island,NULL,Five Islands Road,Port Kembla,2505,New South Wales,Stairs,-34.467373,150.878272,NULL,230
+Cronulla,20,Laycock Avenue,Cronulla,2230,New South Wales,Path,-34.056840,151.151721,NULL,231
+Cronulla,138,Cronulla Street,Cronulla,2230,New South Wales,Path,-34.055727,151.151599,NULL,232
+Cronulla,NULL,NULL,Cronulla,2230,New South Wales,Path,-34.055357,151.151434,NULL,233
+Hennessy,29,Hennessy Street,Croydon,2132,New South Wales,Ramp,-33.882836,151.115515,NULL,234
+Paisley,18,The Strand,Croydon,2132,New South Wales,Stairs,-33.883185,151.115082,NULL,235
+Station,30,Hamilton Street,Dapto,2530,New South Wales,Path,-34.492358,150.792222,NULL,236
+Staiton,1,Station Street,Dapto,2530,New South Wales,Path,-34.493077,150.791833,NULL,237
+Bong Bong,NULL,NULL,Dapto,2530,New South Wales,Path,-34.493482,150.791460,NULL,238
+Bong Bong,20,Bong Bong Road,Dapto,2530,New South Wales,Path,-34.493435,150.791306,NULL,239
+Gordon,2C,Gordon Crescent,Denistone,2114,New South Wales,Path,-33.799519,151.086753,NULL,240
+Keith Smith,NULL,Keith Smith Avenue,Mascot,2020,New South Wales,Stairs,-33.933626,151.180573,NULL,241
+Keith Smith,NULL,Keith Smith Avenue,Mascot,2020,New South Wales,Lift,-33.933569,151.180568,NULL,242
+Keith Smith,NULL,NULL,Mascot,2020,New South Wales,Stairs,-33.934008,151.180141,NULL,243
+Keith Smith,NULL,NULL,Mascot,2020,New South Wales,Escalators,-33.934003,151.180113,NULL,244
+Keith Smith,NULL,NULL,Mascot,2020,New South Wales,Lift,-33.933986,151.180049,NULL,245
+School,2,Doonside Road,Doonside,2767,New South Wales,Ramp,-33.764015,150.869281,NULL,246
+Cross,17,Hill End Road,Doonside,2767,New South Wales,Ramp,-33.763627,150.869234,NULL,247
+Main,4A,Wamsley Street,Dora Creek,2264,New South Wales,Path,-33.083823,151.501041,NULL,248
+Newport,4A,Wamsley Street,Dora Creek,2264,New South Wales,Stairs,-33.084114,151.500864,NULL,249
+Newport,4A,Wamsley Street,Dora Creek,2264,New South Wales,Stairs,-33.084021,151.500698,NULL,250
+Camden,3,Camden Road,Douglas Park,2569,New South Wales,Path,-34.183233,150.710546,NULL,251
+Camden,28,Station Street West,Douglas Park,2569,New South Wales,Path,-34.183303,150.710538,NULL,252
+New Canterbury,NULL,NULL,Dulwich Hill,2203,New South Wales,Stairs,-33.904761,151.139002,NULL,253
+New Canterbury,486,New Canterbury Road,Dulwich Hill,2203,New South Wales,Lift,-33.904772,151.138975,NULL,254
+Bedford,1,Bedford Crescent,Dulwich Hill,2203,New South Wales,Stairs,-33.910671,151.140584,NULL,255
+Bedford,3,Bedford Crescent,Dulwich Hill,2203,New South Wales,Lift,-33.910626,151.140555,NULL,256
+Station,28,Station Street,Dundas,2117,New South Wales,Path,-33.804026,151.033110,NULL,257
+Kissing Point,57,Kissing Point Road,Dundas,2117,New South Wales,Ramp,-33.803883,151.032917,NULL,258
+Kissing Point,57,Kissing Point Road,Dundas,2117,New South Wales,Stairs,-33.803894,151.032895,NULL,259
+Kissing Point,NULL,NULL,Dundas,2117,New South Wales,Path,-33.803397,151.032467,NULL,260
+Brown,4,Brown Street,Dungog,2420,New South Wales,Ramp,-32.402557,151.759385,NULL,261
+Brown,4,Brown Street,Dungog,2420,New South Wales,Stairs,-32.402493,151.759251,NULL,262
+Thompson,3,Thompson Lane,East Hills,2213,New South Wales,Path,-33.962011,150.984726,NULL,263
+Park,96,Park Road,East Hills,2213,New South Wales,Ramp,-33.961573,150.984449,NULL,264
+Park,96,Park Road,East Hills,2213,New South Wales,Stairs,-33.961642,150.984343,NULL,265
+Park,96,Park Road,East Hills,2213,New South Wales,Ramp,-33.961730,150.984255,NULL,266
+Melbourne,NULL,Melbourne Street,East Maitland,2323,New South Wales,Stairs,-32.744572,151.587474,NULL,267
+Bourke,32,Bourke Street,Richmond,2753,New South Wales,Ramp,-33.601803,150.758829,NULL,268
+Bourke,32,Bourke Street,Richmond,2753,New South Wales,Stairs,-33.601745,150.758729,NULL,269
+Railway,27,Railway Parade,Eastwood,2122,New South Wales,Ramp,-33.789929,151.082667,NULL,270
+Railway,20,Railway Parade,Eastwood,2122,New South Wales,Ramp,-33.790410,151.082636,NULL,271
+Railway,20,Railway Parade,Eastwood,2122,New South Wales,Lift,-33.790170,151.082563,NULL,272
+West,2C,Railway Parade,Eastwood,2122,New South Wales,Lift,-33.790149,151.082002,NULL,273
+West,2C,Railway Parade,Eastwood,2122,New South Wales,Path,-33.790148,151.081972,NULL,274
+New South Head,180,New South Head Road,Edgecliff,2027,New South Wales,Path,-33.878936,151.236154,NULL,275
+Soliders,4,Henderson Road,Edmondson Park,2174,New South Wales,Lift,-33.969304,150.858864,NULL,276
+Soliders,4,Henderson Road,Edmondson Park,2174,New South Wales,Stairs,-33.969362,150.858844,NULL,277
+Old Bathurst,4,Mackellar Street,Emu Plains,2750,New South Wales,Stairs,-33.745777,150.671412,NULL,278
+Mackellar,4,Mackellar Street,Emu Plains,2750,New South Wales,Stairs,-33.745524,150.671380,NULL,279
+Old Bathurst,4,Mackellar Street,Emu Plains,2750,New South Wales,Lift,-33.745827,150.671332,NULL,280
+Mackellar,4,Mackellar Street,Emu Plains,2750,New South Wales,Lift,-33.745657,150.671283,NULL,281
+Princes,2,Station Street,Engadine,2233,New South Wales,Ramp,-34.067539,151.014842,NULL,282
+Princes,2,Station Street,Engadine,2233,New South Wales,Ramp,-34.067195,151.014735,NULL,283
+Princes,35,A1,Engadine,2233,New South Wales,Lift,-34.067769,151.014681,NULL,284
+Princes,35-37,Princes Highway,Engadine,2233,New South Wales,Lift,-34.067381,151.014551,NULL,285
+Langston,NULL,Beecroft Road,Epping,2121,New South Wales,Path,-33.772548,151.082278,NULL,286
+Beecroft,49,Beecroft Road,Epping,2121,New South Wales,Stairs,-33.772841,151.081872,NULL,287
+Beecroft,56,Beecroft Road,Epping,2121,New South Wales,Lift,-33.772652,151.081804,NULL,288
+Beecroft,53,Beecroft Road,Epping,2121,New South Wales,Stairs,-33.772915,151.081640,NULL,289
+Beecroft,NULL,NULL,Epping,2121,New South Wales,Lift,-33.772720,151.081567,NULL,290
+Erskineville,11,Swanson Street,Erskineville,2043,New South Wales,Path,-33.900053,151.185556,NULL,291
+Ringwood,1,Bundanoon Road,Exeter,2579,New South Wales,Path,-34.613466,150.317799,NULL,292
+Bundanoon,NULL,NULL,Exeter,2579,New South Wales,Path,-34.613377,150.317359,NULL,293
+Darling,270,Pyrmont Street,Sydney,2000,New South Wales,Ramp,-33.876778,151.199475,NULL,294
+Pyrmont,456B,Harris Street,Ultimo,2007,New South Wales,Stairs,-33.876787,151.199250,NULL,295
+Dale,NULL,NULL,Fairfield,2165,New South Wales,Path,-33.872552,150.957049,NULL,296
+Dale,52,The Crescent,Fairfield,2165,New South Wales,Stairs,-33.872509,150.957006,NULL,297
+The Crescent,52,The Crescent,Fairfield,2165,New South Wales,Path,-33.872282,150.956899,NULL,298
+The Crescent,52-68,The Crescent,Fairfield,2165,New South Wales,Stairs,-33.872389,150.956864,NULL,299
+Dale,NULL,NULL,Fairfield,2165,New South Wales,Lift,-33.872644,150.956818,NULL,300
+The Crescent,NULL,NULL,Fairfield,2165,New South Wales,Lift,-33.872497,150.956712,NULL,301
+Elliotts,2,Montague Street,Fairy Meadow,2519,New South Wales,Stairs,-34.395096,150.896577,NULL,302
+Elliotts,62,Rann Street,Fairy Meadow,2519,New South Wales,Stairs,-34.395059,150.896452,NULL,303
+Tucker,17,Fassifern Road,Fassifern,2283,New South Wales,Ramp,-32.985674,151.581208,NULL,304
+Tucker,17,Fassifern Road,Fassifern,2283,New South Wales,Stairs,-32.985681,151.581175,NULL,305
+Tucker,4,Wallsend Road,Fassifern,2283,New South Wales,Ramp,-32.985576,151.580841,NULL,306
+Great Western,NULL,NULL,Faulconbridge,2776,New South Wales,Ramp,-33.696816,150.534935,NULL,307
+Great Western,NULL,NULL,Faulconbridge,2776,New South Wales,Stairs,-33.696780,150.534926,NULL,308
+Great Western,24B,Sir Henrys Parade,Faulconbridge,2776,New South Wales,Stairs,-33.696540,150.534819,NULL,309
+Great Western,607,Great Western Highway,Faulconbridge,2776,New South Wales,Stairs,-33.696331,150.534567,NULL,310
+Great Western,NULL,NULL,Faulconbridge,2776,New South Wales,Ramp,-33.696369,150.534430,NULL,311
+Miller,55,Miller Street,Pyrmont,2009,New South Wales,Path,-33.870463,151.192178,NULL,312
+Miller,1,Saunders Street,Pyrmont,2009,New South Wales,Path,-33.870768,151.191652,NULL,313
+The Crescent,96,The Crescent,Homebush West,2140,New South Wales,Stairs,-33.865154,151.070676,NULL,314
+The Crescent,318,Parramatta Road,Homebush West,2140,New South Wales,Stairs,-33.863892,151.070239,NULL,315
+Belinda,18,Belinda Street,Gerringong,2534,New South Wales,Ramp,-34.744778,150.817650,NULL,316
+Burton,4,Burton Street,Glebe,2037,New South Wales,Stairs,-33.877076,151.187564,NULL,317
+Bayview,5030,Palmerston Avenue,Glebe,2037,New South Wales,Ramp,-33.877294,151.187253,NULL,318
+Burfitt,5B,Burfitt Parade,Glenbrook,2773,New South Wales,Ramp,-33.769026,150.621263,NULL,319
+Railway,104,Railway Parade,Glenfield,2167,New South Wales,Stairs,-33.972077,150.893577,NULL,320
+service road,90,Railway Parade,Glenfield,2167,New South Wales,Stairs,-33.971739,150.893269,NULL,321
+Railway,108,Railway Parade,Glenfield,2167,New South Wales,Lift,-33.972286,150.893255,NULL,322
+service road,104,Railway Parade,Glenfield,2167,New South Wales,Lift,-33.971830,150.893173,NULL,323
+Railway,102,Railway Parade,Glenfield,2167,New South Wales,Stairs,-33.972475,150.893125,NULL,324
+Werona,77,Werona Avenue,Gordon,2072,New South Wales,Ramp,-33.755984,151.154864,NULL,325
+Werona,87,Werona Avenue,Gordon,2072,New South Wales,Ramp,-33.755350,151.154396,NULL,326
+St Johns,3,Werona Avenue,Gordon,2072,New South Wales,Stairs,-33.756120,151.154175,NULL,327
+St Johns,1-5,Saint Johns Avenue,Gordon,2072,New South Wales,Ramp,-33.755964,151.154096,NULL,328
+Wade,3,Wade Lane,Gordon,2072,New South Wales,Ramp,-33.755682,151.153977,NULL,329
+Burns,6,Burns Crescent,Gosford,2250,New South Wales,Lift,-33.423480,151.341944,NULL,330
+Burns,6,Burns Crescent,Gosford,2250,New South Wales,Stairs,-33.423481,151.341911,NULL,331
+Showground,40,Showground Road,Gosford,2250,New South Wales,Stairs,-33.423330,151.341414,NULL,332
+Showground,38,Showground Road,Gosford,2250,New South Wales,Path,-33.423383,151.341401,NULL,333
+Sloane,NULL,Sloane Street,Goulburn,2580,New South Wales,Path,-34.759019,149.720588,NULL,334
+Park,171,Sloane Street,Goulburn,2580,New South Wales,Path,-34.758126,149.719249,NULL,335
+Memorial,9A,South Street,Granville,2142,New South Wales,Ramp,-33.832776,151.011491,NULL,336
+Memorial,7-9,South Street,Granville,2142,New South Wales,Ramp,-33.832900,151.011405,NULL,337
+Botany,NULL,NULL,Zetland,2017,New South Wales,Stairs,-33.905966,151.203077,NULL,338
+Botany,297,Botany Road,Waterloo,2017,New South Wales,Stairs,-33.905818,151.203031,NULL,339
+O'Riordan,318B,Botany Road,Alexandria,2015,New South Wales,Escalators,-33.906278,151.202693,NULL,340
+O'Riordan,312,Botany Road,Alexandria,2015,New South Wales,Lift,-33.906214,151.202540,NULL,341
+Nelson,2B,Nelson Street,Greta,2334,New South Wales,Ramp,-32.686787,151.384282,NULL,342
+Mansfield,2B,Mansfield Street,Greta,2334,New South Wales,Ramp,-32.686675,151.384053,NULL,343
+Railway,318,Railway Terrace,Guildford,2161,New South Wales,Ramp,-33.854233,150.984682,NULL,344
+Military,121,Military Road,Guildford,2161,New South Wales,Ramp,-33.853822,150.984647,NULL,345
+Railway,318,Railway Terrace,Guildford,2161,New South Wales,Stairs,-33.854449,150.984595,NULL,346
+Railway,322,Railway Terrace,Guildford,2161,New South Wales,Lift,-33.854568,150.984486,NULL,347
+Military,126,Military Road,Guildford,2161,New South Wales,Ramp,-33.854167,150.984403,NULL,348
+Military,126,Military Road,Guildford,2161,New South Wales,Stairs,-33.854257,150.984328,NULL,349
+Military,128,Military Road,Guildford,2161,New South Wales,Stairs,-33.854330,150.984277,NULL,350
+Military,132,Military Road,Guildford,2161,New South Wales,Lift,-33.854492,150.984227,NULL,351
+Gymea Bay,57B,Gymea Bay Road,Gymea,2227,New South Wales,Lift,-34.034907,151.085208,NULL,352
+Gymea Bay,57B,Gymea Bay Road,Gymea,2227,New South Wales,Stairs,-34.034870,151.085182,NULL,353
+Beaumont,6,Beaumont Street,Islington,2296,New South Wales,Stairs,-32.918025,151.748511,NULL,354
+Beaumont,1A,Beaumont Street,Hamilton,2303,New South Wales,Ramp,-32.918530,151.748397,NULL,355
+Beaumont,1A,Beaumont Street,Hamilton,2303,New South Wales,Stairs,-32.918385,151.748269,NULL,356
+Beaumont,1A,Beaumont Street,Hamilton,2303,New South Wales,Ramp,-32.918418,151.748255,NULL,357
+Marion,46A,Wigram Street,Harris Park,2150,New South Wales,Ramp,-33.823357,151.007932,NULL,358
+Station W,21,Station Street West,Parramatta,2150,New South Wales,Stairs,-33.823262,151.007463,NULL,359
+Danger,10,Dangar Road,Brooklyn,2083,New South Wales,Stairs,-33.547008,151.226715,NULL,360
+Danger,8,Dangar Road,Brooklyn,2083,New South Wales,Stairs,-33.547101,151.226598,NULL,361
+Darley,2,Darley Road,Leichhardt,2040,New South Wales,Path,-33.879582,151.147550,NULL,362
+Darley,26,Darley Road,Leichhardt,2040,New South Wales,Path,-33.879500,151.147106,NULL,363
+Great Western,186,Great Western Highway,Hazelbrook,2779,New South Wales,Stairs,-33.723530,150.454573,NULL,364
+Great Western,183-186,Great Western Highway,Hazelbrook,2779,New South Wales,Ramp,-33.723086,150.454017,NULL,365
+Railway,40,Railway Parade,Hazelbrook,2779,New South Wales,Path,-33.723673,150.453967,NULL,366
+Wilson,126,Wilson Parade,Royal National Park,2233,New South Wales,Path,-34.087924,151.008429,NULL,367
+Wilson,126,Wilson Parade,Royal National Park,2233,New South Wales,Ramp,-34.087939,151.008414,NULL,368
+Princes,1349,A1,Heathcote,2233,New South Wales,Ramp,-34.087785,151.008298,NULL,369
+Princes,1350,A1,Heathcote,2233,New South Wales,Path,-34.087802,151.008285,NULL,370
+Tunnel,9,Tunnel Road,Helensburgh,2508,New South Wales,Lift,-34.177189,150.994246,NULL,371
+Tunnel,9,Tunnel Road,Helensburgh,2508,New South Wales,Stairs,-34.177147,150.994085,NULL,372
+Maitland,360,Maitland Road,Hexham,2322,New South Wales,Stairs,-32.828752,151.684320,NULL,373
+High,NULL,NULL,Maitland,2320,New South Wales,Stairs,-32.741327,151.564424,NULL,374
+Le Darcy,14,Anzac Street,South Maitland,2320,New South Wales,Ramp,-32.741972,151.564195,NULL,375
+Hilldale,179,Hilldale Road,Hilldale,2420,New South Wales,Ramp,-32.504484,151.649805,NULL,376
+The Boulevarde,NULL,The Boulevarde,Holsworthy,2173,New South Wales,Stairs,-33.962927,150.956504,NULL,377
+The Boulevarde,NULL,The Boulevarde,Holsworthy,2173,New South Wales,Ramp,-33.962979,150.956456,NULL,378
+The Boulevarde,25,The Boulevarde,Holsworthy,2173,New South Wales,Lift,-33.962829,150.956351,NULL,379
+Loftus,11,Station Street,Homebush,2140,New South Wales,Stairs,-33.866419,151.086421,NULL,380
+The Crescent,22,The Crescent,Homebush,2140,New South Wales,Ramp,-33.866968,151.086107,NULL,381
+The Crescent,22,The Crescent,Homebush,2140,New South Wales,Stairs,-33.866926,151.086095,NULL,382
+Hunter,21,Florence Street,Hornsby,2077,New South Wales,Ramp,-33.703839,151.099774,NULL,383
+George,6,Florence Street,Hornsby,2077,New South Wales,Ramp,-33.703553,151.098842,NULL,384
+George,6,Florence Street,Hornsby,2077,New South Wales,Stairs,-33.703569,151.098831,NULL,385
+George,6,Florence Street,Hornsby,2077,New South Wales,Ramp,-33.703735,151.098746,NULL,386
+Station,240-242,Pacific Highway,Hornsby,2077,New South Wales,Path,-33.703479,151.098091,NULL,387
+Wardell,2,Dudley Street,Marrickville,2204,New South Wales,Stairs,-33.911058,151.141146,NULL,388
+Duntroon,116,Duntroon Street,Hurlstone Park,2193,New South Wales,Path,-33.910189,151.132541,NULL,389
+Forest,231,Forest Road,Hurstville,2220,New South Wales,Stairs,-33.967034,151.102847,NULL,390
+Ormonde,NULL,Ormonde Parade,Hurstville,2220,New South Wales,Stairs,-33.967684,151.102359,NULL,391
+Ormonde,30,Ormonde Parade,Hurstville,2220,New South Wales,Lift,-33.967632,151.102288,NULL,392
+Forest,249,Forest Road,Hurstville,2220,New South Wales,Ramp,-33.966517,151.101902,NULL,393
+Forest,249,Forest Road,Hurstville,2220,New South Wales,Escalators,-33.966517,151.101902,NULL,394
+Ingleburn,1890,Ingleburn Road,Ingleburn,2565,New South Wales,Stairs,-33.997438,150.864875,NULL,395
+Ingleburn,2,Oxford Road,Ingleburn,2565,New South Wales,Ramp,-33.997602,150.864618,NULL,396
+Ingleburn,3,Ingleburn Road,Ingleburn,2565,New South Wales,Stairs,-33.997889,150.864377,NULL,397
+Stanley,NULL,NULL,Ingleburn,2565,New South Wales,Ramp,-33.997421,150.864313,NULL,398
+Stanley,45,Stanley Road,Ingleburn,2565,New South Wales,Stairs,-33.997576,150.864010,NULL,399
+Departure,1072,Airport Drive,Mascot,2020,New South Wales,Escalators,-33.935181,151.166541,NULL,400
+Departure,1072,Airport Drive,Mascot,2020,New South Wales,Lift,-33.935207,151.166470,NULL,401
+Departure,1072,Airport Drive,Mascot,2020,New South Wales,Lift,-33.935198,151.166446,NULL,402
+Railway,NULL,NULL,Jannali,2226,New South Wales,Ramp,-34.016091,151.064840,NULL,403
+Railway,63,Railway Crescent,Jannali,2226,New South Wales,Path,-34.015883,151.064756,NULL,404
+Mitchell,3A,Jannali Avenue,Jannali,2226,New South Wales,Ramp,-34.015994,151.064370,NULL,405
+Harris,27A,Harvey Street,Pyrmont,2009,New South Wales,Ramp,-33.867262,151.192430,NULL,406
+Harvey,27,Harvey Street,Pyrmont,2009,New South Wales,Stairs,-33.867162,151.192075,NULL,407
+Chapman,7,Victoria Road,Glebe,2037,New South Wales,Stairs,-33.875320,151.178614,NULL,408
+Chapman,12,Maxwell Road,Forest Lodge,2037,New South Wales,Ramp,-33.875338,151.178597,NULL,409
+Chapman,12,Maxwell Road,Forest Lodge,2037,New South Wales,Ramp,-33.875560,151.178368,NULL,410
+Goldsmith,273,Great Western Highway,Katoomba,2780,New South Wales,Ramp,-33.711948,150.312168,NULL,411
+Bathurst,77,Bathurst Road,Katoomba,2780,New South Wales,Ramp,-33.712276,150.312138,NULL,412
+Bathurst,75,Bathurst Road,Katoomba,2780,New South Wales,Lift,-33.712282,150.311982,NULL,413
+Bathurst,287,Bathurst Road,Katoomba,2780,New South Wales,Stairs,-33.712252,150.311784,NULL,414
+West Dapto,3,West Dapto Road,Kembla Grange,2526,New South Wales,Ramp,-34.470126,150.817796,NULL,415
+Railway,35,Bong Bong Street,Kiama,2533,New South Wales,Path,-34.672599,150.854366,NULL,416
+Werona,23A,Werona Avenue,Killara,2071,New South Wales,Stairs,-33.765694,151.162099,NULL,417
+Culworth,18,Culworth Avenue,Killara,2071,New South Wales,Stairs,-33.765852,151.161797,NULL,418
+Victoria,NULL,Darlinghurst Road,Potts Point,2011,New South Wales,Stairs,-33.874031,151.222503,NULL,419
+Victoria,NULL,Darlinghurst Road,Potts Point,2011,New South Wales,Lift,-33.874269,151.222204,NULL,420
+Victoria,NULL,Darlinghurst Road,Potts Point,2011,New South Wales,Stairs,-33.874237,151.222195,NULL,421
+Kingsgrove,1,Commercial Road,Kingsgrove,2208,New South Wales,Stairs,-33.940375,151.101084,NULL,422
+Kingsgrove,231,Kingsgrove Road,Kingsgrove,2208,New South Wales,Lift,-33.940480,151.100874,NULL,423
+Kingsgrove,1,Commercial Road,Kingsgrove,2208,New South Wales,Stairs,-33.940457,151.100856,NULL,424
+Richmond,NULL,NULL,Kingswood,2747,New South Wales,Ramp,-33.758233,150.720239,NULL,425
+Great Western,NULL,NULL,Kingswood,2747,New South Wales,Lift,-33.758426,150.720233,NULL,426
+Richmond,NULL,NULL,Kingswood,2747,New South Wales,Stairs,-33.758233,150.720116,NULL,427
+Great Western,NULL,NULL,Kingswood,2747,New South Wales,Stairs,-33.758367,150.720071,NULL,428
+Oak,166,Oak Road,Kirrawee,2232,New South Wales,Path,-34.034911,151.071020,NULL,429
+Regent,11,Railway Parade,Kogarah,2217,New South Wales,Stairs,-33.962796,151.132691,NULL,430
+Regent,1,Railway Parade,Kogarah,2217,New South Wales,Lift,-33.962746,151.132687,NULL,431
+Station,7,Railway Parade,Kogarah,2217,New South Wales,Stairs,-33.962605,151.132201,NULL,432
+Station,7,Railway Parade,Kogarah,2217,New South Wales,Lift,-33.962643,151.132191,NULL,433
+Station,14,Station Street,Kogarah,2217,New South Wales,Stairs,-33.962688,151.132145,NULL,434
+Station,12,Station Street,Kogarah,2217,New South Wales,Ramp,-33.962795,151.132102,NULL,435
+Glenrock,38,Brisbane Water Drive,Koolewong,2256,New South Wales,Stairs,-33.466133,151.318476,NULL,436
+Glenrock,138,Glenrock Parade,Koolewong,2256,New South Wales,Stairs,-33.466144,151.318369,NULL,437
+Park,202,Park Avenue,Kotara,2289,New South Wales,Stairs,-32.941769,151.698059,NULL,438
+Kotara,7-9,Kotara Place,Kotara,2289,New South Wales,Ramp,-32.941369,151.697463,NULL,439
+The Boulevarde,60A,The Boulevarde,Lakemba,2195,New South Wales,Lift,-33.920101,151.076370,NULL,440
+Railway,44,Railway Parade,Lakemba,2195,New South Wales,Lift,-33.919880,151.076251,NULL,441
+Railway,44,Railway Parade,Lakemba,2195,New South Wales,Stairs,-33.919759,151.076133,NULL,442
+Explorers,215,Explorers Road,Lapstone,2773,New South Wales,Ramp,-33.773278,150.642635,NULL,443
+Explorers,215,Explorers Road,Lapstone,2773,New South Wales,Stairs,-33.773559,150.642610,NULL,444
+Honour,7,Honour Avenue,Lawson,2783,New South Wales,Ramp,-33.719507,150.430417,NULL,445
+Great Western,1,Honour Avenue,Lawson,2783,New South Wales,Ramp,-33.719142,150.430060,NULL,446
+Lotus,6,Loftus Street,Lawson,2783,New South Wales,Ramp,-33.718972,150.429606,NULL,447
+Great Western,289,A32,Lawson,2783,New South Wales,Ramp,-33.719435,150.429499,NULL,448
+James,130,James Street,Lilyfield,2040,New South Wales,Lift,-33.874980,151.155035,NULL,449
+James,130,James Street,Lilyfield,2040,New South Wales,Stairs,-33.874994,151.155017,NULL,450
+City West Link,71,Hubert Street,Lilyfield,2040,New South Wales,Path,-33.874998,151.153580,NULL,451
+Monier,2,Monier Square,Villawood,2163,New South Wales,Ramp,-33.881894,150.985102,NULL,452
+Christina,NULL,Christina Road,Villawood,2163,New South Wales,Ramp,-33.881263,150.984962,NULL,453
+Rickard,199,Rickard Road,Leppington,2179,New South Wales,Stairs,-33.954439,150.808266,NULL,454
+Rickard,187,Rickard Road,Leppington,2179,New South Wales,Lift,-33.954515,150.808246,NULL,455
+O'Sullivan,2,O'Sullivan Road,Leumeah,2560,New South Wales,Lift,-34.050674,150.830805,NULL,456
+Plough Inn,NULL,Plough Inn Road,Leumeah,2560,New South Wales,Path,-34.050312,150.830767,NULL,457
+Old Leumeah,4,O'Sullivan Road,Leumeah,2560,New South Wales,Ramp,-34.050801,150.830725,NULL,458
+Old Leumeah,2,O'Sullivan Road,Leumeah,2560,New South Wales,Stairs,-34.050813,150.830702,NULL,459
+O'Sullivan,2,O'Sullivan Road,Leumeah,2560,New South Wales,Stairs,-34.050895,150.830574,NULL,460
+Plough Inn,NULL,Plough Inn Road,Leumeah,2560,New South Wales,Lift,-34.050482,150.830560,NULL,461
+O'Sullivan,4,O'Sullivan Road,Leumeah,2560,New South Wales,Ramp,-34.051029,150.830433,NULL,462
+Railway,133,Leura Mall,Leura,2780,New South Wales,Stairs,-33.712120,150.331128,NULL,463
+Thomas,4,Victoria Street,Lewisham,2049,New South Wales,Stairs,-33.893109,151.147598,NULL,464
+Railway,2,Victoria Street,Lewisham,2049,New South Wales,Stairs,-33.893635,151.147544,NULL,465
+Hudson,2,McGill Street,Lewisham,2049,New South Wales,Path,-33.893850,151.143462,NULL,466
+Smith,16,Flour Mill Way,Summer Hill,2130,New South Wales,Path,-33.893786,151.143342,NULL,467
+Church,31A,Church Street,Lidcombe,2141,New South Wales,Path,-33.863531,151.045064,NULL,468
+Church,29,Church Street,Lidcombe,2141,New South Wales,Lift,-33.863460,151.044792,NULL,469
+Railway,NULL,Railway Parade,Lidcombe,2141,New South Wales,Stairs,-33.863869,151.044644,NULL,470
+Railway,NULL,Railway Parade,Lidcombe,2141,New South Wales,Lift,-33.863867,151.044606,NULL,471
+Church,NULL,Church Street,Lidcombe,2141,New South Wales,Stairs,-33.863380,151.044554,NULL,472
+Railway,64,Railway Street,Lidcombe,2141,New South Wales,Stairs,-33.863756,151.044279,NULL,473
+Catherine,383,A4,Lilyfield,2040,New South Wales,Ramp,-33.874195,151.164823,NULL,474
+Catherine,383,A4,Lilyfield,2040,New South Wales,Stairs,-33.874115,151.164768,NULL,475
+Great Western,807,Great Western Highway,Linden,2778,New South Wales,Path,-33.715330,150.505321,NULL,476
+Burke,NULL,NULL,Linden,2778,New South Wales,Stairs,-33.714744,150.504366,NULL,477
+Lindfield,1,Lindfield Avenue,Lindfield,2070,New South Wales,Stairs,-33.775654,151.169509,NULL,478
+Lindfield,9,Lindfield Avenue,Lindfield,2070,New South Wales,Stairs,-33.775288,151.169385,NULL,479
+Lindfield,9,Lindfield Avenue,Lindfield,2070,New South Wales,Ramp,-33.775267,151.169370,NULL,480
+Pacific,1-5,Tryon Place,Lindfield,2070,New South Wales,Stairs,-33.775954,151.169300,NULL,481
+Lindfield,NULL,NULL,Lindfield,2070,New South Wales,Stairs,-33.775087,151.169230,NULL,482
+Pacific,1-5,Tryon Place,Lindfield,2070,New South Wales,Ramp,-33.775738,151.169107,NULL,483
+Pacific,331,A1,Lindfield,2070,New South Wales,Stairs,-33.775702,151.169076,NULL,484
+Pacific,58,Railway Crescent,Lisarow,2250,New South Wales,Stairs,-33.382184,151.370179,NULL,485
+Pacific,58,Railway Crescent,Lisarow,2250,New South Wales,Path,-33.382192,151.370165,NULL,486
+Railway,5,Awaba Street,Lisarow,2250,New South Wales,Stairs,-33.382071,151.370084,NULL,487
+Railway,5,Awaba Street,Lisarow,2250,New South Wales,Path,-33.382059,151.370071,NULL,488
+Main,114,Main Street,Lithgow,2790,New South Wales,Path,-33.480925,150.156929,NULL,489
+Railway,57,Railway Parade,Lithgow,2790,New South Wales,Path,-33.480516,150.156706,NULL,490
+Moore,140,Bigge Street,Liverpool,2170,New South Wales,Path,-33.923146,150.927698,NULL,491
+Biggs,256,Bigge Street,Liverpool,2170,New South Wales,Lift,-33.924384,150.926997,NULL,492
+Biggs,256,Bigge Street,Liverpool,2170,New South Wales,Stairs,-33.924304,150.926937,NULL,493
+Station,238,Station Lane,Lochinvar,2321,New South Wales,Ramp,-32.720483,151.450531,NULL,494
+Station,NULL,NULL,Lochinvar,2321,New South Wales,Ramp,-32.720394,151.450481,NULL,495
+Pitt,NULL,NULL,Loftus,2232,New South Wales,Ramp,-34.044999,151.051388,NULL,496
+Loftus,113,Loftus Lane,Loftus,2232,New South Wales,Ramp,-34.045454,151.051209,NULL,497
+Recycling,LOT 1,Springhill Road,Spring Hill,2500,New South Wales,Stairs,-34.454811,150.875214,NULL,498
+Menangle,NULL,Menangle Road,Campbelltown,2560,New South Wales,Lift,-34.072492,150.797478,NULL,499
+Menangle,NULL,Menangle Road,Campbelltown,2560,New South Wales,Lift,-34.072217,150.797388,NULL,500
+Menangle,NULL,Menangle Road,Campbelltown,2560,New South Wales,Stairs,-34.072553,150.797159,NULL,501
+Menangle,NULL,Menangle Road,Campbelltown,2560,New South Wales,Stairs,-34.072266,150.797075,NULL,502
+Burren,71,Burren Street,Newtown,2042,New South Wales,Stairs,-33.896791,151.185386,NULL,503
+Railway,278,Railway Parade,Macquarie Fields,2564,New South Wales,Stairs,-33.984842,150.879078,NULL,504
+Railway,276,Railway Parade,Macquarie Fields,2564,New South Wales,Ramp,-33.984966,150.878937,NULL,505
+Lane Cove,NULL,NULL,Macquarie Park,2113,New South Wales,Lift,-33.785444,151.128497,NULL,506
+Lane Cove,NULL,NULL,Macquarie Park,2113,New South Wales,Escalators,-33.785368,151.128445,NULL,507
+Lane Cove,37a,Waterloo Road,North Ryde,2113,New South Wales,Escalators,-33.785078,151.128004,NULL,508
+Lane Cove,37a,Waterloo Road,North Ryde,2113,New South Wales,Lift,-33.785062,151.127979,NULL,509
+Herring,NULL,NULL,Macquarie Park,2113,New South Wales,Lift,-33.777435,151.118471,NULL,510
+Herring,175,Herring Road,Macquarie Park,2113,New South Wales,Escalators,-33.777416,151.118413,NULL,511
+Herring,NULL,NULL,Macquarie Park,2109,New South Wales,Escalators,-33.777211,151.118104,NULL,512
+Herring,NULL,NULL,Macquarie Park,2109,New South Wales,Lift,-33.777168,151.118093,NULL,513
+Station,NULL,Station Street,Maitland,2320,New South Wales,Path,-32.737747,151.552236,NULL,514
+Harvey,62,Railway Road,Marayong,2148,New South Wales,Stairs,-33.746220,150.900311,NULL,515
+Harvey,64,Railway Road,Marayong,2148,New South Wales,Lift,-33.746017,150.900309,NULL,516
+Railway,62,Railway Road,Marayong,2148,New South Wales,Stairs,-33.746230,150.900047,NULL,517
+Railway,62,Railway Road,Marayong,2148,New South Wales,Lift,-33.746022,150.900042,NULL,518
+Marion,2A,Marion Street,Haberfield,2045,New South Wales,Path,-33.883915,151.144996,NULL,519
+Station,12,Station Street,Marrickville,2204,New South Wales,Path,-33.913975,151.153316,NULL,520
+Illawarra,10,Station Street,Marrickville,2204,New South Wales,Stairs,-33.913757,151.153224,NULL,521
+Illawarra,10,Station Street,Marrickville,2204,New South Wales,Lift,-33.913781,151.153181,NULL,522
+Illawarra,2,Station Street,Marrickville,2204,New South Wales,Lift,-33.913835,151.153151,NULL,523
+Illawarra,2,Station Street,Marrickville,2204,New South Wales,Stairs,-33.913863,151.153138,NULL,524
+Macquarie,65,Martin Place,Sydney,2000,New South Wales,Stairs,-33.867962,151.211624,1,525
+Phillip,158,Phillip Street,Sydney,2000,New South Wales,Lift,-33.867725,151.211419,4,526
+Phillip,NULL,NULL,Sydney,2000,New South Wales,Stairs,-33.867961,151.211355,2,527
+Elizabeth,NULL,NULL,Sydney,2000,New South Wales,Stairs,-33.867709,151.210828,5,528
+Elizabeth,39,Elizabeth Street,Sydney,2000,New South Wales,Stairs,-33.867949,151.210511,6,529
+Elizabeth,48,Martin Place,Sydney,2000,New South Wales,Stairs,-33.867730,151.210204,7,530
+Grace,2,Cory Street,Martins Creek,2420,New South Wales,Ramp,-32.558481,151.618412,NULL,531
+Wollondilly,1,Wollondilly Street,Marulan,2579,New South Wales,Path,-34.709501,150.005677,NULL,532
+Railway,1,Wollondilly Street,Marulan,2579,New South Wales,Path,-34.709599,150.005669,NULL,533
+Bourke,32,John Street,Mascot,2020,New South Wales,Stairs,-33.923159,151.187392,NULL,534
+Bourke,32,John Street,Mascot,2020,New South Wales,Escalators,-33.923158,151.187362,NULL,535
+Bourke,7,Bourke Street,Mascot,2020,New South Wales,Lift,-33.923363,151.187339,NULL,536
+Constitution,64,Constitution Road,Meadowbank,2114,New South Wales,Lift,-33.815669,151.090224,NULL,537
+Constitution,64,Constitution Road,Meadowbank,2114,New South Wales,Stairs,-33.815795,151.090208,NULL,538
+Bank,NULL,Bank Street,Meadowbank,2114,New South Wales,Lift,-33.815627,151.089939,NULL,539
+Bank,27,Bank Street,Meadowbank,2114,New South Wales,Ramp,-33.815555,151.089916,NULL,540
+Great Western,50,A32,Medlow Bath,2780,New South Wales,Ramp,-33.674654,150.281141,NULL,541
+Great Western,1,Atlingworth Parade,Medlow Bath,2780,New South Wales,Stairs,-33.672953,150.280391,NULL,542
+Stevens,NULL,Stevens Road,Menangle,2568,New South Wales,Ramp,-34.125394,150.744180,NULL,543
+Stevens,NULL,Stevens Road,Menangle,2568,New South Wales,Path,-34.125855,150.744066,NULL,544
+Racecourse,72,Racecourse Avenue,Menangle Park,2563,New South Wales,Ramp,-34.103381,150.745079,NULL,545
+Racecourse,72,Racecourse Avenue,Menangle Park,2563,New South Wales,Ramp,-34.103385,150.744950,NULL,546
+Railway,91,Merrylands Road,Merrylands,2160,New South Wales,Ramp,-33.836695,150.992669,NULL,547
+Terminal,1,Terminal Place,Merrylands,2160,New South Wales,Ramp,-33.836314,150.992666,NULL,548
+Railway,91,Merrylands Road,Merrylands,2160,New South Wales,Stairs,-33.836805,150.992561,NULL,549
+Railway,91,Merrylands Road,Merrylands,2160,New South Wales,Lift,-33.836906,150.992375,NULL,550
+Railway,126,Merrylands Road,Merrylands,2160,New South Wales,Ramp,-33.836948,150.992327,NULL,551
+Terminal,137,Merrylands Road,Merrylands,2160,New South Wales,Stairs,-33.836582,150.992281,NULL,552
+Terminal,116,Railway Terrace,Merrylands,2160,New South Wales,Lift,-33.836790,150.992228,NULL,553
+Terminal,137,Merrylands Road,Merrylands,2160,New South Wales,Stairs,-33.836715,150.992163,NULL,554
+Railway,126,Merrylands Road,Merrylands,2160,New South Wales,Stairs,-33.837154,150.992075,NULL,555
+Terminal,131,Merrylands Road,Merrylands,2160,New South Wales,Ramp,-33.836851,150.992015,NULL,556
+Terminal,134,Merrylands Road,Merrylands,2160,New South Wales,Stairs,-33.837050,150.991837,NULL,557
+McCubbin,8,McCubbin Close,Metford,2323,New South Wales,Stairs,-32.765478,151.618292,NULL,558
+McCubbin,8,McCubbin Close,Metford,2323,New South Wales,Lift,-32.765360,151.618132,NULL,559
+Ennis,10,Ennis Road,Milsons Point,2061,New South Wales,Ramp,-33.845795,151.212403,NULL,560
+Alfred,NULL,NULL,Milsons Point,2061,New South Wales,Path,-33.845946,151.211719,NULL,561
+Tocal,392,Tocal Road,Mindaribba,2320,New South Wales,Ramp,-32.668350,151.584553,NULL,562
+North,8,North Street,Minnamurra,2533,New South Wales,Ramp,-34.626330,150.853009,NULL,563
+Minto,2,Minto Road,Minto,2566,New South Wales,Stairs,-34.027504,150.842600,NULL,564
+Minto,4,Minto Road,Minto,2566,New South Wales,Lift,-34.027644,150.842564,NULL,565
+Minto,2,Minto Road,Minto,2566,New South Wales,Ramp,-34.027769,150.842550,NULL,566
+Somerset,9,Wiltshire Street,Minto,2566,New South Wales,Stairs,-34.027220,150.842327,NULL,567
+Somerset,9,Wiltshire Street,Minto,2566,New South Wales,Lift,-34.027466,150.842237,NULL,568
+Somerset,11,Wiltshire Street,Minto,2566,New South Wales,Ramp,-34.027693,150.842231,NULL,569
+Kiora,92,Kiora Road,Miranda,2228,New South Wales,Stairs,-34.036075,151.101970,NULL,570
+Kiora,92,Kiora Road,Miranda,2228,New South Wales,Ramp,-34.036075,151.101970,NULL,571
+Railway,38,Railway Parade,Mittagong,2575,New South Wales,Stairs,-34.452638,150.448385,NULL,572
+Regent,1,Station Street,Mittagong,2575,New South Wales,Stairs,-34.452403,150.448362,NULL,573
+Macquarie,108,Macquarie Street,Morisset,2264,New South Wales,Lift,-33.109036,151.488290,NULL,574
+Macquarie,108,Macquarie Street,Morisset,2264,New South Wales,Ramp,-33.109029,151.488249,NULL,575
+Dora,108,Macquarie Street,Morisset,2264,New South Wales,Lift,-33.108838,151.488156,NULL,576
+Macquarie,108,Macquarie Street,Morisset,2264,New South Wales,Stairs,-33.109079,151.488153,NULL,577
+Dora,108,Macquarie Street,Morisset,2264,New South Wales,Stairs,-33.108931,151.488060,NULL,578
+Dora,83,B53,Morisset,2264,New South Wales,Ramp,-33.108950,151.487884,NULL,579
+Coleborne,103-105,Railway Parade,Mortdale,2223,New South Wales,Lift,-33.971122,151.081084,NULL,580
+Coleborne,103-105,Railway Parade,Mortdale,2223,New South Wales,Stairs,-33.971239,151.081009,NULL,581
+Cook,2,Morts Road,Mortdale,2223,New South Wales,Lift,-33.971040,151.080879,NULL,582
+Cook,2A,Morts Road,Mortdale,2223,New South Wales,Stairs,-33.971165,151.080809,NULL,583
+Argyle,NULL,NULL,Moss Vale,2577,New South Wales,Path,-34.548389,150.372103,NULL,584
+Lackey,247,Argyle Street,Moss Vale,2577,New South Wales,Path,-34.547592,150.371870,NULL,585
+Pacific,599,Pacific Highway,Mount Colah,2079,New South Wales,Stairs,-33.671292,151.115098,NULL,586
+North,NULL,NULL,Mount Druitt,2770,New South Wales,Ramp,-33.769056,150.820321,NULL,587
+North,NULL,NULL,Mount Druitt,2770,New South Wales,Stairs,-33.768884,150.820314,NULL,588
+North,NULL,NULL,Mount Druitt,2770,New South Wales,Lift,-33.769032,150.820186,NULL,589
+North,53,North Parade,Mount Druitt,2770,New South Wales,Stairs,-33.769402,150.820177,NULL,590
+Beames,211,Beames Avenue,Mount Druitt,2770,New South Wales,Lift,-33.769777,150.820169,NULL,591
+North,53,North Parade,Mount Druitt,2770,New South Wales,Lift,-33.769410,150.820142,NULL,592
+Beames,NULL,NULL,Mount Druitt,2770,New South Wales,Ramp,-33.769957,150.820108,NULL,593
+Beames,1,Coates Street,Mount Druitt,2770,New South Wales,Stairs,-33.769759,150.819919,NULL,594
+North,51,North Parade,Mount Druitt,2770,New South Wales,Lift,-33.768855,150.819857,NULL,595
+North,51,North Parade,Mount Druitt,2770,New South Wales,Stairs,-33.769032,150.819779,NULL,596
+North,NULL,NULL,Mount Druitt,2770,New South Wales,Stairs,-33.768833,150.819593,NULL,597
+Harwood,7,Harwood Avenue,Mount Kuring-Gai,2080,New South Wales,Stairs,-33.653827,151.137012,NULL,598
+Harwood,7,Harwood Avenue,Mount Kuring-Gai,2080,New South Wales,Ramp,-33.653823,151.136988,NULL,599
+Pacific,787-795,Pacific Highway,Mount Kuring-Gai,2080,New South Wales,Ramp,-33.653769,151.136568,NULL,600
+Patrick,35a,Station Street,Mount Victoria,2786,New South Wales,Stairs,-33.588267,150.257054,NULL,601
+Station,35a,Station Street,Mount Victoria,2786,New South Wales,Stairs,-33.588175,150.256825,NULL,602
+Mulgrave,122,Mulgrave Road,Mulgrave,2756,New South Wales,Ramp,-33.626498,150.829898,NULL,603
+Elizabeth,NULL,NULL,Sydney,2000,New South Wales,Stairs,-33.874934,151.209861,NULL,604
+Elizabeth,149,Liverpool Street,Sydney,2000,New South Wales,Escalators,-33.876913,151.209825,NULL,605
+Elizabeth,287,Elizabeth Street,Sydney,2000,New South Wales,Stairs,-33.876529,151.209806,NULL,606
+Elizabeth,149,Liverpool Street,Sydney,2000,New South Wales,Lift,-33.876591,151.209734,NULL,607
+Elizabeth,201-217,Elizabeth Street,Sydney,2000,New South Wales,Escalators,-33.874827,151.209529,NULL,608
+Liverpool,299,Elizabeth Street,Sydney,2000,New South Wales,Escalators,-33.876712,151.209218,NULL,609
+Liverpool,299,Elizabeth Street,Sydney,2000,New South Wales,Stairs,-33.876698,151.209194,NULL,610
+Market,35,Market Street,Muswellbrook,2333,New South Wales,Ramp,-32.267441,150.890863,NULL,611
+Market,35,Market Street,Muswellbrook,2333,New South Wales,Stairs,-32.267585,150.890803,NULL,612
+Market,18,Market Street,Muswellbrook,2333,New South Wales,Stairs,-32.267426,150.890461,NULL,613
+Goonak,45,Narara Crescent,Narara,2250,New South Wales,Path,-33.394781,151.344553,NULL,614
+Narara Valley,44,Narara Valley Drive,Narara,2250,New South Wales,Stairs,-33.394594,151.344433,NULL,615
+Narara Valley,44,Narara Valley Drive,Narara,2250,New South Wales,Path,-33.394606,151.344415,NULL,616
+Hannans,117,Hannans Road,Narwee,2209,New South Wales,Path,-33.947500,151.070799,NULL,617
+Hurst,3,Fisher Place,Narwee,2209,New South Wales,Path,-33.947831,151.070644,NULL,618
+Hannell,10,Dangar Street,Wickham,2293,New South Wales,Path,-32.924128,151.759867,NULL,619
+Hannell,27,Station Street,Wickham,2293,New South Wales,Path,-32.924432,151.759635,NULL,620
+Charles,27,Station Street,Wickham,2293,New South Wales,Path,-32.923917,151.759388,NULL,621
+Cooper,850,Hunter Street,Newcastle West,2302,New South Wales,Path,-32.924456,151.758950,NULL,622
+King,324A,King Street,Newtown,2042,New South Wales,Lift,-33.897948,151.178891,NULL,623
+King,324A,King Street,Newtown,2042,New South Wales,Ramp,-33.897876,151.178881,NULL,624
+Kathleen Morreau,23,Kathleen Morreau Road,Niagara Park,2250,New South Wales,Stairs,-33.383228,151.354572,NULL,625
+Washington,23,Kathleen Morreau Road,Niagara Park,2250,New South Wales,Stairs,-33.383070,151.354404,NULL,626
+Denman,54,Denman Parade,Normanhurst,2076,New South Wales,Path,-33.720908,151.097151,NULL,627
+Malsbury,2,Eaton Avenue,Normanhurst,2076,New South Wales,Path,-33.720647,151.096902,NULL,628
+Delhi,19,Delhi Road,North Ryde,2113,New South Wales,Lift,-33.794552,151.137925,NULL,629
+Delhi,19,Delhi Road,North Ryde,2113,New South Wales,Escalators,-33.794514,151.137923,NULL,630
+Queen,81,Queen Street,North Strathfield,2137,New South Wales,Stairs,-33.859162,151.088501,NULL,631
+Hamilton,2A,Hamilton Street,North Strathfield,2137,New South Wales,Ramp,-33.859706,151.088207,NULL,632
+Blue,42,Blue Street,North Sydney,2060,New South Wales,Path,-33.841022,151.207498,NULL,633
+Blue,32,Blue Street,North Sydney,2060,New South Wales,Path,-33.841003,151.207374,NULL,634
+Station,4,Flinders Street,North Wollongong,2500,New South Wales,Stairs,-34.412350,150.891562,NULL,635
+Station,2a,Flinders Street,North Wollongong,2500,New South Wales,Path,-34.412118,150.891559,NULL,636
+Station,2a,Flinders Street,North Wollongong,2500,New South Wales,Lift,-34.412111,150.891528,NULL,637
+Porter,18,Porter Street,North Wollongong,2500,New South Wales,Lift,-34.412085,150.891361,NULL,638
+Porter,18,Porter Street,North Wollongong,2500,New South Wales,Path,-34.412087,150.891326,NULL,639
+Porter,20,Porter Street,North Wollongong,2500,New South Wales,Stairs,-34.412306,150.891248,NULL,640
+Pomeroy,27,Beronga Street,North Strathfield,2137,New South Wales,Ramp,-33.857557,151.087398,NULL,641
+Stanford,NULL,Stanford Drive,Oak Flats,2529,New South Wales,Ramp,-34.571981,150.820611,NULL,642
+Stanford,NULL,Stanford Drive,Oak Flats,2529,New South Wales,Stairs,-34.571888,150.820453,NULL,643
+Stanford,NULL,Stanford Drive,Oak Flats,2529,New South Wales,Ramp,-34.571730,150.820208,NULL,644
+Oatley,12A,Oatley Parade,Oatley,2223,New South Wales,Lift,-33.980228,151.079292,NULL,645
+River,4,Mulga Road,Oatley,2223,New South Wales,Stairs,-33.980004,151.078968,NULL,646
+Mulga,NULL,NULL,Oatley,2223,New South Wales,Lift,-33.980259,151.078761,NULL,647
+Park,1,Park Street,Sydney Olympic Park,2127,New South Wales,Path,-33.846111,151.070683,NULL,648
+Dawn Fraser,8,Dawn Fraser Avenue,Sydney Olympic Park,2127,New South Wales,Path,-33.846478,151.070287,NULL,649
+Murray Rose,7,Murray Rose Avenue,Sydney Olympic Park,2127,New South Wales,Path,-33.846086,151.070081,NULL,650
+Dawn Fraser,8,Dawn Fraser Avenue,Sydney Olympic Park,2127,New South Wales,Path,-33.846566,151.070046,NULL,651
+Murray Rose,NULL,NULL,Sydney Olympic Park,2127,New South Wales,Stairs,-33.846173,151.069828,NULL,652
+Dawn Fraser,10,Dawn Fraser Avenue,Sydney Olympic Park,2127,New South Wales,Stairs,-33.846706,151.069556,NULL,653
+Murray Rose,11,Murray Rose Avenue,Sydney Olympic Park,2127,New South Wales,Ramp,-33.846343,151.069495,NULL,654
+Dawn Fraser,NULL,NULL,Sydney Olympic Park,2127,New South Wales,Path,-33.846785,151.069456,NULL,655
+Murray Rose,11,Murray Rose Avenue,Sydney Olympic Park,2127,New South Wales,Stairs,-33.846393,151.069391,NULL,656
+Murray Rose,11,Murray Rose Avenue,Sydney Olympic Park,2127,New South Wales,Lift,-33.846394,151.069248,NULL,657
+Dawn Fraser,NULL,NULL,Sydney Olympic Park,2127,New South Wales,Path,-33.846869,151.069215,NULL,658
+Murray Rose,11,Murray Rose Avenue,Sydney Olympic Park,2127,New South Wales,Stairs,-33.846479,151.069006,NULL,659
+Showground,1,Showground Road,Sydney Olympic Park,2127,New South Wales,Path,-33.846984,151.068271,NULL,660
+Lady Carrington,42,Lady Carrington Road,Otford,2508,New South Wales,Stairs,-34.210526,151.005908,NULL,661
+Lady Carrington,42,Lady Carrington Road,Otford,2508,New South Wales,Ramp,-34.210722,151.005521,NULL,662
+Station,42,Lady Carrington Road,Otford,2508,New South Wales,Stairs,-34.211092,151.005504,NULL,663
+Mill,NULL,NULL,Ourimbah,2258,New South Wales,Stairs,-33.359656,151.370276,NULL,664
+Mill,80,Brownlee Street,Ourimbah,2258,New South Wales,Ramp,-33.359554,151.370108,NULL,665
+Station,NULL,NULL,Ourimbah,2258,New South Wales,Path,-33.359695,151.369750,NULL,666
+Station,NULL,NULL,Ourimbah,2258,New South Wales,Path,-33.359373,151.369735,NULL,667
+Hay,NULL,NULL,Haymarket,2000,New South Wales,Path,-33.879254,151.202740,NULL,668
+Hay,NULL,NULL,Haymarket,2000,New South Wales,Path,-33.879337,151.202620,NULL,669
+Banks,134,Cahors Road,Padstow,2211,New South Wales,Path,-33.951684,151.032344,NULL,670
+Howard,NULL,NULL,Padstow,2211,New South Wales,Ramp,-33.952094,151.032024,NULL,671
+Memorial,132,Memorial Drive,Padstow,2211,New South Wales,Ramp,-33.951764,151.031979,NULL,672
+Memorial,NULL,NULL,Padstow,2211,New South Wales,Path,-33.952005,151.031966,NULL,673
+Memorial,NULL,NULL,Padstow,2211,New South Wales,Stairs,-33.951706,151.031930,NULL,674
+Anderson,224,Weston Street,Panania,2213,New South Wales,Ramp,-33.954133,150.998297,NULL,675
+Weston,224,Weston Street,Panania,2213,New South Wales,Ramp,-33.954404,150.998267,NULL,676
+Station,3,Darcy Street,Parramatta,2150,New South Wales,Stairs,-33.817878,151.006321,NULL,677
+Liverpool-Parramatta,10,Valentine Avenue,Parramatta,2150,New South Wales,Lift,-33.818237,151.005929,NULL,678
+Liverpool-Parramatta,3,Darcy Street,Parramatta,2150,New South Wales,Stairs,-33.818198,151.005884,NULL,679
+Liverpool-Parramatta,NULL,NULL,Parramatta,2150,New South Wales,Stairs,-33.817531,151.005003,NULL,680
+Darcy,21,Darcy Street,Parramatta,2150,New South Wales,Lift,-33.817078,151.004916,NULL,681
+Liverpool-Parramatta,87,Argyle Street,Parramatta,2150,New South Wales,Lift,-33.817376,151.004695,NULL,682
+Darcy,21R,Darcy Street,Parramatta,2150,New South Wales,Stairs,-33.816980,151.004680,NULL,683
+Liverpool-Parramatta,NULL,Station Street East,Parramatta,2150,New South Wales,Escalators,-33.817572,151.004509,NULL,684
+Liverpool-Parramatta,87,Argyle Street,Parramatta,2150,New South Wales,Stairs,-33.817204,151.004443,NULL,685
+Main,19,Railway Street,Paterson,2421,New South Wales,Stairs,-32.602370,151.614764,NULL,686
+Wentworth,221,Wentworth Avenue,Pendle Hill,2145,New South Wales,Ramp,-33.801676,150.957003,NULL,687
+Wentworth,227,Wentworth Avenue,Pendle Hill,2145,New South Wales,Stairs,-33.801271,150.956549,NULL,688
+Joyce,152B,Pendle Way,Pendle Hill,2145,New South Wales,Ramp,-33.801352,150.955929,NULL,689
+Joyce,152B,Pendle Way,Pendle Hill,2145,New South Wales,Path,-33.801308,150.955850,NULL,690
+Railway,346,Pennant Hills Road,Pennant Hills,2120,New South Wales,Stairs,-33.737930,151.072777,NULL,691
+Railway,5,Ramsay Road,Pennant Hills,2120,New South Wales,Lift,-33.737955,151.072626,NULL,692
+Yarrara,NULL,NULL,Pennant Hills,2120,New South Wales,Path,-33.737715,151.072606,NULL,693
+Yarrara,NULL,NULL,Pennant Hills,2120,New South Wales,Stairs,-33.737723,151.072573,NULL,694
+Railway,NULL,Railway Street,Pennant Hills,2120,New South Wales,Ramp,-33.738161,151.072564,NULL,695
+Yarrara,5,Ramsay Road,Pennant Hills,2120,New South Wales,Lift,-33.737865,151.072498,NULL,696
+Combewood,81,Lord Sheffield Circuit,Penrith,2750,New South Wales,Stairs,-33.749858,150.696576,NULL,697
+Combewood,7,Station Street,Penrith,2750,New South Wales,Lift,-33.749851,150.696504,NULL,698
+Jane,57,Great Western Highway,Penrith,2750,New South Wales,Stairs,-33.750290,150.696471,NULL,699
+Jane,57,Great Western Highway,Penrith,2750,New South Wales,Lift,-33.750281,150.696433,NULL,700
+Jane,7,Station Street,Penrith,2750,New South Wales,Stairs,-33.750188,150.696196,NULL,701
+Penrose,901,Penrose Road,Penrose,2579,New South Wales,Path,-34.672305,150.212274,NULL,702
+Kareela,310,Kareela Road,Penrose,2579,New South Wales,Path,-34.672160,150.212086,NULL,703
+Bridge,NULL,NULL,Penshurst,2222,New South Wales,Stairs,-33.966081,151.088837,NULL,704
+Laycock,10,The Strand,Penshurst,2222,New South Wales,Ramp,-33.966332,151.088801,NULL,705
+Laycock,10,The Strand,Penshurst,2222,New South Wales,Stairs,-33.966319,151.088713,NULL,706
+Bridge,5,Penshurst Street,Penshurst,2222,New South Wales,Lift,-33.966097,151.088668,NULL,707
+Trafalgar,3,Regent Street,Petersham,2049,New South Wales,Stairs,-33.894022,151.155767,NULL,708
+Terminus,36,Terminus Street,Petersham,2049,New South Wales,Stairs,-33.893606,151.155541,NULL,709
+Prince,7,Campbell Street,Picton,2571,New South Wales,Stairs,-34.179648,150.612881,NULL,710
+Station,7,Campbell Street,Picton,2571,New South Wales,Stairs,-34.179278,150.612730,NULL,711
+Prince,7,Campbell Street,Picton,2571,New South Wales,Stairs,-34.179682,150.612704,NULL,712
+Station,6,Campbell Street,Picton,2571,New South Wales,Lift,-34.179211,150.612664,NULL,713
+Kurrawa,NULL,NULL,Point Clare,2250,New South Wales,Stairs,-33.446300,151.328526,NULL,714
+Brisbane Water,47,Brisbane Water Drive,Point Clare,2250,New South Wales,Stairs,-33.446182,151.328264,NULL,715
+Brisbane Water,47,Brisbane Water Drive,Point Clare,2250,New South Wales,Ramp,-33.446213,151.328219,NULL,716
+Old Port,LOT 1,Darcy Road,Port Kembla,2505,New South Wales,Ramp,-34.477188,150.902856,NULL,717
+Flinders,NULL,NULL,Port Kembla,2505,New South Wales,Stairs,-34.472979,150.887326,NULL,718
+Flinders,2,Flinders Street,Port Kembla,2505,New South Wales,Stairs,-34.473129,150.887041,NULL,719
+Punchbowl,715,Punchbowl Road,Punchbowl,2196,New South Wales,Stairs,-33.925252,151.055579,NULL,720
+The Boulevarde,279A,The Boulevarde,Punchbowl,2196,New South Wales,Stairs,-33.925567,151.055571,NULL,721
+Grandview,79,Grandview Street,Pymble,2073,New South Wales,Stairs,-33.744638,151.142273,NULL,722
+Pacific,987,A1,Pymble,2073,New South Wales,Stairs,-33.744983,151.142198,NULL,723
+Murray,94,Union Street,Pyrmont,2009,New South Wales,Path,-33.869535,151.197707,NULL,724
+Pearce,44,Pearce Road,Quakers Hill,2763,New South Wales,Lift,-33.727310,150.886272,NULL,725
+Pearce,46A,Pearce Road,Quakers Hill,2763,New South Wales,Stairs,-33.727215,150.886217,NULL,726
+Railway,23,Railway Road,Quakers Hill,2763,New South Wales,Lift,-33.727431,150.886038,NULL,727
+Railway,21,Railway Road,Quakers Hill,2763,New South Wales,Stairs,-33.727214,150.885887,NULL,728
+Gibbons,NULL,NULL,Redfern,2016,New South Wales,Path,-33.892029,151.199511,NULL,729
+Lawson,5,Lawson Street,Redfern,2016,New South Wales,Path,-33.891563,151.198824,NULL,730
+Marian,NULL,NULL,Eveleigh,2015,New South Wales,Stairs,-33.892704,151.198181,NULL,731
+Amy,4,Amy Street,Regents Park,2143,New South Wales,Path,-33.883351,151.024178,NULL,732
+Park,401,Park Road,Regents Park,2143,New South Wales,Stairs,-33.883115,151.023793,NULL,733
+Park,401,Park Road,Regents Park,2143,New South Wales,Ramp,-33.883246,151.023700,NULL,734
+Blamey,2,Revesby Place,Revesby,2212,New South Wales,Stairs,-33.952707,151.015486,NULL,735
+Marco,NULL,NULL,Revesby,2212,New South Wales,Lift,-33.952358,151.015319,NULL,736
+Marco,NULL,NULL,Revesby,2212,New South Wales,Stairs,-33.952311,151.015277,NULL,737
+Blamey,4,Revesby Place,Revesby,2212,New South Wales,Lift,-33.952736,151.015232,NULL,738
+Blaxland,NULL,Blaxland Road,Rhodes,2138,New South Wales,Stairs,-33.830676,151.087236,NULL,739
+Blaxland,NULL,Blaxland Road,Rhodes,2138,New South Wales,Lift,-33.830649,151.087223,NULL,740
+Walker,4,Walker Street,Rhodes,2138,New South Wales,Lift,-33.830456,151.086876,NULL,741
+Walker,4,Walker Street,Rhodes,2138,New South Wales,Stairs,-33.830640,151.086821,NULL,742
+E Market,21,East Market Street,Richmond,2753,New South Wales,Stairs,-33.598771,150.752309,NULL,743
+E Market,21,East Market Street,Richmond,2753,New South Wales,Ramp,-33.598854,150.752253,NULL,744
+Garfield,86,West Parade,Riverstone,2765,New South Wales,Path,-33.679768,150.860729,NULL,745
+Garfield,NULL,NULL,Riverstone,2765,New South Wales,Path,-33.679856,150.860520,NULL,746
+Riverstone,1,Riverstone Parade,Riverstone,2765,New South Wales,Path,-33.679051,150.860440,NULL,747
+Belmore,220,Belmore Road,Riverwood,2210,New South Wales,Path,-33.951470,151.052562,NULL,748
+Belmore,NULL,NULL,Riverwood,2210,New South Wales,Stairs,-33.951600,151.052549,NULL,749
+Geeves,NULL,NULL,Rockdale,2216,New South Wales,Stairs,-33.952303,151.136987,NULL,750
+Geeves,NULL,NULL,Rockdale,2216,New South Wales,Lift,-33.952487,151.136861,NULL,751
+Geeves,1A,Tramway Arcade,Rockdale,2216,New South Wales,Stairs,-33.952580,151.136844,NULL,752
+Railway,88,Railway Street,Rockdale,2216,New South Wales,Ramp,-33.951910,151.136441,NULL,753
+Railway,102,Railway Street,Rockdale,2216,New South Wales,Stairs,-33.952210,151.136280,NULL,754
+Beames,NULL,NULL,Rooty Hill,2766,New South Wales,Stairs,-33.771882,150.844461,NULL,755
+North,NULL,NULL,Rooty Hill,2766,New South Wales,Stairs,-33.771486,150.844284,NULL,756
+Beames,1,Rooty Hill Road South,Rooty Hill,2766,New South Wales,Ramp,-33.772013,150.844247,NULL,757
+Rooty Hill North,2A,Rooty Hill Road North,Rooty Hill,2766,New South Wales,Ramp,-33.771248,150.843872,NULL,758
+James Ruse,120,James Ruse Drive,Rosehill,2142,New South Wales,Stairs,-33.823038,151.022231,NULL,759
+James Ruse,116,James Ruse Drive,Rosehill,2142,New South Wales,Stairs,-33.823220,151.022210,NULL,760
+James Ruse,116,James Ruse Drive,Rosehill,2142,New South Wales,Ramp,-33.823084,151.021815,NULL,761
+Hill,43,Hill Street,Roseville,2069,New South Wales,Ramp,-33.784348,151.177866,NULL,762
+Pacific,NULL,NULL,Roseville,2069,New South Wales,Ramp,-33.784679,151.177749,NULL,763
+Bayview,31,Bayview Crescent,Annandale,2038,New South Wales,Ramp,-33.871857,151.172948,NULL,764
+Bayview,31,Bayview Crescent,Annandale,2038,New South Wales,Ramp,-33.871953,151.172914,NULL,765
+The Crescent,31,Bayview Crescent,Annandale,2038,New South Wales,Stairs,-33.871748,151.172869,NULL,766
+Brodie,5,Brodie Street,Rydalmere,2116,New South Wales,Path,-33.810156,151.029479,NULL,767
+Astra,1,Astra Street,Shortland,2307,New South Wales,Stairs,-32.872794,151.702801,NULL,768
+Railway,371,Lawrence Hargrave Drive,Scarborough,2515,New South Wales,Stairs,-34.265678,150.965496,NULL,769
+Railway,1,Railway Avenue,Scarborough,2515,New South Wales,Stairs,-34.265516,150.965194,NULL,770
+Railway,NULL,Railway Terrace,Schofields,2762,New South Wales,Path,-33.704835,150.874238,NULL,771
+Railway,NULL,Railway Terrace,Schofields,2762,New South Wales,Lift,-33.704438,150.874017,NULL,772
+Railway,NULL,NULL,Schofields,2762,New South Wales,Stairs,-33.704187,150.873932,NULL,773
+Bridge,NULL,Siding Terrace,Schofields,2762,New South Wales,Lift,-33.704544,150.873610,NULL,774
+Bridge,NULL,Siding Terrace,Schofields,2762,New South Wales,Stairs,-33.704317,150.873526,NULL,775
+Susan,109,Susan Street,Scone,2337,New South Wales,Path,-32.046706,150.867072,NULL,776
+Helen,NULL,NULL,Sefton,2162,New South Wales,Lift,-33.885162,151.011841,NULL,777
+Wellington,141,Wellington Road,Sefton,2162,New South Wales,Lift,-33.885496,151.011797,NULL,778
+Helen,44A,Helen Street,Sefton,2162,New South Wales,Stairs,-33.885160,151.011671,NULL,779
+Wellington,143,Wellington Road,Sefton,2162,New South Wales,Stairs,-33.885432,151.011622,NULL,780
+Prospect,198,Prospect Highway,Seven Hills,2147,New South Wales,Stairs,-33.774105,150.936191,NULL,781
+The Hills,47,Boomerang Place,Seven Hills,2147,New South Wales,Lift,-33.774557,150.936172,NULL,782
+Prospect,NULL,NULL,Seven Hills,2147,New South Wales,Lift,-33.774071,150.936089,NULL,783
+Prospect,NULL,NULL,Seven Hills,2147,New South Wales,Ramp,-33.774102,150.935925,NULL,784
+The Hills,53,Boomerang Place,Seven Hills,2147,New South Wales,Ramp,-33.774520,150.935432,NULL,785
+Piper,NULL,Piper Drive,Shell Cove,2529,New South Wales,Lift,-34.591251,150.844818,NULL,786
+Piper,1,Piper Drive,Shell Cove,2529,New South Wales,Stairs,-34.591307,150.844801,NULL,787
+Piper,NULL,Piper Drive,Shell Cove,2529,New South Wales,Lift,-34.591225,150.844669,NULL,788
+Piper,1,Piper Drive,Shell Cove,2529,New South Wales,Stairs,-34.591287,150.844651,NULL,789
+Munro,4,Munro Lane,Singleton,2330,New South Wales,Ramp,-32.571960,151.165682,NULL,790
+Munro,18,Munro Street,Singleton,2330,New South Wales,Ramp,-32.571853,151.165540,NULL,791
+Munro,14,Munro Street,Singleton,2330,New South Wales,Path,-32.571833,151.165486,NULL,792
+Macquarie,238,Macquarie Road,Springwood,2777,New South Wales,Stairs,-33.699189,150.563697,NULL,793
+Macquarie,248,Macquarie Road,Springwood,2777,New South Wales,Ramp,-33.699361,150.563522,NULL,794
+Station,NULL,NULL,Springwood,2777,New South Wales,Ramp,-33.698964,150.563304,NULL,795
+James,2,Saint James Road,Sydney,2000,New South Wales,Stairs,-33.869927,151.211498,NULL,796
+James,2,Saint James Road,Sydney,2000,New South Wales,Ramp,-33.870033,151.211289,NULL,797
+Elizabeth,118,Elizabeth Street,Sydney,2000,New South Wales,Lift,-33.870678,151.210484,NULL,798
+Elizabeth,118,Elizabeth Street,Sydney,2000,New South Wales,Stairs,-33.870749,151.210448,NULL,799
+Sergeants,NULL,NULL,St Leonards,2065,New South Wales,Stairs,-33.822246,151.194762,NULL,800
+Sergeants,1,Sergeants Lane,St Leonards,2065,New South Wales,Lift,-33.822223,151.194760,NULL,801
+Herbert,NULL,NULL,St Leonards,2065,New South Wales,Lift,-33.822323,151.193647,NULL,802
+Herbert,3,Herbert Street,St Leonards,2065,New South Wales,Stairs,-33.822316,151.193608,NULL,803
+Herbert,NULL,NULL,St Leonards,2065,New South Wales,Stairs,-33.822462,151.193432,NULL,804
+Herbert,NULL,NULL,St Leonards,2065,New South Wales,Lift,-33.822430,151.193367,NULL,805
+Forrester,NULL,Station Street,North Saint Marys,2760,New South Wales,Lift,-33.761897,150.775158,NULL,806
+Station,113b,Station Street,Saint Marys,2760,New South Wales,Lift,-33.762350,150.775057,NULL,807
+Forrester,NULL,Station Street,North Saint Marys,2760,New South Wales,Stairs,-33.761880,150.774925,NULL,808
+Station,NULL,NULL,North Saint Marys,2760,New South Wales,Stairs,-33.762318,150.774872,NULL,809
+May,1,Goodsell Street,St Peters,2044,New South Wales,Path,-33.907453,151.180861,NULL,810
+Lord,9,Lord Street,Newtown,2042,New South Wales,Path,-33.906942,151.180649,NULL,811
+Douglas,140,Percival Road,Stanmore,2048,New South Wales,Ramp,-33.894164,151.164204,NULL,812
+Trafalgar,110,Cambridge Street,Stanmore,2048,New South Wales,Ramp,-33.894676,151.164157,NULL,813
+Railway,NULL,Wodi Wodi Walking Track,Stanwell Park,2508,New South Wales,Stairs,-34.226183,150.981234,NULL,814
+Railway,NULL,Wodi Wodi Walking Track,Stanwell Park,2508,New South Wales,Stairs,-34.226144,150.981004,NULL,815
+Everton,39,Everton Road,Strathfield,2135,New South Wales,Lift,-33.871468,151.094603,NULL,816
+Everton,39,Everton Road,Strathfield,2135,New South Wales,Stairs,-33.871344,151.094481,NULL,817
+Strathfield,NULL,NULL,Strathfield,2135,New South Wales,Ramp,-33.872208,151.094283,NULL,818
+Albert,1,Albert Road,Strathfield,2135,New South Wales,Ramp,-33.871859,151.093829,NULL,819
+Grosvenor,30,Grosvenor Crescent,Summer Hill,2130,New South Wales,Stairs,-33.890159,151.138944,NULL,820
+Carlton,60,Carlton Crescent,Summer Hill,2130,New South Wales,Lift,-33.890532,151.138907,NULL,821
+Grosvenor,30,Grosvenor Crescent,Summer Hill,2130,New South Wales,Lift,-33.890106,151.138752,NULL,822
+Carlton,60,Carlton Crescent,Summer Hill,2130,New South Wales,Stairs,-33.890441,151.138641,NULL,823
+Carlton,60,Carlton Crescent,Summer Hill,2130,New South Wales,Ramp,-33.890431,151.138615,NULL,824
+East,NULL,NULL,Sutherland,2232,New South Wales,Lift,-34.031570,151.057432,NULL,825
+East,NULL,NULL,Sutherland,2232,New South Wales,Path,-34.031556,151.057342,NULL,826
+East,NULL,NULL,Sutherland,2232,New South Wales,Stairs,-34.031834,151.056909,NULL,827
+East,NULL,NULL,Sutherland,2232,New South Wales,Ramp,-34.031834,151.056909,NULL,828
+Gleeson,NULL,NULL,Sydenham,2044,New South Wales,Lift,-33.914911,151.166101,NULL,829
+Gleeson,NULL,NULL,Sydenham,2044,New South Wales,Path,-33.914863,151.166047,NULL,830
+George,44A,George Street,Tahmoor,2573,New South Wales,Path,-34.223587,150.590241,NULL,831
+Pitt,41,Pitt Street,Tahmoor,2573,New South Wales,Path,-34.223465,150.589830,NULL,832
+Railway,4,Weir Road,Tallong,2579,New South Wales,Path,-34.718375,150.086092,NULL,833
+Woodberry,9,Woodberry Road,Tarro,2322,New South Wales,Stairs,-32.808820,151.669463,NULL,834
+Woodberry,9,Woodberry Road,Tarro,2322,New South Wales,Stairs,-32.808895,151.669372,NULL,835
+Brisbane Water,NULL,Brisbane Water Drive,Tascott,2250,New South Wales,Ramp,-33.450839,151.318815,NULL,836
+Brisbane Water,NULL,Brisbane Water Drive,Tascott,2250,New South Wales,Stairs,-33.450882,151.318787,NULL,837
+Glenrock,8,Kateena Avenue,Tascott,2250,New South Wales,Ramp,-33.450773,151.318740,NULL,838
+Glenrock,4,Kateena Avenue,Tascott,2250,New South Wales,Stairs,-33.450949,151.318344,NULL,839
+Parramatta,739,A22,Summer Hill,2130,New South Wales,Lift,-33.889566,151.145176,NULL,840
+Parramatta,743,Great Western Highway,Summer Hill,2130,New South Wales,Lift,-33.889906,151.145104,NULL,841
+Parramatta,743,A22,Summer Hill,2130,New South Wales,Stairs,-33.889630,151.145083,NULL,842
+Parramatta,743,Great Western Highway,Summer Hill,2130,New South Wales,Stairs,-33.889868,151.145073,NULL,843
+Johnson,22,Johnson Street,Maitland,2320,New South Wales,Ramp,-32.723231,151.539895,NULL,844
+Johnson,22,Johnson Street,Maitland,2320,New South Wales,Stairs,-32.723378,151.539885,NULL,845
+Sturt,NULL,NULL,Telopea,2117,New South Wales,Path,-33.794006,151.041781,NULL,846
+Sturt,NULL,NULL,Telopea,2117,New South Wales,Ramp,-33.794249,151.041524,NULL,847
+Sturt,33,Sturt Street,Telopea,2117,New South Wales,Path,-33.794570,151.041383,NULL,848
+Adderton,55A,Adderton Road,Telopea,2117,New South Wales,Ramp,-33.794021,151.041263,NULL,849
+Adderton,55A,Adderton Road,Telopea,2117,New South Wales,Stairs,-33.794115,151.041195,NULL,850
+Griffith,14,Griffiths Street,Tempe,2044,New South Wales,Stairs,-33.923691,151.156798,NULL,851
+Griffith,24,Griffiths Street,Tempe,2044,New South Wales,Stairs,-33.923947,151.156750,NULL,852
+Richardson,NULL,Unnamed Road,Marrickville,2204,New South Wales,Stairs,-33.923580,151.156471,NULL,853
+Richardson,NULL,Richardsons Crescent,Marrickville,2204,New South Wales,Stairs,-33.923896,151.156397,NULL,854
+William,NULL,William Street,Teralba,2284,New South Wales,Ramp,-32.962768,151.604150,NULL,855
+William,NULL,NULL,Teralba,2284,New South Wales,Path,-32.962727,151.603926,NULL,856
+Railway,127,Railway Street,Teralba,2284,New South Wales,Stairs,-32.962162,151.603641,NULL,857
+Pirrama,48A,Pirrama Road,Pyrmont,2009,New South Wales,Path,-33.867270,151.195709,NULL,858
+Station,NULL,NULL,Thirroul,2515,New South Wales,Stairs,-34.317860,150.919375,NULL,859
+Station,7,Station Street,Thirroul,2515,New South Wales,Lift,-34.317997,150.919252,NULL,860
+Railway,4,Railway Parade,Thirroul,2515,New South Wales,Path,-34.317883,150.918865,NULL,861
+Railway,4,Railway Parade,Thirroul,2515,New South Wales,Stairs,-34.317958,150.918851,NULL,862
+Railway,288,Pennant Hills Road,Thornleigh,2120,New South Wales,Path,-33.732079,151.078373,NULL,863
+Railway,NULL,NULL,Thornleigh,2120,New South Wales,Stairs,-33.732118,151.078332,NULL,864
+The Esplanade,86,The Esplanade,Thornleigh,2120,New South Wales,Stairs,-33.731809,151.078118,NULL,865
+Karuah,17,Karuah Street,Thornton,2322,New South Wales,Stairs,-32.783573,151.639993,NULL,866
+Karuah,17,Karuah Street,Thornton,2322,New South Wales,Lift,-32.783561,151.639955,NULL,867
+Wentworth,40,Cooyong Crescent,Toongabbie,2146,New South Wales,Ramp,-33.786999,150.951607,NULL,868
+Portice,11,Portico Parade,Toongabbie,2146,New South Wales,Ramp,-33.787142,150.951166,NULL,869
+George,NULL,George Street,Sydney,2000,New South Wales,Stairs,-33.873171,151.207125,2,870
+George,552,George Street,Sydney,2000,New South Wales,Stairs,-33.873576,151.207064,2,871
+George,816,George Street,Sydney,2000,New South Wales,Lift,-33.873894,151.207020,2,872
+George,816,George Street,Sydney,2000,New South Wales,Stairs,-33.873948,151.207008,2,873
+George,63,George Street,Sydney,2000,New South Wales,Stairs,-33.873243,151.206718,5,874
+George,455,George Street,Sydney,2000,New South Wales,Stairs,-33.873002,151.206696,5,875
+George,485,George Street,Sydney,2000,New South Wales,Stairs,-33.874166,151.206667,4,876
+George,483,George Street,Sydney,2000,New South Wales,Stairs,-33.873704,151.206619,5,877
+Kent,NULL,Unnamed Road,Sydney,2000,New South Wales,Path,-33.873462,151.205675,5,878
+Towradgi,NULL,NULL,Towradgi,2518,New South Wales,Ramp,-34.384084,150.901667,NULL,879
+Towradgi,NULL,NULL,Towradgi,2518,New South Wales,Ramp,-34.384126,150.901358,NULL,880
+Bryant,NULL,Bryant Drive,Tuggerah,2259,New South Wales,Ramp,-33.307745,151.420420,NULL,881
+Bryant,NULL,Bryant Drive,Tuggerah,2259,New South Wales,Stairs,-33.307745,151.420420,NULL,882
+Pacific,86,Pacific Highway,Tuggerah,2259,New South Wales,Ramp,-33.307474,151.420075,NULL,883
+Pacific,NULL,Pacific Highway,Tuggerah,2259,New South Wales,Stairs,-33.307677,151.420038,NULL,884
+Rohini,2a,Rohini Street,Turramurra,2074,New South Wales,Path,-33.732589,151.129097,NULL,885
+William,NULL,Rohini St,Turramurra,2074,New South Wales,Path,-33.732877,151.128659,NULL,886
+Reede,128,Turrella Street,Turrella,2205,New South Wales,Stairs,-33.929774,151.140428,NULL,887
+Berkeley,NULL,NULL,Unanderra,2526,New South Wales,Stairs,-34.455128,150.846083,NULL,888
+Berkeley,NULL,NULL,Unanderra,2526,New South Wales,Stairs,-34.454803,150.845495,NULL,889
+Great Western,NULL,NULL,Valley Heights,2777,New South Wales,Stairs,-33.703882,150.584080,NULL,890
+Great Western,NULL,NULL,Valley Heights,2777,New South Wales,Ramp,-33.703855,150.584019,NULL,891
+Great Western,4,The Valley Road,Valley Heights,2777,New South Wales,Stairs,-33.704148,150.583689,NULL,892
+Waller,1,Waller Street,East Maitland,2323,New South Wales,Stairs,-32.750965,151.594137,NULL,893
+Victoria,64,Victoria Street,East Maitland,2323,New South Wales,Stairs,-32.751124,151.593796,NULL,894
+Villawood,NULL,River Avenue,Villawood,2163,New South Wales,Stairs,-33.880921,150.977362,NULL,895
+River,101,River Avenue,Villawood,2163,New South Wales,Stairs,-33.880740,150.977347,NULL,896
+Bandon,100,Bandon Road,Vineyard,2765,New South Wales,Ramp,-33.650188,150.851063,NULL,897
+Redleaf,1-5,Railway Avenue,Wahroonga,2076,New South Wales,Stairs,-33.718001,151.117518,NULL,898
+Alexandria,49,Alexandria Parade,Waitara,2077,New South Wales,Path,-33.710286,151.105246,NULL,899
+Waitara,12,Waitara Avenue,Waitara,2077,New South Wales,Stairs,-33.710656,151.104915,NULL,900
+Wallarobba Brookfield,1428,Dungog Road,Wallarobba,2420,New South Wales,Ramp,-32.496150,151.695692,NULL,901
+Eucalyptus,9A,Eucalyptus Circuit,Warabrook,2304,New South Wales,Ramp,-32.886983,151.711187,NULL,902
+Ring,NULL,Unnamed Road,Callaghan,2308,New South Wales,Ramp,-32.888486,151.709521,NULL,903
+Platt,NULL,NULL,Waratah,2298,New South Wales,Stairs,-32.902103,151.731215,NULL,904
+Platt,2,Railway Terrace,Mayfield,2304,New South Wales,Stairs,-32.902354,151.731023,NULL,905
+Davis,10A,Davis Street,Dulwich Hill,2203,New South Wales,Path,-33.898962,151.140003,NULL,906
+Weston,77,Weston Street,Dulwich Hill,2203,New South Wales,Path,-33.898812,151.139864,NULL,907
+Warnervale,2,Albert Warner Drive,Warnervale,2259,New South Wales,Path,-33.247384,151.449136,NULL,908
+Warnervale,2,Albert Warner Drive,Warnervale,2259,New South Wales,Path,-33.247132,151.448845,NULL,909
+Warrawee,1,Warrawee Avenue,Warrawee,2074,New South Wales,Path,-33.724393,151.122039,NULL,910
+Heydon,19,Heydon Avenue,Warrawee,2074,New South Wales,Path,-33.724541,151.121722,NULL,911
+Railway,58,Railway Parade,Warrimoo,2774,New South Wales,Stairs,-33.721326,150.602951,NULL,912
+Great Western,NULL,Great Western Highway,Warrimoo,2774,New South Wales,Stairs,-33.721589,150.602781,NULL,913
+Great Western,NULL,Great Western Highway,Warrimoo,2774,New South Wales,Ramp,-33.721592,150.602768,NULL,914
+Great Western,285,Great Western Highway,Warrimoo,2774,New South Wales,Ramp,-33.722068,150.602657,NULL,915
+Great Western,289,Great Western Highway,Warrimoo,2774,New South Wales,Stairs,-33.722044,150.602565,NULL,916
+Warwick,NULL,Warwick Street,Warwick Farm,2170,New South Wales,Stairs,-33.913180,150.935324,NULL,917
+Warwick,NULL,Warwick Street,Warwick Farm,2170,New South Wales,Lift,-33.913405,150.935276,NULL,918
+Remembrance,NULL,Remembrance Avenue,Warwick Farm,2170,New South Wales,Lift,-33.913246,150.934995,NULL,919
+Remembrance,NULL,Remembrance Avenue,Warwick Farm,2170,New South Wales,Stairs,-33.913473,150.934961,NULL,920
+Kooraban,3,McKell Avenue,Waterfall,2233,New South Wales,Ramp,-34.135172,150.994605,NULL,921
+Bay,NULL,NULL,Waverton,2060,New South Wales,Path,-33.837567,151.197468,NULL,922
+Bay,94A,Bay Road,Waverton,2060,New South Wales,Path,-33.837610,151.197336,NULL,923
+Railway,8,Railway Parade,Wentworth Falls,2782,New South Wales,Stairs,-33.709329,150.376489,NULL,924
+Station,22,Station Street,Wentworth Falls,2782,New South Wales,Stairs,-33.709525,150.376119,NULL,925
+Pyrmont Bridge,NULL,NULL,Pyrmont,2009,New South Wales,Path,-33.874241,151.194094,NULL,926
+Wattle,26,Wattle Street,Pyrmont,2009,New South Wales,Ramp,-33.875067,151.193538,NULL,927
+Wentworth,79,Wentworth Avenue,Wentworthville,2145,New South Wales,Stairs,-33.806868,150.972524,NULL,928
+The Kingsway,1,The Kingsway,Wentworthville,2145,New South Wales,Stairs,-33.807252,150.972304,NULL,929
+Wentworth,83,Wentworth Avenue,Wentworthville,2145,New South Wales,Ramp,-33.806676,150.971932,NULL,930
+The Kingsway,NULL,NULL,Wentworthville,2145,New South Wales,Ramp,-33.807068,150.971827,NULL,931
+Victoria,10,Kazanis Court,Werrington,2747,New South Wales,Stairs,-33.759049,150.757566,NULL,932
+Railway,18,Railway Street,Werrington,2747,New South Wales,Stairs,-33.759249,150.757531,NULL,933
+Victoria,10,Kazanis Court,Werrington,2747,New South Wales,Lift,-33.759037,150.757445,NULL,934
+Railway,10,Kazanis Court,Werrington,2747,New South Wales,Lift,-33.759207,150.757401,NULL,935
+Railway,2D,Ryedale Road,West Ryde,2114,New South Wales,Stairs,-33.807466,151.090579,NULL,936
+Railway,2D,Ryedale Road,West Ryde,2114,New South Wales,Lift,-33.807471,151.090403,NULL,937
+West,28,West Parade,West Ryde,2114,New South Wales,Ramp,-33.806875,151.090157,NULL,938
+West,2D,Ryedale Road,West Ryde,2114,New South Wales,Ramp,-33.807044,151.090083,NULL,939
+West,1-55,West Parade,West Ryde,2114,New South Wales,Stairs,-33.807467,151.089960,NULL,940
+Railway,25,Railway Parade,Westmead,2145,New South Wales,Stairs,-33.808361,150.988187,NULL,941
+Alexandria,27,Alexandra Avenue,Westmead,2145,New South Wales,Stairs,-33.808708,150.987870,NULL,942
+Railway,2,Railway Parade,Westmead,2145,New South Wales,Ramp,-33.808190,150.987715,NULL,943
+Alexandria,27,Alexandra Avenue,Westmead,2145,New South Wales,Ramp,-33.808641,150.987657,NULL,944
+King Georges,89,King Georges Road,Wiley Park,2195,New South Wales,Ramp,-33.922781,151.068062,NULL,945
+King Georges,89,King Georges Road,Wiley Park,2195,New South Wales,Ramp,-33.922704,151.068018,NULL,946
+George,6,Church Street,Windsor,2756,New South Wales,Path,-33.613623,150.811105,NULL,947
+Cox,21,Cox Street,Windsor,2756,New South Wales,Path,-33.612927,150.809029,NULL,948
+Railway,57-61,Railway Parade,Wingello,2579,New South Wales,Path,-34.692335,150.158381,NULL,949
+Sydney,9,Wingello Street,Wingello,2579,New South Wales,Path,-34.692016,150.158205,NULL,950
+Dungog,NULL,Dungog Road,Wirragulla,2420,New South Wales,Ramp,-32.462926,151.742468,NULL,951
+Brodie Spark,NULL,NULL,Wolli Creek,2205,New South Wales,Stairs,-33.928671,151.154443,NULL,952
+Brodie Spark,NULL,Brodie Spark Drive,Wolli Creek,2205,New South Wales,Lift,-33.928684,151.154358,NULL,953
+Discovery Point,2,Discovery Point Place,Wolli Creek,2205,New South Wales,Lift,-33.928849,151.153891,NULL,954
+Discovery Point,2,Discovery Point Place,Wolli Creek,2205,New South Wales,Stairs,-33.928829,151.153842,NULL,955
+Crown,335,Princes Highway,Wollongong,2500,New South Wales,Path,-34.425827,150.888638,NULL,956
+Station,8,Station Street,Wollongong,2500,New South Wales,Stairs,-34.426733,150.888559,NULL,957
+Station,8,Station Street,Wollongong,2500,New South Wales,Path,-34.426987,150.888436,NULL,958
+Crown,NULL,NULL,Wollongong,2500,New South Wales,Lift,-34.426456,150.888434,NULL,959
+Crown,NULL,NULL,Wollongong,2500,New South Wales,Lift,-34.426425,150.888220,NULL,960
+Crown,306A,Crown Street,Wollongong,2500,New South Wales,Path,-34.425872,150.888212,NULL,961
+Railway Staiton,1,Railway Station Square,Wollongong,2500,New South Wales,Path,-34.427208,150.887947,NULL,962
+Railway Staiton,NULL,NULL,Wollongong,2500,New South Wales,Ramp,-34.426791,150.887817,NULL,963
+Milner,2B,Milner Crescent,Wollstonecraft,2065,New South Wales,Path,-33.831590,151.192595,NULL,964
+Shirley,31,Shirley Road,Wollstonecraft,2065,New South Wales,Ramp,-33.832459,151.192182,NULL,965
+Shirley,1,Telopea Street,Wollstonecraft,2065,New South Wales,Path,-33.832674,151.191792,NULL,966
+Milray,43,Milray Avenue,Wollstonecraft,2065,New South Wales,Path,-33.831467,151.191573,NULL,967
+Morrison,NULL,NULL,Wombarra,2515,New South Wales,Stairs,-34.275453,150.953675,NULL,968
+Morrison,119,Morrison Avenue,Wombarra,2515,New South Wales,Stairs,-34.275304,150.953508,NULL,969
+Wondabyne Wharf,NULL,Unnamed Road,Wondabyne,2256,New South Wales,Ramp,-33.492021,151.257148,NULL,970
+Railway,19,Railway Parade,Woodford,2778,New South Wales,Stairs,-33.735751,150.482196,NULL,971
+Great Western,21,Railway Parade,Woodford,2778,New South Wales,Ramp,-33.735468,150.481841,NULL,972
+Great Western,56,Great Western Highway,Woodford,2778,New South Wales,Ramp,-33.735267,150.480885,NULL,973
+Swan,24,Denman Avenue,Woolooware,2230,New South Wales,Stairs,-34.047412,151.143762,NULL,974
+Swan,24,Denman Avenue,Woolooware,2230,New South Wales,Lift,-34.047448,151.143701,NULL,975
+Swan,1,Panorama Avenue,Woolooware,2230,New South Wales,Stairs,-34.047698,151.143648,NULL,976
+Swan,1,Panorama Avenue,Woolooware,2230,New South Wales,Lift,-34.047656,151.143584,NULL,977
+Park,18,Park Road,Woonona,2517,New South Wales,Ramp,-34.349393,150.915389,NULL,978
+Railway,1A,Railway Parade,Woonona,2517,New South Wales,Stairs,-34.349561,150.915360,NULL,979
+Park,NULL,NULL,Woonona,2517,New South Wales,Ramp,-34.349329,150.915110,NULL,980
+Blackwall,35-39,Blackwall Road,Woy Woy,2256,New South Wales,Path,-33.485973,151.324352,NULL,981
+Railway,9,Railway Street,Woy Woy,2256,New South Wales,Ramp,-33.485273,151.323725,NULL,982
+Railway,25,Railway Street,Woy Woy,2256,New South Wales,Lift,-33.485857,151.323384,NULL,983
+Railway,44,Railway Street,Woy Woy,2256,New South Wales,Stairs,-33.485978,151.323215,NULL,984
+Wyee,NULL,NULL,Wyee,2259,New South Wales,Ramp,-33.179840,151.487240,NULL,985
+Gorokan,16,Gorokan Road,Wyee,2259,New South Wales,Stairs,-33.180164,151.486856,NULL,986
+Carrington,NULL,NULL,Sydney,2000,New South Wales,Stairs,-33.865539,151.206314,1,987
+Carrington,9,Carrington Street,Sydney,2000,New South Wales,Stairs,-33.865833,151.206282,1,988
+Carrington,9,Carrington Street,Sydney,2000,New South Wales,Path,-33.865722,151.206269,1,989
+Carrington,NULL,NULL,Sydney,2000,New South Wales,Lift,-33.865705,151.206102,1,990
+York,NULL,NULL,Sydney,2000,New South Wales,Stairs,-33.865662,151.205972,3,991
+York,289-307,George Street,Sydney,2000,New South Wales,Stairs,-33.865756,151.205963,3,992
+York,NULL,NULL,Sydney,2000,New South Wales,Path,-33.865601,151.205520,3,993
+Jamison,1B,Jamison Street,Sydney,2000,New South Wales,Path,-33.864453,151.205316,NULL,994
+Clarence,50,Clarence Street,Sydney,2000,New South Wales,Lift,-33.865729,151.205079,4,995
+Clarence,34,Clarence Street,Sydney,2000,New South Wales,Path,-33.865643,151.205004,4,996
+Clarence,32,Clarence Street,Sydney,2000,New South Wales,Stairs,-33.865628,151.204800,4,997
+Napoleon,15A,Napoleon Street,Sydney,2000,New South Wales,Path,-33.865246,151.203970,NULL,998
+Napoleon,261,Kent Street,Sydney,2000,New South Wales,Lift,-33.865341,151.203967,NULL,999
+Howarth,51,Howarth Street,Wyong,2259,New South Wales,Stairs,-33.285083,151.425599,NULL,1000
+Howarth,47,Howarth Street,Wyong,2259,New South Wales,Lift,-33.285332,151.425549,NULL,1001
+Pacific,72,Pacific Highway,Wyong,2259,New South Wales,Lift,-33.285249,151.425220,NULL,1002
+Pacific,84,Pacific Highway,Wyong,2259,New South Wales,Stairs,-33.285322,151.425158,NULL,1003
+Hume,NULL,NULL,Yagoona,2199,New South Wales,Path,-33.907331,151.024676,NULL,1004
+Railway,NULL,Railway Street,Yennora,2161,New South Wales,Stairs,-33.864882,150.971040,NULL,1005
+Nelson,33,Nelson Road,Yennora,2161,New South Wales,Stairs,-33.864620,150.970945,NULL,1006
+Railway,38,Nelson Road,Yennora,2161,New South Wales,Stairs,-33.864988,150.970808,NULL,1007
+Railway,39,Nelson Road,Yennora,2161,New South Wales,Ramp,-33.865029,150.970716,NULL,1008
+Old Hume,38-42,Old Hume Highway,Yerrinbool,2575,New South Wales,Path,-34.371592,150.543448,NULL,1009
+Bells,NULL,Unnamed Road,Clarence,2790,New South Wales,Stairs,-33.471841,150.202119,NULL,1010
