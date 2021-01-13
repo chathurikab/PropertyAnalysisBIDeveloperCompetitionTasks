@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="AUS_Property_median"
   DTS:PackageType="5"
-  DTS:VersionBuild="80"
-  DTS:VersionGUID="{1843E51D-86C2-4D59-82A9-025768F537F4}">
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{8796DBA7-1374-4EE5-BC8E-8B9158024583}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1081,227 +1081,6 @@ where [refTable].[Year] = ? and [refTable].[Month] = ?</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Australia Property Median\Load data to DW\Lookup 1"
-                  componentClassID="Microsoft.Lookup"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Lookup 1"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[FactAreawiseProperty]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[FactAreawiseProperty]) [refTable]
-where [refTable].[StateID] = ? and [refTable].[CityID] = ? and [refTable].[SuburbID] = ? and [refTable].[PeriodKey] = ? and [refTable].[TransportID] = ? and [refTable].[CountryID] = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      name="CacheType"
-                      typeConverter="CacheType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CountryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CityID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SuburbID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PeriodKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TransportID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PropertyMedian" dataType="DT_NUMERIC" length="0" precision="15" scale="2" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[StateId]};#{Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CityId]};#{Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[SuburbId]};#{Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PeriodKey]};#{Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[TransportId]};#{Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CountryID]};</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Australia Property Median\Load data to DW\Lookup 1.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                      description="Connection manager used to access lookup data."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input].Columns[StateId]"
-                          cachedDataType="i4"
-                          cachedName="StateId"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[StateId]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">StateID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input].Columns[CityId]"
-                          cachedDataType="i4"
-                          cachedName="CityId"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CityId]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">CityID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input].Columns[SuburbId]"
-                          cachedDataType="i4"
-                          cachedName="SuburbId"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[SuburbId]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">SuburbID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input].Columns[PeriodKey]"
-                          cachedDataType="i4"
-                          cachedName="PeriodKey"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PeriodKey]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">PeriodKey</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input].Columns[TransportId]"
-                          cachedDataType="i4"
-                          cachedName="TransportId"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[TransportId]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">TransportID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input].Columns[CountryID]"
-                          cachedDataType="i4"
-                          cachedName="CountryID"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CountryID]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">CountryID</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Lookup 1.Outputs[Lookup Match Output]"
-                      errorOrTruncationOperation="Lookup"
-                      exclusionGroup="1"
-                      name="Lookup Match Output"
-                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Lookup 1.Outputs[Lookup No Match Output]"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      name="Lookup No Match Output"
-                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Lookup 1.Outputs[Lookup Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Lookup Error Output"
-                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Australia Property Median\Load data to DW\Lookup City"
                   componentClassID="Microsoft.Lookup"
                   contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
@@ -1946,198 +1725,6 @@ where [refTable].[Suburb] = ? and [refTable].[PostalCode] = ?</property>
                           refId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          name="ErrorColumn"
-                          specialFlags="2" />
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
-                  refId="Package\Australia Property Median\Load data to DW\Lookup Transport"
-                  componentClassID="Microsoft.Lookup"
-                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
-                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
-                  name="Lookup Transport"
-                  usesDispositions="true"
-                  version="6">
-                  <properties>
-                    <property
-                      dataType="System.String"
-                      description="Specifies the SQL statement that generates the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimTransport]</property>
-                    <property
-                      dataType="System.String"
-                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
-                      expressionType="Notify"
-                      name="SqlCommandParam"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimTransport]) [refTable]
-where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCode] = ?</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of connection used to access the reference dataset."
-                      name="ConnectionType"
-                      typeConverter="LookupConnectionType">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the cache type of the lookup table."
-                      name="CacheType"
-                      typeConverter="CacheType">2</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
-                      name="NoMatchBehavior"
-                      typeConverter="LookupNoMatchBehavior">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
-                      name="NoMatchCachePercentage">0</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
-                      name="MaxMemoryUsage">25</property>
-                    <property
-                      dataType="System.Int64"
-                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
-                      name="MaxMemoryUsage64">25</property>
-                    <property
-                      dataType="System.String"
-                      description="Indicates whether to reference metadata in an XML format."
-                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TransportId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Name" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StopId" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetNumber" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="StreetName" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Suburb" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PostCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="State" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Country" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EntranceType" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_NUMERIC" length="0" precision="8" scale="6" codePage="0"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_NUMERIC" length="0" precision="9" scale="6" codePage="0"/&gt;&lt;referenceColumn name="ExitNumber" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                      name="ParameterMap">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]};#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]};#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]};</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the column code page to use when code page information is unavailable from the data source."
-                      name="DefaultCodePage">1252</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
-                      name="TreatDuplicateKeysAsError">false</property>
-                  </properties>
-                  <connections>
-                    <connection
-                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.Task1_Warehouse]"
-                      description="Connection manager used to access lookup data."
-                      name="OleDbConnection" />
-                  </connections>
-                  <inputs>
-                    <input
-                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]"
-                      name="Lookup Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input].Columns[State]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="State"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">State</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input].Columns[Suburb]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Suburb"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">Suburb</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input].Columns[PostCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="PostCode"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table that a column joins."
-                              name="JoinToReferenceColumn">PostCode</property>
-                            <property
-                              dataType="System.Null"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn" />
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output]"
-                      errorOrTruncationOperation="Lookup"
-                      exclusionGroup="1"
-                      name="Lookup Match Output"
-                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output].Columns[TransportId]"
-                          dataType="i4"
-                          errorOrTruncationOperation="Copy Column"
-                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output].Columns[TransportId]"
-                          name="TransportId"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              dataType="System.String"
-                              description="Specifies the column in the reference table from which a column is copied."
-                              name="CopyFromReferenceColumn">TransportId</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup No Match Output]"
-                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
-                      exclusionGroup="1"
-                      name="Lookup No Match Output"
-                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output]"
-                      exclusionGroup="1"
-                      isErrorOut="true"
-                      name="Lookup Error Output"
-                      synchronousInputId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output].Columns[ErrorColumn]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -3777,457 +3364,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Australia Property Median\Load data to DW\Merge Join 4"
-                  componentClassID="Microsoft.MergeJoin"
-                  contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
-                  name="Merge Join 4"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the type of join to perform."
-                      name="JoinType"
-                      typeConverter="JoinType">1</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the number of columns in the ordering key."
-                      name="NumKeyColumns">10</property>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the null values are treated as equal values."
-                      name="TreatNullsAsEqual">true</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Indicates the requested maximum buffers per input before blocking."
-                      name="MaxBuffersPerInput">5</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input]"
-                      hasSideEffects="true"
-                      name="Merge Join Left Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[StateCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="StateCode"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[StateCode]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[State]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="State"
-                          cachedSortKeyPosition="2"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[State]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[District]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="District"
-                          cachedSortKeyPosition="3"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[District]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[City]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="City"
-                          cachedSortKeyPosition="4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[City]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[Suburb]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Suburb"
-                          cachedSortKeyPosition="5"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[Suburb]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[PostCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="PostCode"
-                          cachedSortKeyPosition="6"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[PostCode]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[Location]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Location"
-                          cachedSortKeyPosition="7"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[Location]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[PropertyMedianValue]"
-                          cachedDataType="numeric"
-                          cachedName="PropertyMedianValue"
-                          cachedPrecision="15"
-                          cachedScale="2"
-                          cachedSortKeyPosition="8"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[PropertyMedianValue]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[UpdatedYear]"
-                          cachedDataType="i4"
-                          cachedName="UpdatedYear"
-                          cachedSortKeyPosition="9"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[UpdatedYear]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[UpdatedMonth]"
-                          cachedDataType="i4"
-                          cachedName="UpdatedMonth"
-                          cachedSortKeyPosition="10"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[UpdatedMonth]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[StateId]"
-                          cachedDataType="i4"
-                          cachedName="StateId"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[StateId]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[CityId]"
-                          cachedDataType="i4"
-                          cachedName="CityId"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[CityId]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[SuburbId]"
-                          cachedDataType="i4"
-                          cachedName="SuburbId"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[SuburbId]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[PeriodKey]"
-                          cachedDataType="i4"
-                          cachedName="PeriodKey"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[PeriodKey]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[CountryID]"
-                          cachedDataType="i4"
-                          cachedName="CountryID"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[CountryID]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                    <input
-                      refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input]"
-                      hasSideEffects="true"
-                      name="Merge Join Right Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[StateCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="StateCode"
-                          cachedSortKeyPosition="1"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[StateCode]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[State]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="State"
-                          cachedSortKeyPosition="2"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[State]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[District]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="District"
-                          cachedSortKeyPosition="3"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[District]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[City]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="City"
-                          cachedSortKeyPosition="4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[City]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[Suburb]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Suburb"
-                          cachedSortKeyPosition="5"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[Suburb]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[PostCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="PostCode"
-                          cachedSortKeyPosition="6"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[PostCode]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[Location]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Location"
-                          cachedSortKeyPosition="7"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[Location]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[PropertyMedianValue]"
-                          cachedDataType="numeric"
-                          cachedName="PropertyMedianValue"
-                          cachedPrecision="15"
-                          cachedScale="2"
-                          cachedSortKeyPosition="8"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[PropertyMedianValue]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[UpdatedYear]"
-                          cachedDataType="i4"
-                          cachedName="UpdatedYear"
-                          cachedSortKeyPosition="9"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[UpdatedYear]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[UpdatedMonth]"
-                          cachedDataType="i4"
-                          cachedName="UpdatedMonth"
-                          cachedSortKeyPosition="10"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[UpdatedMonth]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[TransportId]"
-                          cachedDataType="i4"
-                          cachedName="TransportId"
-                          cachedSortKeyPosition="11"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[TransportId]" />
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output]"
-                      isSorted="true"
-                      name="Merge Join Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[StateCode]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[StateCode]"
-                          name="StateCode"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[StateCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[State]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[State]"
-                          name="State"
-                          sortKeyPosition="2">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[State]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[District]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[District]"
-                          name="District"
-                          sortKeyPosition="3">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[District]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[City]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[City]"
-                          name="City"
-                          sortKeyPosition="4">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[City]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[Suburb]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[Suburb]"
-                          name="Suburb"
-                          sortKeyPosition="5">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[Suburb]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PostCode]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PostCode]"
-                          name="PostCode"
-                          sortKeyPosition="6">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[PostCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[Location]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[Location]"
-                          name="Location"
-                          sortKeyPosition="7">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[Location]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PropertyMedianValue]"
-                          dataType="numeric"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PropertyMedianValue]"
-                          name="PropertyMedianValue"
-                          precision="15"
-                          scale="2"
-                          sortKeyPosition="8">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[PropertyMedianValue]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[UpdatedYear]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[UpdatedYear]"
-                          name="UpdatedYear"
-                          sortKeyPosition="9">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[UpdatedYear]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[UpdatedMonth]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[UpdatedMonth]"
-                          name="UpdatedMonth"
-                          sortKeyPosition="10">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[UpdatedMonth]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[StateId]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[StateId]"
-                          name="StateId">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[StateId]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CityId]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CityId]"
-                          name="CityId">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[CityId]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[SuburbId]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[SuburbId]"
-                          name="SuburbId">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[SuburbId]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PeriodKey]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PeriodKey]"
-                          name="PeriodKey">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[PeriodKey]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[TransportId]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[TransportId]"
-                          name="TransportId">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input].Columns[TransportId]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CountryID]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CountryID]"
-                          name="CountryID">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="The input column associated with this output column"
-                              name="InputColumnID">#{Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input].Columns[CountryID]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
-                <component
                   refId="Package\Australia Property Median\Load data to DW\Multicast"
                   componentClassID="Microsoft.Multicast"
                   contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -4252,13 +3388,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                       refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 1]"
                       deleteOutputOnPathDetached="true"
                       name="Multicast Output 1"
-                      synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 4]"
-                      deleteOutputOnPathDetached="true"
-                      name="Multicast Output 4"
                       synchronousInputId="Package\Australia Property Median\Load data to DW\Multicast.Inputs[Multicast Input 1]">
                       <externalMetadataColumns />
                     </output>
@@ -4370,31 +3499,25 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                           cachedDataType="i4"
                           cachedName="StateId"
                           externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateID]"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[StateId]" />
+                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[StateId]" />
                         <inputColumn
                           refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CityId]"
                           cachedDataType="i4"
                           cachedName="CityId"
                           externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CityID]"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CityId]" />
+                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[CityId]" />
                         <inputColumn
                           refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SuburbId]"
                           cachedDataType="i4"
                           cachedName="SuburbId"
                           externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SuburbID]"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[SuburbId]" />
+                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[SuburbId]" />
                         <inputColumn
                           refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PeriodKey]"
                           cachedDataType="i4"
                           cachedName="PeriodKey"
                           externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PeriodKey]"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PeriodKey]" />
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TransportId]"
-                          cachedDataType="i4"
-                          cachedName="TransportId"
-                          externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransportID]"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[TransportId]" />
+                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[PeriodKey]" />
                         <inputColumn
                           refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PropertyMedianValue]"
                           cachedDataType="numeric"
@@ -4403,13 +3526,13 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                           cachedScale="2"
                           cachedSortKeyPosition="8"
                           externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyMedian]"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[PropertyMedianValue]" />
+                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[PropertyMedianValue]" />
                         <inputColumn
                           refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CountryID]"
                           cachedDataType="i4"
                           cachedName="CountryID"
                           externalMetadataColumnId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
-                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output].Columns[CountryID]" />
+                          lineageId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output].Columns[CountryID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4433,10 +3556,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                           refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PeriodKey]"
                           dataType="i4"
                           name="PeriodKey" />
-                        <externalMetadataColumn
-                          refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TransportID]"
-                          dataType="i4"
-                          name="TransportID" />
                         <externalMetadataColumn
                           refId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PropertyMedian]"
                           dataType="numeric"
@@ -6698,392 +5817,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                     </output>
                   </outputs>
                 </component>
-                <component
-                  refId="Package\Australia Property Median\Load data to DW\Sort 5"
-                  componentClassID="Microsoft.Sort"
-                  contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-                  description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
-                  name="Sort 5"
-                  version="1">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Indicates whether the Sort transformation removes rows with duplicate sort values."
-                      name="EliminateDuplicates">true</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the maximum number of threads to use for sorting."
-                      expressionType="Notify"
-                      name="MaximumThreads">-1</property>
-                  </properties>
-                  <inputs>
-                    <input
-                      refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input]"
-                      name="Sort Input">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[StateCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="StateCode"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">1</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[State]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="State"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">2</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[District]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="District"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">3</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[City]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="City"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">4</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[Suburb]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Suburb"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">5</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[PostCode]"
-                          cachedDataType="wstr"
-                          cachedLength="10"
-                          cachedName="PostCode"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">6</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[Location]"
-                          cachedDataType="wstr"
-                          cachedLength="100"
-                          cachedName="Location"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Location]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">7</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[PropertyMedianValue]"
-                          cachedDataType="numeric"
-                          cachedName="PropertyMedianValue"
-                          cachedPrecision="15"
-                          cachedScale="2"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyMedianValue]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">8</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[UpdatedYear]"
-                          cachedDataType="i4"
-                          cachedName="UpdatedYear"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedYear]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">9</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[UpdatedMonth]"
-                          cachedDataType="i4"
-                          cachedName="UpdatedMonth"
-                          lineageId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedMonth]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">10</property>
-                          </properties>
-                        </inputColumn>
-                        <inputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input].Columns[TransportId]"
-                          cachedDataType="i4"
-                          cachedName="TransportId"
-                          lineageId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output].Columns[TransportId]">
-                          <properties>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the comparison options for character data."
-                              name="NewComparisonFlags">0</property>
-                            <property
-                              dataType="System.Int32"
-                              description="Specifies the sort order of the column."
-                              name="NewSortKeyPosition">11</property>
-                          </properties>
-                        </inputColumn>
-                      </inputColumns>
-                      <externalMetadataColumns />
-                    </input>
-                  </inputs>
-                  <outputs>
-                    <output
-                      refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output]"
-                      isSorted="true"
-                      name="Sort Output">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[StateCode]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[StateCode]"
-                          name="StateCode"
-                          sortKeyPosition="1">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[StateCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[State]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[State]"
-                          name="State"
-                          sortKeyPosition="2">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[District]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[District]"
-                          name="District"
-                          sortKeyPosition="3">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[District]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[City]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[City]"
-                          name="City"
-                          sortKeyPosition="4">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[Suburb]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[Suburb]"
-                          name="Suburb"
-                          sortKeyPosition="5">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Suburb]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[PostCode]"
-                          dataType="wstr"
-                          length="10"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[PostCode]"
-                          name="PostCode"
-                          sortKeyPosition="6">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostCode]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[Location]"
-                          dataType="wstr"
-                          length="100"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[Location]"
-                          name="Location"
-                          sortKeyPosition="7">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[Location]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[PropertyMedianValue]"
-                          dataType="numeric"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[PropertyMedianValue]"
-                          name="PropertyMedianValue"
-                          precision="15"
-                          scale="2"
-                          sortKeyPosition="8">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[PropertyMedianValue]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[UpdatedYear]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[UpdatedYear]"
-                          name="UpdatedYear"
-                          sortKeyPosition="9">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedYear]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[UpdatedMonth]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[UpdatedMonth]"
-                          name="UpdatedMonth"
-                          sortKeyPosition="10">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output].Columns[UpdatedMonth]}</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[TransportId]"
-                          dataType="i4"
-                          lineageId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output].Columns[TransportId]"
-                          name="TransportId"
-                          sortKeyPosition="11">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Specifies the lineage identifier of the input column that is associated with this output column."
-                              name="SortColumnId">#{Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output].Columns[TransportId]}</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                  </outputs>
-                </component>
               </components>
               <paths>
                 <path
@@ -7093,64 +5826,49 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                   startId="Package\Australia Property Median\Load data to DW\AUS as Country.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output]"
-                  endId="Package\Australia Property Median\Load data to DW\Sort 5.Inputs[Sort Input]"
-                  name="Lookup Match Output"
-                  startId="Package\Australia Property Median\Load data to DW\Lookup Transport.Outputs[Lookup Match Output]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output1]"
                   endId="Package\Australia Property Median\Load data to DW\Sort 4.Inputs[Sort Input]"
                   name="Lookup Match Output"
                   startId="Package\Australia Property Median\Load data to DW\Lookup  Period.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output2]"
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output1]"
                   endId="Package\Australia Property Median\Load data to DW\Sort 3.Inputs[Sort Input]"
                   name="Lookup Match Output"
                   startId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output3]"
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output2]"
                   endId="Package\Australia Property Median\Load data to DW\Sort 1.Inputs[Sort Input]"
                   name="Lookup Match Output"
                   startId="Package\Australia Property Median\Load data to DW\Lookup State.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output4]"
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output3]"
                   endId="Package\Australia Property Median\Load data to DW\Sort 2.Inputs[Sort Input]"
                   name="Lookup Match Output"
                   startId="Package\Australia Property Median\Load data to DW\Lookup City.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output5]"
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output4]"
                   endId="Package\Australia Property Median\Load data to DW\Merge Join.Inputs[Merge Join Left Input]"
                   name="Lookup Match Output"
                   startId="Package\Australia Property Median\Load data to DW\Lookup Country.Outputs[Lookup Match Output]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Lookup No Match Output]"
-                  endId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  name="Lookup No Match Output"
-                  startId="Package\Australia Property Median\Load data to DW\Lookup 1.Outputs[Lookup No Match Output]" />
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output2]"
+                  endId="Package\Australia Property Median\Load data to DW\Merge Join 2.Inputs[Merge Join Left Input]"
+                  name="Merge Join Output"
+                  startId="Package\Australia Property Median\Load data to DW\Merge Join 1.Outputs[Merge Join Output]" />
                 <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output3]"
-                  endId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Left Input]"
+                  endId="Package\Australia Property Median\Load data to DW\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="Merge Join Output"
                   startId="Package\Australia Property Median\Load data to DW\Merge Join 3.Outputs[Merge Join Output]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output2]"
-                  endId="Package\Australia Property Median\Load data to DW\Lookup 1.Inputs[Lookup Input]"
-                  name="Merge Join Output"
-                  startId="Package\Australia Property Median\Load data to DW\Merge Join 4.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output4]"
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output]"
                   endId="Package\Australia Property Median\Load data to DW\Merge Join 1.Inputs[Merge Join Left Input]"
                   name="Merge Join Output"
                   startId="Package\Australia Property Median\Load data to DW\Merge Join.Outputs[Merge Join Output]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output]"
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output1]"
                   endId="Package\Australia Property Median\Load data to DW\Merge Join 3.Inputs[Merge Join Left Input]"
                   name="Merge Join Output"
                   startId="Package\Australia Property Median\Load data to DW\Merge Join 2.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output1]"
-                  endId="Package\Australia Property Median\Load data to DW\Merge Join 2.Inputs[Merge Join Left Input]"
-                  name="Merge Join Output"
-                  startId="Package\Australia Property Median\Load data to DW\Merge Join 1.Outputs[Merge Join Output]" />
                 <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 1]"
                   endId="Package\Australia Property Median\Load data to DW\Lookup Suburb.Inputs[Lookup Input]"
@@ -7161,11 +5879,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                   endId="Package\Australia Property Median\Load data to DW\Lookup State.Inputs[Lookup Input]"
                   name="Multicast Output 2"
                   startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 2]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 4]"
-                  endId="Package\Australia Property Median\Load data to DW\Lookup Transport.Inputs[Lookup Input]"
-                  name="Multicast Output 4"
-                  startId="Package\Australia Property Median\Load data to DW\Multicast.Outputs[Multicast Output 4]" />
                 <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 5]"
                   endId="Package\Australia Property Median\Load data to DW\Lookup City.Inputs[Lookup Input]"
@@ -7188,34 +5901,29 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                   startId="Package\Australia Property Median\Load data to DW\OLE DB Source.Outputs[OLE DB Source Output]" />
                 <path
                   refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output4]"
-                  endId="Package\Australia Property Median\Load data to DW\Merge Join.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Australia Property Median\Load data to DW\Sort 1.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output]"
-                  endId="Package\Australia Property Median\Load data to DW\Lookup Country.Inputs[Lookup Input]"
-                  name="Sort Output"
-                  startId="Package\Australia Property Median\Load data to DW\Sort.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output1]"
-                  endId="Package\Australia Property Median\Load data to DW\Merge Join 2.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Australia Property Median\Load data to DW\Sort 3.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output2]"
-                  endId="Package\Australia Property Median\Load data to DW\Merge Join 3.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Australia Property Median\Load data to DW\Sort 4.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output3]"
                   endId="Package\Australia Property Median\Load data to DW\Merge Join 1.Inputs[Merge Join Right Input]"
                   name="Sort Output"
                   startId="Package\Australia Property Median\Load data to DW\Sort 2.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output5]"
-                  endId="Package\Australia Property Median\Load data to DW\Merge Join 4.Inputs[Merge Join Right Input]"
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output]"
+                  endId="Package\Australia Property Median\Load data to DW\Merge Join.Inputs[Merge Join Right Input]"
                   name="Sort Output"
-                  startId="Package\Australia Property Median\Load data to DW\Sort 5.Outputs[Sort Output]" />
+                  startId="Package\Australia Property Median\Load data to DW\Sort 1.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output1]"
+                  endId="Package\Australia Property Median\Load data to DW\Lookup Country.Inputs[Lookup Input]"
+                  name="Sort Output"
+                  startId="Package\Australia Property Median\Load data to DW\Sort.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output2]"
+                  endId="Package\Australia Property Median\Load data to DW\Merge Join 2.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Australia Property Median\Load data to DW\Sort 3.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Australia Property Median\Load data to DW.Paths[Sort Output3]"
+                  endId="Package\Australia Property Median\Load data to DW\Merge Join 3.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Australia Property Median\Load data to DW\Sort 4.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -7336,8 +6044,8 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="290,251"
-          Size="290,294"
+          PanelSize="290,267"
+          Size="290,310"
           Id="Package\Australia Property Median"
           TopLeft="60,60" />
       </GraphLayout>
@@ -7443,17 +6151,13 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           Id="Package\Australia Property Median\Load data to DW\OLE DB Source"
           TopLeft="847,47" />
         <NodeLayout
-          Size="162,42"
-          Id="Package\Australia Property Median\Load data to DW\Lookup Transport"
-          TopLeft="1225,211" />
-        <NodeLayout
           Size="120,42"
           Id="Package\Australia Property Median\Load data to DW\Multicast"
           TopLeft="876,141" />
         <NodeLayout
           Size="171,42"
           Id="Package\Australia Property Median\Load data to DW\OLE DB Destination"
-          TopLeft="860,471" />
+          TopLeft="1045,490" />
         <NodeLayout
           Size="153,42"
           Id="Package\Australia Property Median\Load data to DW\Lookup Country"
@@ -7467,17 +6171,9 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           Id="Package\Australia Property Median\Load data to DW\Merge Join"
           TopLeft="510,399" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Australia Property Median\Load data to DW\Merge Join 4"
-          TopLeft="1237,392" />
-        <NodeLayout
           Size="107,42"
           Id="Package\Australia Property Median\Load data to DW\Sort 4"
           TopLeft="1062,302" />
-        <NodeLayout
-          Size="122,42"
-          Id="Package\Australia Property Median\Load data to DW\Lookup 1"
-          TopLeft="1234,467" />
         <NodeLayout
           Size="141,42"
           Id="Package\Australia Property Median\Load data to DW\Lookup State"
@@ -7489,15 +6185,11 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
         <NodeLayout
           Size="139,42"
           Id="Package\Australia Property Median\Load data to DW\Merge Join 3"
-          TopLeft="1049,394" />
+          TopLeft="1049,393" />
         <NodeLayout
           Size="149,42"
           Id="Package\Australia Property Median\Load data to DW\Lookup  Period"
           TopLeft="1037,213" />
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Australia Property Median\Load data to DW\Sort 5"
-          TopLeft="1247,293" />
         <NodeLayout
           Size="139,42"
           Id="Package\Australia Property Median\Load data to DW\Merge Join 1"
@@ -7528,28 +6220,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           TopLeft="875,289" />
         <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output1]"
-          TopLeft="929,331">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66"
-              Start="0,0"
-              End="0,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output]"
           TopLeft="378.25,332">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7562,6 +6232,28 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output]"
+          TopLeft="573.25,338">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7707,40 +6399,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 4]"
-          TopLeft="964,183">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="342,28"
-              Start="0,0"
-              End="342,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,5.73913043478261" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,5.73913043478261"
-                    Point2="0,9.73913043478261"
-                    Point3="4,9.73913043478261" />
-                  <mssgle:LineSegment
-                    End="338,9.73913043478261" />
-                  <mssgle:CubicBezierSegment
-                    Point1="338,9.73913043478261"
-                    Point2="342,9.73913043478261"
-                    Point3="342,13.7391304347826" />
-                  <mssgle:LineSegment
-                    End="342,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Multicast Output 2]"
           TopLeft="908,183">
           <EdgeLayout.Curve>
@@ -7797,85 +6455,7 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output4]"
-          TopLeft="640,419">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="32,0"
-              Start="0,0"
-              End="24.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="24.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output3]"
-          TopLeft="1188,414">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="49,0"
-              Start="0,0"
-              End="41.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="41.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output2]"
-          TopLeft="1306.5,434">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-11.5,33"
-              Start="0,0"
-              End="-11.5,25.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="-4,16.5" />
-                  <mssgle:LineSegment
-                    End="-7.5,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-7.5,16.5"
-                    Point2="-11.5,16.5"
-                    Point3="-11.5,20.5" />
-                  <mssgle:LineSegment
-                    End="-11.5,25.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output1]"
           TopLeft="811,418">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7897,8 +6477,8 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output]"
-          TopLeft="999,416.5">
+          Id="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output1]"
+          TopLeft="999,416">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7919,31 +6499,29 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup No Match Output]"
-          TopLeft="1234,490">
+          Id="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output]"
+          TopLeft="640,419">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-203,0"
+              EndConnector="32,0"
               Start="0,0"
-              End="-195.5,0">
+              End="24.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-195.5,0" />
+                    End="24.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-153.55638671875,5,111.6127734375,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output5]"
+          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output4]"
           TopLeft="452,388">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -7979,7 +6557,7 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output4]"
+          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output3]"
           TopLeft="741.25,256">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8003,7 +6581,7 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output3]"
+          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output2]"
           TopLeft="574.5,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8027,7 +6605,7 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output2]"
+          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output1]"
           TopLeft="931.25,256">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8051,7 +6629,7 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output1]"
+          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output]"
           TopLeft="1113.5,255">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8071,30 +6649,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-48.19138671875,13.9453125,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Lookup Match Output]"
-          TopLeft="1303.25,253">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,10.4453125,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -8121,51 +6675,7 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output5]"
-          TopLeft="1303.5,335">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output4]"
-          TopLeft="573.25,338">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,61"
-              Start="0,0"
-              End="0,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output3]"
           TopLeft="742,339">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8187,19 +6697,75 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output2]"
+          Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output3]"
           TopLeft="1117,344">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="0,49"
               Start="0,0"
-              End="0,42.5">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Sort Output2]"
+          TopLeft="929,331">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Australia Property Median\Load data to DW.Paths[Merge Join Output3]"
+          TopLeft="1118.5,435">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12,55"
+              Start="0,0"
+              End="12,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
+                  <mssgle:LineSegment
+                    End="8,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8,27.5"
+                    Point2="12,27.5"
+                    Point3="12,31.5" />
+                  <mssgle:LineSegment
+                    End="12,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8221,29 +6787,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Australia Property Median\Load data to DW\Lookup Transport">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimTransport]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -8272,29 +6815,6 @@ where [refTable].[State] = ? and [refTable].[Suburb] = ? and [refTable].[PostCod
         <Name>UsedTableName</Name>
         <Value
           type="q3:string">[dbo].[DimCountry]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Australia Property Median\Load data to DW\Lookup 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[FactAreawiseProperty]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
