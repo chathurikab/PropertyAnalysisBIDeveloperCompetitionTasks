@@ -11,8 +11,8 @@
   DTS:LocaleID="5129"
   DTS:ObjectName="1_AUS_GeographicalArea"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{7D6950A8-61EB-4757-A007-F31475E89453}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{6B111E1F-022B-4FCF-805F-F2EB28ABB40B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5988,7 +5988,7 @@ where [refTable].[Suburb] = ?</property>
         <NodeLayout
           Size="158,42"
           Id="Package\1_AUS_GeographicalArea\Load data to DW"
-          TopLeft="193,188" />
+          TopLeft="196,188" />
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea.PrecedenceConstraints[Constraint]"
           TopLeft="94,61">
@@ -6029,9 +6029,9 @@ where [refTable].[Suburb] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35,48"
+              EndConnector="38,48"
               Start="0,0"
-              End="35,40.5">
+              End="38,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -6042,13 +6042,13 @@ where [refTable].[Suburb] = ?</property>
                     Point2="0,24"
                     Point3="4,24" />
                   <mssgle:LineSegment
-                    End="31,24" />
+                    End="34,24" />
                   <mssgle:CubicBezierSegment
-                    Point1="31,24"
-                    Point2="35,24"
-                    Point3="35,28" />
+                    Point1="34,24"
+                    Point2="38,24"
+                    Point3="38,28" />
                   <mssgle:LineSegment
-                    End="35,40.5" />
+                    End="38,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6073,6 +6073,10 @@ where [refTable].[Suburb] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="98,42"
+          Id="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort"
+          TopLeft="348,307" />
+        <NodeLayout
           Size="291,42"
           Id="Package\1_AUS_GeographicalArea\Get data to Staging Db\Excel Source"
           TopLeft="251,98" />
@@ -6084,32 +6088,6 @@ where [refTable].[Suburb] = ?</property>
           Size="156,42"
           Id="Package\1_AUS_GeographicalArea\Get data to Staging Db\Data Conversion"
           TopLeft="318,205" />
-        <EdgeLayout
-          Id="Package\1_AUS_GeographicalArea\Get data to Staging Db.Paths[Excel Source Output]"
-          TopLeft="396.25,140">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65"
-              Start="0,0"
-              End="0,57.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="98,42"
-          Id="Package\1_AUS_GeographicalArea\Get data to Staging Db\Sort"
-          TopLeft="348,307" />
         <EdgeLayout
           Id="Package\1_AUS_GeographicalArea\Get data to Staging Db.Paths[Data Conversion Output]"
           TopLeft="396.5,247">
@@ -6146,6 +6124,28 @@ where [refTable].[Suburb] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\1_AUS_GeographicalArea\Get data to Staging Db.Paths[Excel Source Output]"
+          TopLeft="396.25,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
